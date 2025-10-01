@@ -1,4 +1,5 @@
 import "./login.css";
+import {Botao} from '../../components/botao/Botao.jsx'
 import logo from '../../assets/ChatGPT Image 23_09_2025, 11_25_31 1.png'; 
 
 export const Login = () => {
@@ -22,7 +23,7 @@ export const Login = () => {
             <a href="#">Esqueceu a senha?</a>
           </div>
 
-          <button type="submit">Entrar</button>
+     <Botao nomeBotao="Entrar" />
         </form>
       </div>
     </div>

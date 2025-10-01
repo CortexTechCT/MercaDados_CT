@@ -1,0 +1,68 @@
+.menu-lateral {
+  background-color: #0E1A3D;
+  color: white;
+  width: 240px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 16px;
+  border-right: 1px solid #162A63;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo-menu {
+  margin-bottom: 24px;
+}
+
+.CASA {
+  margin: 0 auto 60px auto;
+  height: 80px;
+  width: 80px;
+  display: block;
+}
+
+.menu-lateral nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral nav li {
+  font-size: 15px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-lateral nav li:hover {
+  background-color: #162A63;
+}
+
+.menu-lateral nav li.ativo {
+  background-color: #F97316;
+  color: white;
+  font-weight: bold;
+}
+
+.sair {
+  color: #F97316;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sair:hover {
+  color: #e59400;
+}
