@@ -11,12 +11,12 @@ export const MenuLateral = () => {
       <nav>
         <ul>
           <li>Gerenciamento</li>
-          <li>Fornecedor</li>
+          <li className="ativo">Fornecedor</li>
           <li>Estoque</li>
           <li>Lucro e Gastos</li>
           <li>Administração</li>
           <li>Produtos</li>
-          <li className="ativo">Cadastro novo</li>
+          <li >Cadastro novo</li>
         </ul>
       </nav>
 
