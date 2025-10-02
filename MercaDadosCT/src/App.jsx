@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import { CadastroFuncionario } from './pages/CadastroUsuario/cadastrousuario'
+//  import { CadastroFuncionario } from './pages/CadastroUsuario/cadastrousuario'
 import './App.css'
-import {Login} from './pages/Login/login'
+//import {Login} from './pages/Login/login'
+import { Cadastroproduto } from './pages/CadastroProduto/cadastroproduto'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-
-  <CadastroFuncionario/>
+    <Cadastroproduto/>
+  {/*<Login/>*/}
+  {/* <CadastroFuncionario/> */}
     </>
   )
 }

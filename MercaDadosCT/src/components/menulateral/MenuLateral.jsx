@@ -15,7 +15,7 @@ export const MenuLateral = () => {
           <li>Estoque</li>
           <li>Lucro e Gastos</li>
           <li>Administração</li>
-          <li>Produtos</li>
+          <li className="ativo">Produtos</li>
           <li className="ativo">Cadastro novo</li>
         </ul>
       </nav>
