@@ -1,0 +1,70 @@
+.registro-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 20px;
+  background-color: DEE5FA;
+  min-height: 100vh;
+}
+
+.produtos {
+  background: #A3B2DF;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.img-produto {
+  width: 250px;
+  border-radius: 12px;
+}
+
+.resumo {
+  background: #A3B2DF;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.resumo h2 {
+  margin-bottom: 10px;
+}
+
+.resumo table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.resumo th, .resumo td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.resumo th {
+  background: #f0f0f0;
+}
+
+.atendido {
+  margin: 15px 0;
+}
+
+.total-final {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.valor-final {
+  background: #0d1b4c;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
