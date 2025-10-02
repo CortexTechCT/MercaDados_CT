@@ -1,0 +1,91 @@
+.container-geral-home {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+}
+
+.conteudo-principal {
+  margin-left: 240px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.home-box {
+  background-color: #EEF3FF;
+  border-radius: 15px;
+  margin: 48px auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 1200px;
+  color: #000;
+}
+
+.home-box h2 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.cards-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card-info {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card-info .icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 8px;
+}
+
+.pessoas {
+  background: url('/icons/pessoas.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.alerta {
+  background: url('/icons/alerta.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.caminhão {
+  background: url('/icons/caminhao.svg') no-repeat center center;
+  background-size: contain;
+}
+
+.card-info strong {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.graficos-home {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.grafico-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 300px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
