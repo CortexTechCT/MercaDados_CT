@@ -44,7 +44,7 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "API de Games",
+        Title = "API",
         Description = "Aplicaçao para gerenciamento de Games",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
@@ -94,11 +94,11 @@ if (app.Environment.IsDevelopment())
 //Adiciona o Cors(política criada)
 app.UseCors("CorsPolicy");
 
-//Adicionar o mapeamento dos controllers
-app.MapControllers();
-
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+//Adicionar o mapeamento dos controllers
+app.MapControllers();
 
 app.Run();

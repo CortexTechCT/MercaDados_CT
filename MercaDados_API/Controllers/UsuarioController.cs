@@ -55,10 +55,7 @@ namespace Mercadados_API.Controllers
             {
                 string email = HttpContext.Request.Query["email"];
                 string senha = HttpContext.Request.Query["senha"];
-                string tipoUsuario = HttpContext.Request.Query["tipoUsuario"];
-                int numero = int.Parse(HttpContext.Request.Query["numero"]);
-                int cpf = int.Parse(HttpContext.Request.Query["cpf"]);
-                Usuario usuario = _usuarioRepository.BuscaPorEmailSenha(email, senha, tipoUsuario, numero, cpf);
+                Usuario usuario = _usuarioRepository.BuscaPorEmailSenha(email, senha);
                 if (usuario == null)
                 {
                     return NotFound("Usuário não encontrado.");
