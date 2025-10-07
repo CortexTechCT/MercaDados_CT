@@ -1,0 +1,21 @@
+.top-header {
+  display: flex;
+  justify-content: flex-end;
+    padding: 16px 24px;
+  background-color: #0E1A3D;
+      padding-right: 14%;
+}
+.icons-header {
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+  width: 14%;
+}
+
+
+.icons-header img {
+  width: 36px;
+  height: 33px;
+  margin-left: 20px;
+  cursor: pointer;
+}

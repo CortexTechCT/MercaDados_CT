@@ -10,7 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "axios": "^1.12.2",
+=======
+    "apexcharts": "^5.3.5",
+>>>>>>> 1af5f47b98e3ecc4e553498649c9633db698071b
     "react": "^19.1.1",
+    "react-apexcharts": "^1.7.0",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
