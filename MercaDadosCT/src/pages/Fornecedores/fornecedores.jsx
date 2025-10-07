@@ -101,6 +101,8 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
 
         <MenuNormal/>
         <main className="fornecedores-box">
+          <div className="conteudoss">
+
           <h2 class="titulo-fornecedores">Fornecedores:</h2>
 
 
@@ -153,6 +155,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
               </div>
             </div>
           </div>
+                  </div>
         </main>
                   </div>
       </div>

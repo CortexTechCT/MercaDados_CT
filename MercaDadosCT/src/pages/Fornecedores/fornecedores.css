@@ -8,7 +8,7 @@
   padding: 20px;
   background-color: #f5f7ff;
   justify-content: flex-end;
-   overflow-y: auto;  
+  
 }
 
 .titulo-fornecedores {
@@ -21,11 +21,13 @@
    margin-top: 5%;
 }
 
+.conteudoss{
+background-color:   conteudoss#333;
+}
 .fornecedores-lista {
     display: flex;
     flex-direction: column;
     margin: 74px auto;
-  
     width: 75%;
     gap: 20px;
 

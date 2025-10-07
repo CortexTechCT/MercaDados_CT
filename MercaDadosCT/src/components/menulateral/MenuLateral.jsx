@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export const MenuLateral = () => {
   return (
     <aside className="menu-lateral">
+      
       <img className="CASA" src={iconeCasa} alt="casa" />
       <nav>
         <ul>
