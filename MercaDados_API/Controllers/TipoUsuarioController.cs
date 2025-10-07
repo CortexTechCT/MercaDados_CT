@@ -72,7 +72,7 @@ namespace Mercadados_API.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
         public IActionResult Get()
         {
             try
