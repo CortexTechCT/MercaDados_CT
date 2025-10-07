@@ -23,6 +23,7 @@
   height: 80px;
   width: 80px;
   display: block;
+    cursor: pointer;
 }
 
 .menu-lateral nav ul {
@@ -32,20 +33,36 @@
 }
 
 .menu-lateral nav li {
-  font-size: 15px;
-  padding: 12px 16px;
   margin-bottom: 10px;
   border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  overflow: hidden; /* para deixar o efeito do background legal */
+}
+
+.menu-lateral nav li:last-child {
+  margin-bottom: 0;
+}
+
+/* Estilo para o Link dentro do li */
+.menu-lateral nav li a {
+  display: block; /* faz o link ocupar todo o li */
+  padding: 12px 16px;
+  font-size: 15px;
   font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
 }
 
-.menu-lateral nav li:hover {
+
+.menu-lateral nav li a:hover {
   background-color: #162A63;
+  color: #F97316;
 }
 
-.menu-lateral nav li.ativo {
+
+.menu-lateral nav li a.ativo {
   background-color: #F97316;
   color: white;
   font-weight: bold;
@@ -66,4 +83,16 @@
 
 .sair:hover {
   color: #e59400;
+}
+
+@media (max-width: 1024px) {
+  .menu-lateral {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .menu-lateral.ativo {
+    transform: translateX(0);
+  }
 }

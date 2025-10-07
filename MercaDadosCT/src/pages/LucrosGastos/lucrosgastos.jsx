@@ -1,9 +1,9 @@
 import "./lucrosgastos.css";
 import ReactApexChart from "react-apexcharts";
-import { MenuLateral } from "../../components/menulateral/MenuLateral";
+import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 
-export const LucroEGastos = () => {
+export const LucrosGastos = () => {
     const graficoProdutos = {
         series: [
             {

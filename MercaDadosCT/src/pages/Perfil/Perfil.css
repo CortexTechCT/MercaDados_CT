@@ -1,0 +1,35 @@
+.conteudo-principal-perfil {
+margin-left: 240px; 
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.logo-perfil {
+    margin: 0 auto 40px auto;
+    margin-left: 260px;
+    
+    width: 106px;
+
+}
+
+.logo-perfil img {
+    height: 100%;
+
+}
+
+.Perfil-Logo {
+    border: 2.9px solid #F97316;
+    border-radius: 57px;
+    padding: 48px 40px;
+        margin: 48px auto;
+    width: 730px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    box-sizing: border-box
+} 
+ .Logo-perfil{
+  margin-left: 283px;
+  
+ }
