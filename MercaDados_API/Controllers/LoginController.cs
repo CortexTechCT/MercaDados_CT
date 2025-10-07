@@ -35,7 +35,7 @@ namespace Mercadados_API.Controllers
                 }
 
                 // Busca o usuário pelo repositório  
-                Usuario usuarioBuscado = _usuarioRepository.BuscaPorEmailSenha(loginDto.Email, loginDto.Senha, null!, 0, 0);
+                Usuario usuarioBuscado = _usuarioRepository.BuscaPorEmailSenha(loginDto.Email, loginDto.Senha);
 
                 if (usuarioBuscado == null)
                 {
@@ -45,10 +45,10 @@ namespace Mercadados_API.Controllers
                 // Define os claims do token  
                 var claims = new[]
                 {
-                   new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.UsuarioID.ToString()),
-                   new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
-                   new Claim("TipoUsuario", usuarioBuscado.TipoUsuario?.TituloTipoUsuario ?? "Desconhecido")
-               };
+                  new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.UsuarioID.ToString()),
+                  new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
+                  new Claim("TipoUsuario", usuarioBuscado.TipoUsuario?.TituloTipoUsuario ?? "Desconhecido")
+              };
 
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtKey));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
