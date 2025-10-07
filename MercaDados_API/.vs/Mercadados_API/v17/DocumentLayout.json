@@ -1,14 +1,31 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\",
+  "WorkspaceRootPath": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\49984891860\\desktop\\mercadados_ct\\mercadados_api\\controllers\\itemvendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\itemvendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\49984891860\\desktop\\mercadados_ct\\mercadados_api\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\50457069856\\desktop\\mercadados_ct\\mercadados_api\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\50457069856\\desktop\\mercadados_ct\\mercadados_api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\50457069856\\desktop\\mercadados_ct\\mercadados_api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\50457069856\\desktop\\mercadados_ct\\mercadados_api\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 2703fd4231a85bb7954cbc733c5e4ed8df9de631
     }
   ],
   "DocumentGroupContainers": [
@@ -23,6 +40,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "ItemVendaController.cs",
               "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\ItemVendaController.cs",
               "RelativeDocumentMoniker": "Controllers\\ItemVendaController.cs",
@@ -31,10 +49,21 @@
               "ViewState": "AgIAAC4AAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-07T18:02:32.511Z",
+=======
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\UsuarioRepository.cs",
+              "RelativeToolTip": "Repositories\\UsuarioRepository.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAiwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T17:16:54.014Z",
+>>>>>>> 2703fd4231a85bb7954cbc733c5e4ed8df9de631
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "ProdutosController.cs",
               "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\ProdutosController.cs",
@@ -49,6 +78,41 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+=======
+              "DocumentIndex": 2,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAcwDgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T17:05:02.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IUsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeToolTip": "Interfaces\\IUsuarioRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T17:04:34.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAEwCUAAABuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T16:51:55.182Z"
+>>>>>>> 2703fd4231a85bb7954cbc733c5e4ed8df9de631
             }
           ]
         }

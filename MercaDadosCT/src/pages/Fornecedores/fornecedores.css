@@ -16,16 +16,26 @@
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
+<<<<<<< HEAD
+  margin-left: 24%;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 40px;
+=======
   margin-left: 13%;
   font-family: 'Montserrat', sans-serif;
    margin-top: 5%;
+>>>>>>> 77fa97c7b1a3a3307414c63821d325493f3a572d
 }
 
 .fornecedores-lista {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+    margin-left: 20%;
+=======
     margin: 74px auto;
   
+>>>>>>> 77fa97c7b1a3a3307414c63821d325493f3a572d
     width: 75%;
     gap: 20px;
 

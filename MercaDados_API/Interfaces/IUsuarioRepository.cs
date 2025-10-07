@@ -7,6 +7,6 @@ namespace Mercadados_API.Interfaces
     {
         void Cadastrar(Usuario usuario);
         Usuario BuscarPorId(Guid id);
-        Usuario BuscaPorEmailSenha(string email, string senha, string tipousuario, int numero, int cpf);
+        Usuario BuscaPorEmailSenha(string email, string senha);
     }
 }
