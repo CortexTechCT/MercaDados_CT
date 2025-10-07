@@ -3,6 +3,7 @@ import { MenuLateral } from "../../components/menulateral/MenuLateral";
 import iconeSino from '../../assets/Alarm.png';
 import iconeUsuario from '../../assets/perfil.png';
 import {Botao} from '../../components/botao/Botao.jsx'
+import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 
 export const CadastroFuncionario = () => {
   return (
@@ -10,12 +11,8 @@ export const CadastroFuncionario = () => {
       <MenuLateral />
 
       <div className="conteudo-principal">
-        <header className="top-header">
-          <div className="icons-header">
-            <img src={iconeSino} alt="Notificações" />
-            <img src={iconeUsuario} alt="Usuário" />
-          </div>
-        </header>
+      <MenuNormal/> 
+       
 
         <main className="formulario-box">
           <h2>Cadastro de Funcionario:</h2>

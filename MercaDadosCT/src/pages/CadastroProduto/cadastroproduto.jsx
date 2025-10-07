@@ -2,11 +2,15 @@ import "./cadastroproduto.css";
 import { MenuLateral } from "../../components/menulateral/MenuLateral";
 import imagemCaixa from "../../assets/caixa.svg";
 import { Botao } from "../../components/botao/Botao";
-
+import {MenuNormal} from "../../components/menunormal/menunormal"
 export const Cadastroproduto = () => {
   return (
     <div className="container-geral">
       <MenuLateral />
+
+   <div className="conteudo-principal">
+      <MenuNormal/> 
+       
 
       <main className="formulario-box">
         <h2>Produtos:</h2>
@@ -22,7 +26,8 @@ export const Cadastroproduto = () => {
           <div className="descricao-texto">
             <strong>Descrição:</strong>
             <p>
-              O produto é um tal que faz parte de tal coisa e consumido por tal
+              O produto é um tal que faz parte de tal coisa e
+               consumido por tal
               pessoas e com tal proteínas, vitaminas entre outros
             </p>
           </div>
@@ -43,6 +48,7 @@ export const Cadastroproduto = () => {
           <Botao nomeBotao="Cadastrar" />
         </div>
       </main>
+      </div>
     </div>
   );
 };

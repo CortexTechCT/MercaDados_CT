@@ -1,11 +1,10 @@
 import "./MenuLateral.css";
-import iconeCasa from '../../assets/imagem_2025-09-23_101000545-removebg-preview 1.png';
-import iconeSair from '../../assets/Vector.png';
+import iconeCasa from "../../assets/imagem_2025-09-23_101000545-removebg-preview 1.png";
+import iconeSair from "../../assets/Vector.png";
 
 export const MenuLateral = () => {
   return (
     <aside className="menu-lateral">
-
       <img className="CASA" src={iconeCasa} alt="casa" />
 
       <nav>
@@ -16,7 +15,7 @@ export const MenuLateral = () => {
           <li>Lucro e Gastos</li>
           <li>Administração</li>
           <li className="ativo">Produtos</li>
-          <li className="ativo">Cadastro novo</li>
+          <li>Cadastro novo</li>
         </ul>
       </nav>
 
