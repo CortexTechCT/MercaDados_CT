@@ -6,5 +6,5 @@ export const Botao = ({ nomeBotao }) => {
     <button className="botao" >
       {nomeBotao}
     </button>
-  );
-};
+  )
+}

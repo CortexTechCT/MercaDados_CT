@@ -14,7 +14,7 @@ export const Home = () => {
                 position: 'bottom'
             }
         },
-    };
+    }
 
     const graficoProdutos = {
         series: [
@@ -45,7 +45,7 @@ export const Home = () => {
             },
             colors: ["#00E396", "#008FFB", "#FEB019"],
         },
-    };
+    }
 
     return (
         <div className="container-geral-home">
@@ -99,5 +99,5 @@ export const Home = () => {
                 </main>
             </div>
         </div>
-    );
-};
+    )
+}

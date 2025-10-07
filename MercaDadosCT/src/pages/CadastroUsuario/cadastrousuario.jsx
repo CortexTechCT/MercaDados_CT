@@ -1,19 +1,15 @@
-import "./cadastrousuario.css";
-import { MenuLateral } from "../../components/menulateral/MenuLateral";
-import iconeSino from '../../assets/Alarm.png';
-import iconeUsuario from '../../assets/perfil.png';
-import {Botao} from '../../components/botao/Botao.jsx'
+import "./CadastroUsuario.css";
+import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
+import { Botao } from '../../components/botao/Botao.jsx'
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 
-export const CadastroFuncionario = () => {
+export const CadastroUsuario = () => {
   return (
     <div className="container-geral">
       <MenuLateral />
 
       <div className="conteudo-principal">
-      <MenuNormal/> 
-       
-
+        <MenuNormal />
         <main className="formulario-box">
           <h2>Cadastro de Funcionario:</h2>
           <form className="formulario-grid">
@@ -28,9 +24,9 @@ export const CadastroFuncionario = () => {
             <input type="text" placeholder="Número de telefone" />
             <input type="text" placeholder="Complemento" />
           </form>
-               <Botao nomeBotao="Cadastrar" />
+          <Botao nomeBotao="Cadastrar" />
         </main>
       </div>
     </div>
-  );
-};
+  )
+}
