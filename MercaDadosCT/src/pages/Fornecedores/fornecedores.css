@@ -8,6 +8,7 @@
   padding: 20px;
   background-color: #f5f7ff;
   justify-content: flex-end;
+   overflow-y: auto;  
 }
 
 .titulo-fornecedores {
@@ -15,44 +16,59 @@
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
+<<<<<<< HEAD
   margin-left: 24%;
   font-family: 'Montserrat', sans-serif;
   margin-top: 40px;
+=======
+  margin-left: 13%;
+  font-family: 'Montserrat', sans-serif;
+   margin-top: 5%;
+>>>>>>> 77fa97c7b1a3a3307414c63821d325493f3a572d
 }
 
 .fornecedores-lista {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     margin-left: 20%;
+=======
+    margin: 74px auto;
+  
+>>>>>>> 77fa97c7b1a3a3307414c63821d325493f3a572d
     width: 75%;
     gap: 20px;
-    padding: 45px;
-}
 
+}
 .fornecedor-card {
   display: flex;
   align-items: center;
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  justify-content: flex-start;
+  background-color: #fff;
+  border: 1px dashed #ccc;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+  height: 280px; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo-fornecedor {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
-  display: block; 
+  margin-right: 25px;
 }
 
 .grafico-placeholder {
   flex: 1;
-  margin-left: 20px;
-  height: 100px;
-  border: 1px dashed gray;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-style: normal;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.grafico-placeholder > div {
+  width: 100% ;
+  height: 100% ;
 }

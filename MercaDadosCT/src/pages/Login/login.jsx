@@ -7,9 +7,7 @@ export const Login = () => {
     <div className="login-container">
       <div className="login-box">
         <div className="logo">
-      
-         <img className ="Logo"src={logo} alt="" />
-         
+          <img className ="Logo"src={logo} alt="" />
         </div>
 
         <form>
@@ -27,5 +25,5 @@ export const Login = () => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}

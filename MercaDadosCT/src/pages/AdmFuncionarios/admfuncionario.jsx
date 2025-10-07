@@ -1,8 +1,8 @@
-import "./admfuncionario.css";
+import "./AdmFuncionario.css";
 import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
-import { MenuLateral } from "../../components/menulateral/MenuLateral";
+import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 
 import vini from "../../assets/viniciou.jpg";
@@ -167,5 +167,5 @@ export const AdmFuncionario = () => {
                 </main>
             </div>
         </div>
-    );
-};
+    )
+}
