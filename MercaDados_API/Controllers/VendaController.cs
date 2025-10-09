@@ -66,7 +66,7 @@ namespace Mercadados_API.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult actionResult(Venda venda, Guid id)
+        public IActionResult Put(Venda venda, Guid id)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace Mercadados_API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult delete(Guid id) 
+        public IActionResult Delete(Guid id) 
         {
             try
             {
@@ -94,6 +94,5 @@ namespace Mercadados_API.Controllers
                 return BadRequest(error);
             }
         }   
-
     }
 }

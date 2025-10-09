@@ -13,6 +13,28 @@
   overflow-y: auto;
 }
 
+/* TOPO */
+.topo-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+/* Botão de menu - escondido por padrão */
+.btn-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.btn-menu img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Dashboard */
 .home-box {
   background-color: #EEF3FF;
   border-radius: 15px;
@@ -21,12 +43,6 @@
   width: 90%;
   max-width: 1200px;
   color: #000;
-}
-
-.home-box h2 {
-  margin-bottom: 24px;
-  font-size: 24px;
-  font-weight: 600;
 }
 
 .cards-dashboard {
@@ -48,31 +64,18 @@
   align-items: flex-start;
   justify-content: center;
 }
-
-.card-info .icon {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 8px;
+.dashboard-h2{
+  margin-bottom: 4%;
+  
 }
-
-.pessoas {
-  background: url('/icons/pessoas.svg') no-repeat center center;
-  background-size: contain;
+.pessoas{
+  width: 60px;  
 }
-
-.alerta {
-  background: url('/icons/alerta.svg') no-repeat center center;
-  background-size: contain;
+.caminhao{
+ width: 60px;  
 }
-
-.caminhão {
-  background: url('/icons/caminhao.svg') no-repeat center center;
-  background-size: contain;
-}
-
-.card-info strong {
-  font-size: 20px;
-  margin-top: 5px;
+.alertaa{
+ width: 60px;  
 }
 
 .graficos-home {
@@ -88,4 +91,51 @@
   flex: 1;
   min-width: 300px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* ========================= */
+/* ===== RESPONSIVIDADE ==== */
+/* ========================= */
+
+@media (max-width: 1024px) {
+  .conteudo-principal {
+    margin-left: 0;
+  }
+
+  .btn-menu {
+    display: block; /* só aparece aqui */
+  }
+
+  .container-geral-home {
+    position: relative;
+  }
+
+  .container-geral-home .MenuLateral {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 240px;
+    height: 100vh;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .container-geral-home.menu-ativo .MenuLateral {
+    left: 0;
+  }
+
+  .cards-dashboard {
+    flex-direction: column;
+  }
+
+  .graficos-home {
+    flex-direction: column;
+  }
+}
+
+/* Oculta completamente o botão de menu em telas grandes */
+@media (min-width: 1025px) {
+  .btn-menu {
+    display: none ;
+  }
 }
