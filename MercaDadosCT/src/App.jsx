@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 // import { useState } from 'react'
 
@@ -23,6 +24,20 @@ function App() {
       <Rotas /> 
       {/* <CadastroProdutos/> */}
 
+=======
+import React from "react";
+import "./App.css";
+
+// Páginas do sistema
+import { LeituraProdutos } from "./pages/Leitura_Produtos/LeituraProdutos";
+
+function App() {
+  return (
+    <>
+      {/* Renderize a página principal aqui */}
+      <LeituraProdutos />
+      {/* <Rotas /> */}
+>>>>>>> bda8aa5bade5a7e7dd29fb9262db973c4f139f4b
     </>
   );
 }

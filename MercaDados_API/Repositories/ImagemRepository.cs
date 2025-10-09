@@ -1,6 +1,8 @@
-﻿using Mercadados_API.Contexts;
+﻿using System;
+using Mercadados_API.Contexts;
 using Mercadados_API.Interfaces;
 using Mercadados_API.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mercadados_API.Repositories
@@ -9,6 +11,12 @@ namespace Mercadados_API.Repositories
     {
 
         private readonly Context _context;
+
+        public ImagemRepository(Context context)
+        {
+            _context = context;
+        }
+
 
         public async Task<Imagem> CreateAsync(Imagem imagem)
         {
