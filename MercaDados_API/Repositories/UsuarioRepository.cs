@@ -1,6 +1,7 @@
 ﻿using Mercadados_API.Contexts;
 using Mercadados_API.Domains;
 using Mercadados_API.Interfaces;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Mercadados_API.Repositories
 {
@@ -11,18 +12,14 @@ namespace Mercadados_API.Repositories
         {
             _context = context;
         }
-
-        public Usuario BuscaPorEmailSenha(string email, string senha, string tipoUsuario, int numero, int cpf)
+        public Usuario BuscaPorEmailSenha(string email, string senha)
         {
             try
             {
                 Usuario usuarioBuscado = _context.Usuario
                     .FirstOrDefault(u =>
                         u.Email == email &&
-                        u.Senha == senha &&
-                        u.TipoUsuario.TituloTipoUsuario == tipoUsuario && 
-                        u.Numero == numero.ToString() && 
-                        u.Cpf == cpf.ToString())!;
+                        u.Senha == senha)!;
 
                 return usuarioBuscado;
             }
