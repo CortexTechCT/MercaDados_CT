@@ -1,11 +1,10 @@
-import "./Registro.css";
+import "./LeituraProdutos.css";
 import { Botao } from "../../components/botao/Botao";
 import Doritos from "../../assets/Doritos.png";
 import Monster from "../../assets/Monster.png";
 import casa from "../../assets/casa.png";
-import { FaBell, FaUserCircle } from "react-icons/fa";
 
-export const Registro = () => {
+export const LeituraProdutos = () => {
   return (
     <div className="registro-container">
 
@@ -15,10 +14,6 @@ export const Registro = () => {
           <img src={casa} alt="Logo MercaDados" className="casa" />
         </div>
 
-        <div className="header-right">
-          <FaBell className="icon" />
-          <FaUserCircle className="icon" />
-        </div>
       </header>
 
       {/* Conteúdo principal */}
