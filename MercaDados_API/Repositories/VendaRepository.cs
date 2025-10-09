@@ -17,13 +17,13 @@ namespace Mercadados_API.Repositories
             try
             {
                 Venda vendaBuscada = _context.Venda.Find(id)!;
-                if (vendaBuscada == null)
+                if (vendaBuscada != null)
                 {
                     vendaBuscada.Valor = venda.Valor;
                     vendaBuscada.Quantidade = venda.Quantidade;
                 }
               
-                _context.Venda.Update(vendaBuscada);
+                _context.Venda.Update(vendaBuscada!);
                 _context.SaveChanges();
 
             }
