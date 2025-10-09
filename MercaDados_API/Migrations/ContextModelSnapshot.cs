@@ -70,6 +70,8 @@ namespace Mercadados_API.Migrations
 
                     b.HasKey("EstoqueProdutosID");
 
+                    b.HasIndex("ProdutosID");
+
                     b.ToTable("EstoqueProdutos");
                 });
 
@@ -129,9 +131,6 @@ namespace Mercadados_API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("EstoqueProdutosID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("Varchar(200)");
@@ -143,9 +142,6 @@ namespace Mercadados_API.Migrations
                         .HasColumnType("INT");
 
                     b.HasKey("ProdutoID");
-
-                    b.HasIndex("EstoqueProdutosID")
-                        .IsUnique();
 
                     b.ToTable("Produtos");
                 });
@@ -262,6 +258,17 @@ namespace Mercadados_API.Migrations
                     b.Navigation("EstoqueProdutos");
                 });
 
+            modelBuilder.Entity("Mercadados_API.Domains.EstoqueProdutos", b =>
+                {
+                    b.HasOne("Mercadados_API.Domains.Produtos", "Produtos")
+                        .WithMany()
+                        .HasForeignKey("ProdutosID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Produtos");
+                });
+
             modelBuilder.Entity("Mercadados_API.Domains.Feedback", b =>
                 {
                     b.HasOne("Mercadados_API.Domains.Usuario", "Usuario")
@@ -290,17 +297,6 @@ namespace Mercadados_API.Migrations
                     b.Navigation("Produtos");
 
                     b.Navigation("Venda");
-                });
-
-            modelBuilder.Entity("Mercadados_API.Domains.Produtos", b =>
-                {
-                    b.HasOne("Mercadados_API.Domains.EstoqueProdutos", "EstoqueProdutos")
-                        .WithOne("Produtos")
-                        .HasForeignKey("Mercadados_API.Domains.Produtos", "EstoqueProdutosID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("EstoqueProdutos");
                 });
 
             modelBuilder.Entity("Mercadados_API.Domains.Usuario", b =>
@@ -334,8 +330,6 @@ namespace Mercadados_API.Migrations
             modelBuilder.Entity("Mercadados_API.Domains.EstoqueProdutos", b =>
                 {
                     b.Navigation("Estoque");
-
-                    b.Navigation("Produtos");
                 });
 #pragma warning restore 612, 618
         }
