@@ -2,6 +2,9 @@ import "./home.css";
 import ReactApexChart from "react-apexcharts";
 import { MenuLateral } from "../../components/menulateral/MenuLateral";
 import { MenuNormal } from "../../components/menunormal/menunormal";
+import Pessoas from "../../assets/pessoas.png"
+import alerta from "../../assets/alerta.png"
+import caminhao from "../../assets/caminhao.png"
 
 export const Home = () => {
     const graficoPizza = {
@@ -53,20 +56,25 @@ export const Home = () => {
             <div className="conteudo-principal">
                 <MenuNormal />
                 <main className="home-box">
-                    <h2>Dashboard</h2>
+                    <h2 className="dashboard-h2">Dashboard</h2>
 
                     <div className="cards-dashboard">
                         <div className="card-info">
                             <div className="icon pessoas" />
+                            <img className ="pessoas"src={Pessoas} alt="" />
                             <p>Administração</p>
                         </div>
                         <div className="card-info">
                             <div className="icon alerta" />
+                            <img className ="alertaa"src={alerta} alt="" />
+
                             <p>Alertas/Situações Críticas</p>
                             <strong>3</strong>
                         </div>
                         <div className="card-info">
                             <div className="icon caminhão" />
+
+                            <img className ="caminhao"src={caminhao} alt="" />
                             <p>Fornecedores Ativos</p>
                             <strong>32</strong>
                         </div>

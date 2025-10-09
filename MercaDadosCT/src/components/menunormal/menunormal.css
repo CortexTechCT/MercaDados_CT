@@ -1,21 +1,41 @@
 .top-header {
   display: flex;
-  justify-content: flex-end;
-    padding: 16px 24px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
   background-color: #0E1A3D;
-      padding-right: 14%;
+padding-left: 78%;
 }
+
+
 .icons-header {
   display: flex;
   align-items: center;
-  gap: 16px; 
-  width: 14%;
+  gap: 16px;
 }
-
 
 .icons-header img {
   width: 36px;
   height: 33px;
-  margin-left: 20px;
   cursor: pointer;
+}
+
+/* Ícone do menu hamburguer */
+.menu-hamburguer {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-hamburguer img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Em tablets e celulares, mostrar o hamburguer */
+@media (max-width: 1024px) {
+  .menu-hamburguer {
+    display: flex;
+    /* display: block; */
+     justify-content: flex-start;
+  }
 }

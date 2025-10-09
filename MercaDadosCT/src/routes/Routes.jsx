@@ -6,9 +6,10 @@ import {AdmFuncionario} from "../pages/AdmFuncionarios/AdmFuncionario";
 import {GestaoEstoque} from "../pages/GestaoEstoque/gestaoestoque";
 import {Home} from "../pages/Home/home";
 import {LucrosGastos} from "../pages/LucrosGastos/LucrosGastos";
+import {Perfil} from "../pages/Perfil/Perfil";
 
 
- const Rotas = () => {
+ const Rotas = () => {  
     return ( 
         // <BrowserRouter> 
             <Routes>
@@ -19,6 +20,7 @@ import {LucrosGastos} from "../pages/LucrosGastos/LucrosGastos";
                     <Route path="/GestaoEstoque" element={<GestaoEstoque/>}/>
                     <Route path="/LucrosGastos" element={<LucrosGastos/>} />
                     <Route path="/AdmFuncionarios" element={<AdmFuncionario/>} />
+                    <Route path="/Perfil" element={<Perfil/>} />
             </Routes>
         // </BrowserRouter>
     )
