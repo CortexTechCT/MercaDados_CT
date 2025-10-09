@@ -20,9 +20,8 @@ export const MenuNormal = ({ toggleMenu }) => {
       </div>
 
       <div className="icons-header">
-        <img src={iconeSino} alt="Notificações" />
+
         <Link to="/Perfil">
-        
         <img src={iconeUsuario} alt="Usuário" />
         </Link>
       </div>
