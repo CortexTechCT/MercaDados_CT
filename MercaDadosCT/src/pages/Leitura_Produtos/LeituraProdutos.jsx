@@ -14,6 +14,16 @@ export const LeituraProdutos = () => {
         <div className="header-icons">  
           <img src={perfil} alt="Perfil" className="icon" />
         </div>
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD:MercaDadosCT/src/pages/Leitura_Produtos/Registro.jsx
+        <div className="header-right">
+
+        </div>
+=======
+>>>>>>> bda8aa5bade5a7e7dd29fb9262db973c4f139f4b:MercaDadosCT/src/pages/Leitura_Produtos/LeituraProdutos.jsx
+>>>>>>> 4d5b4f7fa203d3e12d2937ebb8122826911dd8b4
       </header>
 
       {/* Quadrado azul principal */}
