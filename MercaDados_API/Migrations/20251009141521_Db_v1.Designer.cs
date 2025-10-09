@@ -12,11 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251009140021_Db_v1.Designer.cs
-    [Migration("20251009140021_Db_v1")]
-========
-    [Migration("20251009123902_Db_v1")]
->>>>>>>> 4d0b75c4b26b1325ffaa2d151d39c07e8ef2be0a:MercaDados_API/Migrations/20251009123902_Db_v1.Designer.cs
+    [Migration("20251009141521_Db_v1")]
     partial class Db_v1
     {
         /// <inheritdoc />
@@ -67,11 +63,9 @@ namespace Mercadados_API.Migrations
 
                     b.HasKey("EstoqueProdutosID");
 
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251009140021_Db_v1.Designer.cs
-                    b.HasIndex("ProdutosID");
-========
                     b.HasIndex("EstoqueID");
->>>>>>>> 4d0b75c4b26b1325ffaa2d151d39c07e8ef2be0a:MercaDados_API/Migrations/20251009123902_Db_v1.Designer.cs
+
+                    b.HasIndex("ProdutosID");
 
                     b.ToTable("EstoqueProdutos");
                 });
@@ -256,16 +250,13 @@ namespace Mercadados_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Estoque");
-                });
-
-            modelBuilder.Entity("Mercadados_API.Domains.EstoqueProdutos", b =>
-                {
                     b.HasOne("Mercadados_API.Domains.Produtos", "Produtos")
                         .WithMany()
                         .HasForeignKey("ProdutosID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Estoque");
 
                     b.Navigation("Produtos");
                 });
@@ -326,15 +317,6 @@ namespace Mercadados_API.Migrations
                     b.Navigation("Feedback");
 
                     b.Navigation("Produtos");
-                });
-
-            modelBuilder.Entity("Mercadados_API.Domains.EstoqueProdutos", b =>
-                {
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251009140021_Db_v1.Designer.cs
-                    b.Navigation("Estoque");
-========
-                    b.Navigation("Produtos");
->>>>>>>> 4d0b75c4b26b1325ffaa2d151d39c07e8ef2be0a:MercaDados_API/Migrations/20251009123902_Db_v1.Designer.cs
                 });
 #pragma warning restore 612, 618
         }

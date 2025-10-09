@@ -60,11 +60,9 @@ namespace Mercadados_API.Migrations
 
                     b.HasKey("EstoqueProdutosID");
 
-<<<<<<< HEAD
-                    b.HasIndex("ProdutosID");
-=======
                     b.HasIndex("EstoqueID");
->>>>>>> 4d0b75c4b26b1325ffaa2d151d39c07e8ef2be0a
+
+                    b.HasIndex("ProdutosID");
 
                     b.ToTable("EstoqueProdutos");
                 });
@@ -249,16 +247,13 @@ namespace Mercadados_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Estoque");
-                });
-
-            modelBuilder.Entity("Mercadados_API.Domains.EstoqueProdutos", b =>
-                {
                     b.HasOne("Mercadados_API.Domains.Produtos", "Produtos")
                         .WithMany()
                         .HasForeignKey("ProdutosID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Estoque");
 
                     b.Navigation("Produtos");
                 });
@@ -319,15 +314,6 @@ namespace Mercadados_API.Migrations
                     b.Navigation("Feedback");
 
                     b.Navigation("Produtos");
-                });
-
-            modelBuilder.Entity("Mercadados_API.Domains.EstoqueProdutos", b =>
-                {
-<<<<<<< HEAD
-                    b.Navigation("Estoque");
-=======
-                    b.Navigation("Produtos");
->>>>>>> 4d0b75c4b26b1325ffaa2d151d39c07e8ef2be0a
                 });
 #pragma warning restore 612, 618
         }

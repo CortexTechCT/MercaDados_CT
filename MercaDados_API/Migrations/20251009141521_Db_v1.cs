@@ -12,8 +12,6 @@ namespace Mercadados_API.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251009140021_Db_v1.cs
-========
                 name: "Estoque",
                 columns: table => new
                 {
@@ -27,7 +25,6 @@ namespace Mercadados_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
->>>>>>>> 4d0b75c4b26b1325ffaa2d151d39c07e8ef2be0a:MercaDados_API/Migrations/20251009123902_Db_v1.cs
                 name: "Imagens",
                 columns: table => new
                 {
@@ -81,17 +78,16 @@ namespace Mercadados_API.Migrations
                 {
                     table.PrimaryKey("PK_EstoqueProdutos", x => x.EstoqueProdutosID);
                     table.ForeignKey(
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251009140021_Db_v1.cs
-                        name: "FK_EstoqueProdutos_Produtos_ProdutosID",
-                        column: x => x.ProdutosID,
-                        principalTable: "Produtos",
-                        principalColumn: "ProdutoID",
-========
                         name: "FK_EstoqueProdutos_Estoque_EstoqueID",
                         column: x => x.EstoqueID,
                         principalTable: "Estoque",
                         principalColumn: "EstoqueID",
->>>>>>>> 4d0b75c4b26b1325ffaa2d151d39c07e8ef2be0a:MercaDados_API/Migrations/20251009123902_Db_v1.cs
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_EstoqueProdutos_Produtos_ProdutosID",
+                        column: x => x.ProdutosID,
+                        principalTable: "Produtos",
+                        principalColumn: "ProdutoID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -116,47 +112,6 @@ namespace Mercadados_API.Migrations
                         principalTable: "TipoUsuario",
                         principalColumn: "TipoUsuarioID",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251009140021_Db_v1.cs
-                name: "Estoque",
-                columns: table => new
-                {
-                    EstoqueID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Setor = table.Column<string>(type: "Varchar(200)", nullable: false),
-                    Quantidade = table.Column<int>(type: "INT", nullable: false),
-                    ProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    EstoqueProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Estoque", x => x.EstoqueID);
-                    table.ForeignKey(
-                        name: "FK_Estoque_EstoqueProdutos_EstoqueProdutosID",
-                        column: x => x.EstoqueProdutosID,
-                        principalTable: "EstoqueProdutos",
-                        principalColumn: "EstoqueProdutosID");
-========
-                name: "Produtos",
-                columns: table => new
-                {
-                    ProdutoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Nome = table.Column<string>(type: "Varchar(200)", nullable: false),
-                    Preco = table.Column<double>(type: "FLoat", nullable: false),
-                    Quantidade = table.Column<int>(type: "INT", nullable: false),
-                    EstoqueProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Produtos", x => x.ProdutoID);
-                    table.ForeignKey(
-                        name: "FK_Produtos_EstoqueProdutos_EstoqueProdutosID",
-                        column: x => x.EstoqueProdutosID,
-                        principalTable: "EstoqueProdutos",
-                        principalColumn: "EstoqueProdutosID",
-                        onDelete: ReferentialAction.Cascade);
->>>>>>>> 4d0b75c4b26b1325ffaa2d151d39c07e8ef2be0a:MercaDados_API/Migrations/20251009123902_Db_v1.cs
                 });
 
             migrationBuilder.CreateTable(
@@ -276,42 +231,17 @@ namespace Mercadados_API.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251009140021_Db_v1.cs
-            migrationBuilder.DropForeignKey(
-                name: "FK_ItemVenda_Produtos_ProdutosID",
-                table: "ItemVenda");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Feedback_Usuario_UsuarioID",
-                table: "Feedback");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_ItemVenda_Venda_VendaID",
-                table: "ItemVenda");
-
             migrationBuilder.DropTable(
-                name: "Estoque");
+                name: "EstoqueProdutos");
 
-========
->>>>>>>> 4d0b75c4b26b1325ffaa2d151d39c07e8ef2be0a:MercaDados_API/Migrations/20251009123902_Db_v1.cs
             migrationBuilder.DropTable(
                 name: "Imagens");
 
             migrationBuilder.DropTable(
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251009140021_Db_v1.cs
-                name: "EstoqueProdutos");
-
-            migrationBuilder.DropTable(
-                name: "Produtos");
-
-            migrationBuilder.DropTable(
-                name: "Usuario");
-
-            migrationBuilder.DropTable(
-                name: "TipoUsuario");
-========
                 name: "ItemVenda");
->>>>>>>> 4d0b75c4b26b1325ffaa2d151d39c07e8ef2be0a:MercaDados_API/Migrations/20251009123902_Db_v1.cs
+
+            migrationBuilder.DropTable(
+                name: "Estoque");
 
             migrationBuilder.DropTable(
                 name: "Venda");
@@ -326,13 +256,7 @@ namespace Mercadados_API.Migrations
                 name: "Usuario");
 
             migrationBuilder.DropTable(
-                name: "EstoqueProdutos");
-
-            migrationBuilder.DropTable(
                 name: "TipoUsuario");
-
-            migrationBuilder.DropTable(
-                name: "Estoque");
         }
     }
 }
