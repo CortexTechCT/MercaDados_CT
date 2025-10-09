@@ -6,24 +6,22 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mercadados_API.Migrations
 {
     /// <inheritdoc />
-    public partial class MercaDados : Migration
+    public partial class Db_v1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "EstoqueProdutos",
+                name: "Estoque",
                 columns: table => new
                 {
-                    EstoqueProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    QuantidadeEstoque = table.Column<int>(type: "Int", nullable: false),
-                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    EstoqueID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    EstoqueID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Setor = table.Column<string>(type: "Varchar(200)", nullable: false),
+                    Quantidade = table.Column<int>(type: "INT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EstoqueProdutos", x => x.EstoqueProdutosID);
+                    table.PrimaryKey("PK_Estoque", x => x.EstoqueID);
                 });
 
             migrationBuilder.CreateTable(
@@ -53,43 +51,23 @@ namespace Mercadados_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Estoque",
+                name: "EstoqueProdutos",
                 columns: table => new
                 {
-                    EstoqueID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Setor = table.Column<string>(type: "Varchar(200)", nullable: false),
-                    Quantidade = table.Column<int>(type: "INT", nullable: false),
+                    EstoqueProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    QuantidadeEstoque = table.Column<int>(type: "Int", nullable: false),
+                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    EstoqueProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    EstoqueID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Estoque", x => x.EstoqueID);
+                    table.PrimaryKey("PK_EstoqueProdutos", x => x.EstoqueProdutosID);
                     table.ForeignKey(
-                        name: "FK_Estoque_EstoqueProdutos_EstoqueProdutosID",
-                        column: x => x.EstoqueProdutosID,
-                        principalTable: "EstoqueProdutos",
-                        principalColumn: "EstoqueProdutosID");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Produtos",
-                columns: table => new
-                {
-                    ProdutoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Nome = table.Column<string>(type: "Varchar(200)", nullable: false),
-                    Preco = table.Column<double>(type: "FLoat", nullable: false),
-                    Quantidade = table.Column<int>(type: "INT", nullable: false),
-                    EstoqueProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Produtos", x => x.ProdutoID);
-                    table.ForeignKey(
-                        name: "FK_Produtos_EstoqueProdutos_EstoqueProdutosID",
-                        column: x => x.EstoqueProdutosID,
-                        principalTable: "EstoqueProdutos",
-                        principalColumn: "EstoqueProdutosID",
+                        name: "FK_EstoqueProdutos_Estoque_EstoqueID",
+                        column: x => x.EstoqueID,
+                        principalTable: "Estoque",
+                        principalColumn: "EstoqueID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -117,6 +95,27 @@ namespace Mercadados_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Produtos",
+                columns: table => new
+                {
+                    ProdutoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Nome = table.Column<string>(type: "Varchar(200)", nullable: false),
+                    Preco = table.Column<double>(type: "FLoat", nullable: false),
+                    Quantidade = table.Column<int>(type: "INT", nullable: false),
+                    EstoqueProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Produtos", x => x.ProdutoID);
+                    table.ForeignKey(
+                        name: "FK_Produtos_EstoqueProdutos_EstoqueProdutosID",
+                        column: x => x.EstoqueProdutosID,
+                        principalTable: "EstoqueProdutos",
+                        principalColumn: "EstoqueProdutosID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Feedback",
                 columns: table => new
                 {
@@ -134,6 +133,32 @@ namespace Mercadados_API.Migrations
                         principalTable: "Usuario",
                         principalColumn: "UsuarioID",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Venda",
+                columns: table => new
+                {
+                    VendaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Valor = table.Column<double>(type: "FLOAT", nullable: false),
+                    Quantidade = table.Column<int>(type: "INT", nullable: false),
+                    ProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    FeedbackID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Venda", x => x.VendaID);
+                    table.ForeignKey(
+                        name: "FK_Venda_Feedback_FeedbackID",
+                        column: x => x.FeedbackID,
+                        principalTable: "Feedback",
+                        principalColumn: "FeedbackID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Venda_Produtos_ProdutosID",
+                        column: x => x.ProdutosID,
+                        principalTable: "Produtos",
+                        principalColumn: "ProdutoID");
                 });
 
             migrationBuilder.CreateTable(
@@ -155,40 +180,18 @@ namespace Mercadados_API.Migrations
                         principalTable: "Produtos",
                         principalColumn: "ProdutoID",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Venda",
-                columns: table => new
-                {
-                    VendaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Valor = table.Column<double>(type: "FLOAT", nullable: false),
-                    Quantidade = table.Column<int>(type: "INT", nullable: false),
-                    ItemVendaID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    FeedbackID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Venda", x => x.VendaID);
                     table.ForeignKey(
-                        name: "FK_Venda_Feedback_FeedbackID",
-                        column: x => x.FeedbackID,
-                        principalTable: "Feedback",
-                        principalColumn: "FeedbackID",
+                        name: "FK_ItemVenda_Venda_VendaID",
+                        column: x => x.VendaID,
+                        principalTable: "Venda",
+                        principalColumn: "VendaID",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Venda_ItemVenda_ItemVendaID",
-                        column: x => x.ItemVendaID,
-                        principalTable: "ItemVenda",
-                        principalColumn: "ItemVendaID");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Estoque_EstoqueProdutosID",
-                table: "Estoque",
-                column: "EstoqueProdutosID",
-                unique: true,
-                filter: "[EstoqueProdutosID] IS NOT NULL");
+                name: "IX_EstoqueProdutos_EstoqueID",
+                table: "EstoqueProdutos",
+                column: "EstoqueID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Feedback_UsuarioID",
@@ -222,57 +225,19 @@ namespace Mercadados_API.Migrations
                 column: "FeedbackID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Venda_ItemVendaID",
+                name: "IX_Venda_ProdutosID",
                 table: "Venda",
-                column: "ItemVendaID",
-                unique: true,
-                filter: "[ItemVendaID] IS NOT NULL");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_ItemVenda_Venda_VendaID",
-                table: "ItemVenda",
-                column: "VendaID",
-                principalTable: "Venda",
-                principalColumn: "VendaID",
-                onDelete: ReferentialAction.Cascade);
+                column: "ProdutosID");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Produtos_EstoqueProdutos_EstoqueProdutosID",
-                table: "Produtos");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Feedback_Usuario_UsuarioID",
-                table: "Feedback");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_ItemVenda_Produtos_ProdutosID",
-                table: "ItemVenda");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_ItemVenda_Venda_VendaID",
-                table: "ItemVenda");
-
-            migrationBuilder.DropTable(
-                name: "Estoque");
-
             migrationBuilder.DropTable(
                 name: "Imagens");
 
             migrationBuilder.DropTable(
-                name: "EstoqueProdutos");
-
-            migrationBuilder.DropTable(
-                name: "Usuario");
-
-            migrationBuilder.DropTable(
-                name: "TipoUsuario");
-
-            migrationBuilder.DropTable(
-                name: "Produtos");
+                name: "ItemVenda");
 
             migrationBuilder.DropTable(
                 name: "Venda");
@@ -281,7 +246,19 @@ namespace Mercadados_API.Migrations
                 name: "Feedback");
 
             migrationBuilder.DropTable(
-                name: "ItemVenda");
+                name: "Produtos");
+
+            migrationBuilder.DropTable(
+                name: "Usuario");
+
+            migrationBuilder.DropTable(
+                name: "EstoqueProdutos");
+
+            migrationBuilder.DropTable(
+                name: "TipoUsuario");
+
+            migrationBuilder.DropTable(
+                name: "Estoque");
         }
     }
 }

@@ -27,6 +27,5 @@ namespace Mercadados_API.Domains
         [ForeignKey("EstoqueProdutosID")]
         public EstoqueProdutos? EstoqueProdutos { get; set; }
 
-
     }
 }
