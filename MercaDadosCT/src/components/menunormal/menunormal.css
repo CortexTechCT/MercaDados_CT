@@ -4,7 +4,9 @@
   align-items: center;
   padding: 16px 24px;
   background-color: #0E1A3D;
-padding-left: 78%;
+  padding-left: 78%;
+  border-bottom: 0.1px solid #162A63;
+  
 }
 
 
@@ -12,15 +14,16 @@ padding-left: 78%;
   display: flex;
   align-items: center;
   gap: 16px;
+    position: relative;
+  left: 20%;
 }
 
 .icons-header img {
   width: 36px;
-  height: 33px;
+
   cursor: pointer;
 }
 
-/* Ícone do menu hamburguer */
 .menu-hamburguer {
   display: none;
   cursor: pointer;
@@ -31,11 +34,11 @@ padding-left: 78%;
   height: 32px;
 }
 
-/* Em tablets e celulares, mostrar o hamburguer */
+
 @media (max-width: 1024px) {
   .menu-hamburguer {
     display: flex;
     /* display: block; */
-     justify-content: flex-start;
+    justify-content: flex-start;
   }
 }

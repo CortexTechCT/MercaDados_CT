@@ -21,12 +21,8 @@ namespace Mercadados_API.Domains
         [Required(ErrorMessage = "Quantidade é obrigatorio!")]
         public int Quantidade { get; set; }
 
-        [Column(TypeName = "Varchar(200)")]
-        [Required(ErrorMessage = "A parte do estoque é obrigatorio")]
-
-        [ForeignKey("EstoqueProdutosID")]
-        public EstoqueProdutos? EstoqueProdutos { get; set; }
-
+        //[ForeignKey("EstoqueProdutosID")]
+        //public EstoqueProdutos? EstoqueProdutos { get; set; }
 
     }
 }

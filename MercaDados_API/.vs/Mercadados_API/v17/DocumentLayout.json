@@ -1,22 +1,55 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\",
+  "WorkspaceRootPath": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\49984891860\\desktop\\mercadados_ct\\mercadados_api\\domains\\estoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:domains\\estoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\49984891860\\desktop\\mercadados_ct\\mercadados_api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251009141521_Db_v1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251009141521_Db_v1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> a5a6b410c33846e71a450806eff6b66da78f2d0e
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\49984891860\\desktop\\mercadados_ct\\mercadados_api\\controllers\\itemvendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\47766024829\\desktop\\mercadados_ct\\mercadados_api\\repositories\\tipousuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:repositories\\tipousuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\47766024829\\desktop\\mercadados_ct\\mercadados_api\\domains\\itemvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:domains\\itemvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\47766024829\\desktop\\mercadados_ct\\mercadados_api\\domains\\estoqueprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:domains\\estoqueprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\47766024829\\desktop\\mercadados_ct\\mercadados_api\\domains\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:domains\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\47766024829\\desktop\\mercadados_ct\\mercadados_api\\domains\\estoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:domains\\estoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\47766024829\\desktop\\mercadados_ct\\mercadados_api\\repositories\\itemvendarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:repositories\\itemvendarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\47766024829\\desktop\\mercadados_ct\\mercadados_api\\controllers\\itemvendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\itemvendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\49984891860\\desktop\\mercadados_ct\\mercadados_api\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\47766024829\\desktop\\mercadados_ct\\mercadados_api\\repositories\\produtosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:repositories\\produtosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\47766024829\\desktop\\mercadados_ct\\mercadados_api\\repositories\\imagemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:repositories\\imagemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,6 +68,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "Estoque.cs",
               "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\Estoque.cs",
               "RelativeDocumentMoniker": "Domains\\Estoque.cs",
@@ -78,8 +112,130 @@
               "ToolTip": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\ProdutosController.cs",
               "RelativeToolTip": "Controllers\\ProdutosController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+=======
+              "Title": "20251009141521_Db_v1.cs",
+              "DocumentMoniker": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251009141521_Db_v1.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251009141521_Db_v1.cs",
+              "ToolTip": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251009141521_Db_v1.cs",
+              "RelativeToolTip": "Migrations\\20251009141521_Db_v1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T18:02:19.039Z"
+              "WhenOpened": "2025-10-09T14:15:21.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Estoque.cs",
+              "DocumentMoniker": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\Estoque.cs",
+              "RelativeDocumentMoniker": "Domains\\Estoque.cs",
+              "ToolTip": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\Estoque.cs",
+              "RelativeToolTip": "Domains\\Estoque.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T12:24:52.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Produtos.cs",
+              "DocumentMoniker": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\Produtos.cs",
+              "RelativeDocumentMoniker": "Domains\\Produtos.cs",
+              "ToolTip": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\Produtos.cs",
+              "RelativeToolTip": "Domains\\Produtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T12:22:24.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EstoqueProdutos.cs",
+              "DocumentMoniker": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\EstoqueProdutos.cs",
+              "RelativeDocumentMoniker": "Domains\\EstoqueProdutos.cs",
+              "ToolTip": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\EstoqueProdutos.cs",
+              "RelativeToolTip": "Domains\\EstoqueProdutos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T12:22:17.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ItemVenda.cs",
+              "DocumentMoniker": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\ItemVenda.cs",
+              "RelativeDocumentMoniker": "Domains\\ItemVenda.cs",
+              "ToolTip": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\ItemVenda.cs",
+              "RelativeToolTip": "Domains\\ItemVenda.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAXAAAAAAAAAA==",
+>>>>>>> a5a6b410c33846e71a450806eff6b66da78f2d0e
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T11:55:32.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TipoUsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\TipoUsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\TipoUsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\TipoUsuarioRepository.cs",
+              "RelativeToolTip": "Repositories\\TipoUsuarioRepository.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T11:53:53.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProdutosRepository.cs",
+              "DocumentMoniker": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\ProdutosRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\ProdutosRepository.cs",
+              "ToolTip": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\ProdutosRepository.cs",
+              "RelativeToolTip": "Repositories\\ProdutosRepository.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T11:53:35.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ImagemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\ImagemRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\ImagemRepository.cs",
+              "ToolTip": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\ImagemRepository.cs",
+              "RelativeToolTip": "Repositories\\ImagemRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T11:53:22.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ItemVendaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\ItemVendaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\ItemVendaRepository.cs",
+              "ToolTip": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\ItemVendaRepository.cs",
+              "RelativeToolTip": "Repositories\\ItemVendaRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T11:50:09.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ItemVendaController.cs",
+              "DocumentMoniker": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\ItemVendaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ItemVendaController.cs",
+              "ToolTip": "C:\\Users\\47766024829\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\ItemVendaController.cs",
+              "RelativeToolTip": "Controllers\\ItemVendaController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T11:49:42.73Z"
             }
           ]
         }
