@@ -23,7 +23,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
           bar: {
             borderRadius: 10,
             dataLabels: {
-              position: 'top', // top, center, bottom
+              position: 'top',
             },
           }
         },
@@ -101,6 +101,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
 
         <MenuNormal/>
         <main className="fornecedores-box">
+          <div className="painel-box">
           <h2 class="titulo-fornecedores">Fornecedores:</h2>
 
 
@@ -153,8 +154,9 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
               </div>
             </div>
           </div>
+          </div>
         </main>
-                  </div>
+        </div>
       </div>
     );
   };
