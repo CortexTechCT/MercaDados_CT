@@ -28,7 +28,7 @@ export const AdmFuncionario = () => {
         setFuncAberto(funcAberto === index ? null : index);
     };
 
-    // Configuração dos gráficos
+
     const pizzaChartOptions = {
         chart: {
             width: 380,

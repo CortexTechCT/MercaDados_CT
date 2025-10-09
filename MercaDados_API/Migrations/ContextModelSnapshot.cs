@@ -28,12 +28,6 @@ namespace Mercadados_API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("EstoqueProdutosID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProdutosID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("Quantidade")
                         .HasColumnType("INT");
 
@@ -42,10 +36,6 @@ namespace Mercadados_API.Migrations
                         .HasColumnType("Varchar(200)");
 
                     b.HasKey("EstoqueID");
-
-                    b.HasIndex("EstoqueProdutosID")
-                        .IsUnique()
-                        .HasFilter("[EstoqueProdutosID] IS NOT NULL");
 
                     b.ToTable("Estoque");
                 });
@@ -69,6 +59,10 @@ namespace Mercadados_API.Migrations
                         .HasColumnType("Int");
 
                     b.HasKey("EstoqueProdutosID");
+
+                    b.HasIndex("EstoqueID");
+
+                    b.HasIndex("ProdutosID");
 
                     b.ToTable("EstoqueProdutos");
                 });
@@ -129,9 +123,6 @@ namespace Mercadados_API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("EstoqueProdutosID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("Varchar(200)");
@@ -143,9 +134,6 @@ namespace Mercadados_API.Migrations
                         .HasColumnType("INT");
 
                     b.HasKey("ProdutoID");
-
-                    b.HasIndex("EstoqueProdutosID")
-                        .IsUnique();
 
                     b.ToTable("Produtos");
                 });
@@ -210,7 +198,7 @@ namespace Mercadados_API.Migrations
                     b.Property<Guid>("FeedbackID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ItemVendaID")
+                    b.Property<Guid?>("ProdutosID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantidade")
@@ -223,9 +211,7 @@ namespace Mercadados_API.Migrations
 
                     b.HasIndex("FeedbackID");
 
-                    b.HasIndex("ItemVendaID")
-                        .IsUnique()
-                        .HasFilter("[ItemVendaID] IS NOT NULL");
+                    b.HasIndex("ProdutosID");
 
                     b.ToTable("Venda");
                 });
@@ -253,13 +239,23 @@ namespace Mercadados_API.Migrations
                     b.ToTable("Imagens");
                 });
 
-            modelBuilder.Entity("Mercadados_API.Domains.Estoque", b =>
+            modelBuilder.Entity("Mercadados_API.Domains.EstoqueProdutos", b =>
                 {
-                    b.HasOne("Mercadados_API.Domains.EstoqueProdutos", "EstoqueProdutos")
-                        .WithOne("Estoque")
-                        .HasForeignKey("Mercadados_API.Domains.Estoque", "EstoqueProdutosID");
+                    b.HasOne("Mercadados_API.Domains.Estoque", "Estoque")
+                        .WithMany()
+                        .HasForeignKey("EstoqueID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("EstoqueProdutos");
+                    b.HasOne("Mercadados_API.Domains.Produtos", "Produtos")
+                        .WithMany()
+                        .HasForeignKey("ProdutosID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Estoque");
+
+                    b.Navigation("Produtos");
                 });
 
             modelBuilder.Entity("Mercadados_API.Domains.Feedback", b =>
@@ -292,17 +288,6 @@ namespace Mercadados_API.Migrations
                     b.Navigation("Venda");
                 });
 
-            modelBuilder.Entity("Mercadados_API.Domains.Produtos", b =>
-                {
-                    b.HasOne("Mercadados_API.Domains.EstoqueProdutos", "EstoqueProdutos")
-                        .WithOne("Produtos")
-                        .HasForeignKey("Mercadados_API.Domains.Produtos", "EstoqueProdutosID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("EstoqueProdutos");
-                });
-
             modelBuilder.Entity("Mercadados_API.Domains.Usuario", b =>
                 {
                     b.HasOne("Mercadados_API.Domains.TipoUsuario", "TipoUsuario")
@@ -322,18 +307,11 @@ namespace Mercadados_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Mercadados_API.Domains.ItemVenda", "ItemVenda")
-                        .WithOne()
-                        .HasForeignKey("Mercadados_API.Domains.Venda", "ItemVendaID");
+                    b.HasOne("Mercadados_API.Domains.Produtos", "Produtos")
+                        .WithMany()
+                        .HasForeignKey("ProdutosID");
 
                     b.Navigation("Feedback");
-
-                    b.Navigation("ItemVenda");
-                });
-
-            modelBuilder.Entity("Mercadados_API.Domains.EstoqueProdutos", b =>
-                {
-                    b.Navigation("Estoque");
 
                     b.Navigation("Produtos");
                 });

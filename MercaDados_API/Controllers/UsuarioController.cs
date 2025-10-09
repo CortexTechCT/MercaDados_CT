@@ -1,7 +1,11 @@
-﻿using Mercadados_API.Domains;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Mercadados_API.Domains;
+using Mercadados_API.DTO;
 using Mercadados_API.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Mercadados_API.Controllers
 {
@@ -11,6 +15,8 @@ namespace Mercadados_API.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioRepository _usuarioRepository;
+        private const string JwtKey = "eventos-chave-autenticacao-Mercadados-dev";
+        private const int JwtExpireMinutes = 5;
         public UsuarioController(IUsuarioRepository usuarioRepository)
         {
             _usuarioRepository = usuarioRepository;
@@ -36,26 +42,6 @@ namespace Mercadados_API.Controllers
             try
             {
                 Usuario usuario = _usuarioRepository.BuscarPorId(id);
-                if (usuario == null)
-                {
-                    return NotFound("Usuário não encontrado.");
-                }
-                return Ok(usuario);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-
-        [HttpGet("BuscarPorEmailSenha")]
-        public IActionResult Get()
-        {
-            try
-            {
-                string email = HttpContext.Request.Query["email"];
-                string senha = HttpContext.Request.Query["senha"];
-                Usuario usuario = _usuarioRepository.BuscaPorEmailSenha(email, senha);
                 if (usuario == null)
                 {
                     return NotFound("Usuário não encontrado.");

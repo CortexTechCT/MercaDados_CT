@@ -12,8 +12,12 @@
   flex-direction: column;
   overflow-y: auto;
 }
+.link-administrador{
+ color: #000;
+  text-decoration: none;
+}
 
-/* TOPO */
+
 .topo-home {
   display: flex;
   align-items: center;
@@ -21,7 +25,7 @@
   padding: 10px 30px;
 }
 
-/* Botão de menu - escondido por padrão */
+
 .btn-menu {
   background: none;
   border: none;
@@ -64,6 +68,14 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+ transition: transform 0.5s ease, background-color 0.9s ease;
+}
+
+
+
+
+.card-info:hover{
+    transform: scale(1.1);
 }
 .dashboard-h2{
   margin-bottom: 4%;
@@ -79,19 +91,28 @@
  width: 60px;  
 }
 
-.graficos-home {
+.graficos-home  {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
+.lucrosGastos_h4{
 
-.grafico-box {
+  color: #000;
+  text-decoration: none;
+}
+
+.grafico-box-home {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
   flex: 1;
   min-width: 300px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+   transition: transform 0.5s ease, background-color 0.9s ease;
+}
+.grafico-box-home:hover{
+      transform: scale(1.1);
 }
 
 /* ========================= */
