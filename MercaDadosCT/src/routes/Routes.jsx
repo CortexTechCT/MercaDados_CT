@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {Login} from "../pages/Login/login";
 import {CadastroUsuario} from "../pages/CadastroUsuario/CadastroUsuario";
+import {CadastroProduto} from "../pages/CadastroProduto/cadastroproduto";
 import {Fornecedores} from "../pages/Fornecedores/fornecedores";
 import {AdmFuncionario} from "../pages/AdmFuncionarios/AdmFuncionario";
 import {GestaoEstoque} from "../pages/GestaoEstoque/gestaoestoque";
@@ -16,6 +17,7 @@ import {Perfil} from "../pages/Perfil/Perfil";
                 <Route path="/" element={<Login />} exact />
                     <Route path="/Home" element={<Home />}  />
                     <Route path="/CadastroUsuario" element={<CadastroUsuario />} />
+                    <Route path="/CadastroProduto" element={<CadastroProduto />} />
                     <Route path="/Fornecedores" element={<Fornecedores/>} />
                     <Route path="/GestaoEstoque" element={<GestaoEstoque/>}/>
                     <Route path="/LucrosGastos" element={<LucrosGastos/>} />

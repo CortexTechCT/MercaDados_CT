@@ -4,20 +4,24 @@
   align-items: center;
   padding: 16px 24px;
   background-color: #0E1A3D;
-padding-left: 78%;
+padding-left: 85%;
 }
-
+.icone-sino {
+  margin-top: 2px; 
+}
 
 .icons-header {
   display: flex;
   align-items: center;
   gap: 16px;
+  height: 100%;
 }
 
 .icons-header img {
-  width: 36px;
-  height: 33px;
-  cursor: pointer;
+   width: 32px;         
+  height: 32px;
+  object-fit: contain;
+  display: block;      
 }
 
 /* Ícone do menu hamburguer */
