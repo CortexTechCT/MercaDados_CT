@@ -101,12 +101,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
 
         <MenuNormal/>
         <main className="fornecedores-box">
-<<<<<<< HEAD
           <div className="painel-box">
-=======
-          <div className="conteudoss">
-
->>>>>>> 527e61e5313bcd32677546f09c04f80c9c7b1ed9
           <h2 class="titulo-fornecedores">Fornecedores:</h2>
 
 
@@ -116,6 +111,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
                 src={chocolandiaLogo}
                 alt="Chocolândia"
                 className="logo-fornecedor"
+                
                 />
               <div className="grafico-placeholder">
                 <ReactApexChart
@@ -159,11 +155,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
               </div>
             </div>
           </div>
-<<<<<<< HEAD
           </div>
-=======
-                  </div>
->>>>>>> 527e61e5313bcd32677546f09c04f80c9c7b1ed9
         </main>
         </div>
       </div>

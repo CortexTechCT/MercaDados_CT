@@ -35,7 +35,7 @@ export const AdmFuncionario = () => {
             type: "pie",
         },
         labels: ["Satisfeito", "Neutro", "Insatisfeito"],
-        colors: ["#337DFF", "#FFC043", "#FF5A5F"], 
+        colors: ["#337DFF", "#FFC043", "#FF5A5F"],
         responsive: [
             {
                 breakpoint: 480,
@@ -88,79 +88,79 @@ export const AdmFuncionario = () => {
     };
 
     return (
-            <div className="container-geral-admfuncionario">
-                <MenuLateral />
-                <div className="conteudo-principal">
-                    <MenuNormal />
+        <div className="container-geral-admfuncionario">
+            <MenuLateral />
+            <div className="conteudo-principal">
+                <MenuNormal />
 
-                    <main className="funcionario-box">
-                        <h2>Gestão de funcionários:</h2>
-                        <div className="lista-funcionarios">
-                            {funcionarios.map((f, index) => (
-                                <div key={index} className="item-funcionario-wrapper">
-                                    <div className="item-funcionario">
-                                        <div className="info-funcionario">
-                                            <img src={f.foto} alt={f.nome} className="foto-funcionario" />
-                                            <span>{f.nome}</span>
-                                        </div>
-                                        <span
-                                            className={`seta ${funcAberto === index ? "aberto" : ""}`}
-                                            onClick={() => toggleFuncionario(index)}
-                                        >
-                                            {funcAberto === index ? "˄" : "˅"}
-                                        </span>
+                <main className="funcionario-box">
+                    <h2>Gestão de funcionários:</h2>
+                    <div className="lista-funcionarios">
+                        {funcionarios.map((f, index) => (
+                            <div key={index} className="item-funcionario-wrapper">
+                                <div className="item-funcionario">
+                                    <div className="info-funcionario">
+                                        <img src={f.foto} alt={f.nome} className="foto-funcionario" />
+                                        <span>{f.nome}</span>
                                     </div>
-
-                                    <div
-                                        className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""
-                                            }`}
+                                    <span
+                                        className={`seta ${funcAberto === index ? "aberto" : ""}`}
+                                        onClick={() => toggleFuncionario(index)}
                                     >
-                                        {funcAberto === index && (
-                                            <div className="detalhes-funcionario">
-                                                <div className="header-funcionario-expandido">
-                                                    <div>
-                                                        <strong>{f.nome}</strong>
-                                                        <span className="funcao">Função: Caixa de Vendas</span>
-                                                    </div>
-                                                </div>
+                                        {funcAberto === index ? "˄" : "˅"}
+                                    </span>
+                                </div>
 
-                                                <div className="graficos-funcionario">
-                                                    <div className="grafico-barra-placeholder">
-                                                        <ReactApexChart
-                                                            options={graficoBarras.options}
-                                                            series={graficoBarras.series}
-                                                            type="bar"
-                                                            height={250}
-                                                        />
-                                                    </div>
-                                                    <div className="grafico-pizza-placeholder">
-                                                        <ReactApexChart
-                                                            options={pizzaChartOptions}
-                                                            series={pizzaChartSeries}
-                                                            type="pie"
-                                                            width={320}
-                                                        />
-                                                    </div>
-
-                                                </div>
-
-                                                <div className="legenda-satisfacao">
-                                                    <div className="item-legenda">
-                                                        <div className="cor azul"></div>
-                                                        <span>🙂</span>
-                                                    </div>
-                                                    <div className="item-legenda">
-                                                        <div className="cor amarelo"></div>
-                                                        <span>😐</span>
-                                                    </div>
-                                                    <div className="item-legenda">
-                                                        <div className="cor vermelho"></div>
-                                                        <span>😠</span>
-                                                    </div>
+                                <div
+                                    className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""
+                                        }`}
+                                >
+                                    {funcAberto === index && (
+                                        <div className="detalhes-funcionario">
+                                            <div className="header-funcionario-expandido">
+                                                <div>
+                                                    <strong>{f.nome}</strong>
+                                                    <span className="funcao">Função: Caixa de Vendas</span>
                                                 </div>
                                             </div>
-                                        )}
-                                    </div>
+
+                                            <div className="graficos-funcionario">
+                                                <div className="grafico-barra-placeholder">
+                                                    <ReactApexChart
+                                                        options={graficoBarras.options}
+                                                        series={graficoBarras.series}
+                                                        type="bar"
+                                                        height={250}
+                                                    />
+                                                </div>
+                                                <div className="grafico-pizza-placeholder">
+                                                    <ReactApexChart
+                                                        options={pizzaChartOptions}
+                                                        series={pizzaChartSeries}
+                                                        type="pie"
+                                                        width={320}
+                                                    />
+                                                </div>
+
+                                            </div>
+
+                                            <div className="legenda-satisfacao">
+                                                <div className="item-legenda">
+                                                    <div className="cor azul"></div>
+                                                    <span>🙂</span>
+                                                </div>
+                                                <div className="item-legenda">
+                                                    <div className="cor amarelo"></div>
+                                                    <span>😐</span>
+                                                </div>
+                                                <div className="item-legenda">
+                                                    <div className="cor vermelho"></div>
+                                                    <span>😠</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>
