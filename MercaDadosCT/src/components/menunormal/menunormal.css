@@ -2,18 +2,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
+  padding: 12px 24px;
   background-color: #0E1A3D;
+<<<<<<< HEAD
 padding-left: 85%;
 }
 .icone-sino {
   margin-top: 2px; 
+=======
+  padding-left: 78%;
+  border-bottom: 0.1px solid #162A63;
+
+}
+
+.Usuario-perfil {
+  display: flex;
+  transition: transform 0.5s ease, background-color 0.9s ease;
+  align-items: center;
+}
+
+.Usuario-perfil:hover {
+  transform: scale(1.2);
+>>>>>>> d9a89bb51add40e46639175e29bcc16188b10516
 }
 
 .icons-header {
   display: flex;
-  align-items: center;
   gap: 16px;
+<<<<<<< HEAD
   height: 100%;
 }
 
@@ -22,9 +38,19 @@ padding-left: 85%;
   height: 32px;
   object-fit: contain;
   display: block;      
+=======
+  position: relative;
+  left: 20%;
+
 }
 
-/* Ícone do menu hamburguer */
+.icons-header img {
+  width: 36px;
+
+  cursor: pointer;
+>>>>>>> d9a89bb51add40e46639175e29bcc16188b10516
+}
+
 .menu-hamburguer {
   display: none;
   cursor: pointer;
@@ -35,11 +61,11 @@ padding-left: 85%;
   height: 32px;
 }
 
-/* Em tablets e celulares, mostrar o hamburguer */
+
 @media (max-width: 1024px) {
   .menu-hamburguer {
     display: flex;
     /* display: block; */
-     justify-content: flex-start;
+    justify-content: flex-start;
   }
 }

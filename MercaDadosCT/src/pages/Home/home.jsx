@@ -5,6 +5,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
 import Pessoas from "../../assets/pessoas.png"
 import alerta from "../../assets/alerta.png"
 import caminhao from "../../assets/caminhao.png"
+import { Link } from "react-router-dom";
 
 export const Home = () => {
     const graficoPizza = {
@@ -60,23 +61,29 @@ export const Home = () => {
 
                     <div className="cards-dashboard">
                         <div className="card-info">
+                            <Link className="link-administrador" to="/AdmFuncionarios">
                             <div className="icon pessoas" />
                             <img className ="pessoas"src={Pessoas} alt="" />
                             <p>Administração</p>
+                            </Link>
                         </div>
                         <div className="card-info">
+                              <Link className="link-administrador" to="/LucrosGastos">
                             <div className="icon alerta" />
                             <img className ="alertaa"src={alerta} alt="" />
 
                             <p>Alertas/Situações Críticas</p>
                             <strong>3</strong>
+                              </Link>
                         </div>
                         <div className="card-info">
+                             <Link className="link-administrador" to="/Fornecedores">
                             <div className="icon caminhão" />
 
                             <img className ="caminhao"src={caminhao} alt="" />
                             <p>Fornecedores Ativos</p>
                             <strong>32</strong>
+                             </Link>
                         </div>
                         <div className="card-info">
                             <p>Vendas do Dia</p>
@@ -85,23 +92,27 @@ export const Home = () => {
                     </div>
 
                     <div className="graficos-home">
-                        <div className="grafico-box">
-                            <ReactApexChart
+                        <div className="grafico-box-home">
+                            <Link to = "/Fornecedores">
+                            <ReactApexChart className ="dashboard-home"
                                 options={graficoPizza.options}
                                 series={graficoPizza.series}
                                 type="pie"
                                 height={300}
-                            />
+                                />
+                                </Link>
                         </div>
 
-                        <div className="grafico-box">
-                            <h4>Irregular Data in Time Series</h4>
-                            <ReactApexChart
+                        <div className="grafico-box-home">
+                            <Link to = "/LucrosGastos">
+                            <h4 className="lucrosGastos_h4">Lucros e Gastos</h4>
+                            <ReactApexChart className ="dashboard-home"
                                 options={graficoProdutos.options}
                                 series={graficoProdutos.series}
                                 type="area"
                                 height={300}
-                            />
+                                />
+                                </Link>
                         </div>
                     </div>
                 </main>

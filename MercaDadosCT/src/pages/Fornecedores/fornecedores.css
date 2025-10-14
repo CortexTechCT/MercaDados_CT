@@ -5,10 +5,19 @@
 
 .fornecedores-box {
   flex: 1;
-  padding: 20px;
+  /*padding: 20px;*/
   background-color: #f5f7ff;
   justify-content: flex-end;
   
+}
+
+.painel-box {
+  background-color: #EEF3FF;
+  border-radius: 20px;
+  padding: 30px 40px;
+  max-width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .titulo-fornecedores {
@@ -16,15 +25,23 @@
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
-<<<<<<< HEAD
+
+
   margin-left: 24%;
   font-family: 'Montserrat', sans-serif;
   margin-top: 40px;
-=======
+
   margin-left: 13%;
   font-family: 'Montserrat', sans-serif;
    margin-top: 5%;
->>>>>>> 77fa97c7b1a3a3307414c63821d325493f3a572d
+
+  margin-left: 24%;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 40px;
+  margin-left: 13%;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 5%;
+
 }
 
 .conteudoss{
@@ -33,15 +50,11 @@ background-color:   conteudoss#333;
 .fornecedores-lista {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-    margin-left: 20%;
-=======
     margin: 74px auto;
 <<<<<<< HEAD
 =======
-  
->>>>>>> 77fa97c7b1a3a3307414c63821d325493f3a572d
->>>>>>> 2703fd4231a85bb7954cbc733c5e4ed8df9de631
+
+>>>>>>> 4d5b4f7fa203d3e12d2937ebb8122826911dd8b4
     width: 75%;
     gap: 20px;
 
@@ -57,6 +70,10 @@ background-color:   conteudoss#333;
   margin-bottom: 25px;
   height: 280px; 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   transition: transform 0.5s ease, background-color 0.9s ease;
+}    
+.fornecedor-card:hover{
+  transform: scale(1.1);
 }
 
 .logo-fornecedor {
