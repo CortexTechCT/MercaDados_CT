@@ -1,0 +1,54 @@
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #0E1A3D;
+  padding-left: 78%;
+  border-bottom: 0.1px solid #162A63;
+
+}
+
+.Usuario-perfil {
+  display: flex;
+  transition: transform 0.5s ease, background-color 0.9s ease;
+  align-items: center;
+}
+
+.Usuario-perfil:hover {
+  transform: scale(1.2);
+}
+
+
+.icons-header {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  left: 20%;
+
+}
+
+.icons-header img {
+  width: 36px;
+
+  cursor: pointer;
+}
+
+.menu-hamburguer {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-hamburguer img {
+  width: 32px;
+  height: 32px;
+}
+
+
+@media (max-width: 1024px) {
+  .menu-hamburguer {
+    display: flex;
+    /* display: block; */
+    justify-content: flex-start;
+  }
+}
