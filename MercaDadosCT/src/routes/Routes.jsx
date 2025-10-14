@@ -10,7 +10,7 @@ import { Perfil } from "../pages/Perfil/Perfil";
 
 const Rotas = () => {
   return (
-    // <BrowserRouter>
+  
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Home" element={<Home />} />
@@ -20,8 +20,8 @@ const Rotas = () => {
         <Route path="/LucrosGastos" element={<LucrosGastos />} />
         <Route path="/AdmFuncionarios" element={<AdmFuncionario />} />
         <Route path="/Perfil" element={<Perfil />} />
-      </Routes>
-    // </BrowserRouter>
+      </Routes> 
+
   );
 };
 
