@@ -14,24 +14,21 @@ export const LeituraProdutos = () => {
         <div className="header-icons">  
           <img src={perfil} alt="Perfil" className="icon" />
         </div>
-<<<<<<< HEAD
-=======
+
 
 
         <div className="header-right">
 
-<<<<<<< HEAD
+
 
          </div>
       </header>     
 
-=======
+
         </div>
-=======
->>>>>>> bda8aa5bade5a7e7dd29fb9262db973c4f139f4b:MercaDadosCT/src/pages/Leitura_Produtos/LeituraProdutos.jsx
->>>>>>> 4d5b4f7fa203d3e12d2937ebb8122826911dd8b4
+
       </header>
->>>>>>> 174fe558609e280d0777daa46454735f8a2d2591
+
 
       {/* Quadrado azul principal */}
       <div className="fundo-azul">
