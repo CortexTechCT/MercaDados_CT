@@ -1,41 +1,24 @@
+import React from "react";
 import "./LeituraProdutos.css";
 import { Botao } from "../../components/botao/Botao";
+import Header from "../../components/header/Header";
 import Doritos from "../../assets/Doritos.png";
-import Monster from "../../assets/Monster.png";
-import casa from "../../assets/casa.png";
-import perfil from "../../assets/perfil.png";
 
 export const LeituraProdutos = () => {
   return (
     <div className="leitura-container">
       {/* Header */}
-      <header className="header">
-        <img src={casa} alt="Home" className="icon" />
-        <div className="header-icons">  
-          <img src={perfil} alt="Perfil" className="icon" />
-        </div>
-<<<<<<< HEAD
-=======
+      <Header />
 
-<<<<<<< HEAD:MercaDadosCT/src/pages/Leitura_Produtos/Registro.jsx
-        <div className="header-right">
-
-        </div>
-=======
->>>>>>> bda8aa5bade5a7e7dd29fb9262db973c4f139f4b:MercaDadosCT/src/pages/Leitura_Produtos/LeituraProdutos.jsx
->>>>>>> 4d5b4f7fa203d3e12d2937ebb8122826911dd8b4
-      </header>
-
-      {/* Quadrado azul principal */}
+      {/* Fundo azul */}
       <div className="fundo-azul">
         <div className="conteudo">
-          {/* Lado esquerdo - produtos */}
+          {/* Produtos */}
           <div className="produtos">
             <img src={Doritos} alt="Doritos" className="produto-img" />
-            <img src={Monster} alt="Monster" className="produto-img" />
           </div>
 
-          {/* Lado direito - tabela */}
+          {/* Tabela */}
           <div className="tabela">
             <h2 className="titulo">Registro Atual</h2>
             <h3 className="subtitulo">12x Caixa de Energético</h3>
@@ -63,18 +46,33 @@ export const LeituraProdutos = () => {
 
             <div className="itens-cupom">
               <h4>Itens do Cupom</h4>
-              <div className="linha">
-                <span className="item">Doritos 300g</span>
-                <span>1 un</span>
-                <span>R$ 8,99</span>
-                <span><b>R$ 8,99</b></span>
-              </div>
-              <div className="linha">
-                <span className="item">Caixa de Energético Monster</span>
-                <span>12 un</span>
-                <span>R$ 9,49</span>
-                <span><b>R$ 113,99</b></span>
-              </div>
+              <table className="tabela-itens">
+                <thead>
+                  <tr>
+                    <th>Produto</th>
+                    <th>Qtd:</th>
+                    <th>Preço Unitário:</th>
+                    <th>Total:</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Doritos 300g</td>
+                    <td>1 un</td>
+                    <td>R$ 8,99</td>
+                    <td>R$ 8,99</td>
+                  </tr>
+                  </tbody>
+
+                  <tbody>
+                  <tr>
+                    <td>Caixa de Energético Monster</td>
+                    <td>12 un</td>
+                    <td>R$ 9,49</td>
+                    <td>R$ 113,99</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <p className="atendido">Atendido por: xxxxx</p>
@@ -84,7 +82,7 @@ export const LeituraProdutos = () => {
               <div className="total">R$ 122,87</div>
             </div>
 
-            <Botao texto="continuar" />
+            <Botao nomeBotao="continuar" />
           </div>
         </div>
       </div>

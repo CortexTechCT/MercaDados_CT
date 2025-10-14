@@ -1,177 +1,131 @@
-/* GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .leitura-container {
-  background-color: #d1d4e2;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   font-family: "Poppins", sans-serif;
+  background-color: #A3B2DF;
+  min-height: 100vh;
 }
 
-/* HEADER */
-.header {
-  background-color: #0d1b3d;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 50px;
-}
-
-.header-icons {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-.icon {
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-}
-
-/* FUNDO AZUL CLARO */
 .fundo-azul {
   background-color: #97aef2;
-  margin: 40px auto;
+  width: 1298px;  
+  margin: 2rem auto;
+  padding: 30px;
   border-radius: 20px;
-  padding: 60px 70px;
-  width: 90%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-/* CONTEÚDO */
 .conteudo {
   display: flex;
-  justify-content: center;
-  gap: 60px;
-  width: 100%;
+  gap: 3rem;
+  align-items: flex-start;
 }
 
-/* PRODUTOS */
 .produtos {
   display: flex;
   flex-direction: column;
+  background-color: #DEE5FA;
+  height: 777px;
   align-items: center;
-  gap: 90px;
+  border-radius: 18px;
+  gap: 2rem;
 }
 
 .produto-img {
-  width: 320px;
+  width: 220px;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  
   height: auto;
-  object-fit: contain;
 }
 
-/* TABELA PRINCIPAL */
 .tabela {
-  background-color: #dce2fa;
-  border-radius: 25px;
-  padding: 50px;
-  width: 600px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #DEE5FA;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 715px;
+  height:777px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .titulo {
-  text-align: left;
-  margin-bottom: 10px;
-  font-weight: 700;
-  color: #111;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  margin-bottom: 0.5rem;
 }
 
 .subtitulo {
-  text-align: left;
-  margin-bottom: 25px;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  color: #222;
+  color: #1e2a47;
+  margin-bottom: 1rem;
 }
 
-/* TABELA DE DADOS */
-.tabela-dados {
+.tabela-dados,
+.tabela-itens {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-.tabela-dados th {
-  text-align: center;
-  font-weight: 600;
-  border-bottom: 2px solid #000;
-  padding-bottom: 8px;
-}
-
-.tabela-dados td {
-  text-align: center;
-  padding: 10px 5px;
-  font-size: 15px;
-}
-
-.tabela-dados td b {
-  font-weight: 700;
-}
-
-/* ITENS DO CUPOM */
-.itens-cupom {
   margin-top: 20px;
 }
 
+.tabela-dados th,
+.tabela-dados td,
+.tabela-itens th,
+.tabela-itens td {
+  border-bottom: 1px solid #ccc;
+  padding: 16px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.tabela caixa de energtico td{
+  background-color: #D0DCFF;
+}
+
+
 .itens-cupom h4 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   font-weight: 600;
-  margin-bottom: 10px;
 }
 
-.linha {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 6px;
-  font-size: 15px;
-}
-
-.item {
-  flex: 1.5;
-}
-
-/* TEXTO FINAL */
 .atendido {
-  margin: 20px 0;
-  font-size: 14px;
+  margin-top: 30px;
+  font-size: 0.95rem;
+  color: #000000;
 }
 
-/* RESUMO E TOTAL */
 .resumo {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  font-weight: 600;
 }
 
 .total {
-  background-color: #0d1b3d;
-  color: white;
-  font-weight: bold;
-  padding: 10px 25px;
-  border-radius: 30px;
-  font-size: 20px;
-  text-align: center;
-  min-width: 130px;
+  width: 205px;
+  background-color: #1e2a47;
+  color: #fff;
+  padding: 0.6rem 2rem;
+  border-radius: 27px;
+  font-size: 25px;
+  margin-top: 125px;
+  align-items: center;
 }
 
-/* BOTÃO LARANJA */
 button {
-  background-color: #f57c00 !important;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  padding: 12px 60px;
-  cursor: pointer;
-  font-size: 18px;
-  margin: 0 auto;
-  display: block;
-  transition: 0.2s ease;
+  margin-top: 50px; 
 }
 
-button:hover {
-  opacity: 0.9;
-  transform: scale(1.02);
-}
+
+
+    
