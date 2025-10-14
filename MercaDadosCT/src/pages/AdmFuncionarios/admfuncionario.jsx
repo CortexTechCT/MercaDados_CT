@@ -1,4 +1,4 @@
-import "./AdmFuncionario.css";
+import "./admfuncionario.css";
 import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
