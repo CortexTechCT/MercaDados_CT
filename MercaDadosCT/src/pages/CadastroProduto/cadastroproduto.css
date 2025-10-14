@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* ---------- GLOBAL ---------- */
+
 * {
   font-family: 'Poppins', sans-serif;
   padding: 0;
@@ -10,9 +10,10 @@
 
 body {
   background-color: #f5f7ff;
+  
 }
 
-/* ---------- CONTAINERS ---------- */
+
 .container-geral {
   display: flex;
 }
@@ -29,9 +30,10 @@ main {
   justify-content: flex-start;
   gap: 20px;
   width: 100%;
+   padding-top:40%;
 }
 
-/* ---------- DESCRIÇÃO DO PRODUTO ---------- */
+
 .descricao-produto {
   display: flex;
   justify-content: center;
@@ -42,7 +44,7 @@ main {
   border-radius: 12px;
   max-width: 900px;
   margin: 2em auto 32px auto;
-  flex-wrap: wrap; /* melhora adaptação */
+  flex-wrap: wrap; 
 }
 
 .img-produto {
@@ -54,14 +56,18 @@ main {
   max-width: 400px;
 }
 
-/* ---------- FORMULÁRIO ---------- */
+
 .formulario-box {
   background-color: #eff3ff;
   border-radius: 30px;
-  margin: 20px auto;
+  margin: 46px auto;
   padding: 40px;
   max-width: 1000px;
   color: #030303;
+   display: flex;
+   margin-right:9%;
+   
+      
 }
 
 .formulario-box h2 {
@@ -93,7 +99,7 @@ main {
   font-size: 13px;
 }
 
-/* ---------- UPLOAD ---------- */
+
 .upload-box {
   display: flex;
   justify-content: center;
@@ -116,19 +122,20 @@ main {
   background-color: #1b3a8c;
 }
 
-/* ---------- BOTÕES ---------- */
+
 .botao-box {
   display: flex;
   gap: 20px;
   margin-bottom: 62px;
   justify-content: center;
+
+    
 }
 
 button {
   margin-top: 20px;
 }
 
-/* ---------- RESPONSIVIDADE ---------- */
 
 /* Tablets */
 @media (max-width: 1024px) {
@@ -164,12 +171,9 @@ button {
   }
 }
 
-/* Celulares */
+
 @media (max-width: 600px) {
-  body {
-    background-color: #f5f7ff;
-    padding: 10px;
-  }
+  
 
   .formulario-box {
     width: 95%;

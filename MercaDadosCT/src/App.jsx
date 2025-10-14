@@ -10,8 +10,8 @@ import "./App.css";
 // import { LucroEGastos } from "./pages/LucrosGastos/lucrosgastos";
 // import { Home } from "./pages/Home/home";
 //  import { GestaoEstoque } from "./pages/GestaoEstoque/gestaoestoque";
-//  import { Cadastroproduto } from "./pages/CadastroProduto/cadastroproduto";
-import { Fornecedores } from "./pages/Fornecedores/fornecedores";
+ import { Cadastroproduto } from "./pages/CadastroProduto/cadastroproduto";
+// import { Fornecedores } from "./pages/Fornecedores/fornecedores";
 // import Rotas from "./routes/Routes"; // se for usar rotas futuramente
 
 function App() {
@@ -19,9 +19,10 @@ function App() {
 
   return (
     <>
-    <Fornecedores/>
+    {/* <GestaoEstoque/> */}
+    {/* <Fornecedores/> */}
      {/* <AdmFuncionario/> */}
-{/* <Cadastroproduto/> */}
+<Cadastroproduto/>
     </>
   );
 }
