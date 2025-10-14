@@ -11,7 +11,7 @@ import { LeituraProdutos } from "../pages/Leitura_Produtos/LeituraProdutos";
 
 const Rotas = () => {
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Home" element={<Home />} />
@@ -23,7 +23,7 @@ const Rotas = () => {
         <Route path="/Perfil" element={<Perfil />} />
         <Route path="/LeituraProdutos" element={<LeituraProdutos />} />
       </Routes>
-    </BrowserRouter>
+    // </BrowserRouter>
   );
 };
 
