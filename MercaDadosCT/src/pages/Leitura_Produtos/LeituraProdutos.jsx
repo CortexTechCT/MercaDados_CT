@@ -14,13 +14,13 @@ export const LeituraProdutos = () => {
           <img src={casa} alt="Logo MercaDados" className="casa" />
         </div>
 
-<<<<<<< HEAD:MercaDadosCT/src/pages/Leitura_Produtos/Registro.jsx
+
         <div className="header-right">
 
-        </div>
-=======
->>>>>>> bda8aa5bade5a7e7dd29fb9262db973c4f139f4b:MercaDadosCT/src/pages/Leitura_Produtos/LeituraProdutos.jsx
-      </header>
+
+         </div>
+      </header>     
+
 
       {/* Conteúdo principal */}
       <div className="registro-content">
