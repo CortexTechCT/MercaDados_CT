@@ -8,6 +8,7 @@ namespace Mercadados_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class ImagemController : ControllerBase
     {
         private readonly IImagemRepository _repository;
@@ -69,7 +70,7 @@ namespace Mercadados_API.Controllers
             };
 
             await _repository.CreateAsync(imagem);
-            return CreatedAtAction(nameof(GetImagemPorId), new { id = imagem.Id }, imagem);
+            return CreatedAtAction(nameof(GetImagemPorId), new { id = imagem.ImagemID }, imagem);
         }
 
         [HttpPut("{id}")]

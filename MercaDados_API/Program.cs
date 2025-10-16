@@ -1,6 +1,8 @@
+using System.Globalization;
 using Mercadados_API.Contexts;
 using Mercadados_API.Interfaces;
 using Mercadados_API.Repositories;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -75,6 +77,8 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+
 
 if (app.Environment.IsDevelopment())
 {
