@@ -105,7 +105,6 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
           <div className="painel-box">
 
 
-          <div className="painel-box">
 
           <div className="conteudoss">
 
@@ -126,7 +125,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
                   options={state.options}
                   series={state.series}
                   type="bar"
-                  width="100%"
+                  width="90%"
                   height="100%"
                   />
 
@@ -140,7 +139,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
                   options={state.options}
                   series={state.series}
                   type="bar"
-                  width="100%"
+                  width="90%"
                   height="100%" 
                   />
               </div>
@@ -157,7 +156,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
                   options={state.options}
                   series={state.series}
                   type="bar"
-                  width="100%"
+                  width="90%"
                   height="100%"
                   />
               </div>
@@ -167,12 +166,6 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
           </div>
 
           </div>
-
-
-          
-
-                  </div>
-
         </main>
         </div>
       </div>
