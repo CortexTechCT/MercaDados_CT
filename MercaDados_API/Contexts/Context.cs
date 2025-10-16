@@ -23,6 +23,8 @@ namespace Mercadados_API.Contexts
         public DbSet<EstoqueProdutos> EstoqueProdutos { get; set; }
         public DbSet<Feedback> Feedback { get; set; }
         public DbSet<Imagem> Imagens { get; set; }
+        public DbSet<Funcionario> Funcionario { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
