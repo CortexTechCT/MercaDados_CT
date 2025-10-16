@@ -7,6 +7,7 @@ import { GestaoEstoque } from "../pages/GestaoEstoque/gestaoestoque";
 import { Home } from "../pages/Home/home";
 import { LucrosGastos } from "../pages/LucrosGastos/lucrosgastos";
 import { Perfil } from "../pages/Perfil/Perfil";
+import { LeituraProdutos } from "../pages/Leitura_Produtos/LeituraProdutos";
 
 const Rotas = () => {
   return (
@@ -20,6 +21,7 @@ const Rotas = () => {
         <Route path="/LucrosGastos" element={<LucrosGastos />} />
         <Route path="/AdmFuncionarios" element={<AdmFuncionario />} />
         <Route path="/Perfil" element={<Perfil />} />
+        <Route path="/Leitura" element={<LeituraProdutos />} />
       </Routes>
     // </BrowserRouter>
   );
