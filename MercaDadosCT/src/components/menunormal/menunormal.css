@@ -6,14 +6,17 @@
   padding: 12px 24px;
   background-color: #0E1A3D;
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
   padding-left: 89%;
 =======
 <<<<<<< HEAD
+>>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
 padding-left: 85%;
 }
 .icone-sino {
   margin-top: 2px; 
-=======
   padding-left: 78%;
 <<<<<<< HEAD
 >>>>>>> 8f28868e5a8d696a57a6f7a3f1184782b0e22c2c
@@ -33,13 +36,18 @@ padding-left: 85%;
 
 .Usuario-perfil:hover {
   transform: scale(1.2);
->>>>>>> d9a89bb51add40e46639175e29bcc16188b10516
+
+<<<<<<< HEAD
+.casa_menunormal{
+  
+=======
+>>>>>>> b4fa9d0bf73ff6edab18605a35754a7da2b51bbd
 }
 
 .icons-header {
   display: flex;
   gap: 16px;
-<<<<<<< HEAD
+
   height: 100%;
 }
 
@@ -48,7 +56,7 @@ padding-left: 85%;
   height: 32px;
   object-fit: contain;
   display: block;      
-=======
+
   position: relative;
   left: 20%;
 
@@ -58,7 +66,7 @@ padding-left: 85%;
   width: 36px;
 
   cursor: pointer;
->>>>>>> d9a89bb51add40e46639175e29bcc16188b10516
+
 }
 
 .menu-hamburguer {
