@@ -5,7 +5,7 @@
 
 .fornecedores-box {
   flex: 1;
-  /*padding: 20px;*/
+  padding: 20px;
   background-color: #f5f7ff;
   justify-content: flex-end;
   

@@ -104,6 +104,9 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
 
           <div className="painel-box">
 
+
+          <div className="painel-box">
+
           <div className="conteudoss">
 
 
@@ -159,6 +162,8 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
                   />
               </div>
             </div>
+          </div>
+
           </div>
 
           </div>

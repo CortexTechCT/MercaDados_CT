@@ -1,5 +1,7 @@
 
 import "./MenuLateral.css";
+
+
 import iconeCasa from '../../assets/casa.png';
 import iconeSair from '../../assets/Vector.png';
 import { Link } from "react-router-dom";
@@ -11,12 +13,18 @@ export const MenuLateral = () => {
   return (
     <aside className="menu-lateral">
 
+
+
+
    <Link to = "/Home">
+
 
       <img className="CASA" src={iconeCasa} alt="casa" />
    </Link>
       <nav>
         <ul>
+
+
 
 
           <li><Link to="/Home">Gerenciamento</Link></li>
@@ -33,5 +41,5 @@ export const MenuLateral = () => {
         <span>sair da conta</span>
       </div>
     </aside>
-  )
+  );
 }
