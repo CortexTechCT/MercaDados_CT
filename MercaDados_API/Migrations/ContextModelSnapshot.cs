@@ -115,6 +115,9 @@ namespace Mercadados_API.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
+                    b.Property<string>("FotoPerfil")
+                        .HasColumnType("VARCHAR(300)");
+
                     b.Property<string>("Genero")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");

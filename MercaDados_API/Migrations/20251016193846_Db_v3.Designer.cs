@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20251016190607_Db_MercaDadosV1")]
-    partial class Db_MercaDadosV1
+    [Migration("20251016193846_Db_v3")]
+    partial class Db_v3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -117,6 +117,9 @@ namespace Mercadados_API.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
+
+                    b.Property<string>("FotoPerfil")
+                        .HasColumnType("VARCHAR(300)");
 
                     b.Property<string>("Genero")
                         .IsRequired()

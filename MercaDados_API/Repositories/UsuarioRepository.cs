@@ -51,24 +51,5 @@ namespace Mercadados_API.Repositories
             }
         }
 
-        // ✅ Novo método para atualizar a foto do usuário
-        public void AtualizarFoto(Guid id, string caminhoFoto)
-        {
-            try
-            {
-                var usuarioBuscado = _context.Usuario.Find(id);
-                if (usuarioBuscado == null)
-                    throw new Exception("Usuário não encontrado.");
-
-                usuarioBuscado.FotoPerfil = caminhoFoto;
-
-                _context.Usuario.Update(usuarioBuscado);
-                _context.SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

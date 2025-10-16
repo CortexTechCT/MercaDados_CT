@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mercadados_API.Migrations
 {
     /// <inheritdoc />
-    public partial class Db_MercaDadosV1 : Migration
+    public partial class Db_v3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,7 +38,8 @@ namespace Mercadados_API.Migrations
                     CidadeEstadoCEP = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false),
                     Complemento = table.Column<string>(type: "VARCHAR(100)", nullable: true),
                     Numero = table.Column<string>(type: "VARCHAR(13)", nullable: false),
-                    Cpf = table.Column<string>(type: "VARCHAR(14)", nullable: false)
+                    Cpf = table.Column<string>(type: "VARCHAR(14)", nullable: false),
+                    FotoPerfil = table.Column<string>(type: "VARCHAR(300)", nullable: true)
                 },
                 constraints: table =>
                 {

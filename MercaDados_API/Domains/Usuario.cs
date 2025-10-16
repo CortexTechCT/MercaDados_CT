@@ -32,8 +32,6 @@ namespace Mercadados_API.Domains
         [Required(ErrorMessage = "O CPF/CNPJ do usuário é obrigatória!")]
         public string? Cpf { get; set; }
 
-        [Column(TypeName = "VARCHAR(300)")]
-        public string? FotoPerfil { get; set; }
 
     }
 }

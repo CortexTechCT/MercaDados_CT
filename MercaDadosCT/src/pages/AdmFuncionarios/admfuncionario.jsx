@@ -77,7 +77,7 @@ export const AdmFuncionario = () => {
                   <div className="item-funcionario">
                     <div className="info-funcionario">
                       <img
-                        src={f.imagem ? f.imagem : "/assets/default.png"} // fallback se não houver imagem
+                         src={f.fotoPerfil ? `https://localhost:7115${f.fotoPerfil}` : "/assets/default.png"}
                         alt={f.nomeFuncionario}
                         className="foto-funcionario"
                       />  
