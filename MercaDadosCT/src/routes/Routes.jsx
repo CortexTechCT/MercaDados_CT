@@ -12,7 +12,7 @@ import { LeituraProdutos } from "../pages/Leitura_Produtos/LeituraProdutos";
 
 const Rotas = () => {
   return (
-    // <BrowserRouter>
+  
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Home" element={<Home />} />
@@ -22,10 +22,45 @@ const Rotas = () => {
         <Route path="/LucrosGastos" element={<LucrosGastos />} />
         <Route path="/AdmFuncionarios" element={<AdmFuncionario />} />
         <Route path="/Perfil" element={<Perfil />} />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      </Routes> 
+
+=======
+<<<<<<< HEAD
+>>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
         <Route path="/Leitura" element={<LeituraProdutos />} />
         <Route path="/LeituraProdutos" element={<LeituraProdutos />} />
       </Routes>
     // </BrowserRouter>
+>>>>>>> 8f28868e5a8d696a57a6f7a3f1184782b0e22c2c
   );
 };
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  
+=======
+
+<<<<<<< HEAD
+ const Rotas = () => {  
+    return ( 
+        // <BrowserRouter> 
+            <Routes>
+                <Route path="/" element={<Login />} exact />
+                    <Route path="/Home" element={<Home />}  />
+                    <Route path="/CadastroUsuario" element={<CadastroUsuario />} />
+                    <Route path="/CadastroProduto" element={<CadastroProduto />} />
+                    <Route path="/Fornecedores" element={<Fornecedores/>} />
+                    <Route path="/GestaoEstoque" element={<GestaoEstoque/>}/>
+                    <Route path="/LucrosGastos" element={<LucrosGastos/>} />
+                    <Route path="/AdmFuncionarios" element={<AdmFuncionario/>} />
+                    <Route path="/Perfil" element={<Perfil/>} />
+            </Routes>
+        // </BrowserRouter>
+    )
+}
+>>>>>>> 8f28868e5a8d696a57a6f7a3f1184782b0e22c2c
+>>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
 export default Rotas;

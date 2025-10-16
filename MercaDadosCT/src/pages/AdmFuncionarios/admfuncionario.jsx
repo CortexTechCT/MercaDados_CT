@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 import "./AdmFuncionario.css";
 import { useState, useEffect } from "react";
+=======
+<<<<<<< HEAD
+import "./admfuncionario.css";
+import { useState } from "react";
+=======
+import "./AdmFuncionario.css";
+import { useState, useEffect } from "react"; // 👈 importa o useEffect
+>>>>>>> 0012f210671cdd031baf72f565fbec06813aca24
+>>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
 import ReactApexChart from "react-apexcharts";
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
@@ -14,6 +24,7 @@ export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
   const [funcAberto, setFuncAberto] = useState(null);
 
+<<<<<<< HEAD
   // Alterna o card aberto
   const toggleFuncionario = (index) => {
     setFuncAberto(funcAberto === index ? null : index);
@@ -30,6 +41,55 @@ export const AdmFuncionario = () => {
     responsive: [
       {
         breakpoint: 480,
+=======
+
+    
+
+    const funcionarios = [
+        { nome: "Vini", foto: vini },
+        { nome: "Yasmin", foto: yasmin },
+        { nome: "Matheus", foto: matheus },
+        { nome: "Higor", foto: higor },
+        { nome: "Herik", foto: herik },
+        { nome: "Isaac", foto: isaac },
+    ];
+
+    const toggleFuncionario = (index) => {
+        setFuncAberto(funcAberto === index ? null : index);
+    };
+
+    const pizzaChartOptions = {
+        chart: {
+            width: 380,
+            type: "pie",
+        },
+        labels: ["Satisfeito", "Neutro", "Insatisfeito"],
+        colors: ["#337DFF", "#FFC043", "#FF5A5F"],
+        responsive: [
+            {
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 250,
+                    },
+                    legend: {
+                        position: "bottom",
+                    },
+                },
+            },
+        ],
+    };
+
+    const pizzaChartSeries = [44, 30, 26];
+
+    const graficoBarras = {
+        series: [
+            {
+                name: "Inflation",
+                data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
+            },
+        ],
+>>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
         options: {
           chart: { width: 250 },
           legend: { position: "bottom" },
@@ -73,6 +133,7 @@ export const AdmFuncionario = () => {
     ListarFuncionario();
   }, []);
 
+<<<<<<< HEAD
   async function ListarFuncionario() {
     try {
       const resposta = await api.get("Usuario"); // ⬅️ verifique se sua rota é /Usuario, /usuario ou /Usuarios
@@ -88,6 +149,26 @@ export const AdmFuncionario = () => {
       <MenuLateral />
       <div className="conteudo-principal">
         <MenuNormal />
+=======
+                                            <div className="graficos-funcionario">
+                                                <div className="grafico-barra-placeholder">
+                                                    <ReactApexChart
+                                                        options={graficoBarras.options}
+                                                        series={graficoBarras.series}
+                                                        type="bar"
+                                                        height={250}
+                                                    />
+                                                </div>
+                                                <div className="grafico-pizza-placeholder">
+                                                    <ReactApexChart
+                                                        options={pizzaChartOptions}
+                                                        series={pizzaChartSeries}
+                                                        type="pie"
+                                                        width={320}
+                                                    />
+                                                </div>
+                                            </div>
+>>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
 
         <main className="funcionario-box">
           <h2>Gestão de funcionários:</h2>
@@ -109,6 +190,7 @@ export const AdmFuncionario = () => {
                       />
                       <span>{f.nomeUsuario}</span>
                     </div>
+<<<<<<< HEAD
 
                     <span
                       className={`seta ${funcAberto === index ? "aberto" : ""}`}
@@ -179,4 +261,10 @@ export const AdmFuncionario = () => {
       </div>
     </div>
   );
+=======
+                </main>
+            </div>
+        </div>
+    );
+>>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
 };

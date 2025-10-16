@@ -1,4 +1,4 @@
-import "./CadastroUsuario.css";
+import "./cadastrousuario.css";
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { Botao } from '../../components/botao/Botao.jsx'
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";

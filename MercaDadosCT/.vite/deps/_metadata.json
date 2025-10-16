@@ -1,8 +1,48 @@
 {
-  "hash": "21523435",
+  "hash": "6871530f",
   "configHash": "d276b9df",
-  "lockfileHash": "1746dcb4",
-  "browserHash": "b7aa0b98",
-  "optimized": {},
-  "chunks": {}
+  "lockfileHash": "e72acf77",
+  "browserHash": "e19fdf4b",
+  "optimized": {
+    "react-apexcharts": {
+      "src": "../../node_modules/react-apexcharts/dist/react-apexcharts.min.js",
+      "file": "react-apexcharts.js",
+      "fileHash": "049a4caf",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "1fa326ed",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "e0e73c96",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "2868898c",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "9f355fe5",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "react-dom-CMFgoNhk": {
+      "file": "react-dom-CMFgoNhk.js",
+      "isDynamicEntry": false
+    },
+    "react-rj5PKdZc": {
+      "file": "react-rj5PKdZc.js",
+      "isDynamicEntry": false
+    }
+  }
 }
