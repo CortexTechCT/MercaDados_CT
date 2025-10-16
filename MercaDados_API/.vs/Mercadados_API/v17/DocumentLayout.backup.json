@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\",
   "Documents": [
     {
@@ -41,6 +42,13 @@
     {
       "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\50457069856\\desktop\\mercadados_ct\\mercadados_api\\domains\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:domains\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+  "WorkspaceRootPath": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\arquivos\\mercadados_ct\\mercadados_api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
     }
   ],
   "DocumentGroupContainers": [
@@ -54,11 +62,16 @@
           "Children": [
             {
               "$type": "Bookmark",
+<<<<<<< HEAD
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+=======
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+>>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "20251016193846_Db_v3.cs",
               "DocumentMoniker": "C:\\Users\\50457069856\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251016193846_Db_v3.cs",
               "RelativeDocumentMoniker": "Migrations\\20251016193846_Db_v3.cs",
@@ -184,6 +197,16 @@
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-16T19:11:59.99Z",
+=======
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAUwEoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T17:14:13.917Z",
+>>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
               "EditorCaption": ""
             }
           ]

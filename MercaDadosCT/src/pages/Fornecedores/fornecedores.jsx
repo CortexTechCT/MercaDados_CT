@@ -107,8 +107,11 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
           <div className="painel-box">
 
 
+<<<<<<< HEAD
 >>>>>>> 207435599db84fb1fd47b290b9fce492ee9cc117
           <div className="painel-box">
+=======
+>>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
 
           <div className="conteudoss">
 
@@ -128,7 +131,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
                   options={state.options}
                   series={state.series}
                   type="bar"
-                  width="100%"
+                  width="90%"
                   height="100%"
                   />
 
@@ -142,7 +145,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
                   options={state.options}
                   series={state.series}
                   type="bar"
-                  width="100%"
+                  width="90%"
                   height="100%" 
                   />
               </div>
@@ -159,7 +162,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
                   options={state.options}
                   series={state.series}
                   type="bar"
-                  width="100%"
+                  width="90%"
                   height="100%"
                   />
               </div>
@@ -172,6 +175,7 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
           </div>
 
           </div>
+<<<<<<< HEAD
 
 
           
@@ -179,6 +183,8 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
 >>>>>>> 207435599db84fb1fd47b290b9fce492ee9cc117
                   </div>
 
+=======
+>>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
         </main>
         </div>
       </div>
