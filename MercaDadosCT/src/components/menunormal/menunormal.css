@@ -1,5 +1,6 @@
 .top-header {
   display: flex;
+  
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
@@ -14,9 +15,14 @@ padding-left: 85%;
   margin-top: 2px; 
 =======
   padding-left: 78%;
+<<<<<<< HEAD
 >>>>>>> 8f28868e5a8d696a57a6f7a3f1184782b0e22c2c
   border-bottom: 0.1px solid #162A63;
 
+=======
+  border-bottom: 2px solid #162A63;
+   
+>>>>>>> 0012f210671cdd031baf72f565fbec06813aca24
 }
 
 .Usuario-perfil {

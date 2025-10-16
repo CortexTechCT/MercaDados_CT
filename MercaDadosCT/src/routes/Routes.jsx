@@ -50,6 +50,9 @@ const Rotas = () => {
 >>>>>>> 8f28868e5a8d696a57a6f7a3f1184782b0e22c2c
   );
 };
+<<<<<<< HEAD
+  
+=======
 
 <<<<<<< HEAD
  const Rotas = () => {  
@@ -69,6 +72,7 @@ const Rotas = () => {
         // </BrowserRouter>
     )
 }
+>>>>>>> 8f28868e5a8d696a57a6f7a3f1184782b0e22c2c
 export default Rotas;
 =======
 export default Rotas;

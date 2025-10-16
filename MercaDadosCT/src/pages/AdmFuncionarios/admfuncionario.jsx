@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import "./admfuncionario.css";
 import { useState } from "react";
+=======
+import "./AdmFuncionario.css";
+import { useState, useEffect } from "react"; // 👈 importa o useEffect
+>>>>>>> 0012f210671cdd031baf72f565fbec06813aca24
 import ReactApexChart from "react-apexcharts";
 
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
@@ -15,6 +20,9 @@ import isaac from "../../assets/171977797.png";
 export const AdmFuncionario = () => {
     const [funcAberto, setFuncAberto] = useState(null);
 
+
+    
+
     const funcionarios = [
         { nome: "Vini", foto: vini },
         { nome: "Yasmin", foto: yasmin },
@@ -27,7 +35,6 @@ export const AdmFuncionario = () => {
     const toggleFuncionario = (index) => {
         setFuncAberto(funcAberto === index ? null : index);
     };
-
 
     const pizzaChartOptions = {
         chart: {
@@ -52,7 +59,6 @@ export const AdmFuncionario = () => {
     };
 
     const pizzaChartSeries = [44, 30, 26];
-
 
     const graficoBarras = {
         series: [
@@ -141,7 +147,6 @@ export const AdmFuncionario = () => {
                                                         width={320}
                                                     />
                                                 </div>
-
                                             </div>
 
                                             <div className="legenda-satisfacao">
@@ -167,5 +172,5 @@ export const AdmFuncionario = () => {
                 </main>
             </div>
         </div>
-    )
-}
+    );
+};
