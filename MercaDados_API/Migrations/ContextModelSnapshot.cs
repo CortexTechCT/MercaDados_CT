@@ -90,6 +90,53 @@ namespace Mercadados_API.Migrations
                     b.ToTable("Feedback");
                 });
 
+            modelBuilder.Entity("Mercadados_API.Domains.Funcionario", b =>
+                {
+                    b.Property<Guid>("FuncionarioID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CidadeEstadoCEP")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("VARCHAR(200)");
+
+                    b.Property<string>("Complemento")
+                        .HasColumnType("VARCHAR(100)");
+
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(14)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)");
+
+                    b.Property<string>("Genero")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)");
+
+                    b.Property<string>("NomeFuncionario")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)");
+
+                    b.Property<string>("Numero")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(13)");
+
+                    b.Property<string>("RuaENumero")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(200)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)");
+
+                    b.HasKey("FuncionarioID");
+
+                    b.ToTable("Funcionario");
+                });
+
             modelBuilder.Entity("Mercadados_API.Domains.ItemVenda", b =>
                 {
                     b.Property<Guid>("ItemVendaID")

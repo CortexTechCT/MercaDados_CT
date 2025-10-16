@@ -4,8 +4,13 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+<<<<<<< HEAD
+  background-color: #0e1a3d;
+  color: #f97316;
+=======
 
 
+>>>>>>> 0012f210671cdd031baf72f565fbec06813aca24
 }
 
 .Perfil-Logo {

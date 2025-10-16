@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+import "./admfuncionario.css";
+import { useState } from "react";
+=======
 import "./AdmFuncionario.css";
 import { useState, useEffect } from "react"; // 👈 importa o useEffect
+>>>>>>> 0012f210671cdd031baf72f565fbec06813aca24
 import ReactApexChart from "react-apexcharts";
 
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
