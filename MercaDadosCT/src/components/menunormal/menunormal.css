@@ -1,12 +1,13 @@
 .top-header {
   display: flex;
+  
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
   background-color: #0E1A3D;
   padding-left: 78%;
-  border-bottom: 0.1px solid #162A63;
-
+  border-bottom: 2px solid #162A63;
+   
 }
 
 .Usuario-perfil {

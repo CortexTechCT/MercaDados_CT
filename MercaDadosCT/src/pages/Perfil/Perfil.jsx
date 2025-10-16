@@ -42,7 +42,7 @@ export const Perfil = () => {
 
             <div className="botoes-perfil">
               <button className="btn-editar">Editar Perfil</button>
-              <button className="btn-senha">Alterar Senha</button>
+             
             </div>
           </div>
         </main>
