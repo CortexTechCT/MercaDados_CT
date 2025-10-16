@@ -8,43 +8,19 @@ export const LeituraProdutos = () => {
   return (
     <div className="leitura-container">
       {/* Header */}
-<<<<<<< HEAD
       <Header />
-
       {/* Fundo azul */}
-=======
       <header className="header">
         <img src={casa} alt="Home" className="icon" />
         <div className="header-icons">  
           <img src={perfil} alt="Perfil" className="icon" />
         </div>
-<<<<<<< HEAD
 
         <div className="header-right">
-
          </div>
       </header>     
-
-=======
-
-
-
-        <div className="header-right">
-
-
-
-         </div>
-      </header>     
-
-
-        </div>
-
-      </header>
-
->>>>>>> a9bb1511b6aa4c6212b49ed0875ae22f9c1bc2b3
 
       {/* Quadrado azul principal */}
->>>>>>> f5c072692021760268630caf0d25aa32dd99e7c8
       <div className="fundo-azul">
         <div className="conteudo">
           {/* Produtos */}
