@@ -4,6 +4,12 @@
   align-items: center;
   padding: 12px 24px;
   background-color: #0E1A3D;
+<<<<<<< HEAD
+padding-left: 85%;
+}
+.icone-sino {
+  margin-top: 2px; 
+=======
   padding-left: 78%;
   border-bottom: 0.1px solid #162A63;
 
@@ -17,12 +23,22 @@
 
 .Usuario-perfil:hover {
   transform: scale(1.2);
+>>>>>>> d9a89bb51add40e46639175e29bcc16188b10516
 }
-
 
 .icons-header {
   display: flex;
   gap: 16px;
+<<<<<<< HEAD
+  height: 100%;
+}
+
+.icons-header img {
+   width: 32px;         
+  height: 32px;
+  object-fit: contain;
+  display: block;      
+=======
   position: relative;
   left: 20%;
 
@@ -32,6 +48,7 @@
   width: 36px;
 
   cursor: pointer;
+>>>>>>> d9a89bb51add40e46639175e29bcc16188b10516
 }
 
 .menu-hamburguer {
