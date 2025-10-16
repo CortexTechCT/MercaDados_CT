@@ -1,4 +1,5 @@
 ﻿using Mercadados_API.Domains;
+using Mercadados_API.DTO;
 using Mercadados_API.Models;
 using Microsoft.EntityFrameworkCore;
 

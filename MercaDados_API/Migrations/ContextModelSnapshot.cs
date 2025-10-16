@@ -98,7 +98,7 @@ namespace Mercadados_API.Migrations
 
                     b.Property<string>("CidadeEstadoCEP")
                         .IsRequired()
-                        .HasMaxLength(100)
+                        .HasMaxLength(200)
                         .HasColumnType("VARCHAR(200)");
 
                     b.Property<string>("Complemento")
@@ -107,6 +107,9 @@ namespace Mercadados_API.Migrations
                     b.Property<string>("Cpf")
                         .IsRequired()
                         .HasColumnType("VARCHAR(14)");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("DATE");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -265,11 +268,9 @@ namespace Mercadados_API.Migrations
 
             modelBuilder.Entity("Mercadados_API.Models.Imagem", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("ImagemID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Caminho")
                         .IsRequired()
@@ -281,7 +282,7 @@ namespace Mercadados_API.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ImagemID");
 
                     b.ToTable("Imagens");
                 });

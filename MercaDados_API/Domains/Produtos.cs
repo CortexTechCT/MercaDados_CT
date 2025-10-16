@@ -21,8 +21,5 @@ namespace Mercadados_API.Domains
         [Required(ErrorMessage = "Quantidade é obrigatorio!")]
         public int Quantidade { get; set; }
 
-        //[ForeignKey("EstoqueProdutosID")]
-        //public EstoqueProdutos? EstoqueProdutos { get; set; }
-
     }
 }

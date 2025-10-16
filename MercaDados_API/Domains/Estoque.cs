@@ -17,9 +17,5 @@ namespace Mercadados_API.Domains
         [Required(ErrorMessage = "Quantidade é obrigatorio!")]
         public int Quantidade { get; set; }
 
-        //public Guid ProdutosID { get; set; }
-
-        //[ForeignKey("ProdutosID")]
-        //public Produtos? Produtos { get; set; }
     }
 }

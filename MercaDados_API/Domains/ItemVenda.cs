@@ -23,8 +23,8 @@ namespace Mercadados_API.Domains
         [ForeignKey("ProdutosID")]
         public Produtos? Produtos { get; set; }
 
-        public Guid VendaID { get; set; }
         [ForeignKey("VendaID")]
+        public Guid VendaID { get; set; }
         public Venda? Venda { get; set; }
      }
 }
