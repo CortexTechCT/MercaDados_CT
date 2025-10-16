@@ -1,30 +1,14 @@
-<<<<<<< HEAD
 import "./AdmFuncionario.css";
 import { useState, useEffect } from "react";
-=======
-<<<<<<< HEAD
-import "./admfuncionario.css";
-import { useState } from "react";
-=======
-import "./AdmFuncionario.css";
-import { useState, useEffect } from "react"; // 👈 importa o useEffect
->>>>>>> 0012f210671cdd031baf72f565fbec06813aca24
->>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
 import ReactApexChart from "react-apexcharts";
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import api from "../../services/Services.js";
 
-import vini from "../../assets/viniciou.jpg";
-import yasmin from "../../assets/IMG_3617 (1).jpeg";
-import herik from "../../assets/image (2).png";
-import isaac from "../../assets/171977797.png";
-
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
   const [funcAberto, setFuncAberto] = useState(null);
 
-<<<<<<< HEAD
   // Alterna o card aberto
   const toggleFuncionario = (index) => {
     setFuncAberto(funcAberto === index ? null : index);
@@ -32,64 +16,12 @@ export const AdmFuncionario = () => {
 
   // Gráfico de Pizza
   const pizzaChartOptions = {
-    chart: {
-      width: 380,
-      type: "pie",
-    },
+    chart: { width: 380, type: "pie" },
     labels: ["Satisfeito", "Neutro", "Insatisfeito"],
     colors: ["#337DFF", "#FFC043", "#FF5A5F"],
     responsive: [
       {
         breakpoint: 480,
-=======
-
-    
-
-    const funcionarios = [
-        { nome: "Vini", foto: vini },
-        { nome: "Yasmin", foto: yasmin },
-        { nome: "Matheus", foto: matheus },
-        { nome: "Higor", foto: higor },
-        { nome: "Herik", foto: herik },
-        { nome: "Isaac", foto: isaac },
-    ];
-
-    const toggleFuncionario = (index) => {
-        setFuncAberto(funcAberto === index ? null : index);
-    };
-
-    const pizzaChartOptions = {
-        chart: {
-            width: 380,
-            type: "pie",
-        },
-        labels: ["Satisfeito", "Neutro", "Insatisfeito"],
-        colors: ["#337DFF", "#FFC043", "#FF5A5F"],
-        responsive: [
-            {
-                breakpoint: 480,
-                options: {
-                    chart: {
-                        width: 250,
-                    },
-                    legend: {
-                        position: "bottom",
-                    },
-                },
-            },
-        ],
-    };
-
-    const pizzaChartSeries = [44, 30, 26];
-
-    const graficoBarras = {
-        series: [
-            {
-                name: "Inflation",
-                data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-            },
-        ],
->>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
         options: {
           chart: { width: 250 },
           legend: { position: "bottom" },
@@ -97,34 +29,18 @@ export const AdmFuncionario = () => {
       },
     ],
   };
-
   const pizzaChartSeries = [44, 30, 26];
 
   // Gráfico de Barras
   const graficoBarras = {
     series: [
-      {
-        name: "Desempenho",
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-      },
+      { name: "Desempenho", data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2] },
     ],
     options: {
       chart: { type: "bar", height: 250 },
-      plotOptions: {
-        bar: { borderRadius: 10, dataLabels: { position: "top" } },
-      },
-      dataLabels: {
-        enabled: true,
-        formatter: (val) => val + "%",
-        offsetY: -20,
-        style: { fontSize: "12px", colors: ["#304758"] },
-      },
-      xaxis: {
-        categories: [
-          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-        ],
-      },
+      plotOptions: { bar: { borderRadius: 10, dataLabels: { position: "top" } } },
+      dataLabels: { enabled: true, formatter: (val) => val + "%", offsetY: -20, style: { fontSize: "12px", colors: ["#304758"] } },
+      xaxis: { categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] },
     },
   };
 
@@ -133,14 +49,13 @@ export const AdmFuncionario = () => {
     ListarFuncionario();
   }, []);
 
-<<<<<<< HEAD
   async function ListarFuncionario() {
     try {
-      const resposta = await api.get("Usuario"); // ⬅️ verifique se sua rota é /Usuario, /usuario ou /Usuarios
+      const resposta = await api.get("Funcionario"); 
       console.log("Dados recebidos:", resposta.data);
       setListaFuncionario(resposta.data);
     } catch (error) {
-      console.error(" Erro ao buscar os usuários:", error);
+      console.log("❌ Erro ao buscar os usuários:", error);
     }
   }
 
@@ -149,48 +64,25 @@ export const AdmFuncionario = () => {
       <MenuLateral />
       <div className="conteudo-principal">
         <MenuNormal />
-=======
-                                            <div className="graficos-funcionario">
-                                                <div className="grafico-barra-placeholder">
-                                                    <ReactApexChart
-                                                        options={graficoBarras.options}
-                                                        series={graficoBarras.series}
-                                                        type="bar"
-                                                        height={250}
-                                                    />
-                                                </div>
-                                                <div className="grafico-pizza-placeholder">
-                                                    <ReactApexChart
-                                                        options={pizzaChartOptions}
-                                                        series={pizzaChartSeries}
-                                                        type="pie"
-                                                        width={320}
-                                                    />
-                                                </div>
-                                            </div>
->>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
 
         <main className="funcionario-box">
           <h2>Gestão de funcionários:</h2>
 
           <div className="lista-funcionarios">
             {listaFuncionario.length === 0 ? (
-              <p className="nenhum-funcionario">
-                Nenhum funcionário encontrado.
-              </p>
-            ) : (
+              <p className="nenhum-funcionario">Nenhum funcionário encontrado.</p>
+            ) : ( 
               listaFuncionario.map((f, index) => (
                 <div key={index} className="item-funcionario-wrapper">
                   <div className="item-funcionario">
                     <div className="info-funcionario">
                       <img
-                        src={f.foto || vini}
-                        alt={f.nomeUsuario}
+                        src={f.imagem ? f.imagem : "/assets/default.png"} // fallback se não houver imagem
+                        alt={f.nomeFuncionario}
                         className="foto-funcionario"
-                      />
-                      <span>{f.nomeUsuario}</span>
+                      />  
+                      <p>{f.nomeFuncionario}</p>
                     </div>
-<<<<<<< HEAD
 
                     <span
                       className={`seta ${funcAberto === index ? "aberto" : ""}`}
@@ -200,19 +92,13 @@ export const AdmFuncionario = () => {
                     </span>
                   </div>
 
-                  <div
-                    className={`detalhes-funcionario-transicao ${
-                      funcAberto === index ? "aberto" : ""
-                    }`}
-                  >
+                  <div className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""}`}>
                     {funcAberto === index && (
                       <div className="detalhes-funcionario">
                         <div className="header-funcionario-expandido">
                           <div>
-                            <strong>{f.nomeUsuario}</strong>
-                            <span className="funcao">
-                              Função: {f.funcao || "Caixa de Vendas"}
-                            </span>
+                            <strong>{f.nomeFuncionario}</strong>
+                            <span className="funcao">Função: {"Caixa de Vendas"}</span>
                           </div>
                         </div>
 
@@ -261,10 +147,4 @@ export const AdmFuncionario = () => {
       </div>
     </div>
   );
-=======
-                </main>
-            </div>
-        </div>
-    );
->>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
 };

@@ -164,31 +164,50 @@ border-top: 0;
 
 .item-funcionario {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: #fff; 
+  justify-content: space-between;
+  background: #fff;
   padding: 14px 18px;
   border-radius: 12px;
-  border: 1px solid #ddd; 
-  color: #000; 
+  border: 1px solid #ddd;
+  color: #000;
+  gap: 16px; /* adiciona um pequeno espaçamento interno */
 }
 
+/* garante alinhamento horizontal da foto e nome */
 .info-funcionario {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex: 1; /* ocupa o espaço da esquerda, sem empurrar a seta */
+  min-width: 0; /* impede que o texto quebre por falta de espaço */
 }
 
+/* define o tamanho da imagem */
 .foto-funcionario {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
-.item-funcionario span {
-  font-size: 15px;
-  color: #000;
+/* nome do funcionário */
+.info-funcionario p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1e1e1e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* adiciona "..." se o nome for longo */
+}
+
+
+.info-funcionario span {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1e1e1e;
 }
 
 .seta {
