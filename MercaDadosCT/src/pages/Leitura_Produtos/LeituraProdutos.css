@@ -1,19 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .leitura-container {
   font-family: "Poppins", sans-serif;
   background-color: #A3B2DF;
-  min-height: 100vh;
 }
 
 .fundo-azul {
   background-color: #97aef2;
   width: 1298px;  
-  margin: 2rem auto;
+  margin: 2px auto;
+  
   padding: 30px;
   border-radius: 20px;
   display: flex;
@@ -31,10 +25,10 @@
   display: flex;
   flex-direction: column;
   background-color: #DEE5FA;
-  height: 777px;
+  height: 674px;
   align-items: center;
   border-radius: 18px;
-  gap: 2rem;
+
 }
 
 .produto-img {
@@ -52,7 +46,7 @@
   padding: 2rem;
   border-radius: 20px;
   width: 715px;
-  height:777px;
+  height:676px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -74,6 +68,22 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+}
+
+
+.botao_leitura{
+  
+  background-color: #F97316;
+  border: none;
+  padding: 13px 88px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  margin-top: 85px;
 }
 
 .tabela-dados th,
@@ -109,21 +119,18 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
+  height: 5%;
 }
 
 .total {
   width: 205px;
   background-color: #1e2a47;
   color: #fff;
-  padding: 0.6rem 2rem;
+  padding: 9px 40px;
   border-radius: 27px;
   font-size: 25px;
-  margin-top: 125px;
+  margin-top: 95px;
   align-items: center;
-}
-
-button {
-  margin-top: 50px; 
 }
 
 

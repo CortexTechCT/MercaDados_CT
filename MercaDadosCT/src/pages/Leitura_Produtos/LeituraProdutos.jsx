@@ -1,49 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LeituraProdutos.css";
 import { Botao } from "../../components/botao/Botao";
-import Header from "../../components/header/Header";
 import Doritos from "../../assets/Doritos.png";
+import casa from "../../assets/casa.png";
+import { MenuNormal } from "../../components/menunormal/menunormal";
+import { Modal } from "../../components/modal/Modal";
 
 export const LeituraProdutos = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="leitura-container">
-      {/* Header */}
-<<<<<<< HEAD
-      <Header />
-
-      {/* Fundo azul */}
-=======
-      <header className="header">
-        <img src={casa} alt="Home" className="icon" />
-        <div className="header-icons">  
-          <img src={perfil} alt="Perfil" className="icon" />
-        </div>
-
-
-
-        <div className="header-right">
-
-
-
-         </div>
-      </header>     
-
-
-        </div>
-
-      </header>
-
+      <MenuNormal />
 
       {/* Quadrado azul principal */}
->>>>>>> f5c072692021760268630caf0d25aa32dd99e7c8
       <div className="fundo-azul">
         <div className="conteudo">
-          {/* Produtos */}
           <div className="produtos">
             <img src={Doritos} alt="Doritos" className="produto-img" />
           </div>
 
-          {/* Tabela */}
           <div className="tabela">
             <h2 className="titulo">Registro Atual</h2>
             <h3 className="subtitulo">12x Caixa de Energético</h3>
@@ -87,9 +63,6 @@ export const LeituraProdutos = () => {
                     <td>R$ 8,99</td>
                     <td>R$ 8,99</td>
                   </tr>
-                  </tbody>
-
-                  <tbody>
                   <tr>
                     <td>Caixa de Energético Monster</td>
                     <td>12 un</td>
@@ -107,10 +80,23 @@ export const LeituraProdutos = () => {
               <div className="total">R$ 122,87</div>
             </div>
 
-            <Botao nomeBotao="continuar" />
+            {/* Botão que abre o modal */}
+            <button
+              className="botao_leitura"
+              onClick={() => setIsModalOpen(true)}
+            >
+              Continuar
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h2>Confirmação</h2>
+        <p>Deseja ir para forma de Pagamento?</p>
+        <button onClick={() => setIsModalOpen(false)}>Fechar</button>
+      </Modal>
     </div>
   );
 };
