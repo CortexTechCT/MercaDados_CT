@@ -19,6 +19,26 @@
     "react-router": "^7.9.3",
     "react-router-dom": "^7.9.3",
     "sweetalert2": "^11.25.0"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    "react-icons": "^5.5.0",
+    "react-router": "^7.9.3",
+    "react-router-dom": "^7.9.3"
+>>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
+
+
+<<<<<<< HEAD
+
+=======
+    "react-router-dom": "^7.9.3",
+    "sweetalert2": "^11.25.0"
+>>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
+>>>>>>> 5a90c6d300864f8b24180c2eaef5697f9bfb712f
+>>>>>>> 207435599db84fb1fd47b290b9fce492ee9cc117
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

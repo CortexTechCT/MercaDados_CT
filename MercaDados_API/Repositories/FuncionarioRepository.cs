@@ -60,8 +60,9 @@ namespace Mercadados_API.Repositories
                 _context.Funcionario.Add(funcionario);
                 _context.SaveChanges();
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.InnerException?.Message);
                 throw;
             }
         }
