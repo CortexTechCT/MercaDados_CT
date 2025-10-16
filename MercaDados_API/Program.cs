@@ -45,7 +45,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "API",
-        Description = "Aplicaçao para gerenciamento de Games",
+        Description = "Aplicaçao para gerenciamento de dados",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {
