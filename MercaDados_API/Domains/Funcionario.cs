@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Mercadados_API.Models;
+using Mercadados_API.DTO;
+using Microsoft.VisualBasic;
 
 namespace Mercadados_API.Domains
 {
@@ -8,16 +11,22 @@ namespace Mercadados_API.Domains
         [Key]
         public Guid FuncionarioID { get; set; }
 
+        [Column(TypeName = "DATE")]
+        [Required(ErrorMessage = "Este campo precisa estar preenchido!")]
+        [DataType(DataType.Date)]
+        public DateTime DataNascimento { get; set; }
+
+
         [Column(TypeName = "VARCHAR(100)")]
-        [Required(ErrorMessage = "O nome do usuário é obrigatório!")]
+        [Required(ErrorMessage = "Este campo precisa estar preenchido!")]
         public string? NomeFuncionario { get; set; }
 
         [Column(TypeName = "VARCHAR(100)")]
-        [Required(ErrorMessage = "O email do usuário é obrigatório!")]
+        [Required(ErrorMessage = "Este campo precisa estar preenchido!")]
         public string? Email { get; set; }
 
         [Column(TypeName = "VARCHAR(100)")]
-        [Required(ErrorMessage = "A senha do usuário é obrigatória!")]
+        [Required(ErrorMessage = "Este campo precisa estar preenchido!")]
         public string? Senha { get; set; }
 
         [Column(TypeName = "VARCHAR(100)")]
@@ -31,7 +40,7 @@ namespace Mercadados_API.Domains
 
         [Column(TypeName = "VARCHAR(200)")]
         [Required(ErrorMessage = "Este campo precisa estar preenchido!")]
-        [StringLength(100, MinimumLength = 20, ErrorMessage = "A informação deve ter entre 25 e 200 caracteres.")]
+        [StringLength(200, MinimumLength = 10, ErrorMessage = "A informação deve ter entre 10 e 200 caracteres.")]
         [RegularExpression(@"^[A-Za-zÀ-ú\s]+, [A-Z]{2}, \d{5}-\d{3}$", ErrorMessage = "Informe no formato: Cidade, Estado, CEP")]
         public string? CidadeEstadoCEP { get; set; }
 
@@ -46,5 +55,8 @@ namespace Mercadados_API.Domains
         [Column(TypeName = "VARCHAR(14)")]
         [Required(ErrorMessage = "O CPF/CNPJ do usuário é obrigatória!")]
         public string? Cpf { get; set; }
+
+        [Column(TypeName = "VARCHAR(300)")]
+        public string? FotoPerfil { get; set; }
     }
 }

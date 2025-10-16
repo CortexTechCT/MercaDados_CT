@@ -60,8 +60,9 @@ namespace Mercadados_API.Repositories
                 _context.Funcionario.Add(funcionario);
                 _context.SaveChanges();
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.InnerException?.Message);
                 throw;
             }
         }
@@ -90,6 +91,25 @@ namespace Mercadados_API.Repositories
             try
             {
                 return _context.Funcionario.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void AtualizarFoto(Guid id, string caminhoFoto)
+        {
+            try
+            {
+                var usuarioBuscado = _context.Funcionario.Find(id);
+                if (usuarioBuscado == null)
+                    throw new Exception("Usuário não encontrado.");
+
+                usuarioBuscado.FotoPerfil = caminhoFoto;
+
+                _context.Funcionario.Update(usuarioBuscado);
+                _context.SaveChanges();
             }
             catch (Exception)
             {

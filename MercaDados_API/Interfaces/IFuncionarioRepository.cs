@@ -9,6 +9,7 @@ namespace Mercadados_API.Interfaces
         List<Funcionario> Listar();
         void Atualizar(Guid id, Funcionario funcionario);
         void Deletar(Guid id);
+        void AtualizarFoto(Guid id, string caminhoFoto);
 
     }
 }

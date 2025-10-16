@@ -1,5 +1,6 @@
 ﻿using Mercadados_API.Domains;
 using Mercadados_API.Interfaces;
+using Mercadados_API.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -82,6 +83,47 @@ namespace Mercadados_API.Controllers
             catch (Exception error)
             {
                 return BadRequest(error.Message);
+            }
+        }
+
+        [HttpPost("upload-foto/{id}")]
+        public async Task<IActionResult> UploadFoto(Guid id, IFormFile arquivo)
+        {
+            if (arquivo == null || arquivo.Length == 0)
+                return BadRequest("Nenhum arquivo enviado.");
+
+            try
+            {
+                // 📁 Cria a pasta de destino, se não existir
+                var pastaDestino = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imagens");
+                if (!Directory.Exists(pastaDestino))
+                    Directory.CreateDirectory(pastaDestino);
+
+                // 📸 Gera um nome único para o arquivo
+                var nomeArquivo = $"{Guid.NewGuid()}{Path.GetExtension(arquivo.FileName)}";
+                var caminhoCompleto = Path.Combine(pastaDestino, nomeArquivo);
+
+                // 💾 Salva o arquivo fisicamente
+                using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
+                {
+                    await arquivo.CopyToAsync(stream);
+                }
+
+                // 🖼️ Define o caminho relativo (para o frontend)
+                var caminhoRelativo = $"/imagens/{nomeArquivo}";
+
+                // 🧩 Atualiza apenas o campo de foto no banco
+                _funcionarioRepository.AtualizarFoto(id, caminhoRelativo);
+
+                return Ok(new
+                {
+                    message = "Upload realizado com sucesso!",
+                    caminho = caminhoRelativo
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro ao fazer upload: {ex.Message}");
             }
         }
     }

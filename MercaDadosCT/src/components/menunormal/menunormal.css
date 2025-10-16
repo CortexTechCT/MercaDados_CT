@@ -1,10 +1,13 @@
 .top-header {
   display: flex;
-  
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
   background-color: #0E1A3D;
+<<<<<<< HEAD
+<<<<<<< HEAD
+ padding-left: 89%;
+=======
 <<<<<<< HEAD
 
 =======
@@ -13,19 +16,30 @@
 =======
 <<<<<<< HEAD
 >>>>>>> 040580e4f16efe65e4ad2bad3b71756fe8fa3402
+>>>>>>> 207435599db84fb1fd47b290b9fce492ee9cc117
 padding-left: 85%;
+=======
+  padding-left: 89%;
+  padding-left: 85%;
+  border-bottom: 2px solid  #162A63;
+>>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
 }
+
 .icone-sino {
-  margin-top: 2px; 
+  margin-top: 2px;
   padding-left: 78%;
 <<<<<<< HEAD
->>>>>>> 8f28868e5a8d696a57a6f7a3f1184782b0e22c2c
   border-bottom: 0.1px solid #162A63;
 
-=======
   border-bottom: 2px solid #162A63;
    
->>>>>>> 0012f210671cdd031baf72f565fbec06813aca24
+=======
+
+  border-bottom: 0.1px solid #162A63;
+
+  border-bottom: 2px solid #162A63;
+
+>>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
 }
 
 .Usuario-perfil {
@@ -36,27 +50,43 @@ padding-left: 85%;
 
 .Usuario-perfil:hover {
   transform: scale(1.2);
+<<<<<<< HEAD
+=======
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .casa_menunormal{
   
 =======
 >>>>>>> b4fa9d0bf73ff6edab18605a35754a7da2b51bbd
+>>>>>>> 207435599db84fb1fd47b290b9fce492ee9cc117
+=======
+>>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
 }
 
 .icons-header {
   display: flex;
   gap: 16px;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 207435599db84fb1fd47b290b9fce492ee9cc117
   height: 100%;
 }
 
 .icons-header img {
-   width: 32px;         
+  width: 32px;
   height: 32px;
   object-fit: contain;
+<<<<<<< HEAD
   display: block;      
+<<<<<<< HEAD
+=======
+=======
+  display: block;
+>>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
 
+>>>>>>> 207435599db84fb1fd47b290b9fce492ee9cc117
   position: relative;
   left: 20%;
 
@@ -66,7 +96,10 @@ padding-left: 85%;
   width: 36px;
 
   cursor: pointer;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 207435599db84fb1fd47b290b9fce492ee9cc117
 }
 
 .menu-hamburguer {

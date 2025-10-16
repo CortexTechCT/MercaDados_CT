@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mercadados_API.Migrations
 {
     /// <inheritdoc />
-    public partial class Db_v1 : Migration
+    public partial class Db_v3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -25,17 +25,38 @@ namespace Mercadados_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Funcionario",
+                columns: table => new
+                {
+                    FuncionarioID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "DATE", nullable: false),
+                    NomeFuncionario = table.Column<string>(type: "VARCHAR(100)", nullable: false),
+                    Email = table.Column<string>(type: "VARCHAR(100)", nullable: false),
+                    Senha = table.Column<string>(type: "VARCHAR(100)", nullable: false),
+                    Genero = table.Column<string>(type: "VARCHAR(100)", nullable: false),
+                    RuaENumero = table.Column<string>(type: "VARCHAR(200)", nullable: false),
+                    CidadeEstadoCEP = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false),
+                    Complemento = table.Column<string>(type: "VARCHAR(100)", nullable: true),
+                    Numero = table.Column<string>(type: "VARCHAR(13)", nullable: false),
+                    Cpf = table.Column<string>(type: "VARCHAR(14)", nullable: false),
+                    FotoPerfil = table.Column<string>(type: "VARCHAR(300)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Funcionario", x => x.FuncionarioID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Imagens",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImagemID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Caminho = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Imagens", x => x.Id);
+                    table.PrimaryKey("PK_Imagens", x => x.ImagemID);
                 });
 
             migrationBuilder.CreateTable(
@@ -233,6 +254,9 @@ namespace Mercadados_API.Migrations
         {
             migrationBuilder.DropTable(
                 name: "EstoqueProdutos");
+
+            migrationBuilder.DropTable(
+                name: "Funcionario");
 
             migrationBuilder.DropTable(
                 name: "Imagens");
