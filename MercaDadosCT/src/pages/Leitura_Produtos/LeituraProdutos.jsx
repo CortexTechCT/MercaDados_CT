@@ -14,10 +14,7 @@ export const LeituraProdutos = () => {
   return (
     <div className="leitura-container">
       <MenuNormal />
-<<<<<<< HEAD
 
-=======
-=======
       {/* Header */}
       <Header />
       {/* Fundo azul */}
@@ -31,8 +28,7 @@ export const LeituraProdutos = () => {
          </div>
       </header>     
 
-      {/* Quadrado azul principal */}
->>>>>>> d50e02d94a989678f466e3e6a92d49056a1e2412
+
       <div className="fundo-azul">
         <div className="conteudo">
           <div className="produtos">

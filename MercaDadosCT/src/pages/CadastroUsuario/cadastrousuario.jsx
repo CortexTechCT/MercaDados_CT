@@ -1,8 +1,8 @@
 import "./cadastrousuario.css";
 import { useState } from "react";
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
-import { Botao } from "../../components/botao/Botao.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
+import { Botao } from "../../components/botao/Botao.jsx";
 import Swal from "sweetalert2";
 import api from "../../services/Services.js";
 
@@ -20,15 +20,17 @@ export const CadastroUsuario = () => {
     complemento: "",
   });
 
+  // Atualiza o estado conforme os inputs
   function handleChange(e) {
-    setFuncionario({ ...funcionario, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFuncionario({ ...funcionario, [name]: value });
   }
 
+  // Envia os dados para a API
   async function cadastrarFuncionario(e) {
     e.preventDefault();
 
     try {
-      // Formata o objeto conforme seu backend espera
       const funcionarioFormatado = {
         nomeFuncionario: funcionario.nome,
         dataNascimento: funcionario.dataNascimento,
@@ -42,18 +44,16 @@ export const CadastroUsuario = () => {
         senha: funcionario.senha,
       };
 
-      // Faz o POST no backend
-      const response = await api.post("/Funcionario", funcionarioFormatado);
+      const resposta = await api.post("Funcionario", funcionarioFormatado);
 
-      // SweetAlert de sucesso
       Swal.fire({
         icon: "success",
-        title: "Cadastro realizado com sucesso!",
-        text: `Funcionário: ${response.data.nomeFuncionario}`,
+        title: "Funcionário cadastrado com sucesso!",
+        text: `Nome: ${resposta.data.nomeFuncionario}`,
         confirmButtonColor: "#3085d6",
       });
 
-      // Limpa formulário
+      // Limpa os campos
       setFuncionario({
         nome: "",
         dataNascimento: "",
@@ -66,12 +66,13 @@ export const CadastroUsuario = () => {
         telefone: "",
         complemento: "",
       });
+
     } catch (error) {
-      // SweetAlert de erro
+      console.error("❌ Erro ao cadastrar:", error);
       Swal.fire({
         icon: "error",
         title: "Erro ao cadastrar!",
-        text: error.response?.data || error.message,
+        text: error.response?.data?.message || "Não foi possível realizar o cadastro.",
         confirmButtonColor: "#d33",
       });
     }
@@ -82,9 +83,20 @@ export const CadastroUsuario = () => {
       <MenuLateral />
       <div className="conteudo-principal">
         <MenuNormal />
+
         <main className="formulario-box">
           <h2>Cadastro de Funcionário</h2>
+
           <form className="formulario-grid" onSubmit={cadastrarFuncionario}>
+            <input
+              type="text"
+              name="nome"
+              placeholder="Nome completo"
+              value={funcionario.nome}
+              onChange={handleChange}
+              required
+            />
+
             <input
               type="date"
               name="dataNascimento"
@@ -104,15 +116,6 @@ export const CadastroUsuario = () => {
               <option value="Feminino">Feminino</option>
               <option value="Prefiro não dizer">Prefiro não dizer</option>
             </select>
-
-            <input
-              type="text"
-              name="nome"
-              placeholder="Nome completo"
-              value={funcionario.nome}
-              onChange={handleChange}
-              required
-            />
 
             <input
               type="text"
@@ -137,15 +140,6 @@ export const CadastroUsuario = () => {
               name="endereco"
               placeholder="Rua/Avenida, número"
               value={funcionario.endereco}
-              onChange={handleChange}
-              required
-            />
-
-            <input
-              type="password"
-              name="senha"
-              placeholder="Senha"
-              value={funcionario.senha}
               onChange={handleChange}
               required
             />
@@ -176,7 +170,16 @@ export const CadastroUsuario = () => {
               onChange={handleChange}
             />
 
-            <Botao nomeBotao="Cadastrar" tipo="submit" />
+            <input
+              type="password"
+              name="senha"
+              placeholder="Senha"
+              value={funcionario.senha}
+              onChange={handleChange}
+              required
+            />
+
+            <Botao nomeBotao="Cadastrar Funcionário" tipo="submit" />
           </form>
         </main>
       </div>

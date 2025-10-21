@@ -56,6 +56,9 @@ border-top: 0;
   gap: 20px;
   flex-wrap: wrap;
 }
+.Usuario-perfilAdm{
+  background-color: #337DFF;
+}
 
 .grafico-barra-placeholder,
 .grafico-pizza-placeholder {
