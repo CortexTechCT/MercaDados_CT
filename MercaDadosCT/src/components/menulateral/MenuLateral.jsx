@@ -1,8 +1,12 @@
 
 import "./MenuLateral.css";
+
+
 import iconeCasa from '../../assets/casa.png'; // Choose one image source
 import iconeSair from '../../assets/Vector.png';
 import { Link } from "react-router-dom";
+
+
 
 export const MenuLateral = () => {
   return (
@@ -10,7 +14,6 @@ export const MenuLateral = () => {
 
 
    <Link to = "/Home">
-
 
       <img className="CASA" src={iconeCasa} alt="casa" />
    </Link>
