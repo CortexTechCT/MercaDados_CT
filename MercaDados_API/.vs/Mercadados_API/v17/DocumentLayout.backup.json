@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\arquivos\\mercadados_ct\\mercadados_api\\controllers\\feedbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\feedbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\arquivos\\mercadados_ct\\mercadados_api\\contexts\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:contexts\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,6 +43,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FeedbackController.cs",
+              "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\Controllers\\FeedbackController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FeedbackController.cs",
+              "ToolTip": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\Controllers\\FeedbackController.cs",
+              "RelativeToolTip": "Controllers\\FeedbackController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAswEIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T14:11:13.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Context.cs",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\Contexts\\Context.cs",
               "RelativeDocumentMoniker": "Contexts\\Context.cs",
@@ -46,12 +63,11 @@
               "RelativeToolTip": "Contexts\\Context.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T19:38:12.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-16T19:38:12.746Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Funcionario.cs",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\Domains\\Funcionario.cs",
               "RelativeDocumentMoniker": "Domains\\Funcionario.cs",
@@ -63,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "IFuncionarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\Interfaces\\IFuncionarioRepository.cs",
               "RelativeDocumentMoniker": "Interfaces\\IFuncionarioRepository.cs",
@@ -75,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FuncionarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\Repositories\\FuncionarioRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\FuncionarioRepository.cs",
@@ -87,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\arquivos\\MercaDados_CT\\MercaDados_API\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",

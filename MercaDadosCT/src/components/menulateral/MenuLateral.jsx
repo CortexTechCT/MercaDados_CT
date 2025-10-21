@@ -1,17 +1,12 @@
 
 import "./MenuLateral.css";
-<<<<<<< HEAD
+
 
 import iconeCasa from '../../assets/casa.png'; // Choose one image source
 import iconeSair from '../../assets/Vector.png';
 import { Link } from "react-router-dom";
 
 
-=======
-import iconeCasa from '../../assets/casa.png'; // Choose one image source
-import iconeSair from '../../assets/Vector.png';
-import { Link } from "react-router-dom";
->>>>>>> 9eb3cc9ca34842c1cb80d025abe1badc4f982087
 
 export const MenuLateral = () => {
   return (
@@ -20,10 +15,6 @@ export const MenuLateral = () => {
 
    <Link to = "/Home">
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9eb3cc9ca34842c1cb80d025abe1badc4f982087
       <img className="CASA" src={iconeCasa} alt="casa" />
    </Link>
       <nav>

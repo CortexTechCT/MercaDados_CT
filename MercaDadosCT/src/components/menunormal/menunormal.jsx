@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
  import "./menunormal.css";
 ;
-=======
+
 import "./menunormal.css";
 import iconeSino from "../../assets/Alarm.png";
->>>>>>> 9eb3cc9ca34842c1cb80d025abe1badc4f982087
+
 import iconeUsuario from "../../assets/perfil.png";
 import iconeMenu from "../../assets/Hamburguer.png"; 
 import { useState } from "react";

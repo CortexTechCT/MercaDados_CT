@@ -8,7 +8,6 @@ import {Home} from "../pages/Home/home";
 import {LucrosGastos} from "../pages/LucrosGastos/LucrosGastos";
 import {Perfil} from "../pages/Perfil/Perfil";
 
-<<<<<<< HEAD
 
 
  const Rotas = () => {  
@@ -28,27 +27,9 @@ import {Perfil} from "../pages/Perfil/Perfil";
     )
 }
 
-=======
-const Rotas = () => {
-  return (
-  
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/CadastroUsuario" element={<CadastroUsuario />} />
-        <Route path="/Fornecedores" element={<Fornecedores />} />
-        <Route path="/GestaoEstoque" element={<GestaoEstoque />} />
-        <Route path="/LucrosGastos" element={<LucrosGastos />} />
-        <Route path="/AdmFuncionarios" element={<AdmFuncionario />} />
-        <Route path="/Perfil" element={<Perfil />} />
-        <Route path="/Leitura" element={<LeituraProdutos />} />
-        <Route path="/LeituraProdutos" element={<LeituraProdutos />} />
-      </Routes>
-    // </BrowserRouter>
-  );
-};
 
->>>>>>> 9eb3cc9ca34842c1cb80d025abe1badc4f982087
+     
+
 
 export default Rotas;
 

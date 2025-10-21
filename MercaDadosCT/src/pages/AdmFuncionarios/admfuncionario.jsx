@@ -1,26 +1,10 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 9eb3cc9ca34842c1cb80d025abe1badc4f982087
 import "./AdmFuncionario.css";
 import { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
-import iconeUsuario from "../../assets/perfil.png";
+import perfilazul from "../../assets/perfilazul.svg";
 import api from "../../services/Services.js";
-<<<<<<< HEAD
-
-
-
-=======
-import vini from "../../assets/viniciou.jpg";
-import yasmin from "../../assets/IMG_3617 (1).jpeg";
-import matheus from "../../assets/IMG_8991 (1).JPG";
-import higor from "../../assets/IMG_8977 (1).JPG";
-import herik from "../../assets/image (2).png";
-import isaac from "../../assets/171977797.png";
->>>>>>> 9eb3cc9ca34842c1cb80d025abe1badc4f982087
 
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
@@ -51,25 +35,37 @@ export const AdmFuncionario = () => {
   // Gráfico de Barras
   const graficoBarras = {
     series: [
-      { name: "Desempenho", data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2] },
+      {
+        name: "Desempenho",
+        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
+      },
     ],
     options: {
       chart: { type: "bar", height: 250 },
       plotOptions: { bar: { borderRadius: 10, dataLabels: { position: "top" } } },
-      dataLabels: { enabled: true, formatter: (val) => val + "%", offsetY: -20, style: { fontSize: "12px", colors: ["#304758"] } },
-      xaxis: { categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] },
+      dataLabels: {
+        enabled: true,
+        formatter: (val) => val + "%",
+        offsetY: -20,
+        style: { fontSize: "12px", colors: ["#304758"] },
+      },
+      xaxis: {
+        categories: [
+          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+        ],
+      },
     },
   };
 
-  // Buscar funcionários no backend
   useEffect(() => {
     ListarFuncionario();
   }, []);
 
   async function ListarFuncionario() {
     try {
-      const resposta = await api.get("Funcionario"); 
-      console.log("Dados recebidos:", resposta.data);
+      const resposta = await api.get("Funcionario");
+      console.log("✅ Dados recebidos:", resposta.data);
       setListaFuncionario(resposta.data);
     } catch (error) {
       console.log("❌ Erro ao buscar os usuários:", error);
@@ -88,31 +84,42 @@ export const AdmFuncionario = () => {
           <div className="lista-funcionarios">
             {listaFuncionario.length === 0 ? (
               <p className="nenhum-funcionario">Nenhum funcionário encontrado.</p>
-            ) : ( 
+            ) : (
               listaFuncionario.map((f, index) => (
                 <div key={index} className="item-funcionario-wrapper">
-                  <div className="item-funcionario">
+                  <div
+                    className="item-funcionario"
+                    onClick={() => toggleFuncionario(index)}
+                  >
                     <div className="info-funcionario">
-                          <img src={iconeUsuario} className="Usuario-perfilAdm" alt="Usuário" />
-
+                      <img 
+                        src={perfilazul} 
+                        className="Usuario-perfilAdm"
+                        alt="Usuário"
+                      />
                       <p>{f.nomeFuncionario}</p>
                     </div>
 
                     <span
                       className={`seta ${funcAberto === index ? "aberto" : ""}`}
-                      onClick={() => toggleFuncionario(index)}
                     >
                       {funcAberto === index ? "˄" : "˅"}
                     </span>
                   </div>
 
-                  <div className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""}`}>
+                  <div
+                    className={`detalhes-funcionario-transicao ${
+                      funcAberto === index ? "aberto" : ""
+                    }`}
+                  >
                     {funcAberto === index && (
                       <div className="detalhes-funcionario">
                         <div className="header-funcionario-expandido">
                           <div>
                             <strong>{f.nomeFuncionario}</strong>
-                            <span className="funcao">Função: {"Caixa de Vendas"}</span>
+                            <span className="funcao">
+                              Função: {"Caixa de Vendas"}
+                            </span>
                           </div>
                         </div>
 
@@ -122,7 +129,8 @@ export const AdmFuncionario = () => {
                               options={graficoBarras.options}
                               series={graficoBarras.series}
                               type="bar"
-                              height={250}
+                              height={230}
+                              width={370}
                             />
                           </div>
 
@@ -131,7 +139,7 @@ export const AdmFuncionario = () => {
                               options={pizzaChartOptions}
                               series={pizzaChartSeries}
                               type="pie"
-                              width={320}
+                              width={350}
                             />
                           </div>
                         </div>

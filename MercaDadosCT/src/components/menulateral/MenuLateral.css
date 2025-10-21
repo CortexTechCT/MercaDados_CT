@@ -76,6 +76,7 @@
   align-items: center;
   gap: 8px;
   margin-top: 40px;
+  margin-left: 14px;
   padding: 10px 0;
   cursor: pointer;
   transition: color 0.3s ease;

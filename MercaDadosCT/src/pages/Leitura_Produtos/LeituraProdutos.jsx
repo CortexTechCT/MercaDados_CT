@@ -15,24 +15,8 @@ export const LeituraProdutos = () => {
     <div className="leitura-container">
       <MenuNormal />
 
-      {/* Header */}
-      <Header />
-      {/* Fundo azul */}
-      <header className="header">
-        <img src={casa} alt="Home" className="icon" />
-        <div className="header-icons">  
-          <img src={perfil} alt="Perfil" className="icon" />
-        </div>
 
-        <div className="header-right">
-         </div>
-      </header>     
 
-<<<<<<< HEAD
-
-=======
-      {/* Quadrado azul principal */}
->>>>>>> 9eb3cc9ca34842c1cb80d025abe1badc4f982087
       <div className="fundo-azul">
         <div className="conteudo">
           <div className="produtos">

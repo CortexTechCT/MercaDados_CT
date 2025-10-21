@@ -56,9 +56,6 @@ border-top: 0;
   gap: 20px;
   flex-wrap: wrap;
 }
-.Usuario-perfilAdm{
-  background-color: #337DFF;
-}
 
 .grafico-barra-placeholder,
 .grafico-pizza-placeholder {
@@ -77,8 +74,11 @@ border-top: 0;
 .legenda-satisfacao {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 21px;
+    margin-left: 51%;
 }
+
+
 
 .item-legenda {
   display: flex;
@@ -173,20 +173,21 @@ border-top: 0;
   padding: 14px 18px;
   border-radius: 12px;
   border: 1px solid #ddd;
+  cursor: pointer;
   color: #000;
-  gap: 16px; /* adiciona um pequeno espaçamento interno */
+  gap: 16px; 
 }
 
-/* garante alinhamento horizontal da foto e nome */
+
 .info-funcionario {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex: 1; /* ocupa o espaço da esquerda, sem empurrar a seta */
-  min-width: 0; /* impede que o texto quebre por falta de espaço */
+  flex: 1; 
+  min-width: 0; 
 }
 
-/* define o tamanho da imagem */
+
 .foto-funcionario {
   width: 48px;
   height: 48px;
@@ -195,7 +196,6 @@ border-top: 0;
   flex-shrink: 0;
 }
 
-/* nome do funcionário */
 .info-funcionario p {
   margin: 0;
   font-size: 1.1rem;
@@ -203,7 +203,7 @@ border-top: 0;
   color: #1e1e1e;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* adiciona "..." se o nome for longo */
+  text-overflow: ellipsis; 
 }
 
 
@@ -221,9 +221,9 @@ border-top: 0;
 
 
 
-/* --- RESPONSIVIDADE --- */
 
-/* Telas médias (tablets) */
+
+
 @media (max-width: 1024px) {
   .conteudo-principal {
     margin-left: 180px; /* reduz o espaço da lateral */
