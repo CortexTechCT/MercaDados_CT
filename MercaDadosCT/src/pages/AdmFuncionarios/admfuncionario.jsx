@@ -1,23 +1,15 @@
-<<<<<<< HEAD
 import "./AdmFuncionario.css";
 import { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import api from "../../services/Services.js";
-=======
-import "./admfuncionario.css";
-import { useState } from "react";
-import ReactApexChart from "react-apexcharts";
-import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
-import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import vini from "../../assets/viniciou.jpg";
 import yasmin from "../../assets/IMG_3617 (1).jpeg";
 import matheus from "../../assets/IMG_8991 (1).JPG";
 import higor from "../../assets/IMG_8977 (1).JPG";
 import herik from "../../assets/image (2).png";
 import isaac from "../../assets/171977797.png";
->>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
 
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);

@@ -101,17 +101,10 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
 
         <MenuNormal/>
         <main className="fornecedores-box">
-<<<<<<< HEAD
-=======
 
           <div className="painel-box">
 
-
-<<<<<<< HEAD
->>>>>>> 207435599db84fb1fd47b290b9fce492ee9cc117
           <div className="painel-box">
-=======
->>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
 
           <div className="conteudoss">
 
@@ -168,23 +161,14 @@ import { MenuNormal } from "../../components/menunormal/menunormal";
               </div>
             </div>
           </div>
-<<<<<<< HEAD
-          </div>
-=======
 
           </div>
 
+
           </div>
-<<<<<<< HEAD
 
-
-          
-
->>>>>>> 207435599db84fb1fd47b290b9fce492ee9cc117
-                  </div>
-
-=======
->>>>>>> b0050fe402dcb4cc50d02aa37bfa7cfc02f1c679
+          </div>
+                
         </main>
         </div>
       </div>
