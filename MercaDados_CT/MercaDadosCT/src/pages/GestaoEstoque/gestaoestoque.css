@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container-geral-gestaoestoque {
+  background-color: #fff;
+}
+
+.conteudo-principal {
+  margin-left: 240px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.gestaoestoque-box {
+
+  border-radius: 15px;
+  margin: 48px auto;
+  padding: 30px;
+  width: 70%;
+  max-width: 1000px;
+  color: #000;
+}
+
+.gestaoestoque-box h2 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.grafico-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.grafico-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.grafico-box h4 {
+  margin-bottom: 16px;
+  color: #333;
+  font-size: 16px;
+}
+
+.categorias-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.listagem-produtos {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.produtos-h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.produto-card {
+  display: inline-block;
+  background: #A3B2DF;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px;
+  width: 250px;
+  text-align: left;
+  vertical-align: top;
+}
+.produtos-h4{
+    padding: 15px;
+}
+.produto-img {
+  display: block;
+  margin: 0 auto 10px auto;
+  width: 120px;
+}
+
+.produto-info p {
+  margin: 3px 0;
+  color: black;
+  font-size: 14px;
+}
+.listagem-produtos{
+    background-color: #000C38;
+        padding-bottom: 35px;
+        border-radius: 30px;
+}
+
+.categoria-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  color: #000;
+  width: 80px;
+  text-align: center;
+}
+
+.categoria-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .conteudo-principal {
+    margin-left: 0;
+    
+  }
+
+  .gestaoestoque-box {
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .categorias-box {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .categoria-item {
+    width: 60px;
+    font-size: 12px;
+  }
+
+  .produto-card {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .produto-img {
+    width: 100px;
+  }
+
+  .grafico-box {
+    padding: 10px;
+  }
+
+  .grafico-container {
+    gap: 16px;
+  }
+
+  .listagem-produtos {
+    padding: 20px 10px;
+    border-radius: 20px;
+  }
+
+  .produtos-h4 {
+    font-size: 18px;
+  }
+}

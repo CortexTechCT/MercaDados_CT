@@ -1,0 +1,51 @@
+.container-geral-lucroegastos {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+}
+
+.conteudo-principal {
+  margin-left: 240px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.lucroegastos-box {
+  background-color: #EEF3FF;
+  border-radius: 20px;
+  margin: 48px auto;
+  padding: 30px;
+  width: 70%;
+  max-width: 1000px;
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+}
+
+.lucroegastos-box h2 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.grafico-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.grafico-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.grafico-box h4 {
+  margin-bottom: 16px;
+  color: #333;
+  font-size: 16px;
+}
