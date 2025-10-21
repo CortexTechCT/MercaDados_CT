@@ -104,7 +104,11 @@ export const Fornecedores = () => {
 
           <div className="painel-box">
 
+<<<<<<< HEAD
 
+=======
+          <div className="painel-box">
+>>>>>>> 9eb3cc9ca34842c1cb80d025abe1badc4f982087
 
             <div className="conteudoss">
 
@@ -129,6 +133,7 @@ export const Fornecedores = () => {
                       height="100%"
                     />
 
+<<<<<<< HEAD
                   </div>
                 </div>
 
@@ -166,6 +171,49 @@ export const Fornecedores = () => {
             </div>
 
           </div>
+=======
+              </div>
+            </div>
+
+            <div className="fornecedor-card">
+              <img src={nescauLogo} alt="Nescau" className="logo-fornecedor" />
+              <div className="grafico-placeholder">
+                  <ReactApexChart
+                  options={state.options}
+                  series={state.series}
+                  type="bar"
+                  width="90%"
+                  height="100%" 
+                  />
+              </div>
+            </div>
+
+            <div className="fornecedor-card">
+              <img
+                src={duracellLogo}
+                alt="Duracell"
+                className="logo-fornecedor"
+                />
+              <div className="grafico-placeholder">
+                <ReactApexChart
+                  options={state.options}
+                  series={state.series}
+                  type="bar"
+                  width="90%"
+                  height="100%"
+                  />
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+
+          </div>
+
+          </div>
+                
+>>>>>>> 9eb3cc9ca34842c1cb80d025abe1badc4f982087
         </main>
       </div>
     </div>

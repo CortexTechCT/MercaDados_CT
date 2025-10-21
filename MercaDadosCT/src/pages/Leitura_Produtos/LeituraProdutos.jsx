@@ -28,7 +28,11 @@ export const LeituraProdutos = () => {
          </div>
       </header>     
 
+<<<<<<< HEAD
 
+=======
+      {/* Quadrado azul principal */}
+>>>>>>> 9eb3cc9ca34842c1cb80d025abe1badc4f982087
       <div className="fundo-azul">
         <div className="conteudo">
           <div className="produtos">
