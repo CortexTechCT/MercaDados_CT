@@ -4,16 +4,14 @@ import iconeUsuario from "../../assets/perfil.png";
 import iconeMenu from "../../assets/Hamburguer.png"; 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import casa from "../../assets/casa.png"
+import casa from "../../assets/casa.png";
 
-
-
-export const MenuNormal = ({ toggleMenu }) => {
+export const MenuNormal = ({ toggleMenu = () => {} }) => {
   const [menuAberto, setMenuAberto] = useState(false);
 
   const handleMenuClick = () => {
     setMenuAberto(!menuAberto);
-    toggleMenu(); 
+    toggleMenu();
   };
 
   return (
@@ -24,9 +22,8 @@ export const MenuNormal = ({ toggleMenu }) => {
       </div>
 
       <div className="icons-header">
-
         <Link to="/Perfil">
-        <img src={iconeUsuario} className="Usuario-perfil" alt="Usuário" />
+          <img src={iconeUsuario} className="Usuario-perfil" alt="Usuário" />
         </Link>
       </div>
     </header>
