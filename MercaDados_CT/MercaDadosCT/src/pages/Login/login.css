@@ -89,3 +89,27 @@ input:focus {
 button:hover {
   background-color: #e59400;
 }
+
+
+@media (max-width: 600px) {
+  
+.login-box {
+       
+ width: 95%;    
+ border-radius: 18px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 88px 21px;
+    }
+.logo img {
+    height: 100%;
+    margin-bottom: 8px;
+    height: 100px;
+    margin-inline: 70px
+}
+
+input {
+height: 55px;
+ width: 263px;
+ padding: auto;
+    }
+}
+

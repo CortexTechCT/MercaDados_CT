@@ -169,8 +169,8 @@ body {
     display: none;
   }
   .conteudo-principal {
-    margin-left: 0; /* Remove a margem para ocupar toda largura */
-    padding: 16px; /* Opcional, para espaçamento */
+    margin-left: 0; 
+    padding: 16px; 
   }
   .formulario-box {
     padding: 16px;
@@ -185,10 +185,5 @@ body {
     padding: 10px 14px;
   }
 
-  .botao-cadastrar {
-    width: 95%;
-    padding: 8px 0;
-    font-size: 13px;
-    border-radius: 14px;
-  }
+  
 }

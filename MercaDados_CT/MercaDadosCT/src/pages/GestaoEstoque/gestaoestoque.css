@@ -167,4 +167,19 @@
   .produtos-h4 {
     font-size: 18px;
   }
+
+ .apexcharts-title-text{
+
+position: absolute; /* O texto tem posição absoluta */
+  top: 10px; /* Ajuste a distância do topo */
+
+
+} 
+.apexcharts-toolbar{
+
+ position: relative; /* O contêiner pai deve ter posição relativa */
+  width: 100%; 
+
+}
+
 }
