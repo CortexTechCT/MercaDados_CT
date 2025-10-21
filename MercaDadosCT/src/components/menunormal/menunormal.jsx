@@ -1,5 +1,10 @@
+
+ import "./menunormal.css";
+;
+
 import "./menunormal.css";
 import iconeSino from "../../assets/Alarm.png";
+
 import iconeUsuario from "../../assets/perfil.png";
 import iconeMenu from "../../assets/Hamburguer.png"; 
 import { useState } from "react";

@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
+import perfilazul from "../../assets/perfilazul.svg";
 import api from "../../services/Services.js";
+<<<<<<< HEAD:MercaDadosCT/src/pages/AdmFuncionario/admfuncionario.jsx
 
 // // Imagens renomeadas corretamente
 // import vini from "../../assets/viniciou.jpg";
@@ -12,6 +14,8 @@ import api from "../../services/Services.js";
 // import higor from "../../assets/IMG_8977_1.png";
 // import herik from "../../assets/image_2.png";
 // import isaac from "../../assets/171977797.png";
+=======
+>>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22:MercaDadosCT/src/pages/AdmFuncionarios/admfuncionario.jsx
 
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
@@ -43,7 +47,11 @@ export const AdmFuncionario = () => {
     series: [
       {
         name: "Desempenho",
+<<<<<<< HEAD:MercaDadosCT/src/pages/AdmFuncionario/admfuncionario.jsx
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
+=======
+        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
+>>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22:MercaDadosCT/src/pages/AdmFuncionarios/admfuncionario.jsx
       },
     ],
     options: {
@@ -55,19 +63,31 @@ export const AdmFuncionario = () => {
         offsetY: -20,
         style: { fontSize: "12px", colors: ["#304758"] },
       },
+<<<<<<< HEAD:MercaDadosCT/src/pages/AdmFuncionario/admfuncionario.jsx
       xaxis: { categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] },
     },
   };
 
   // Buscar funcionários do backend
+=======
+      xaxis: {
+        categories: [
+          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+        ],
+      },
+    },
+  };
+
+>>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22:MercaDadosCT/src/pages/AdmFuncionarios/admfuncionario.jsx
   useEffect(() => {
     ListarFuncionario();
   }, []);
 
   async function ListarFuncionario() {
     try {
-      const resposta = await api.get("Funcionario"); 
-      console.log("Dados recebidos:", resposta.data);
+      const resposta = await api.get("Funcionario");
+      console.log("✅ Dados recebidos:", resposta.data);
       setListaFuncionario(resposta.data);
     } catch (error) {
       console.log("❌ Erro ao buscar os usuários:", error);
@@ -89,31 +109,47 @@ export const AdmFuncionario = () => {
             ) : (
               listaFuncionario.map((f, index) => (
                 <div key={index} className="item-funcionario-wrapper">
-                  <div className="item-funcionario">
+                  <div
+                    className="item-funcionario"
+                    onClick={() => toggleFuncionario(index)}
+                  >
                     <div className="info-funcionario">
+<<<<<<< HEAD:MercaDadosCT/src/pages/AdmFuncionario/admfuncionario.jsx
                       <img
                         src={f.fotoPerfil ? `https://localhost:7115${f.fotoPerfil}` : "/assets/default.png"}
                         alt={f.nomeFuncionario}
                         className="foto-funcionario"
                       />  
+=======
+                      <img 
+                        src={perfilazul} 
+                        className="Usuario-perfilAdm"
+                        alt="Usuário"
+                      />
+>>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22:MercaDadosCT/src/pages/AdmFuncionarios/admfuncionario.jsx
                       <p>{f.nomeFuncionario}</p>
                     </div>
 
                     <span
                       className={`seta ${funcAberto === index ? "aberto" : ""}`}
-                      onClick={() => toggleFuncionario(index)}
                     >
                       {funcAberto === index ? "˄" : "˅"}
                     </span>
                   </div>
 
-                  <div className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""}`}>
+                  <div
+                    className={`detalhes-funcionario-transicao ${
+                      funcAberto === index ? "aberto" : ""
+                    }`}
+                  >
                     {funcAberto === index && (
                       <div className="detalhes-funcionario">
                         <div className="header-funcionario-expandido">
                           <div>
                             <strong>{f.nomeFuncionario}</strong>
-                            <span className="funcao">Função: {"Caixa de Vendas"}</span>
+                            <span className="funcao">
+                              Função: {"Caixa de Vendas"}
+                            </span>
                           </div>
                         </div>
 
@@ -123,7 +159,8 @@ export const AdmFuncionario = () => {
                               options={graficoBarras.options}
                               series={graficoBarras.series}
                               type="bar"
-                              height={250}
+                              height={230}
+                              width={370}
                             />
                           </div>
 
@@ -132,7 +169,7 @@ export const AdmFuncionario = () => {
                               options={pizzaChartOptions}
                               series={pizzaChartSeries}
                               type="pie"
-                              width={320}
+                              width={350}
                             />
                           </div>
                         </div>

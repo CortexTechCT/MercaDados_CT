@@ -4,37 +4,69 @@
   align-items: center;
   padding: 12px 24px;
   background-color: #0E1A3D;
+<<<<<<< HEAD
   padding-left: 89%;
   padding-left: 89%;
   padding-left: 85%;
   padding-left: 89%;
   padding-left: 85%;
   border-bottom: 2px solid  #162A63;
+=======
+
+ padding-left: 89%;
+
+  padding-left: 89%;
+
+
+padding-left: 85%;
+
+  padding-left: 89%;
+  padding-left: 85%;
+  border-bottom: 2px solid  #162A63;
+
+>>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
 }
 
 .icone-sino {
   margin-top: 2px;
   padding-left: 78%;
+<<<<<<< HEAD
   border-bottom: 0.1px solid #162A63;
 
   border-bottom: 2px solid #162A63;
    
+=======
+>>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
 
   border-bottom: 0.1px solid #162A63;
 
   border-bottom: 2px solid #162A63;
 
+<<<<<<< HEAD
+=======
+
+  border-bottom: 0.1px solid #162A63;
+
+  border-bottom: 2px solid #162A63;
+
+>>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
 }
 
 .Usuario-perfil {
   display: flex;
   transition: transform 0.5s ease, background-color 0.9s ease;
   align-items: center;
+  
 }
 
 .Usuario-perfil:hover {
   transform: scale(1.2);
+<<<<<<< HEAD
 }  
+=======
+}
+>>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
+
 
 .icons-header {
   display: flex;
@@ -47,8 +79,17 @@
   width: 32px;
   height: 32px;
   object-fit: contain;
+<<<<<<< HEAD
   display: block;      
   display: block;
+=======
+
+  display: block;      
+
+
+  display: block;
+
+>>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
   position: relative;
   left: 20%;
 
@@ -57,6 +98,10 @@
 .icons-header img {
   width: 36px;
   cursor: pointer;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
 }
 
 .menu-hamburguer {
@@ -73,7 +118,7 @@
 @media (max-width: 1024px) {
   .menu-hamburguer {
     display: flex;
-    /* display: block; */
+
     justify-content: flex-start;
   }
 }

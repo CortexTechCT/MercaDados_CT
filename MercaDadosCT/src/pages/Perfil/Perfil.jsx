@@ -3,6 +3,7 @@ import { MenuLateral } from "../../components/menulateral/MenuLateral";
 import { MenuNormal } from "../../components/menunormal/menunormal";
 import iconeUsuario from "../../assets/perfil.png";
 
+
 export const Perfil = () => {
   return (
     <div className="container-geral-admfuncionario">
@@ -14,7 +15,7 @@ export const Perfil = () => {
           <div className="perfil-header">
             <img className="Logo-perfil" src={iconeUsuario} alt="Usuário" />
             <div className="perfil-info">
-              <h2>Isaac Borges</h2>
+              <h2>Jucelino</h2>
               <p>Administrador</p>
             </div>
           </div>
@@ -22,12 +23,12 @@ export const Perfil = () => {
           <div className="perfil-dados">
             <div className="campo-perfil">
               <label>Nome completo</label>
-              <input type="text" value="Isaac Borges de Oliveira" readOnly />
+              <input type="text" value="Jucelino da Silva" readOnly />
             </div>
 
             <div className="campo-perfil">
               <label>Email</label>
-              <input type="email" value="isaac@empresa.com" readOnly />
+              <input type="email" value="Jucelino@gmail.com" readOnly />
             </div>
 
             <div className="campo-perfil">
@@ -36,14 +37,16 @@ export const Perfil = () => {
             </div>
 
             <div className="campo-perfil">
+              <label>CPF</label>
+              <input type="text" value="*********911" readOnly />
+            </div>
+
+            <div className="campo-perfil">
               <label>Função</label>
               <input type="text" value="Administrador do Sistema" readOnly />
             </div>
 
-            <div className="botoes-perfil">
-              <button className="btn-editar">Editar Perfil</button>
-             
-            </div>
+      
           </div>
         </main>
       </div>
