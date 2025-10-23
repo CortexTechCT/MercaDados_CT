@@ -47,7 +47,7 @@ namespace Mercadados_API.Controllers
                 {
                   new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.UsuarioID.ToString()),
                   new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
-                  new Claim("TipoUsuario", usuarioBuscado.TipoUsuario?.TituloTipoUsuario ?? "Desconhecido")
+                  new Claim("TituloTipoUsuario", usuarioBuscado.TipoUsuario?.TituloTipoUsuario ?? "Desconhecido")
               };
 
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtKey));

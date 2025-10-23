@@ -1,176 +1,198 @@
-<<<<<<< HEAD
-import "./admfuncionario.css";
-import { useState } from "react";
-=======
 import "./AdmFuncionario.css";
-import { useState, useEffect } from "react"; // 👈 importa o useEffect
->>>>>>> 0012f210671cdd031baf72f565fbec06813aca24
+import { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
-
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
+import perfilazul from "../../assets/perfilazul.svg";
+import api from "../../services/Services.js";
 
-import vini from "../../assets/viniciou.jpg";
-import yasmin from "../../assets/IMG_3617 (1).jpeg";
-import matheus from "../../assets/IMG_8991 (1).JPG";
-import higor from "../../assets/IMG_8977 (1).JPG";
-import herik from "../../assets/image (2).png";
-import isaac from "../../assets/171977797.png";
+ // Imagens (mantidas caso sejam usadas futuramente)
+// import vini from "../../assets/viniciou.jpg";
+// import yasmin from "../../assets/IMG_3617_1.png";
+// import matheus from "../../assets/IMG_8991_1.png";
+// import higor from "../../assets/IMG_8977_1.png";
+// import herik from "../../assets/image_2.png";
+// import isaac from "../../assets/171977797.png";
 
 export const AdmFuncionario = () => {
-    const [funcAberto, setFuncAberto] = useState(null);
+  const [listaFuncionario, setListaFuncionario] = useState([]);
+  const [funcAberto, setFuncAberto] = useState(null);
 
+  const toggleFuncionario = (index) => {
+    setFuncAberto(funcAberto === index ? null : index);
+  };
 
-    
-
-    const funcionarios = [
-        { nome: "Vini", foto: vini },
-        { nome: "Yasmin", foto: yasmin },
-        { nome: "Matheus", foto: matheus },
-        { nome: "Higor", foto: higor },
-        { nome: "Herik", foto: herik },
-        { nome: "Isaac", foto: isaac },
-    ];
-
-    const toggleFuncionario = (index) => {
-        setFuncAberto(funcAberto === index ? null : index);
-    };
-
-    const pizzaChartOptions = {
-        chart: {
-            width: 380,
-            type: "pie",
-        },
-        labels: ["Satisfeito", "Neutro", "Insatisfeito"],
-        colors: ["#337DFF", "#FFC043", "#FF5A5F"],
-        responsive: [
-            {
-                breakpoint: 480,
-                options: {
-                    chart: {
-                        width: 250,
-                    },
-                    legend: {
-                        position: "bottom",
-                    },
-                },
-            },
-        ],
-    };
-
-    const pizzaChartSeries = [44, 30, 26];
-
-    const graficoBarras = {
-        series: [
-            {
-                name: "Inflation",
-                data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-            },
-        ],
+  // Gráfico de Pizza
+  const pizzaChartOptions = {
+    chart: { width: 380, type: "pie" },
+    labels: ["Satisfeito", "Neutro", "Insatisfeito"],
+    colors: ["#337DFF", "#FFC043", "#FF5A5F"],
+    responsive: [
+      {
+        breakpoint: 480,
         options: {
-            chart: { type: "bar", height: 250 },
-            plotOptions: {
-                bar: {
-                    borderRadius: 10,
-                    dataLabels: { position: "top" },
-                },
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: (val) => val + "%",
-                offsetY: -20,
-                style: {
-                    fontSize: "12px",
-                    colors: ["#304758"],
-                },
-            },
-            xaxis: {
-                categories: [
-                    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-                ],
-            },
+          chart: { width: 250 },
+          legend: { position: "bottom" },
         },
-    };
+      },
+    ],
+  };
+  const pizzaChartSeries = [44, 30, 26];
 
-    return (
-        <div className="container-geral-admfuncionario">
-            <MenuLateral />
-            <div className="conteudo-principal">
-                <MenuNormal />
+  // Gráfico de Barras
+  const graficoBarras = {
+    series: [
+      {
+        name: "Desempenho",
+        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
+      },
+    ],
+    options: {
+      chart: { type: "bar", height: 250 },
+      plotOptions: {
+        bar: {
+          borderRadius: 10,
+          dataLabels: { position: "top" },
+        },
+      },
+      dataLabels: {
+        enabled: true,
+        formatter: (val) => val + "%",
+        offsetY: -20,
+        style: { fontSize: "12px", colors: ["#304758"] },
+      },
+      xaxis: {
+        categories: [
+          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+        ],
+      },
+    },
+  };
 
-                <main className="funcionario-box">
-                    <h2>Gestão de funcionários:</h2>
-                    <div className="lista-funcionarios">
-                        {funcionarios.map((f, index) => (
-                            <div key={index} className="item-funcionario-wrapper">
-                                <div className="item-funcionario">
-                                    <div className="info-funcionario">
-                                        <img src={f.foto} alt={f.nome} className="foto-funcionario" />
-                                        <span>{f.nome}</span>
-                                    </div>
-                                    <span
-                                        className={`seta ${funcAberto === index ? "aberto" : ""}`}
-                                        onClick={() => toggleFuncionario(index)}
-                                    >
-                                        {funcAberto === index ? "˄" : "˅"}
-                                    </span>
-                                </div>
+  // Buscar funcionários do backend
+  useEffect(() => {
+    ListarFuncionario();
+  }, []);
 
-                                <div
-                                    className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""
-                                        }`}
-                                >
-                                    {funcAberto === index && (
-                                        <div className="detalhes-funcionario">
-                                            <div className="header-funcionario-expandido">
-                                                <div>
-                                                    <strong>{f.nome}</strong>
-                                                    <span className="funcao">Função: Caixa de Vendas</span>
-                                                </div>
-                                            </div>
+  async function ListarFuncionario() {
+    try {
+      const resposta = await api.get("Funcionario");
+      console.log("Dados recebidos:", resposta.data);
+      setListaFuncionario(resposta.data);
+    } catch (error) {
+      console.log("Erro ao buscar os usuários:", error);
+    }
+  }
 
-                                            <div className="graficos-funcionario">
-                                                <div className="grafico-barra-placeholder">
-                                                    <ReactApexChart
-                                                        options={graficoBarras.options}
-                                                        series={graficoBarras.series}
-                                                        type="bar"
-                                                        height={250}
-                                                    />
-                                                </div>
-                                                <div className="grafico-pizza-placeholder">
-                                                    <ReactApexChart
-                                                        options={pizzaChartOptions}
-                                                        series={pizzaChartSeries}
-                                                        type="pie"
-                                                        width={320}
-                                                    />
-                                                </div>
-                                            </div>
+  return (
+    <div className="container-geral-admfuncionario">
+      <MenuLateral />
+      <div className="conteudo-principal">
+        <MenuNormal />
 
-                                            <div className="legenda-satisfacao">
-                                                <div className="item-legenda">
-                                                    <div className="cor azul"></div>
-                                                    <span>🙂</span>
-                                                </div>
-                                                <div className="item-legenda">
-                                                    <div className="cor amarelo"></div>
-                                                    <span>😐</span>
-                                                </div>
-                                                <div className="item-legenda">
-                                                    <div className="cor vermelho"></div>
-                                                    <span>😠</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
+        <main className="funcionario-box">
+          <h2>Gestão de funcionários:</h2>
+
+          <div className="lista-funcionarios">
+            {listaFuncionario.length === 0 ? (
+              <p className="nenhum-funcionario">Nenhum funcionário encontrado.</p>
+            ) : (
+              listaFuncionario.map((f, index) => (
+                <div key={index} className="item-funcionario-wrapper">
+                  <div
+                    className="item-funcionario"
+                    onClick={() => toggleFuncionario(index)}
+                  >
+                    <div className="info-funcionario">
+                      <img
+                        src={
+                          f.fotoPerfil
+                            ? `https://localhost:7115${f.fotoPerfil}`
+                            : "/assets/default.png"
+                        }
+                        alt={f.nomeFuncionario}
+                        className="foto-funcionario"
+                      />
+
+                      <img
+                        src={perfilazul}
+                        className="Usuario-perfilAdm"
+                        alt="Usuário"
+                      />
+
+                      <p>{f.nomeFuncionario}</p>
                     </div>
-                </main>
-            </div>
-        </div>
-    );
+
+                    <span
+                      className={`seta ${funcAberto === index ? "aberto" : ""}`}
+                    >
+                      {funcAberto === index ? "˄" : "˅"}
+                    </span>
+                  </div>
+
+                  <div
+                    className={`detalhes-funcionario-transicao ${
+                      funcAberto === index ? "aberto" : ""
+                    }`}
+                  >
+                    {funcAberto === index && (
+                      <div className="detalhes-funcionario">
+                        <div className="header-funcionario-expandido">
+                          <div>
+                            <strong>{f.nomeFuncionario}</strong>
+                            <span className="funcao">
+                              Função: {"Caixa de Vendas"}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="graficos-funcionario">
+                          <div className="grafico-barra-placeholder">
+                            <ReactApexChart
+                              options={graficoBarras.options}
+                              series={graficoBarras.series}
+                              type="bar"
+                              height={230}
+                              width={370}
+                            />
+                          </div>
+
+                          <div className="grafico-pizza-placeholder">
+                            <ReactApexChart
+                              options={pizzaChartOptions}
+                              series={pizzaChartSeries}
+                              type="pie"
+                              width={350}
+                            />
+                          </div>
+                        </div>
+
+                        <div className="legenda-satisfacao">
+                          <div className="item-legenda">
+                            <div className="cor azul"></div>
+                            <span>🙂</span>
+                          </div>
+                          <div className="item-legenda">
+                            <div className="cor amarelo"></div>
+                            <span>😐</span>
+                          </div>
+                          <div className="item-legenda">
+                            <div className="cor vermelho"></div>
+                            <span>😠</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </main>
+      </div>
+    </div>
+  );
 };
+
+export default AdmFuncionario;

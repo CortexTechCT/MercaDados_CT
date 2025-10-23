@@ -3,6 +3,7 @@ using Mercadados_API.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace Mercadados_API.Controllers
 {
     [Route("api/[controller]")]
@@ -22,6 +23,11 @@ namespace Mercadados_API.Controllers
         {
             try
             {
+                if (funcionario.Usuario != null && funcionario.Usuario.TipoUsuario != null)
+                {
+                    funcionario.Usuario.TipoUsuario.TituloTipoUsuario = "Funcionario";
+                }
+
                 _funcionarioRepository.Cadastrar(funcionario);
                 return StatusCode(201, funcionario);
             }

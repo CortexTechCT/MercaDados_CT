@@ -55,5 +55,9 @@ namespace Mercadados_API.Domains
         [Column(TypeName = "VARCHAR(14)")]
         [Required(ErrorMessage = "O CPF/CNPJ do usuário é obrigatória!")]
         public string? Cpf { get; set; }
+
+        [ForeignKey("Usuario")]
+        public Guid UsuarioID { get; set; }
+        public Usuario? Usuario { get; set; }
     }
 }

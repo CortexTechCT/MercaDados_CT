@@ -1,6 +1,7 @@
 ﻿using Mercadados_API.Contexts;
 using Mercadados_API.Domains;
 using Mercadados_API.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Mercadados_API.Repositories
@@ -17,6 +18,7 @@ namespace Mercadados_API.Repositories
             try
             {
                 Usuario usuarioBuscado = _context.Usuario
+                    .Include(u => u.TipoUsuario)
                     .FirstOrDefault(u =>
                         u.Email == email &&
                         u.Senha == senha)!;
