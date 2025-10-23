@@ -1,6 +1,7 @@
 import "./login.css";
 import {Botao} from '../../components/botao/Botao.jsx'
 import logo from '../../assets/ChatGPT Image 23_09_2025, 11_25_31 1.png'; 
+import { Link } from "react-router";
 
 export const Login = () => {
   return (
@@ -22,6 +23,10 @@ export const Login = () => {
           </div>
 
      <Botao nomeBotao="Entrar" />
+     <Link to= "/home">
+     
+     
+     </Link>
         </form>
       </div>
     </div>

@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .container-geral-home {
   display: flex;
   height: 100vh;
@@ -47,6 +57,7 @@
   width: 90%;
   max-width: 1200px;
   color: #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .cards-dashboard {
@@ -117,6 +128,17 @@
 /* ========================= */
 /* ===== RESPONSIVIDADE ==== */
 /* ========================= */
+@media (max-width: 600px) {
+.grafico-box-home{
+
+padding: 1px;
+
+}
+
+
+
+}
+
 
 @media (max-width: 1024px) {
   .conteudo-principal {

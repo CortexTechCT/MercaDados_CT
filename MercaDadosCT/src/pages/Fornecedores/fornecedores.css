@@ -45,13 +45,12 @@
 }
 
 .conteudoss{
-background-color:   conteudoss#333;
+background-color:conteudoss#333;
 }
 .fornecedores-lista {
     display: flex;
     flex-direction: column;
     margin: 74px auto;
-
     width: 75%;
     gap: 20px;
 
