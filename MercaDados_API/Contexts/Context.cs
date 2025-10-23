@@ -1,4 +1,5 @@
 ﻿using Mercadados_API.Domains;
+using Mercadados_API.DTO;
 using Mercadados_API.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,11 +24,13 @@ namespace Mercadados_API.Contexts
         public DbSet<EstoqueProdutos> EstoqueProdutos { get; set; }
         public DbSet<Feedback> Feedback { get; set; }
         public DbSet<Imagem> Imagens { get; set; }
+        public DbSet<Funcionario> Funcionario { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=cortextech.database.windows.net; Database=MercaDados; User id=cortexdb; Pwd=Senai@134; TrustServerCertificate=true");
+                optionsBuilder.UseSqlServer("Server=servedbcortex.database.windows.net; Database=MercaDados; User id=cortexdb; Pwd=Senai@134; TrustServerCertificate=true");
             }
         }
     };

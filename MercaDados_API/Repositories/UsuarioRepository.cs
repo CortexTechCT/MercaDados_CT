@@ -1,31 +1,29 @@
 ﻿using Mercadados_API.Contexts;
 using Mercadados_API.Domains;
 using Mercadados_API.Interfaces;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Mercadados_API.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
         private readonly Context _context;
+
         public UsuarioRepository(Context context)
         {
             _context = context;
         }
-        public Usuario BuscaPorEmailSenha(string email, string senha)
+
+        public void Cadastrar(Usuario usuario)
         {
             try
             {
-                Usuario usuarioBuscado = _context.Usuario
-                    .FirstOrDefault(u =>
-                        u.Email == email &&
-                        u.Senha == senha)!;
-
-                return usuarioBuscado;
+                usuario.UsuarioID = Guid.NewGuid();
+                _context.Usuario.Add(usuario);
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception("Erro ao buscar usuário: " + ex.Message);
+                throw;
             }
         }
 
@@ -33,28 +31,25 @@ namespace Mercadados_API.Repositories
         {
             try
             {
-                Usuario usuarioBuscado = _context.Usuario.FirstOrDefault(u => u.UsuarioID == id)!;
-                return usuarioBuscado;
-
+                return _context.Usuario.Find(id)!;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception("Erro ao buscar usuário por ID: " + ex.Message);
+                throw;
             }
         }
 
-        public void Cadastrar(Usuario usuario)
+        public Usuario BuscaPorEmailSenha(string email, string senha)
         {
             try
             {
-                _context.Usuario.Add(usuario);
-                _context.SaveChanges();
-
+                return _context.Usuario.FirstOrDefault(u => u.Email == email && u.Senha == senha)!;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception("Erro ao cadastrar usuário: " + ex.Message);
+                throw;
             }
         }
+
     }
 }

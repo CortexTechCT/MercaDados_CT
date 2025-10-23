@@ -90,6 +90,59 @@ namespace Mercadados_API.Migrations
                     b.ToTable("Feedback");
                 });
 
+            modelBuilder.Entity("Mercadados_API.Domains.Funcionario", b =>
+                {
+                    b.Property<Guid>("FuncionarioID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CidadeEstadoCEP")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("VARCHAR(200)");
+
+                    b.Property<string>("Complemento")
+                        .HasColumnType("VARCHAR(100)");
+
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(14)");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("DATE");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)");
+
+                    b.Property<string>("FotoPerfil")
+                        .HasColumnType("VARCHAR(300)");
+
+                    b.Property<string>("Genero")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)");
+
+                    b.Property<string>("NomeFuncionario")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)");
+
+                    b.Property<string>("Numero")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(13)");
+
+                    b.Property<string>("RuaENumero")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(200)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(100)");
+
+                    b.HasKey("FuncionarioID");
+
+                    b.ToTable("Funcionario");
+                });
+
             modelBuilder.Entity("Mercadados_API.Domains.ItemVenda", b =>
                 {
                     b.Property<Guid>("ItemVendaID")
@@ -218,11 +271,9 @@ namespace Mercadados_API.Migrations
 
             modelBuilder.Entity("Mercadados_API.Models.Imagem", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("ImagemID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Caminho")
                         .IsRequired()
@@ -234,7 +285,7 @@ namespace Mercadados_API.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ImagemID");
 
                     b.ToTable("Imagens");
                 });

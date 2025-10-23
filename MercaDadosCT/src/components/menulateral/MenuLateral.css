@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 24px 16px;
-  border-right: 1px solid #162A63;
+  border-right: 3px solid #162A63;
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -35,16 +35,16 @@
 .menu-lateral nav li {
   margin-bottom: 10px;
   border-radius: 10px;
-  overflow: hidden; /* para deixar o efeito do background legal */
+  overflow: hidden; 
 }
 
 .menu-lateral nav li:last-child {
   margin-bottom: 0;
 }
 
-/* Estilo para o Link dentro do li */
+
 .menu-lateral nav li a {
-  display: block; /* faz o link ocupar todo o li */
+  display: block; 
   padding: 12px 16px;
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
@@ -76,6 +76,7 @@
   align-items: center;
   gap: 8px;
   margin-top: 40px;
+  margin-left: 14px;
   padding: 10px 0;
   cursor: pointer;
   transition: color 0.3s ease;

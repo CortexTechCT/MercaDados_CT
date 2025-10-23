@@ -1,4 +1,6 @@
-﻿namespace Mercadados_API.DTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Mercadados_API.DTO
 {
     public class PutImagemDto
     {

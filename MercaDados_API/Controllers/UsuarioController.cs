@@ -17,6 +17,7 @@ namespace Mercadados_API.Controllers
         private readonly IUsuarioRepository _usuarioRepository;
         private const string JwtKey = "eventos-chave-autenticacao-Mercadados-dev";
         private const int JwtExpireMinutes = 5;
+
         public UsuarioController(IUsuarioRepository usuarioRepository)
         {
             _usuarioRepository = usuarioRepository;
@@ -41,11 +42,10 @@ namespace Mercadados_API.Controllers
         {
             try
             {
-                Usuario usuario = _usuarioRepository.BuscarPorId(id);
+                var usuario = _usuarioRepository.BuscarPorId(id);
                 if (usuario == null)
-                {
                     return NotFound("Usuário não encontrado.");
-                }
+
                 return Ok(usuario);
             }
             catch (Exception e)
@@ -53,5 +53,6 @@ namespace Mercadados_API.Controllers
                 return BadRequest(e.Message);
             }
         }
+    
     }
 }

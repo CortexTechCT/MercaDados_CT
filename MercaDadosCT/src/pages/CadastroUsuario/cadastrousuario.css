@@ -22,6 +22,28 @@ body {
 
 
 
+.formulario-grid select {
+  background-color: #162A63;
+  border: 2px solid #264fbd;
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  appearance: none; /* remove a seta padrão do navegador */
+  height: 45px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.formulario-grid select option {
+  background-color: #162A63;
+  color: white;
+}
+
+
+
 .formulario-box {
   background-color: #0E1A3D;  
   border: 2.9px solid #F97316;

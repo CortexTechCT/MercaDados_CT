@@ -1,6 +1,8 @@
+using System.Globalization;
 using Mercadados_API.Contexts;
 using Mercadados_API.Interfaces;
 using Mercadados_API.Repositories;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -33,6 +35,7 @@ builder.Services.AddScoped<IProdutosRepository, ProdutosRepository>();
 builder.Services.AddScoped<ITipoUsuarioRepository, TipoUsuarioRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IVendaRepository, VendaRepository>();
+builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 
 //Adicionar o serviço de Controllers
 builder.Services.AddControllers();
@@ -45,7 +48,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "API",
-        Description = "Aplicaçao para gerenciamento de Games",
+        Description = "Aplicaçao para gerenciamento de dados",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {
@@ -74,6 +77,8 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+
 
 if (app.Environment.IsDevelopment())
 {

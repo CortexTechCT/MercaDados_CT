@@ -25,8 +25,13 @@ export const Login = () => {
      <Botao nomeBotao="Entrar" />
      <Link to= "/home">
      
+<<<<<<< HEAD
      
      </Link>
+=======
+     aaaa
+     </Link>  
+>>>>>>> 85db17fb182ea78c88e074d961f398611672061c
         </form>
       </div>
     </div>
