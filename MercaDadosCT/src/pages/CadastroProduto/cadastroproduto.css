@@ -60,6 +60,7 @@ main {
 .formulario-box {
   background-color: #eff3ff;
   border-radius: 30px;
+  margin: 18px auto;
   margin: 46px auto;
   padding: 40px;
   max-width: 1000px;
@@ -88,7 +89,6 @@ main {
   border: 2px solid #264fbd;
   border-radius: 22px;
   padding: 12px 16px;
-  color: white;
   font-size: 14px;
   outline: none;
 }
@@ -140,6 +140,7 @@ button {
 /* Tablets */
 @media (max-width: 1024px) {
   .formulario-box {
+    margin: 39px;
     width: 90%;
     padding: 30px 20px;
     border-radius: 24px;
@@ -173,7 +174,10 @@ button {
 
 
 @media (max-width: 600px) {
-  
+
+
+  .Perfil-Logo {
+    margin: 9px;
 
   .formulario-box {
     width: 95%;
@@ -221,4 +225,5 @@ button {
     width: 100%;
     max-width: 280px;
   }
+}
 }

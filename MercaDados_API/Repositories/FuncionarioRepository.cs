@@ -97,5 +97,24 @@ namespace Mercadados_API.Repositories
                 throw;
             }
         }
+
+        public void AtualizarFoto(Guid id, string caminhoFoto)
+        {
+            try
+            {
+                var usuarioBuscado = _context.Funcionario.Find(id);
+                if (usuarioBuscado == null)
+                    throw new Exception("Usuário não encontrado.");
+
+                usuarioBuscado.FotoPerfil = caminhoFoto;
+
+                _context.Funcionario.Update(usuarioBuscado);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
