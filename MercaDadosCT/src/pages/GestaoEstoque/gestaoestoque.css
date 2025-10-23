@@ -1,4 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
 /* ======== CONTAINERS GERAIS ======== */
+
 .container-geral-gestaoestoque {
   background-color: #fff;
 }
@@ -162,6 +174,78 @@
     padding: 0 10px;
   }
 
+
+.categoria-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .conteudo-principal {
+    margin-left: 0;
+    
+  }
+
+  .gestaoestoque-box {
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .categorias-box {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .categoria-item {
+    width: 60px;
+    font-size: 12px;
+  }
+
+  .produto-card {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .produto-img {
+    width: 100px;
+  }
+
+  .grafico-box {
+    padding: 10px;
+  }
+
+  .grafico-container {
+    gap: 16px;
+  }
+
+  .listagem-produtos {
+    padding: 20px 10px;
+    border-radius: 20px;
+  }
+
+  .produtos-h4 {
+    font-size: 18px;
+  }
+
+ .apexcharts-title-text{
+
+position: absolute; /* O texto tem posição absoluta */
+  top: 10px; /* Ajuste a distância do topo */
+
+
+} 
+.apexcharts-toolbar{
+
+ position: relative; /* O contêiner pai deve ter posição relativa */
+  width: 100%; 
+
+}
+
+}
+
   .categoria-item {
     flex: 0 0 120px;
   }
@@ -176,3 +260,4 @@
     padding: 5px;
   }
 }
+

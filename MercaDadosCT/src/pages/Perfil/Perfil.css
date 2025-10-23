@@ -1,10 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0E1A3D; /* ou a cor do seu fundo */
+  height: 100vh;
+}
+
 .conteudo-principal-perfil {
   margin-left: 240px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  background-color: #f5f5f5;
+
+  background-color: #0e1a3d;
+
   color: #f97316;
 
 
@@ -90,3 +108,61 @@
   margin-top: 25px;
 }
 
+
+.btn-editar,
+.btn-senha {
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-editar {
+  background-color: #f97316;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #ff861f;
+  transform: scale(1.05);
+}
+
+.btn-senha {
+  background-color: transparent;
+  border: 1.5px solid #f97316;
+  color: #f97316;
+}
+
+.btn-senha:hover {
+  background-color: #f97316;
+  color: white;
+  transform: scale(1.05);
+}
+@media (max-width: 1024px) {
+.conteudo-principal-perfil {
+    margin-left: 2px;
+}
+
+.Perfil-Logo{
+        padding-block-start: 100px;
+margin: 175px auto;
+
+}
+
+}
+
+@media (max-width: 600px) {
+  
+  .Perfil-Logo {
+        margin: 60px auto;
+        width: 95%;
+        padding: 20px 15px;
+        border-radius: 18px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding-block-start: 70px
+    }
+
+  
+}
