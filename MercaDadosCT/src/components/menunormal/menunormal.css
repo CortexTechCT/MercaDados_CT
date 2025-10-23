@@ -4,14 +4,14 @@
   align-items: center;
   padding: 12px 24px;
   background-color: #0E1A3D;
-<<<<<<< HEAD
+
   padding-left: 89%;
   padding-left: 89%;
   padding-left: 85%;
   padding-left: 89%;
   padding-left: 85%;
   border-bottom: 2px solid  #162A63;
-=======
+
 
  padding-left: 89%;
 
@@ -24,32 +24,25 @@ padding-left: 85%;
   padding-left: 85%;
   border-bottom: 2px solid  #162A63;
 
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
 }
 
 .icone-sino {
   margin-top: 2px;
   padding-left: 78%;
-<<<<<<< HEAD
+
   border-bottom: 0.1px solid #162A63;
 
   border-bottom: 2px solid #162A63;
    
-=======
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
+
 
   border-bottom: 0.1px solid #162A63;
 
   border-bottom: 2px solid #162A63;
-
-<<<<<<< HEAD
-=======
-
   border-bottom: 0.1px solid #162A63;
 
   border-bottom: 2px solid #162A63;
 
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
 }
 
 .Usuario-perfil {
@@ -60,12 +53,9 @@ padding-left: 85%;
 }
 
 .Usuario-perfil:hover {
-  transform: scale(1.2);
-<<<<<<< HEAD
-}  
-=======
-}
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
+
+} 
+
 
 
 .icons-header {
@@ -79,17 +69,17 @@ padding-left: 85%;
   width: 32px;
   height: 32px;
   object-fit: contain;
-<<<<<<< HEAD
-  display: block;      
-  display: block;
-=======
 
   display: block;      
+  display: block;
+
+
+  display: block;      
 
 
   display: block;
 
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
+
   position: relative;
   left: 20%;
 
@@ -98,10 +88,7 @@ padding-left: 85%;
 .icons-header img {
   width: 36px;
   cursor: pointer;
-<<<<<<< HEAD
-=======
 
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22
 }
 
 .menu-hamburguer {
