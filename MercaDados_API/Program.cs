@@ -1,4 +1,4 @@
-using System.Globalization;
+ï»¿using System.Globalization;
 using Mercadados_API.Contexts;
 using Mercadados_API.Interfaces;
 using Mercadados_API.Repositories;
@@ -6,17 +6,16 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services // Acessa a coleção de serviços da aplicação (Dependency Injection)
+builder.Services // Acessa a coleÃ§Ã£o de serviÃ§os da aplicaÃ§Ã£o (Dependency Injection)
     .AddControllers() // Adiciona suporte a controladores na API (MVC ou Web API)
-    .AddJsonOptions(options => // Configura as opções do serializador JSON padrão (System.Text.Json)
+    .AddJsonOptions(options => // Configura as opÃ§Ãµes do serializador JSON padrÃ£o (System.Text.Json)
     {
-        // Configuração para ignorar propriedades nulas ao serializar objetos em JSON
+        // ConfiguraÃ§Ã£o para ignorar propriedades nulas ao serializar objetos em JSON
         options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
 
-        // Configuração para evitar referência circular ao serializar objetos que possuem relacionamentos recursivos
+        // ConfiguraÃ§Ã£o para evitar referÃªncia circular ao serializar objetos que possuem relacionamentos recursivos
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
     });
 
@@ -24,8 +23,7 @@ builder.Services // Acessa a coleção de serviços da aplicação (Dependency Inject
 builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
-// Adicionar o  e a interface ao container de injeção de dependência
+// Adicionar o e a interface ao container de injeÃ§Ã£o de dependÃªncia
 builder.Services.AddScoped<IEstoqueProdutosRepository, EstoqueProdutoRepository>();
 builder.Services.AddScoped<IEstoqueRepository, EstoqueRepository>();
 builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
@@ -37,7 +35,7 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IVendaRepository, VendaRepository>();
 builder.Services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
 
-//Adicionar o serviço de Controllers
+//Adicionar o serviÃ§o de Controllers
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -48,7 +46,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "API",
-        Description = "Aplicaçao para gerenciamento de dados",
+        Description = "AplicaÃ§ao para gerenciamento de dados",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {
@@ -62,7 +60,6 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 });
-
 
 // CORS
 builder.Services.AddCors(options =>
@@ -78,7 +75,10 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-
+// ðŸ”¹ Faz a API entender ponto (.) como separador decimal
+var cultureInfo = new CultureInfo("en-US");
+CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
 if (app.Environment.IsDevelopment())
 {
@@ -87,16 +87,14 @@ if (app.Environment.IsDevelopment())
         options.SerializeAsV2 = true;
     });
 
-    app.UseSwaggerUI(options => // UseSwaggerUI is called only in Development.
+    app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
         options.RoutePrefix = string.Empty;
     });
 }
 
-
-
-//Adiciona o Cors(política criada)
+//Adiciona o Cors(polÃ­tica criada)
 app.UseCors("CorsPolicy");
 
 app.UseAuthentication();

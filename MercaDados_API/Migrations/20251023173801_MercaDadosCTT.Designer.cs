@@ -4,6 +4,7 @@ using Mercadados_API.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20251023173801_MercaDadosCTT")]
+    partial class MercaDadosCTT
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -176,16 +179,12 @@ namespace Mercadados_API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Imagem")
-                        .IsRequired()
-                        .HasColumnType("Varchar(255)");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("Varchar(200)");
 
                     b.Property<double>("Preco")
-                        .HasColumnType("Float");
+                        .HasColumnType("FLoat");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("INT");

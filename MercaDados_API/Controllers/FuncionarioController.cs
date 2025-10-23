@@ -95,7 +95,7 @@ namespace Mercadados_API.Controllers
             try
             {
                 // 📁 Cria a pasta de destino, se não existir
-                var pastaDestino = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imagens");
+                var pastaDestino = Path.Combine("wwwroot", "imagens");
                 if (!Directory.Exists(pastaDestino))
                     Directory.CreateDirectory(pastaDestino);
 

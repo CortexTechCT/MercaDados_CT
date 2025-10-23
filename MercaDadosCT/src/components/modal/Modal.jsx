@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Modal.css";
-import seta from "../../assets/seta.svg"
 
-export const Modal = ({ isOpen, onClose, children }) => {
-  if (!isOpen) return null;
+export const Modal = ({ onClose, children }) => {
+  const [closing, setClosing] = useState(false);
+
+  const handleClose = () => {
+    setClosing(true);
+    setTimeout(onClose, 300);
+  };
+
+  useEffect(() => {
+    setClosing(false);
+  }, []);
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <button className="close-btn" onClick={onClose}>
-          <img  className="img-button-modal" src={seta} alt="seta-img" />
-        </button>
+    <div
+      className={`modal-overlay ${closing ? "fade-out" : ""}`}
+      onClick={handleClose}
+    >
+      <div
+        className={`modal-content ${closing ? "zoom-out" : "animate-modal"}`}
+        onClick={(e) => e.stopPropagation()}
+      >
         {children}
       </div>
     </div>

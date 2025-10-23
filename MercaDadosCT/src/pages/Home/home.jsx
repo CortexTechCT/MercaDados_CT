@@ -73,7 +73,6 @@ export const Home = () => {
                             <img className ="alertaa"src={alerta} alt="" />
 
                             <p>Alertas/Situações Críticas</p>
-                            <strong>3</strong>
                               </Link>
                         </div>
                         <div className="card-info">
@@ -82,7 +81,7 @@ export const Home = () => {
 
                             <img className ="caminhao"src={caminhao} alt="" />
                             <p>Fornecedores Ativos</p>
-                            <strong>32</strong>
+                            <strong>3</strong>
                              </Link>
                         </div>
                         <div className="card-info">

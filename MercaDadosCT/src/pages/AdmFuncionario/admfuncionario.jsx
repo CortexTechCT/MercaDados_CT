@@ -92,16 +92,7 @@ export const AdmFuncionario = () => {
                     onClick={() => toggleFuncionario(index)}
                   >
                     <div className="info-funcionario">
-                      <img
-                        src={
-                          f.fotoPerfil
-                            ? `https://localhost:7115${f.fotoPerfil}`
-                            : "/assets/default.png"
-                        }
-                        alt={f.nomeFuncionario}
-                        className="foto-funcionario"
-                      />
-
+                  
                       <img
                         src={perfilazul}
                         className="Usuario-perfilAdm"

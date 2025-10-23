@@ -8,6 +8,8 @@ import {GestaoEstoque} from "../pages/GestaoEstoque/gestaoestoque";
 import {Home} from "../pages/Home/home";
 import {LucrosGastos} from "../pages/LucrosGastos/LucrosGastos";
 import {Perfil} from "../pages/Perfil/Perfil";
+import {LeituraProdutos} from "../pages/LeituraProdutos/leituraProdutos"
+import {FeedbacksClientes} from "../pages/FeedbacksClientes/feedbacksclientes"
 
 
 
@@ -23,6 +25,8 @@ import {Perfil} from "../pages/Perfil/Perfil";
                     <Route path="/LucrosGastos" element={<LucrosGastos/>} />
                     <Route path="/AdmFuncionarios" element={<AdmFuncionario/>} />
                     <Route path="/Perfil" element={<Perfil/>} />
+                    <Route path="/LeituraProdutos" element={<LeituraProdutos/>} />
+                    <Route path="/Feedback" element={<FeedbacksClientes/>} />
             </Routes>
         // </BrowserRouter>
     )

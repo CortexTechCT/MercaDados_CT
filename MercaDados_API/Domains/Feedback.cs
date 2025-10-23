@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mercadados_API.Domains
@@ -12,9 +13,9 @@ namespace Mercadados_API.Domains
         [Required(ErrorMessage = "A nota é obrigatorio")]
         public string? Nota { get; set; }
 
-        [ForeignKey("Usuario")]
-        public Guid UsuarioID { get; set; }
-        public Usuario? Usuario { get; set; }
+        [ForeignKey("Funcionario")]
+        public Guid FuncionarioID { get; set; }
+        public Funcionario? Funcionario { get; set; }
 
         [Column(TypeName = "DATETIME")]
         [Required(ErrorMessage = "A data do feedback é obrigatorio")]
