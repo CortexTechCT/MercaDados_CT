@@ -1,8 +1,5 @@
-
 import "./MenuLateral.css";
-
-
-import iconeCasa from '../../assets/casa.png'; // Choose one image source
+import iconeCasa from '../../assets/casa.png'; 
 import iconeSair from '../../assets/Vector.png';
 import { Link } from "react-router-dom";
 
