@@ -5,7 +5,7 @@ import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import perfilazul from "../../assets/perfilazul.svg";
 import api from "../../services/Services.js";
-<<<<<<< HEAD:MercaDadosCT/src/pages/AdmFuncionario/admfuncionario.jsx
+
 
 // // Imagens renomeadas corretamente
 // import vini from "../../assets/viniciou.jpg";
@@ -14,8 +14,7 @@ import api from "../../services/Services.js";
 // import higor from "../../assets/IMG_8977_1.png";
 // import herik from "../../assets/image_2.png";
 // import isaac from "../../assets/171977797.png";
-=======
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22:MercaDadosCT/src/pages/AdmFuncionarios/admfuncionario.jsx
+
 
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
@@ -47,11 +46,11 @@ export const AdmFuncionario = () => {
     series: [
       {
         name: "Desempenho",
-<<<<<<< HEAD:MercaDadosCT/src/pages/AdmFuncionario/admfuncionario.jsx
+
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-=======
+
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22:MercaDadosCT/src/pages/AdmFuncionarios/admfuncionario.jsx
+
       },
     ],
     options: {
@@ -63,24 +62,16 @@ export const AdmFuncionario = () => {
         offsetY: -20,
         style: { fontSize: "12px", colors: ["#304758"] },
       },
-<<<<<<< HEAD:MercaDadosCT/src/pages/AdmFuncionario/admfuncionario.jsx
+
       xaxis: { categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] },
     },
   };
 
   // Buscar funcionários do backend
-=======
-      xaxis: {
-        categories: [
-          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-        ],
-      },
-    },
-  };
 
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22:MercaDadosCT/src/pages/AdmFuncionarios/admfuncionario.jsx
-  useEffect(() => {
+  
+
+  useEffect (() => {
     ListarFuncionario();
   }, []);
 
@@ -114,19 +105,18 @@ export const AdmFuncionario = () => {
                     onClick={() => toggleFuncionario(index)}
                   >
                     <div className="info-funcionario">
-<<<<<<< HEAD:MercaDadosCT/src/pages/AdmFuncionario/admfuncionario.jsx
+
                       <img
                         src={f.fotoPerfil ? `https://localhost:7115${f.fotoPerfil}` : "/assets/default.png"}
                         alt={f.nomeFuncionario}
                         className="foto-funcionario"
-                      />  
-=======
+                      /> 
                       <img 
                         src={perfilazul} 
                         className="Usuario-perfilAdm"
                         alt="Usuário"
                       />
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22:MercaDadosCT/src/pages/AdmFuncionarios/admfuncionario.jsx
+
                       <p>{f.nomeFuncionario}</p>
                     </div>
 
@@ -198,5 +188,5 @@ export const AdmFuncionario = () => {
         </main>
       </div>
     </div>
-  );
-};
+  )
+}

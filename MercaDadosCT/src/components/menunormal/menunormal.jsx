@@ -23,7 +23,7 @@ export const MenuNormal = ({ toggleMenu = () => {} }) => {
     <header className="top-header">
       <div className="menu-hamburguer" onClick={handleMenuClick}>
         {/* <img src={iconeMenu} alt="Menu" /> */}
-        <img src={casa} alt="Menu" />
+        <img src={iconeMenu} alt="Menu" />
       </div>
 
       <div className="icons-header">

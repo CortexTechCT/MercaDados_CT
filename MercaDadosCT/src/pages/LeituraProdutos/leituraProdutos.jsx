@@ -19,12 +19,12 @@ export const LeituraProdutos = () => {
     <div className="leitura-container">
       <MenuNormal />
 
-<<<<<<< HEAD:MercaDadosCT/src/pages/LeituraProdutos/leituraProdutos.jsx
+
       {/* Quadrado azul principal */}
-=======
 
 
->>>>>>> 6137098c2118dc53a56bf05c1df9682bbac09d22:MercaDadosCT/src/pages/Leitura_Produtos/LeituraProdutos.jsx
+
+
       <div className="fundo-azul">
         <div className="conteudo">
           <div className="produtos">

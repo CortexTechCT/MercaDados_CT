@@ -26,6 +26,7 @@ export const MenuLateral = () => {
           <li><Link to="/LucrosGastos">Lucro e Gastos</Link></li>
           <li><Link to="/AdmFuncionarios">Administração</Link></li>
           <li><Link to="/CadastroUsuario">Cadastro novo</Link></li>
+          <li><Link to="/CadastroProduto">Cadastro Produto</Link></li>
         </ul>
       </nav>
       <div className="sair">

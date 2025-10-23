@@ -97,7 +97,8 @@ button:hover {
        
  width: 95%;    
  border-radius: 18px;
- box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 88px 21px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+ padding: 70px 21px;
     }
 .logo img {
     height: 100%;
@@ -106,10 +107,32 @@ button:hover {
     margin-inline: 70px
 }
 
-input {
-height: 55px;
- width: 263px;
- padding: auto;
+ input {
+      height: 55px;
+        width: 333px;
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+
+    } 
+      .botao  {
+      
+      max-width: 342px; 
+        margin-left: auto
     }
+
+.formulario-grid{
+
+  padding: 20px;
+}
+  label{
+
+margin-left: 20px;
+
+  }
+form{
+
+  padding: 8px;
+}
 }
 

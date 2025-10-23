@@ -6,7 +6,7 @@
 }
 
 .conteudo-principal {
-  margin-left: 240px;
+  
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
   max-width: 1000px;
   color: #000;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-
+  margin-right: 69px;
 }
 
 .lucroegastos-box h2 {
@@ -48,4 +48,16 @@
   margin-bottom: 16px;
   color: #333;
   font-size: 16px;
+}
+@media (max-width: 600px) {
+
+.lucroegastos-box {
+   
+    width: 91%;
+    
+    margin-right: 17px; 
+
+}
+
+
 }

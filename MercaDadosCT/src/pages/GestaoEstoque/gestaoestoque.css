@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
@@ -8,15 +8,15 @@
   box-sizing: border-box;
 }
 
-=======
+
 /* ======== CONTAINERS GERAIS ======== */
->>>>>>> 85db17fb182ea78c88e074d961f398611672061c
+
 .container-geral-gestaoestoque {
   background-color: #fff;
 }
 
 .conteudo-principal {
-  margin-left: 240px;
+  /* margin-left: 240px; */
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -174,7 +174,7 @@
     padding: 0 10px;
   }
 
-<<<<<<< HEAD
+
 .categoria-item img {
   width: 40px;
   height: 40px;
@@ -183,10 +183,7 @@
 }
 
 @media (max-width: 768px) {
-  .conteudo-principal {
-    margin-left: 0;
-    
-  }
+  
 
   .gestaoestoque-box {
     width: 100%;
@@ -245,7 +242,7 @@ position: absolute; /* O texto tem posição absoluta */
 }
 
 }
-=======
+
   .categoria-item {
     flex: 0 0 120px;
   }
@@ -259,5 +256,6 @@ position: absolute; /* O texto tem posição absoluta */
     font-size: 24px;
     padding: 5px;
   }
+
+
 }
->>>>>>> 85db17fb182ea78c88e074d961f398611672061c

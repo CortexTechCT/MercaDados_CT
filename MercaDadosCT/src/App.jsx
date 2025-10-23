@@ -1,13 +1,16 @@
-import { Routes, Route } from "react-router-dom";
-import { LeituraProdutos } from "./pages/LeituraProdutos/LeituraProdutos";
-import { FormaDePagamento } from "./pages/FormaDePagamento/FormaDePagamento";
+
+
+ import Rotas from "./routes/Routes";
+import"./App.css";
+
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<LeituraProdutos />} />
-      <Route path="/FormaDePagamento" element={<FormaDePagamento />} />
-    </Routes>
+    <>
+    <Rotas/>
+    
+    </>
+    
   );
 }
 

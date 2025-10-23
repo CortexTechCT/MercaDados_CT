@@ -9,6 +9,7 @@
   background-color: #f5f7ff;
   justify-content: flex-end;
   
+ 
 }
 
 .painel-box {
@@ -29,13 +30,13 @@
 
 }
 
-<<<<<<< HEAD
+
 .conteudoss{
 background-color:conteudoss#333;
 }
-=======
 
->>>>>>> 85db17fb182ea78c88e074d961f398611672061c
+
+
 .fornecedores-lista {
     display: flex;
     flex-direction: column;
