@@ -35,8 +35,6 @@ function App() {
     </>
   );
 }
-=======
-<<<<<<< HEAD
 import React from "react";
 import "./App.css";
 import { LeituraProdutos } from "./pages/Leitura_Produtos/LeituraProdutos";
