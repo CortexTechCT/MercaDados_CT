@@ -20,13 +20,11 @@ export const CadastroUsuario = () => {
     complemento: "",
   });
 
-  // Atualiza o estado conforme os inputs
   function handleChange(e) {
     const { name, value } = e.target;
     setFuncionario({ ...funcionario, [name]: value });
   }
 
-  // Envia os dados para a API
   async function cadastrarFuncionario(e) {
     e.preventDefault();
 
@@ -53,7 +51,6 @@ export const CadastroUsuario = () => {
         confirmButtonColor: "#3085d6",
       });
 
-      // Limpa os campos
       setFuncionario({
         nome: "",
         dataNascimento: "",

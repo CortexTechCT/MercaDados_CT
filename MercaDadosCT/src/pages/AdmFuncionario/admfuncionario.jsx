@@ -5,6 +5,7 @@ import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import perfilazul from "../../assets/perfilazul.svg";
 import api from "../../services/Services.js";
+<<<<<<< HEAD
 
 
 // // Imagens renomeadas corretamente
@@ -15,6 +16,8 @@ import api from "../../services/Services.js";
 // import herik from "../../assets/image_2.png";
 // import isaac from "../../assets/171977797.png";
 
+=======
+>>>>>>> 23c6e60537628555937c0961864ef5402240306b
 
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
@@ -39,6 +42,7 @@ export const AdmFuncionario = () => {
       },
     ],
   };
+
   const pizzaChartSeries = [44, 30, 26];
 
   // Gráfico de Barras
@@ -46,11 +50,15 @@ export const AdmFuncionario = () => {
     series: [
       {
         name: "Desempenho",
+<<<<<<< HEAD
 
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
 
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
 
+=======
+        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
+>>>>>>> 23c6e60537628555937c0961864ef5402240306b
       },
     ],
     options: {
@@ -62,6 +70,7 @@ export const AdmFuncionario = () => {
         offsetY: -20,
         style: { fontSize: "12px", colors: ["#304758"] },
       },
+<<<<<<< HEAD
 
       xaxis: { categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] },
     },
@@ -72,6 +81,18 @@ export const AdmFuncionario = () => {
   
 
   useEffect (() => {
+=======
+      xaxis: {
+        categories: [
+          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+        ],
+      },
+    },
+  };
+
+  useEffect(() => {
+>>>>>>> 23c6e60537628555937c0961864ef5402240306b
     ListarFuncionario();
   }, []);
 
@@ -105,14 +126,28 @@ export const AdmFuncionario = () => {
                     onClick={() => toggleFuncionario(index)}
                   >
                     <div className="info-funcionario">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 23c6e60537628555937c0961864ef5402240306b
                       <img
-                        src={f.fotoPerfil ? `https://localhost:7115${f.fotoPerfil}` : "/assets/default.png"}
+                        src={
+                          f.fotoPerfil
+                            ? `https://localhost:7115${f.fotoPerfil}`
+                            : "/assets/default.png"
+                        }
                         alt={f.nomeFuncionario}
                         className="foto-funcionario"
+<<<<<<< HEAD
                       /> 
                       <img 
                         src={perfilazul} 
+=======
+                      />
+
+                      <img
+                        src={perfilazul}
+>>>>>>> 23c6e60537628555937c0961864ef5402240306b
                         className="Usuario-perfilAdm"
                         alt="Usuário"
                       />

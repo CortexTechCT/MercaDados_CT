@@ -27,7 +27,8 @@
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
-
+  margin-left: 11%;
+  margin-top: 20px;
 }
 
 
@@ -35,8 +36,11 @@
 background-color:conteudoss#333;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 23c6e60537628555937c0961864ef5402240306b
 .fornecedores-lista {
     display: flex;
     flex-direction: column;
@@ -55,8 +59,8 @@ background-color:conteudoss#333;
   padding: 20px;
   margin-bottom: 25px;
   height: 280px; 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-   transition: transform 0.5s ease, background-color 0.9s ease;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, background-color 0.9s ease;
 }    
 .fornecedor-card:hover{
   transform: scale(1.1);
@@ -80,4 +84,34 @@ background-color:conteudoss#333;
 .grafico-placeholder > div {
   width: 100% ;
   height: 100% ;
+}
+
+@media (max-width: 1024px) {
+  .titulo-fornecedores {
+    margin-left: 5%;
+    text-align: center;
+  }
+
+  .fornecedores-lista {
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .fornecedor-card {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .logo-fornecedor {
+    margin: 0 auto 15px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .grafico-placeholder {
+    width: 100%;
+    height: 250px;
+  }
 }

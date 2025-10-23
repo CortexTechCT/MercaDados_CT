@@ -20,9 +20,12 @@
     "react-router-dom": "^7.9.4",
     "sweetalert2": "^11.25.0"
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 23c6e60537628555937c0961864ef5402240306b
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
