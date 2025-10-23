@@ -9,10 +9,23 @@ import api from "../../services/Services.js";
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
   const [funcAberto, setFuncAberto] = useState(null);
-
+  const [listaVenda, setListaVenda] = useState([]);
+  const [listaFeed, setListaFeed] = useState([]);
+  
   const toggleFuncionario = (index) => {
     setFuncAberto(funcAberto === index ? null : index);
   };
+
+  async function ListarFeedback () {
+    try{
+         const resposta = await api.get("Feedback");
+      console.log("✅ feed:", resposta.data(f => f.feedbackID));
+      setListaFeed(resposta.data);
+    }
+    catch(error){
+        console.log("❌ Erro ao buscar os feed:", error);
+    }
+  }
 
   // Gráfico de Pizza
   const pizzaChartOptions = {
@@ -32,12 +45,23 @@ export const AdmFuncionario = () => {
 
   const pizzaChartSeries = [44, 30, 26];
 
+  async function ListarVenda () {
+    try{
+         const resposta = await api.get("Venda");
+      console.log("✅ venda:", resposta.data(f => f.vendaID));
+      setListaVenda(resposta.data);
+    }
+    catch(error){
+        console.log("❌ Erro ao buscar as vendas:", error);
+    }
+  }
+
   // Gráfico de Barras
   const graficoBarras = {
     series: [
       {
         name: "Desempenho",
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
+        data: [ListarVenda],
       },
     ],
     options: {
@@ -65,10 +89,10 @@ export const AdmFuncionario = () => {
   async function ListarFuncionario() {
     try {
       const resposta = await api.get("Funcionario");
-      console.log("✅ Dados recebidos:", resposta.data);
+      // console.log("✅ Funcionários:", resposta.data.map(f => f.fotoPerfil));
       setListaFuncionario(resposta.data);
     } catch (error) {
-      console.log("❌ Erro ao buscar os usuários:", error);
+      // console.log("❌ Erro ao buscar os usuários:", error);
     }
   }
 
@@ -95,18 +119,20 @@ export const AdmFuncionario = () => {
                       <img
                         src={
                           f.fotoPerfil
-                            ? `https://localhost:7115${f.fotoPerfil}`
-                            : "/assets/default.png"
+                            ? `https://localhost:7115${f.fotoPerfil.startsWith("/") ? f.fotoPerfil : `/${f.fotoPerfil}`}`
+                            : perfilazul
                         }
                         alt={f.nomeFuncionario}
                         className="foto-funcionario"
+                        onError={(e) => (e.target.src = perfilazul)}
                       />
 
-                      <img
+
+                      {/* <img
                         src={perfilazul}
                         className="Usuario-perfilAdm"
                         alt="Usuário"
-                      />
+                      /> */}
 
                       <p>{f.nomeFuncionario}</p>
                     </div>
@@ -119,9 +145,8 @@ export const AdmFuncionario = () => {
                   </div>
 
                   <div
-                    className={`detalhes-funcionario-transicao ${
-                      funcAberto === index ? "aberto" : ""
-                    }`}
+                    className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""
+                      }`}
                   >
                     {funcAberto === index && (
                       <div className="detalhes-funcionario">
@@ -136,6 +161,7 @@ export const AdmFuncionario = () => {
 
                         <div className="graficos-funcionario">
                           <div className="grafico-barra-placeholder">
+                        
                             <ReactApexChart
                               options={graficoBarras.options}
                               series={graficoBarras.series}

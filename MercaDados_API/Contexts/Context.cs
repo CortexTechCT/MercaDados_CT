@@ -30,7 +30,7 @@ namespace Mercadados_API.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=servedbcortex.database.windows.net; Database=MercaDados; User id=cortexdb; Pwd=Senai@134; TrustServerCertificate=true");
+                optionsBuilder.UseSqlServer("Server=NOTE38-S28\\SQLEXPRESS Database=MercaDados; User sa; Pwd=Senai@134; TrustServerCertificate=true");
             }
         }
     };

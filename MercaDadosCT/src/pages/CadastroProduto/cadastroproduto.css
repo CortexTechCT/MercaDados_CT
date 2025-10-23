@@ -60,11 +60,8 @@ main {
 .formulario-box {
   background-color: #eff3ff;
   border-radius: 30px;
-<<<<<<< HEAD
   margin: 18px auto;
-=======
   margin: 46px auto;
->>>>>>> 85db17fb182ea78c88e074d961f398611672061c
   padding: 40px;
   max-width: 1000px;
   color: #030303;
@@ -143,10 +140,7 @@ button {
 /* Tablets */
 @media (max-width: 1024px) {
   .formulario-box {
-<<<<<<< HEAD
     margin: 39px;
-=======
->>>>>>> 85db17fb182ea78c88e074d961f398611672061c
     width: 90%;
     padding: 30px 20px;
     border-radius: 24px;
@@ -180,16 +174,12 @@ button {
 
 
 @media (max-width: 600px) {
-<<<<<<< HEAD
 
 
   .Perfil-Logo {
     margin: 9px;
-=======
-  
 
   .formulario-box {
->>>>>>> 85db17fb182ea78c88e074d961f398611672061c
     width: 95%;
     padding: 20px 15px;
     border-radius: 18px;
@@ -235,4 +225,5 @@ button {
     width: 100%;
     max-width: 280px;
   }
+}
 }

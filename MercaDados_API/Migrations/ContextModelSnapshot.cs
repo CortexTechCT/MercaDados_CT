@@ -76,16 +76,16 @@ namespace Mercadados_API.Migrations
                     b.Property<DateTime>("DataFeedback")
                         .HasColumnType("DATETIME");
 
+                    b.Property<Guid>("FuncionarioID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Nota")
                         .IsRequired()
                         .HasColumnType("Varchar(200)");
 
-                    b.Property<Guid>("UsuarioID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("FeedbackID");
 
-                    b.HasIndex("UsuarioID");
+                    b.HasIndex("FuncionarioID");
 
                     b.ToTable("Feedback");
                 });
@@ -311,13 +311,13 @@ namespace Mercadados_API.Migrations
 
             modelBuilder.Entity("Mercadados_API.Domains.Feedback", b =>
                 {
-                    b.HasOne("Mercadados_API.Domains.Usuario", "Usuario")
+                    b.HasOne("Mercadados_API.Domains.Funcionario", "Funcionario")
                         .WithMany()
-                        .HasForeignKey("UsuarioID")
+                        .HasForeignKey("FuncionarioID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Usuario");
+                    b.Navigation("Funcionario");
                 });
 
             modelBuilder.Entity("Mercadados_API.Domains.ItemVenda", b =>
