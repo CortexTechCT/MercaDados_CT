@@ -95,7 +95,7 @@
 .sair:focus-visible {
   outline: none;
   box-shadow: none;
-  background: none; /* também remove se focar via teclado */
+  background: none;
 }
 
 

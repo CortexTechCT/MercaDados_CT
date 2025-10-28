@@ -4,6 +4,7 @@ using Mercadados_API.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20251023182537_CortextechMErcados")]
+    partial class CortextechMErcados
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,12 +141,7 @@ namespace Mercadados_API.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
-                    b.Property<Guid>("UsuarioID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("FuncionarioID");
-
-                    b.HasIndex("UsuarioID");
 
                     b.ToTable("Funcionario");
                 });
@@ -321,20 +319,6 @@ namespace Mercadados_API.Migrations
             modelBuilder.Entity("Mercadados_API.Domains.Feedback", b =>
                 {
                     b.HasOne("Mercadados_API.Domains.Funcionario", "Funcionario")
-<<<<<<< HEAD
-=======
-                        .WithMany()
-                        .HasForeignKey("FuncionarioID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Funcionario");
-                });
-
-            modelBuilder.Entity("Mercadados_API.Domains.Funcionario", b =>
-                {
-                    b.HasOne("Mercadados_API.Domains.Usuario", "Usuario")
->>>>>>> 03dbb2b5135411fdf4ff46c42e493676dce0f3a6
                         .WithMany()
                         .HasForeignKey("FuncionarioID")
                         .OnDelete(DeleteBehavior.Cascade)

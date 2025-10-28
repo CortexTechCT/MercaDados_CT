@@ -11,23 +11,47 @@ export const AdmFuncionario = () => {
   const [funcAberto, setFuncAberto] = useState(null);
   const [listaVenda, setListaVenda] = useState([]);
   const [listaFeed, setListaFeed] = useState([]);
-  
+
   const toggleFuncionario = (index) => {
     setFuncAberto(funcAberto === index ? null : index);
   };
 
-  async function ListarFeedback () {
-    try{
-         const resposta = await api.get("Feedback");
-      console.log("✅ feed:", resposta.data(f => f.feedbackID));
-      setListaFeed(resposta.data);
+  // --- FUNÇÕES DE API ---
+  const ListarFuncionario = async () => {
+    try {
+      const resposta = await api.get("Funcionario");
+      setListaFuncionario(resposta.data);
+    } catch (error) {
+      console.error("❌ Erro ao buscar funcionários:", error);
     }
-    catch(error){
-        console.log("❌ Erro ao buscar os feed:", error);
-    }
-  }
+  };
 
-  // Gráfico de Pizza
+  const ListarVenda = async () => {
+    try {
+      const resposta = await api.get("Venda");
+      setListaVenda(resposta.data); // salva dados da venda
+    } catch (error) {
+      console.error("❌ Erro ao buscar vendas:", error);
+    }
+  };
+
+  const ListarFeedback = async () => {
+    try {
+      const resposta = await api.get("Feedback");
+      setListaFeed(resposta.data); // salva dados do feedback
+    } catch (error) {
+      console.error("❌ Erro ao buscar feedback:", error);
+    }
+  };
+
+  // --- USEEFFECT ---
+  useEffect(() => {
+    ListarFuncionario();
+    ListarVenda();
+    ListarFeedback();
+  }, []);
+
+  // --- GRÁFICOS ---
   const pizzaChartOptions = {
     chart: { width: 380, type: "pie" },
     labels: ["Satisfeito", "Neutro", "Insatisfeito"],
@@ -35,33 +59,18 @@ export const AdmFuncionario = () => {
     responsive: [
       {
         breakpoint: 480,
-        options: {
-          chart: { width: 250 },
-          legend: { position: "bottom" },
-        },
+        options: { chart: { width: 250 }, legend: { position: "bottom" } },
       },
     ],
   };
 
-  const pizzaChartSeries = [44, 30, 26];
+  const pizzaChartSeries = [44, 30, 26]; // Você pode calcular usando listaFeed se quiser
 
-  async function ListarVenda () {
-    try{
-         const resposta = await api.get("Venda");
-      console.log("✅ venda:", resposta.data(f => f.vendaID));
-      setListaVenda(resposta.data);
-    }
-    catch(error){
-        console.log("❌ Erro ao buscar as vendas:", error);
-    }
-  }
-
-  // Gráfico de Barras
   const graficoBarras = {
     series: [
       {
         name: "Desempenho",
-        data: [ListarVenda],
+        data: listaVenda.map((v) => v.percentualDesempenho || 0), // Ajuste conforme o seu dado real
       },
     ],
     options: {
@@ -82,18 +91,6 @@ export const AdmFuncionario = () => {
     },
   };
 
-  useEffect(() => {
-    ListarFuncionario();
-  }, []);
-
-  async function ListarFuncionario() {
-    try {
-      const resposta = await api.get("Funcionario");
-      setListaFuncionario(resposta.data);
-    } catch (error) {
-    }
-  }
-
   return (
     <div className="container-geral-admfuncionario">
       <MenuLateral />
@@ -108,7 +105,7 @@ export const AdmFuncionario = () => {
               <p className="nenhum-funcionario">Nenhum funcionário encontrado.</p>
             ) : (
               listaFuncionario.map((f, index) => (
-                <div key={index} className="item-funcionario-wrapper">
+                <div key={f.idFuncionario || index} className="item-funcionario-wrapper">
                   <div
                     className="item-funcionario"
                     onClick={() => toggleFuncionario(index)}
@@ -124,38 +121,28 @@ export const AdmFuncionario = () => {
                         className="foto-funcionario"
                         onError={(e) => (e.target.src = perfilazul)}
                       />
-
-
-                      
-
                       <p>{f.nomeFuncionario}</p>
                     </div>
 
-                    <span
-                      className={`seta ${funcAberto === index ? "aberto" : ""}`}
-                    >
+                    <span className={`seta ${funcAberto === index ? "aberto" : ""}`}>
                       {funcAberto === index ? "˄" : "˅"}
                     </span>
                   </div>
 
-                  <div
-                    className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""
-                      }`}
-                  >
+                  <div className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""}`}>
                     {funcAberto === index && (
                       <div className="detalhes-funcionario">
                         <div className="header-funcionario-expandido">
                           <div>
                             <strong>{f.nomeFuncionario}</strong>
                             <span className="funcao">
-                              Função: {"Caixa de Vendas"}
+                              Função: {"Caixa de Vendas"} {/* Você pode substituir pelo f.funcao se tiver */}
                             </span>
                           </div>
                         </div>
 
                         <div className="graficos-funcionario">
                           <div className="grafico-barra-placeholder">
-                        
                             <ReactApexChart
                               options={graficoBarras.options}
                               series={graficoBarras.series}

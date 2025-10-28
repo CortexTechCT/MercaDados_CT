@@ -48,7 +48,7 @@ export const Home = () => {
       stroke: { curve: "smooth" },
       xaxis: {
         categories: [
-          "01 Jan 2014", "02 Jan", "03 Jan", "04 Jan", "05 Jan", "06 Jan",
+          "01 Jan", "02 Jan", "03 Jan", "04 Jan", "05 Jan", "06 Jan",
           "07 Jan", "08 Jan", "09 Jan", "10 Jan", "11 Jan", "12 Jan",
           "13 Jan", "14 Jan"
         ],
@@ -70,24 +70,27 @@ export const Home = () => {
           <div className="cards-dashboard">
             <div className="card-info">
               <Link className="link-administrador" to="/AdmFuncionarios">
-                <img className="pessoas" src={Pessoas} alt="" />
+                <img className="pessoas" src={Pessoas} alt="Administração" />
                 <p>Administração</p>
               </Link>
             </div>
+
             <div className="card-info">
               <Link className="link-administrador" to="/LucrosGastos">
-                <img className="alertaa" src={alerta} alt="" />
+                <img className="alertaa" src={alerta} alt="Alertas" />
                 <p>Alertas/Situações Críticas</p>
                 <strong>3</strong>
               </Link>
             </div>
+
             <div className="card-info">
               <Link className="link-administrador" to="/Fornecedores">
-                <img className="caminhao" src={caminhao} alt="" />
+                <img className="caminhao" src={caminhao} alt="Fornecedores" />
                 <p>Fornecedores Ativos</p>
                 <strong>32</strong>
               </Link>
             </div>
+
             <div className="card-info">
               <p>Vendas do Dia</p>
               <strong>R$ 12.350</strong>

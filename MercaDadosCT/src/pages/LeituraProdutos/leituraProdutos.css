@@ -1,13 +1,15 @@
 .leitura-container {
   font-family: "Poppins", sans-serif;
   background-color: #A3B2DF;
+  min-height: 100vh;
+  padding-bottom: 2rem;
 }
+
 
 .fundo-azul {
   background-color: #97aef2;
-  width: 1298px;  
-  margin: 2px auto;
-  
+  width: 90%;  
+  margin: 20px auto;
   padding: 30px;
   border-radius: 20px;
   display: flex;
@@ -27,26 +29,23 @@
   background-color: #DEE5FA;
   height: 674px;
   align-items: center;
+  justify-content: center;
   border-radius: 18px;
-
+  padding: 1rem;
 }
 
 .produto-img {
   width: 220px;
-  margin-top: 200px;
-  margin-bottom: 100px;
-  margin-left: 50px;
-  margin-right: 50px;
-  
   height: auto;
 }
+
 
 .tabela {
   background-color: #DEE5FA;
   padding: 2rem;
   border-radius: 20px;
   width: 715px;
-  height:676px;
+  height: 676px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -57,7 +56,6 @@
 }
 
 .subtitulo {
-  font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: #1e2a47;
   margin-bottom: 1rem;
@@ -70,22 +68,6 @@
   margin-top: 20px;
 }
 
-
-.botao_leitura{
-  
-  background-color: #F97316;
-  border: none;
-  padding: 13px 88px;
-  border-radius: 15px;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-  margin-top: 85px;
-}
-
 .tabela-dados th,
 .tabela-dados td,
 .tabela-itens th,
@@ -96,8 +78,27 @@
   font-size: 18px;
 }
 
-.tabela caixa de energtico td{
+.linha-energetico td {
   background-color: #D0DCFF;
+}
+
+
+.botao_leitura {
+  background-color: #F97316;
+  border: none;
+  padding: 13px 88px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 35px auto 0;
+  transition: background-color 0.3s ease;
+}
+
+.botao_leitura:hover {
+  background-color: #e25f05;
 }
 
 
@@ -110,7 +111,7 @@
 .atendido {
   margin-top: 30px;
   font-size: 0.95rem;
-  color: #000000;
+  color: #000;
 }
 
 .resumo {
@@ -119,7 +120,6 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
-  height: 5%;
 }
 
 .total {
@@ -129,10 +129,109 @@
   padding: 9px 40px;
   border-radius: 27px;
   font-size: 25px;
-  margin-top: 95px;
-  align-items: center;
+  margin-top: -64px;
+  text-align: center;
 }
 
 
+.modal-pagamento, .modal-confirmacao {
+  background-color: #ffffff;
+  width: 700px;
+  min-height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
 
-    
+.titulo-modal {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e2a47;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.opcoes-pagamento {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.opcoes-pagamento img {
+  width: 140px;
+  height: 103px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opcoes-pagamento img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.botao-confirmar, .botao-voltar {
+  background-color: #F97316;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 15px;
+  padding: 12px 60px;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-confirmar:hover, .botao-voltar:hover {
+  background-color: #e25f05;
+}
+
+.seta-voltar {
+  width: 40px;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.seta-voltar:hover {
+  transform: scale(1.1);
+}
+
+
+.modal-confirmacao h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e2a47;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-confirmacao p {
+  font-size: 20px;
+  color: #000;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.check-icon {
+  width: 90px;
+  height: 90px;
+  background-color: #1e2a47;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px 0;
+}
