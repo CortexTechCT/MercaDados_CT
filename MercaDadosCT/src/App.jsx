@@ -1,29 +1,12 @@
-
-import { Routes, Route } from "react-router-dom";
-import React from "react";
-import { useState } from "react";
-
-import "./App.css";
-import Rotas from "./routes/Routes"
-
+import Rotas from "./routes/Routes.jsx";
+import { AuthProvider } from "./pages/contexts/authContexts";
 
 function App() {
-
-
-
-
-  return ( 
-<>
-      <Rotas/>
-
- 
-
-    </>
+  return (
+    <AuthProvider>
+      <Rotas />
+    </AuthProvider>
   );
-} 
-
-
-
-
+}
 
 export default App;

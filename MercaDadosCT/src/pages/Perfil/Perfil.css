@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-
 * {
   font-family: 'Poppins', sans-serif;
   padding: 0;
@@ -10,7 +7,6 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #0E1A3D; /* ou a cor do seu fundo */
   height: 100vh;
 }
 
@@ -20,12 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-
-  background-color: #0e1a3d;
-
   color: #f97316;
-
-
 }
 
 .Perfil-Logo {
@@ -74,7 +65,7 @@ body {
 .perfil-dados {
   display: flex;
   flex-direction: column;
-  
+
   align-items: center;
 
 }

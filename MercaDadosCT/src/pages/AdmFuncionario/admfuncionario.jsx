@@ -12,11 +12,15 @@ export const AdmFuncionario = () => {
   const [listaVenda, setListaVenda] = useState([]);
   const [listaFeed, setListaFeed] = useState([]);
 
+<<<<<<< HEAD
   // 🔄 Alternar funcionário aberto/fechado
+=======
+>>>>>>> 1c477fb16f75c651da6321102923e646095c887f
   const toggleFuncionario = (index) => {
     setFuncAberto(funcAberto === index ? null : index);
   };
 
+<<<<<<< HEAD
   // 📡 Buscar dados da API
   async function ListarFuncionario() {
     try {
@@ -49,12 +53,86 @@ export const AdmFuncionario = () => {
   }
 
   // 🔁 Executa ao montar
+=======
+  // --- FUNÇÕES DE API ---
+  const ListarFuncionario = async () => {
+    try {
+      const resposta = await api.get("Funcionario");
+      setListaFuncionario(resposta.data);
+    } catch (error) {
+      console.error("❌ Erro ao buscar funcionários:", error);
+    }
+  };
+
+  const ListarVenda = async () => {
+    try {
+      const resposta = await api.get("Venda");
+      setListaVenda(resposta.data); // salva dados da venda
+    } catch (error) {
+      console.error("❌ Erro ao buscar vendas:", error);
+    }
+  };
+
+  const ListarFeedback = async () => {
+    try {
+      const resposta = await api.get("Feedback");
+      setListaFeed(resposta.data); // salva dados do feedback
+    } catch (error) {
+      console.error("❌ Erro ao buscar feedback:", error);
+    }
+  };
+
+  // --- USEEFFECT ---
+>>>>>>> 1c477fb16f75c651da6321102923e646095c887f
   useEffect(() => {
     ListarFuncionario();
     ListarVenda();
     ListarFeedback();
   }, []);
 
+<<<<<<< HEAD
+=======
+  // --- GRÁFICOS ---
+  const pizzaChartOptions = {
+    chart: { width: 380, type: "pie" },
+    labels: ["Satisfeito", "Neutro", "Insatisfeito"],
+    colors: ["#337DFF", "#FFC043", "#FF5A5F"],
+    responsive: [
+      {
+        breakpoint: 480,
+        options: { chart: { width: 250 }, legend: { position: "bottom" } },
+      },
+    ],
+  };
+
+  const pizzaChartSeries = [44, 30, 26]; // Você pode calcular usando listaFeed se quiser
+
+  const graficoBarras = {
+    series: [
+      {
+        name: "Desempenho",
+        data: listaVenda.map((v) => v.percentualDesempenho || 0), // Ajuste conforme o seu dado real
+      },
+    ],
+    options: {
+      chart: { type: "bar", height: 250 },
+      plotOptions: { bar: { borderRadius: 10, dataLabels: { position: "top" } } },
+      dataLabels: {
+        enabled: true,
+        formatter: (val) => val + "%",
+        offsetY: -20,
+        style: { fontSize: "12px", colors: ["#304758"] },
+      },
+      xaxis: {
+        categories: [
+          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+        ],
+      },
+    },
+  };
+
+>>>>>>> 1c477fb16f75c651da6321102923e646095c887f
   return (
     <div className="container-geral-admfuncionario">
       <MenuLateral />
@@ -65,6 +143,7 @@ export const AdmFuncionario = () => {
           <h2>Gestão de funcionários:</h2>
 
           <div className="lista-funcionarios">
+<<<<<<< HEAD
             {listaFuncionario.map((f, index) => {
               const idFunc = f.funcionarioID || f.idFuncionario || f.id;
 
@@ -134,6 +213,17 @@ export const AdmFuncionario = () => {
               return (
                 <div key={index} className="item-funcionario-wrapper">
                   <div className="item-funcionario" onClick={() => toggleFuncionario(index)}>
+=======
+            {listaFuncionario.length === 0 ? (
+              <p className="nenhum-funcionario">Nenhum funcionário encontrado.</p>
+            ) : (
+              listaFuncionario.map((f, index) => (
+                <div key={f.idFuncionario || index} className="item-funcionario-wrapper">
+                  <div
+                    className="item-funcionario"
+                    onClick={() => toggleFuncionario(index)}
+                  >
+>>>>>>> 1c477fb16f75c651da6321102923e646095c887f
                     <div className="info-funcionario">
                       <img
                         src={
@@ -147,12 +237,19 @@ export const AdmFuncionario = () => {
                       />
                       <p>{f.nomeFuncionario}</p>
                     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1c477fb16f75c651da6321102923e646095c887f
                     <span className={`seta ${funcAberto === index ? "aberto" : ""}`}>
                       {funcAberto === index ? "˄" : "˅"}
                     </span>
                   </div>
 
+<<<<<<< HEAD
                   {/* 🔽 Detalhes abertos */}
+=======
+>>>>>>> 1c477fb16f75c651da6321102923e646095c887f
                   <div className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""}`}>
                     {funcAberto === index && (
                       <div className="detalhes-funcionario">
@@ -160,7 +257,11 @@ export const AdmFuncionario = () => {
                           <div>
                             <strong>{f.nomeFuncionario}</strong>
                             <span className="funcao">
+<<<<<<< HEAD
                               Função: {f.funcao || "Caixa de Vendas"}
+=======
+                              Função: {"Caixa de Vendas"} {/* Você pode substituir pelo f.funcao se tiver */}
+>>>>>>> 1c477fb16f75c651da6321102923e646095c887f
                             </span>
                           </div>
                         </div>
@@ -169,6 +270,7 @@ export const AdmFuncionario = () => {
                         <div className="graficos-funcionario">
                           {/* Gráfico de vendas */}
                           <div className="grafico-barra-placeholder">
+<<<<<<< HEAD
                             {graficoBarrasFuncionario.series?.[0]?.data?.length > 0 ? (
                               <ReactApexChart
                                 options={graficoBarrasFuncionario.options}
@@ -180,6 +282,15 @@ export const AdmFuncionario = () => {
                             ) : (
                               <p>Carregando dados de vendas...</p>
                             )}
+=======
+                            <ReactApexChart
+                              options={graficoBarras.options}
+                              series={graficoBarras.series}
+                              type="bar"
+                              height={230}
+                              width={370}
+                            />
+>>>>>>> 1c477fb16f75c651da6321102923e646095c887f
                           </div>
 
                           {/* Gráfico de feedback */}

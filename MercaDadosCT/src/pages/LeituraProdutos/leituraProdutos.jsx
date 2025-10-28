@@ -1,18 +1,24 @@
-import React from "react";
-import "./leituraProdutos.css";
-import { Botao } from "../../components/botao/Botao";
-import Doritos from "../../assets/Doritos.png";
-import casa from "../../assets/casa.png";
+import React, { useState } from "react";
 import { MenuNormal } from "../../components/menunormal/menunormal";
 import { Modal } from "../../components/modal/Modal";
-import { useNavigate } from "react-router-dom";
+import Doritos from "../../assets/Doritos.png";
+import pix from "../../assets/pix.png";
+import cartaoCredito from "../../assets/cartaoCredito.png";
+import cartaoDebito from "../../assets/cartaoDebito.png";
+import vr from "../../assets/vr.png";
+import dinheiro from "../../assets/dinheiro.png";
+import setaVoltar from "../../assets/setaVoltar.png";
+import check from "../../assets/check.png";
+import "./LeituraProdutos.css";
 
 export const LeituraProdutos = () => {
-  const navigate = useNavigate();
+  const [mostrarPagamento, setMostrarPagamento] = useState(false);
+  const [mostrarConfirmacao, setMostrarConfirmacao] = useState(false);
 
-  // 🔹 Quando clicar em "Continuar", vai para a tela Forma de Pagamento
-  const handleContinuar = () => {
-    navigate("/FormaDePagamento");
+  const handleContinuar = () => setMostrarPagamento(true);
+  const handleConfirmar = () => {
+    setMostrarPagamento(false);
+    setMostrarConfirmacao(true);
   };
 
   return (
@@ -42,56 +48,74 @@ export const LeituraProdutos = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td>12x</td>
-                  <td>x</td>
+                  <td>Doritos 300g</td>
+                  <td>1 un</td>
+                  <td>R$ 8,99</td>
+                  <td>R$ 8,99</td>
+                  <td>R$ 8,99</td>
+                </tr>
+                <tr>
+                  <td>Caixa de Energético Monster</td>
+                  <td>12 un</td>
                   <td>R$ 9,49</td>
-                  <td>=</td>
+                  <td>R$ 113,99</td>
                   <td><b>R$ 113,99</b></td>
                 </tr>
               </tbody>
             </table>
 
-            <div className="itens-cupom">
-              <h4>Itens do Cupom</h4>
-              <table className="tabela-itens">
-                <thead>
-                  <tr>
-                    <th>Produto</th>
-                    <th>Qtd:</th>
-                    <th>Preço Unitário:</th>
-                    <th>Total:</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Doritos 300g</td>
-                    <td>1 un</td>
-                    <td>R$ 8,99</td>
-                    <td>R$ 8,99</td>
-                  </tr>
-                  <tr>
-                    <td>Caixa de Energético Monster</td>
-                    <td>12 un</td>
-                    <td>R$ 9,49</td>
-                    <td>R$ 113,99</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <p className="atendido">Atendido por: xxxxx</p>
-            <div className="resumo">
-              <p>Desconto = R$ 0,00</p>
-              <div className="total">R$ 122,87</div>
-            </div>
-
-            {/* 🔘 Botão que leva para Forma de Pagamento */}
             <button className="botao_leitura" onClick={handleContinuar}>
               Continuar
             </button>
           </div>
         </div>
       </div>
+
+      {/* MODAL - FORMAS DE PAGAMENTO */}
+      {mostrarPagamento && (
+        <Modal onClose={() => setMostrarPagamento(false)}>
+          <div className="modal-pagamento">
+            <img
+              src={setaVoltar}
+              alt="Voltar"
+              className="seta-voltar"
+              onClick={() => setMostrarPagamento(false)}
+            />
+            <h2 className="titulo-modal">Forma de Pagamento</h2>
+
+            <div className="opcoes-pagamento">
+              <img src={pix} alt="Pix" />
+              <img src={cartaoCredito} alt="Cartão Crédito" />
+              <img src={cartaoDebito} alt="Cartão Débito" />
+              <img src={vr} alt="VR" />
+              <img src={dinheiro} alt="Dinheiro" />
+            </div>
+
+            <button className="botao-confirmar" onClick={handleConfirmar}>
+              Confirmar
+            </button>
+          </div>
+        </Modal>
+      )}
+
+      {/* MODAL - CONFIRMAÇÃO */}
+      {mostrarConfirmacao && (
+        <Modal onClose={() => setMostrarConfirmacao(false)}>
+          <div className="modal-confirmacao">
+            <h2>Compra Confirmada!</h2>
+            <img src={check} alt="Check" className="check-icon" />
+            <p>Obrigado pela compra!</p>
+            <button
+              className="botao-voltar"
+              onClick={() => setMostrarConfirmacao(false)}
+            >
+              Fechar
+            </button>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };
+
+export default LeituraProdutos;

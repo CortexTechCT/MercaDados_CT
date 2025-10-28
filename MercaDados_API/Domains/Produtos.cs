@@ -13,7 +13,7 @@ namespace Mercadados_API.Domains
         [Required(ErrorMessage = "Nome é obrigatorio!")]
         public string? Nome { get; set; }
 
-        [Column(TypeName = "FLoat")]
+        [Column(TypeName = "Float")]
         [Required(ErrorMessage = "Preço é obrigatorio!")]
         public float Preco { get; set; }
 
@@ -21,5 +21,8 @@ namespace Mercadados_API.Domains
         [Required(ErrorMessage = "Quantidade é obrigatorio!")]
         public int Quantidade { get; set; }
 
+        [Column(TypeName = "Varchar(255)")]
+        [Required(ErrorMessage = "Imagem é obrigatória!")]
+        public string? Imagem { get; set; } 
     }
 }

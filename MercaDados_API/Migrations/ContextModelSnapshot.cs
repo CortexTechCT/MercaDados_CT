@@ -138,7 +138,12 @@ namespace Mercadados_API.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
+                    b.Property<Guid>("UsuarioID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("FuncionarioID");
+
+                    b.HasIndex("UsuarioID");
 
                     b.ToTable("Funcionario");
                 });
@@ -176,12 +181,16 @@ namespace Mercadados_API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Imagem")
+                        .IsRequired()
+                        .HasColumnType("Varchar(255)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("Varchar(200)");
 
                     b.Property<double>("Preco")
-                        .HasColumnType("FLoat");
+                        .HasColumnType("Float");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("INT");
@@ -312,6 +321,20 @@ namespace Mercadados_API.Migrations
             modelBuilder.Entity("Mercadados_API.Domains.Feedback", b =>
                 {
                     b.HasOne("Mercadados_API.Domains.Funcionario", "Funcionario")
+<<<<<<< HEAD
+=======
+                        .WithMany()
+                        .HasForeignKey("FuncionarioID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Funcionario");
+                });
+
+            modelBuilder.Entity("Mercadados_API.Domains.Funcionario", b =>
+                {
+                    b.HasOne("Mercadados_API.Domains.Usuario", "Usuario")
+>>>>>>> 03dbb2b5135411fdf4ff46c42e493676dce0f3a6
                         .WithMany()
                         .HasForeignKey("FuncionarioID")
                         .OnDelete(DeleteBehavior.Cascade)

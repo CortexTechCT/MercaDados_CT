@@ -69,6 +69,8 @@
 }
 
 .sair {
+  background: none;
+  border: none;
   color: #F97316;
   font-weight: bold;
   font-size: 14px;
@@ -80,11 +82,23 @@
   padding: 10px 0;
   cursor: pointer;
   transition: color 0.3s ease;
+  outline: none;
+  box-shadow: none;
 }
 
 .sair:hover {
+  background: none; /* garante que não vai aparecer nenhum fundo */
   color: #e59400;
 }
+
+.sair:focus,
+.sair:focus-visible {
+  outline: none;
+  box-shadow: none;
+  background: none;
+}
+
+
 
 @media (max-width: 1024px) {
   .menu-lateral {
