@@ -5,19 +5,14 @@ import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import perfilazul from "../../assets/perfilazul.svg";
 import api from "../../services/Services.js";
-<<<<<<< HEAD
 
-
-// // Imagens renomeadas corretamente
+ // Imagens (mantidas caso sejam usadas futuramente)
 // import vini from "../../assets/viniciou.jpg";
 // import yasmin from "../../assets/IMG_3617_1.png";
 // import matheus from "../../assets/IMG_8991_1.png";
 // import higor from "../../assets/IMG_8977_1.png";
 // import herik from "../../assets/image_2.png";
 // import isaac from "../../assets/171977797.png";
-
-=======
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
 
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
@@ -42,7 +37,6 @@ export const AdmFuncionario = () => {
       },
     ],
   };
-
   const pizzaChartSeries = [44, 30, 26];
 
   // Gráfico de Barras
@@ -50,38 +44,23 @@ export const AdmFuncionario = () => {
     series: [
       {
         name: "Desempenho",
-<<<<<<< HEAD
-
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
-
-=======
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
       },
     ],
     options: {
       chart: { type: "bar", height: 250 },
-      plotOptions: { bar: { borderRadius: 10, dataLabels: { position: "top" } } },
+      plotOptions: {
+        bar: {
+          borderRadius: 10,
+          dataLabels: { position: "top" },
+        },
+      },
       dataLabels: {
         enabled: true,
         formatter: (val) => val + "%",
         offsetY: -20,
         style: { fontSize: "12px", colors: ["#304758"] },
       },
-<<<<<<< HEAD
-
-      xaxis: { categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] },
-    },
-  };
-
-  // Buscar funcionários do backend
-
-  
-
-  useEffect (() => {
-=======
       xaxis: {
         categories: [
           "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -91,18 +70,18 @@ export const AdmFuncionario = () => {
     },
   };
 
+  // Buscar funcionários do backend
   useEffect(() => {
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
     ListarFuncionario();
   }, []);
 
   async function ListarFuncionario() {
     try {
       const resposta = await api.get("Funcionario");
-      console.log("✅ Dados recebidos:", resposta.data);
+      console.log("Dados recebidos:", resposta.data);
       setListaFuncionario(resposta.data);
     } catch (error) {
-      console.log("❌ Erro ao buscar os usuários:", error);
+      console.log("Erro ao buscar os usuários:", error);
     }
   }
 
@@ -126,10 +105,6 @@ export const AdmFuncionario = () => {
                     onClick={() => toggleFuncionario(index)}
                   >
                     <div className="info-funcionario">
-<<<<<<< HEAD
-
-=======
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
                       <img
                         src={
                           f.fotoPerfil
@@ -138,16 +113,10 @@ export const AdmFuncionario = () => {
                         }
                         alt={f.nomeFuncionario}
                         className="foto-funcionario"
-<<<<<<< HEAD
-                      /> 
-                      <img 
-                        src={perfilazul} 
-=======
                       />
 
                       <img
                         src={perfilazul}
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
                         className="Usuario-perfilAdm"
                         alt="Usuário"
                       />
@@ -223,5 +192,7 @@ export const AdmFuncionario = () => {
         </main>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default AdmFuncionario;

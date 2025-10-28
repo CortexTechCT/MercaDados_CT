@@ -53,8 +53,9 @@
   background-color: #EEF3FF;
   border-radius: 15px;
   margin: 48px auto;
+  margin-left: 22%;
   padding: 30px;
-  width: 90%;
+  width: 70%;
   max-width: 1200px;
   color: #000;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -80,9 +81,6 @@
   justify-content: center;
  transition: transform 0.5s ease, background-color 0.9s ease;
 }
-
-
-
 
 .card-info:hover{
     transform: scale(1.1);

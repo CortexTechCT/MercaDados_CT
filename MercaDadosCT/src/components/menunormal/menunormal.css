@@ -4,65 +4,30 @@
   align-items: center;
   padding: 12px 24px;
   background-color: #0E1A3D;
-<<<<<<< HEAD
   border-bottom: 2px solid  #162A63;
-
-
-=======
-
   padding-left: 89%;
   padding-left: 89%;
   padding-left: 85%;
   padding-left: 89%;
   padding-left: 85%;
   border-bottom: 2px solid  #162A63;
-
-
- padding-left: 89%;
-
   padding-left: 89%;
-
-
-padding-left: 85%;
-
+  padding-left: 89%;
+  padding-left: 85%;
   padding-left: 89%;
   padding-left: 85%;
   border-bottom: 2px solid  #162A63;
-
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
 }
 
 .icone-sino {
   margin-top: 2px;
   padding-left: 78%;
-
   border-bottom: 0.1px solid #162A63;
-
   border-bottom: 2px solid #162A63;
-<<<<<<< HEAD
-  
-=======
-   
-
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
-
   border-bottom: 0.1px solid #162A63;
-
   border-bottom: 2px solid #162A63;
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
   border-bottom: 0.1px solid #162A63;
-
   border-bottom: 2px solid #162A63;
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
 }
 
 .Usuario-perfil {
@@ -73,17 +38,8 @@ padding-left: 85%;
 }
 
 .Usuario-perfil:hover {
-<<<<<<< HEAD
   transform: scale(1.2);
-
 }  
-
-=======
-
-} 
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
-
-
 
 .icons-header {
   display: flex;
@@ -96,23 +52,11 @@ padding-left: 85%;
   width: 32px;
   height: 32px;
   object-fit: contain;
-
   display: block;      
   display: block;
-<<<<<<< HEAD
-=======
-
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
-
   display: block;      
-
-
   display: block;
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
   position: relative;
   left: 20%;
 
@@ -123,9 +67,8 @@ padding-left: 85%;
   cursor: pointer;
 <<<<<<< HEAD
     margin-right: 5691px;
-=======
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
 
+  
 }
 
 .menu-hamburguer {
@@ -151,6 +94,9 @@ padding-left: 85%;
 .icons-header img {
     
     margin-right:10px;
+}
+.menu-hamburguer img {
+ margin-left: -669;
 }
 
 
