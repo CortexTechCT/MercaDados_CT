@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20251028181924_MyV1Spada")]
-    partial class MyV1Spada
+    [Migration("20251028193354_MyV1_Spada")]
+    partial class MyV1_Spada
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

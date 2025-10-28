@@ -4,6 +4,7 @@ using Mercadados_API.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+
 namespace Mercadados_API.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
@@ -19,6 +20,13 @@ namespace Mercadados_API.Repositories
         {
             try
             {
+                Usuario usuarioBuscado = _context.Usuario
+                    .Include(u => u.TipoUsuario)
+                    .FirstOrDefault(u =>
+                        u.Email == usuario.Email &&
+                        u.Senha == usuario.Senha)!;
+
+
                 usuario.UsuarioID = Guid.NewGuid();
                 _context.Usuario.Add(usuario);
                 _context.SaveChanges();
