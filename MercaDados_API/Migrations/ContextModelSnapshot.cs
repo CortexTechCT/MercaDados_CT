@@ -321,8 +321,6 @@ namespace Mercadados_API.Migrations
             modelBuilder.Entity("Mercadados_API.Domains.Feedback", b =>
                 {
                     b.HasOne("Mercadados_API.Domains.Funcionario", "Funcionario")
-<<<<<<< HEAD
-=======
                         .WithMany()
                         .HasForeignKey("FuncionarioID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -334,13 +332,12 @@ namespace Mercadados_API.Migrations
             modelBuilder.Entity("Mercadados_API.Domains.Funcionario", b =>
                 {
                     b.HasOne("Mercadados_API.Domains.Usuario", "Usuario")
->>>>>>> 03dbb2b5135411fdf4ff46c42e493676dce0f3a6
                         .WithMany()
-                        .HasForeignKey("FuncionarioID")
+                        .HasForeignKey("UsuarioID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Funcionario");
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Mercadados_API.Domains.ItemVenda", b =>

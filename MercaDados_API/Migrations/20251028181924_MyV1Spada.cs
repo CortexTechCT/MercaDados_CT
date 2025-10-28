@@ -6,11 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mercadados_API.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251023180350_V1.cs
-    public partial class V1 : Migration
-========
-    public partial class Db_v3 : Migration
->>>>>>>> 5c80c6e61db46478ba58ceeca58aaba4d5471094:MercaDados_API/Migrations/20251016193846_Db_v3.cs
+    public partial class MyV1Spada : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -26,28 +22,6 @@ namespace Mercadados_API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Estoque", x => x.EstoqueID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Funcionario",
-                columns: table => new
-                {
-                    FuncionarioID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DataNascimento = table.Column<DateTime>(type: "DATE", nullable: false),
-                    NomeFuncionario = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    Email = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    Senha = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    Genero = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    RuaENumero = table.Column<string>(type: "VARCHAR(200)", nullable: false),
-                    CidadeEstadoCEP = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false),
-                    Complemento = table.Column<string>(type: "VARCHAR(100)", nullable: true),
-                    Numero = table.Column<string>(type: "VARCHAR(13)", nullable: false),
-                    Cpf = table.Column<string>(type: "VARCHAR(14)", nullable: false),
-                    FotoPerfil = table.Column<string>(type: "VARCHAR(300)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Funcionario", x => x.FuncionarioID);
                 });
 
             migrationBuilder.CreateTable(
@@ -69,8 +43,9 @@ namespace Mercadados_API.Migrations
                 {
                     ProdutoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "Varchar(200)", nullable: false),
-                    Preco = table.Column<double>(type: "FLoat", nullable: false),
-                    Quantidade = table.Column<int>(type: "INT", nullable: false)
+                    Preco = table.Column<double>(type: "Float", nullable: false),
+                    Quantidade = table.Column<int>(type: "INT", nullable: false),
+                    Imagem = table.Column<string>(type: "Varchar(255)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -140,22 +115,51 @@ namespace Mercadados_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Funcionario",
+                columns: table => new
+                {
+                    FuncionarioID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "DATE", nullable: false),
+                    NomeFuncionario = table.Column<string>(type: "VARCHAR(100)", nullable: false),
+                    Email = table.Column<string>(type: "VARCHAR(100)", nullable: false),
+                    Senha = table.Column<string>(type: "VARCHAR(100)", nullable: false),
+                    Genero = table.Column<string>(type: "VARCHAR(100)", nullable: false),
+                    RuaENumero = table.Column<string>(type: "VARCHAR(200)", nullable: false),
+                    CidadeEstadoCEP = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false),
+                    Complemento = table.Column<string>(type: "VARCHAR(100)", nullable: true),
+                    Numero = table.Column<string>(type: "VARCHAR(13)", nullable: false),
+                    Cpf = table.Column<string>(type: "VARCHAR(14)", nullable: false),
+                    UsuarioID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FotoPerfil = table.Column<string>(type: "VARCHAR(300)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Funcionario", x => x.FuncionarioID);
+                    table.ForeignKey(
+                        name: "FK_Funcionario_Usuario_UsuarioID",
+                        column: x => x.UsuarioID,
+                        principalTable: "Usuario",
+                        principalColumn: "UsuarioID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Feedback",
                 columns: table => new
                 {
                     FeedbackID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nota = table.Column<string>(type: "Varchar(200)", nullable: false),
-                    UsuarioID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FuncionarioID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DataFeedback = table.Column<DateTime>(type: "DATETIME", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Feedback", x => x.FeedbackID);
                     table.ForeignKey(
-                        name: "FK_Feedback_Usuario_UsuarioID",
-                        column: x => x.UsuarioID,
-                        principalTable: "Usuario",
-                        principalColumn: "UsuarioID",
+                        name: "FK_Feedback_Funcionario_FuncionarioID",
+                        column: x => x.FuncionarioID,
+                        principalTable: "Funcionario",
+                        principalColumn: "FuncionarioID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -223,8 +227,13 @@ namespace Mercadados_API.Migrations
                 column: "ProdutosID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Feedback_UsuarioID",
+                name: "IX_Feedback_FuncionarioID",
                 table: "Feedback",
+                column: "FuncionarioID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Funcionario_UsuarioID",
+                table: "Funcionario",
                 column: "UsuarioID");
 
             migrationBuilder.CreateIndex(
@@ -260,9 +269,6 @@ namespace Mercadados_API.Migrations
                 name: "EstoqueProdutos");
 
             migrationBuilder.DropTable(
-                name: "Funcionario");
-
-            migrationBuilder.DropTable(
                 name: "Imagens");
 
             migrationBuilder.DropTable(
@@ -279,6 +285,9 @@ namespace Mercadados_API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Produtos");
+
+            migrationBuilder.DropTable(
+                name: "Funcionario");
 
             migrationBuilder.DropTable(
                 name: "Usuario");

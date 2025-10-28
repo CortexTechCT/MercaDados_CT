@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20251023132317_CtMercadados")]
-    partial class CtMercadados
+    [Migration("20251028181924_MyV1Spada")]
+    partial class MyV1Spada
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -79,16 +79,16 @@ namespace Mercadados_API.Migrations
                     b.Property<DateTime>("DataFeedback")
                         .HasColumnType("DATETIME");
 
+                    b.Property<Guid>("FuncionarioID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Nota")
                         .IsRequired()
                         .HasColumnType("Varchar(200)");
 
-                    b.Property<Guid>("UsuarioID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("FeedbackID");
 
-                    b.HasIndex("UsuarioID");
+                    b.HasIndex("FuncionarioID");
 
                     b.ToTable("Feedback");
                 });
@@ -141,7 +141,12 @@ namespace Mercadados_API.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");
 
+                    b.Property<Guid>("UsuarioID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("FuncionarioID");
+
+                    b.HasIndex("UsuarioID");
 
                     b.ToTable("Funcionario");
                 });
@@ -179,12 +184,16 @@ namespace Mercadados_API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Imagem")
+                        .IsRequired()
+                        .HasColumnType("Varchar(255)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("Varchar(200)");
 
                     b.Property<double>("Preco")
-                        .HasColumnType("FLoat");
+                        .HasColumnType("Float");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("INT");
@@ -313,6 +322,17 @@ namespace Mercadados_API.Migrations
                 });
 
             modelBuilder.Entity("Mercadados_API.Domains.Feedback", b =>
+                {
+                    b.HasOne("Mercadados_API.Domains.Funcionario", "Funcionario")
+                        .WithMany()
+                        .HasForeignKey("FuncionarioID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Funcionario");
+                });
+
+            modelBuilder.Entity("Mercadados_API.Domains.Funcionario", b =>
                 {
                     b.HasOne("Mercadados_API.Domains.Usuario", "Usuario")
                         .WithMany()

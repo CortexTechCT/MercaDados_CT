@@ -44,14 +44,12 @@ export const AdmFuncionario = () => {
     }
   };
 
-  // --- USEEFFECT ---
   useEffect(() => {
     ListarFuncionario();
     ListarVenda();
     ListarFeedback();
   }, []);
 
-  // --- GRÁFICOS ---
   const pizzaChartOptions = {
     chart: { width: 380, type: "pie" },
     labels: ["Satisfeito", "Neutro", "Insatisfeito"],
