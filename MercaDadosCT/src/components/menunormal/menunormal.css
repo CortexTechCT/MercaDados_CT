@@ -4,49 +4,52 @@
   align-items: center;
   padding: 12px 24px;
   background-color: #0E1A3D;
+<<<<<<< HEAD
 
   border-bottom: 2px solid  #162A63;
 
+=======
+  border-bottom: 2px solid  #162A63;
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
   padding-left: 89%;
   padding-left: 89%;
   padding-left: 85%;
   padding-left: 89%;
   padding-left: 85%;
   border-bottom: 2px solid  #162A63;
-
-
- padding-left: 89%;
-
   padding-left: 89%;
-
-
-padding-left: 85%;
-
+  padding-left: 89%;
+  padding-left: 85%;
   padding-left: 89%;
   padding-left: 85%;
   border-bottom: 2px solid  #162A63;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
 }
 
 .icone-sino {
   margin-top: 2px;
   padding-left: 78%;
-
   border-bottom: 0.1px solid #162A63;
-
   border-bottom: 2px solid #162A63;
+<<<<<<< HEAD
 
+=======
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
   border-bottom: 0.1px solid #162A63;
-
   border-bottom: 2px solid #162A63;
   border-bottom: 0.1px solid #162A63;
-
   border-bottom: 2px solid #162A63;
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
 }
 
 .Usuario-perfil {
@@ -57,11 +60,14 @@ padding-left: 85%;
 }
 
 .Usuario-perfil:hover {
+<<<<<<< HEAD
 
+=======
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
   transform: scale(1.2);
-
 }  
 
+<<<<<<< HEAD
 
 
 
@@ -69,6 +75,8 @@ padding-left: 85%;
 
 
 
+=======
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
 .icons-header {
   display: flex;
   gap: 16px;
@@ -80,16 +88,19 @@ padding-left: 85%;
   width: 32px;
   height: 32px;
   object-fit: contain;
+  display: block;      
+  display: block;
+<<<<<<< HEAD
 
+=======
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
   display: block;      
   display: block;
 
-  display: block;      
+<<<<<<< HEAD
 
-
-  display: block;
-
-
+=======
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
   position: relative;
   left: 20%;
 
@@ -98,10 +109,16 @@ padding-left: 85%;
 .icons-header img {
   width: 36px;
   cursor: pointer;
+<<<<<<< HEAD
 
     margin-right: -305px
 
+=======
+<<<<<<< HEAD
+    margin-right: 5691px;
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
 
+  
 }
 
 .menu-hamburguer {
@@ -129,9 +146,14 @@ padding-left: 85%;
     
     margin-right:10px;
 }
+<<<<<<< HEAD
 .menu-hamburguer img  {
 margin-left:-669px;
 }
+=======
+.menu-hamburguer img {
+ margin-left: -669;
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
 }
 
 @media (max-width: 600px ) {

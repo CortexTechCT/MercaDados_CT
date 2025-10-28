@@ -30,7 +30,11 @@
   width: 70%;
   max-width: 1000px;
   color: #000;
+<<<<<<< HEAD
  margin-left: 325px;
+=======
+  margin-left: 25%;
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
 }
 
 .gestaoestoque-box h2 {
@@ -265,6 +269,10 @@ position: absolute; /* O texto tem posição absoluta */
   }
 
 
+<<<<<<< HEAD
 
 
 
+=======
+}
+>>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
