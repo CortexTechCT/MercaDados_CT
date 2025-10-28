@@ -32,17 +32,13 @@ export const Login = () => {
             <a href="#">Esqueceu a senha?</a>
           </div>
 
-<<<<<<< HEAD
      <Botao nomeBotao="Entrar" />
      <Link to= "/home">
      
      
      </Link>
-=======
-          <Link to="/home">
-            <Botao nomeBotao="Entrar" />
-          </Link>
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
+
+         
         </form>
       </div>
     </div>

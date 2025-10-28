@@ -176,7 +176,9 @@ export const CadastroUsuario = () => {
               required
             />
 
-            <Botao nomeBotao="Cadastrar Funcionário" tipo="submit" />
+            <div className="botao_cadusuario">
+              <Botao nomeBotao="Cadastrar Funcionário" tipo="submit" />
+            </div>
           </form>
         </main>
       </div>

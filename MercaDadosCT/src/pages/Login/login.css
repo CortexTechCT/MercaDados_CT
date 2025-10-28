@@ -87,12 +87,16 @@ input:focus {
 
 
 button:hover {
-  background-color: #e59400;
+  background-color:#F97316;;
+  
 }
-
 
 @media (max-width: 600px) {
   
+
+
+
+
 .login-box {
        
  width: 95%;    
@@ -109,7 +113,7 @@ button:hover {
 
  input {
       height: 55px;
-        width: 333px;
+        width: 294px;
         display: flex;
         justify-content: center;
         margin-left: auto;
@@ -117,8 +121,9 @@ button:hover {
     } 
       .botao  {
       
-      max-width: 342px; 
-        margin-left: auto
+        max-width: 342px; 
+        margin-left: 20px;
+        width: 20px;
     }
 
 .formulario-grid{

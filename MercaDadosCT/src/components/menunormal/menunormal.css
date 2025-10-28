@@ -4,11 +4,8 @@
   align-items: center;
   padding: 12px 24px;
   background-color: #0E1A3D;
-<<<<<<< HEAD
+
   border-bottom: 2px solid  #162A63;
-
-
-=======
 
   padding-left: 89%;
   padding-left: 89%;
@@ -29,7 +26,7 @@ padding-left: 85%;
   padding-left: 85%;
   border-bottom: 2px solid  #162A63;
 
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
+
 }
 
 .icone-sino {
@@ -39,30 +36,17 @@ padding-left: 85%;
   border-bottom: 0.1px solid #162A63;
 
   border-bottom: 2px solid #162A63;
-<<<<<<< HEAD
-  
-=======
-   
-
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
 
   border-bottom: 0.1px solid #162A63;
 
   border-bottom: 2px solid #162A63;
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
   border-bottom: 0.1px solid #162A63;
 
   border-bottom: 2px solid #162A63;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
+
+
 }
 
 .Usuario-perfil {
@@ -73,15 +57,15 @@ padding-left: 85%;
 }
 
 .Usuario-perfil:hover {
-<<<<<<< HEAD
+
   transform: scale(1.2);
 
 }  
 
-=======
 
-} 
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
+
+
+
 
 
 
@@ -99,20 +83,13 @@ padding-left: 85%;
 
   display: block;      
   display: block;
-<<<<<<< HEAD
-=======
-
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
 
   display: block;      
 
 
   display: block;
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
   position: relative;
   left: 20%;
 
@@ -121,10 +98,9 @@ padding-left: 85%;
 .icons-header img {
   width: 36px;
   cursor: pointer;
-<<<<<<< HEAD
-    margin-right: 5691px;
-=======
->>>>>>> 23c6e60537628555937c0961864ef5402240306b
+
+    margin-right: -305px
+
 
 }
 
@@ -138,6 +114,7 @@ padding-left: 85%;
 .menu-hamburguer img {
   width: 32px;
   height: 32px;
+  margin-left: -315px;
 }
 
 
@@ -152,6 +129,15 @@ padding-left: 85%;
     
     margin-right:10px;
 }
-
-
+.menu-hamburguer img  {
+margin-left:-669px;
 }
+}
+
+@media (max-width: 600px ) {
+.menu-hamburguer img {
+       margin-left: -320px;
+    
+    }
+  }
+

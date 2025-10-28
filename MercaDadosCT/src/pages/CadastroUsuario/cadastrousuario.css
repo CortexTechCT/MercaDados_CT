@@ -94,6 +94,7 @@ body {
   cursor: pointer;
   display: block;
   margin: 0 auto;
+ 
 }
 
 .botao-cadastrar:hover {
@@ -137,6 +138,15 @@ body {
 @media (max-width: 600px) {
 
 
+.formulario-grid select {
+
+margin-left: -87px;
+
+width: 308px;
+
+}
+
+
 
 
   .formulario-box {
@@ -177,12 +187,16 @@ body {
     max-width: 100%;
   }
  
-  .botao-cadastrar {
-    width: 90%;       /* Largura menor que 100% */
-    padding: 10px 0;  /* Altura do botão via padding */
-    font-size: 14px;  /* Fonte menor */
-    border-radius: 16px; /* Borda proporcional */
-  }
+ /* .botao{
+         width: 135%;
+        margin-left: -84px;
+
+} */
+
+.botao_cadusuario{
+  width: 135%;
+        margin-left: -100px;
+}
 
 }
 

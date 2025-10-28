@@ -1,6 +1,4 @@
 
- import "./menunormal.css";
-;
 
 import "./menunormal.css";
 import iconeSino from "../../assets/Alarm.png";
