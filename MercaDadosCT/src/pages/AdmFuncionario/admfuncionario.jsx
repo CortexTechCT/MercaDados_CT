@@ -11,90 +11,49 @@ export const AdmFuncionario = () => {
   const [funcAberto, setFuncAberto] = useState(null);
   const [listaVenda, setListaVenda] = useState([]);
   const [listaFeed, setListaFeed] = useState([]);
-  
+
+  // 🔄 Alternar funcionário aberto/fechado
   const toggleFuncionario = (index) => {
     setFuncAberto(funcAberto === index ? null : index);
   };
 
-  async function ListarFeedback () {
-    try{
-         const resposta = await api.get("Feedback");
-      console.log("✅ feed:", resposta.data(f => f.feedbackID));
-      setListaFeed(resposta.data);
-    }
-    catch(error){
-        console.log("❌ Erro ao buscar os feed:", error);
-    }
-  }
-
-  // Gráfico de Pizza
-  const pizzaChartOptions = {
-    chart: { width: 380, type: "pie" },
-    labels: ["Satisfeito", "Neutro", "Insatisfeito"],
-    colors: ["#337DFF", "#FFC043", "#FF5A5F"],
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          chart: { width: 250 },
-          legend: { position: "bottom" },
-        },
-      },
-    ],
-  };
-
-  const pizzaChartSeries = [44, 30, 26];
-
-  async function ListarVenda () {
-    try{
-         const resposta = await api.get("Venda");
-      console.log("✅ venda:", resposta.data(f => f.vendaID));
-      setListaVenda(resposta.data);
-    }
-    catch(error){
-        console.log("❌ Erro ao buscar as vendas:", error);
-    }
-  }
-
-  // Gráfico de Barras
-  const graficoBarras = {
-    series: [
-      {
-        name: "Desempenho",
-        data: [ListarVenda],
-      },
-    ],
-    options: {
-      chart: { type: "bar", height: 250 },
-      plotOptions: { bar: { borderRadius: 10, dataLabels: { position: "top" } } },
-      dataLabels: {
-        enabled: true,
-        formatter: (val) => val + "%",
-        offsetY: -20,
-        style: { fontSize: "12px", colors: ["#304758"] },
-      },
-      xaxis: {
-        categories: [
-          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-        ],
-      },
-    },
-  };
-
-  useEffect(() => {
-    ListarFuncionario();
-  }, []);
-
+  // 📡 Buscar dados da API
   async function ListarFuncionario() {
     try {
       const resposta = await api.get("Funcionario");
-      // console.log("✅ Funcionários:", resposta.data.map(f => f.fotoPerfil));
       setListaFuncionario(resposta.data);
+      console.log("✅ Funcionários:", resposta.data);
     } catch (error) {
-      // console.log("❌ Erro ao buscar os usuários:", error);
+      console.log("❌ Erro ao buscar funcionários:", error);
     }
   }
+
+  async function ListarVenda() {
+    try {
+      const resposta = await api.get("Venda/Listar");
+      setListaVenda(resposta.data);
+      console.log("✅ Vendas:", resposta.data);
+    } catch (error) {
+      console.log("❌ Erro ao buscar vendas:", error);
+    }
+  }
+
+  async function ListarFeedback() {
+    try {
+      const resposta = await api.get("Feedback");
+      setListaFeed(resposta.data);
+      console.log("✅ Feedbacks:", resposta.data);
+    } catch (error) {
+      console.log("❌ Erro ao buscar feedbacks:", error);
+    }
+  }
+
+  // 🔁 Executa ao montar
+  useEffect(() => {
+    ListarFuncionario();
+    ListarVenda();
+    ListarFeedback();
+  }, []);
 
   return (
     <div className="container-geral-admfuncionario">
@@ -106,15 +65,75 @@ export const AdmFuncionario = () => {
           <h2>Gestão de funcionários:</h2>
 
           <div className="lista-funcionarios">
-            {listaFuncionario.length === 0 ? (
-              <p className="nenhum-funcionario">Nenhum funcionário encontrado.</p>
-            ) : (
-              listaFuncionario.map((f, index) => (
+            {listaFuncionario.map((f, index) => {
+              const idFunc = f.funcionarioID || f.idFuncionario || f.id;
+
+              // 🔸 IDs dos feedbacks do funcionário
+              const feedbacksFuncionarioIDs = listaFeed
+                .filter(fb => fb.funcionarioID === idFunc)
+                .map(fb => fb.feedbackID);
+
+              // 🔸 Filtra vendas do funcionário
+              const vendasFuncionario = listaVenda.filter(v =>
+                feedbacksFuncionarioIDs.includes(v.feedbackID)
+              );
+
+              // 🔸 Filtra feedbacks do funcionário
+              const feedbacksFuncionario = listaFeed.filter(
+                fb => fb.funcionarioID === idFunc
+              );
+
+              // 🔸 Calcula vendas por mês (usando data do feedback)
+              const vendasPorMes = Array.from({ length: 12 }, (_, i) => {
+                const mes = i + 1;
+                return vendasFuncionario.filter(v => {
+                  const feedback = listaFeed.find(fb => fb.feedbackID === v.feedbackID);
+                  if (!feedback) return false;
+                  return new Date(feedback.dataFeedback).getMonth() + 1 === mes;
+                }).length;
+              });
+
+              // 🔸 Contagem de feedbacks por tipo
+              const pizzaSeriesFuncionario = [
+                feedbacksFuncionario.filter(fb => fb.nota?.toLowerCase() === "satisfeito").length,
+                feedbacksFuncionario.filter(fb => fb.nota?.toLowerCase() === "neutro").length,
+                feedbacksFuncionario.filter(fb => fb.nota?.toLowerCase() === "insatisfeito").length,
+              ];
+
+              // 🔸 Configuração do gráfico de barras
+              const graficoBarrasFuncionario = {
+                series: [{ name: "Vendas", data: vendasPorMes }],
+                options: {
+                  chart: { type: "bar", height: 250 },
+                  plotOptions: { bar: { borderRadius: 10, dataLabels: { position: "top" } } },
+                  dataLabels: {
+                    enabled: true,
+                    formatter: val => val,
+                    offsetY: -20,
+                    style: { fontSize: "12px", colors: ["#304758"] },
+                  },
+                  xaxis: {
+                    categories: [
+                      "Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"
+                    ],
+                  },
+                },
+              };
+
+              // 🔸 Configuração do gráfico de pizza
+              const graficoPizzaFuncionario = {
+                options: {
+                  chart: { type: "pie", width: 380 },
+                  labels: ["Satisfeito", "Neutro", "Insatisfeito"],
+                  colors: ["#337DFF", "#FFC043", "#FF5A5F"],
+                  legend: { position: "bottom" },
+                },
+                series: pizzaSeriesFuncionario,
+              };
+
+              return (
                 <div key={index} className="item-funcionario-wrapper">
-                  <div
-                    className="item-funcionario"
-                    onClick={() => toggleFuncionario(index)}
-                  >
+                  <div className="item-funcionario" onClick={() => toggleFuncionario(index)}>
                     <div className="info-funcionario">
                       <img
                         src={
@@ -126,81 +145,64 @@ export const AdmFuncionario = () => {
                         className="foto-funcionario"
                         onError={(e) => (e.target.src = perfilazul)}
                       />
-
-
-                      {/* <img
-                        src={perfilazul}
-                        className="Usuario-perfilAdm"
-                        alt="Usuário"
-                      /> */}
-
                       <p>{f.nomeFuncionario}</p>
                     </div>
-
-                    <span
-                      className={`seta ${funcAberto === index ? "aberto" : ""}`}
-                    >
+                    <span className={`seta ${funcAberto === index ? "aberto" : ""}`}>
                       {funcAberto === index ? "˄" : "˅"}
                     </span>
                   </div>
 
-                  <div
-                    className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""
-                      }`}
-                  >
+                  {/* 🔽 Detalhes abertos */}
+                  <div className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""}`}>
                     {funcAberto === index && (
                       <div className="detalhes-funcionario">
                         <div className="header-funcionario-expandido">
                           <div>
                             <strong>{f.nomeFuncionario}</strong>
                             <span className="funcao">
-                              Função: {"Caixa de Vendas"}
+                              Função: {f.funcao || "Caixa de Vendas"}
                             </span>
                           </div>
                         </div>
 
+                        {/* 📊 GRÁFICOS */}
                         <div className="graficos-funcionario">
+                          {/* Gráfico de vendas */}
                           <div className="grafico-barra-placeholder">
-                        
-                            <ReactApexChart
-                              options={graficoBarras.options}
-                              series={graficoBarras.series}
-                              type="bar"
-                              height={230}
-                              width={370}
-                            />
+                            {graficoBarrasFuncionario.series?.[0]?.data?.length > 0 ? (
+                              <ReactApexChart
+                                options={graficoBarrasFuncionario.options}
+                                series={graficoBarrasFuncionario.series}
+                                type="bar"
+                                height={230}
+                                width={370}
+                              />
+                            ) : (
+                              <p>Carregando dados de vendas...</p>
+                            )}
                           </div>
 
+                          {/* Gráfico de feedback */}
                           <div className="grafico-pizza-placeholder">
-                            <ReactApexChart
-                              options={pizzaChartOptions}
-                              series={pizzaChartSeries}
-                              type="pie"
-                              width={350}
-                            />
-                          </div>
-                        </div>
-
-                        <div className="legenda-satisfacao">
-                          <div className="item-legenda">
-                            <div className="cor azul"></div>
-                            <span>🙂</span>
-                          </div>
-                          <div className="item-legenda">
-                            <div className="cor amarelo"></div>
-                            <span>😐</span>
-                          </div>
-                          <div className="item-legenda">
-                            <div className="cor vermelho"></div>
-                            <span>😠</span>
+                            {graficoPizzaFuncionario.series?.some(n => n > 0) ? (
+                              <ReactApexChart
+                                options={graficoPizzaFuncionario.options}
+                                series={graficoPizzaFuncionario.series}
+                                type="pie"
+                                width={350}
+                              />
+                            ) : (
+                              <p>Carregando feedbacks...</p>
+                            )}
                           </div>
                         </div>
                       </div>
                     )}
                   </div>
                 </div>
-              ))
-            )}
+              );
+            })}
+
           </div>
         </main>
       </div>
