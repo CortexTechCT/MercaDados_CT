@@ -7,7 +7,6 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
 
 useEffect(() => {
-  // ❗ sempre limpa o login salvo ao abrir o app
   localStorage.removeItem("usuario");
   localStorage.removeItem("token");
 }, []);

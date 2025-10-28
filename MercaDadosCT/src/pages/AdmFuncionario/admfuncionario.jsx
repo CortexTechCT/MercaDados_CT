@@ -89,10 +89,8 @@ export const AdmFuncionario = () => {
   async function ListarFuncionario() {
     try {
       const resposta = await api.get("Funcionario");
-      // console.log("✅ Funcionários:", resposta.data.map(f => f.fotoPerfil));
       setListaFuncionario(resposta.data);
     } catch (error) {
-      // console.log("❌ Erro ao buscar os usuários:", error);
     }
   }
 
@@ -128,11 +126,7 @@ export const AdmFuncionario = () => {
                       />
 
 
-                      {/* <img
-                        src={perfilazul}
-                        className="Usuario-perfilAdm"
-                        alt="Usuário"
-                      /> */}
+                      
 
                       <p>{f.nomeFuncionario}</p>
                     </div>
