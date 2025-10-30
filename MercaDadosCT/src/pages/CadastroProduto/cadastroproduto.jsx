@@ -44,7 +44,6 @@ const handleSubmit = async () => {
     formData.append("Peso", produto.Peso);
     formData.append("Setor", produto.Setor);
 
-    // ✅ Nome do arquivo e arquivo dentro de Imagem
     if (produto.Imagem) {
       formData.append("Imagem.Arquivo", produto.Imagem);
       formData.append("Imagem.Nome", produto.Imagem.name);
