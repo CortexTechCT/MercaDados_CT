@@ -30,9 +30,13 @@
   width: 70%;
   max-width: 1000px;
   color: #000;
+<<<<<<< HEAD
 
  margin-left: 325px;
 
+=======
+ margin-left: 325px;
+>>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
   margin-left: 25%;
 }
 
@@ -224,8 +228,8 @@ margin: 40px;
   }
 
   .produto-card {
-    width: 100%;
-    margin: 10px auto;
+    width: 95%;
+        margin: 17px auto;  
   }
 
   .produto-img {
@@ -241,8 +245,10 @@ margin: 40px;
   }
 
   .listagem-produtos {
-    padding: 20px 10px;
-    border-radius: 20px;
+   padding: 20px 10px;
+        width: 87%;
+        align-items: center;
+        margin-left: 22px;
   }
 
   .produtos-h4 {
@@ -251,14 +257,14 @@ margin: 40px;
 
  .apexcharts-title-text{
 
-position: absolute; /* O texto tem posição absoluta */
-  top: 10px; /* Ajuste a distância do topo */
+position: absolute;
+  top: 10px; 
 
 
 } 
 .apexcharts-toolbar{
 
- position: relative; /* O contêiner pai deve ter posição relativa */
+ position: relative; 
   width: 100%; 
 
 }
@@ -280,6 +286,7 @@ position: absolute; /* O texto tem posição absoluta */
   }
 
 
+<<<<<<< HEAD
 
 
 
@@ -287,3 +294,5 @@ position: absolute; /* O texto tem posição absoluta */
 
 
 
+=======
+>>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290

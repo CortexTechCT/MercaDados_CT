@@ -1,5 +1,5 @@
 import "./MenuLateral.css";
-import iconeCasa from "../../assets/casa.png"; 
+import iconeCasa from "../../assets/casa.png";
 import iconeSair from "../../assets/Vector.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -17,11 +17,15 @@ export const MenuLateral = () => {
 
   return (
     <>
-      <div className="icone-hamburguer" onClick={alternarMenu}>
-        <div className="linha"></div>
-        <div className="linha"></div>
-        <div className="linha"></div>
-      </div>
+      {!menuAberto && ( 
+        <div className="icone-hamburguer" onClick={alternarMenu}>
+          <div className="linha"></div>
+          <div className="linha"></div>
+          <div className="linha"></div>
+        </div>
+      )}
+
+      {menuAberto && <div className="overlay" onClick={fecharMenu}></div>}
 
       <aside className={`menu-lateral ${menuAberto ? "ativo" : ""}`}>
         <Link to="/Home" onClick={fecharMenu}>

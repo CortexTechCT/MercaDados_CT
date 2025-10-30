@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from "../pages/Login/login";
 import { CadastroUsuario } from "../pages/CadastroUsuario/cadastrousuario";

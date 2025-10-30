@@ -4,6 +4,7 @@
   align-items: center;
   padding: 12px 24px;
   background-color: #0E1A3D;
+<<<<<<< HEAD
 
 
   border-bottom: 2px solid  #162A63;
@@ -17,6 +18,23 @@
   
 
 
+=======
+  border-bottom: 2px solid  #162A63;
+  border-bottom: 2px solid  #162A63;
+  padding-left: 89%;
+  padding-left: 89%;
+  padding-left: 85%;
+  padding-left: 89%;
+  padding-left: 85%;
+  border-bottom: 2px solid  #162A63;
+  padding-left: 89%;
+  padding-left: 89%;
+  padding-left: 85%;
+  padding-left: 89%;
+  padding-left: 85%;
+  border-bottom: 2px solid  #162A63;
+
+>>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
 }
 
 .icone-sino {
@@ -24,6 +42,13 @@
   padding-left: 78%;
   border-bottom: 0.1px solid #162A63;
   border-bottom: 2px solid #162A63;
+<<<<<<< HEAD
+=======
+  border-bottom: 0.1px solid #162A63;
+  border-bottom: 2px solid #162A63;
+  border-bottom: 0.1px solid #162A63;
+  border-bottom: 2px solid #162A63;
+>>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
 
 }
 
@@ -35,9 +60,12 @@
 }
 
 .Usuario-perfil:hover {
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
   transform: scale(1.2);
 }  
 
@@ -55,15 +83,21 @@
   object-fit: contain;
   display: block;      
   display: block;
+<<<<<<< HEAD
 
+=======
+  display: block;      
+  display: block;
+>>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
   position: relative;
   left: 20%;
 
-}
+} 
 
 .icons-header img {
   width: 36px;
   cursor: pointer;
+<<<<<<< HEAD
 
 
     margin-right: -305px;
@@ -72,34 +106,20 @@
     margin-right: 5691px;
 
 
+=======
+  margin-right: -305px
+>>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
   
 }
 
-.menu-hamburguer {
-  display: none;
-  cursor: pointer;
-
-
-}
-
-.menu-hamburguer img {
-  width: 32px;
-  height: 32px;
-  margin-left: -315px;
-}
-
-
 @media (max-width: 1024px) {
-  .menu-hamburguer  {
-    display: flex;
-
-    justify-content: flex-start;
-  }
+  
 
 .icons-header img {
     
     margin-right:10px;
 }
+<<<<<<< HEAD
 
 .menu-hamburguer img  {
 margin-left:-669px;
@@ -118,3 +138,8 @@ margin-left:-669px;
   }
 
 }
+=======
+
+  
+}
+>>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
