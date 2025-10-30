@@ -15,11 +15,21 @@ namespace Mercadados_API.Repositories
         {
             _context = context;
         }
-
+         
         public void Cadastrar(Usuario usuario)
         {
             try
             {
+<<<<<<< HEAD
+=======
+                Usuario usuarioBuscado = _context.Usuario
+                    .Include(u => u.TipoUsuario)
+                    .FirstOrDefault(u =>
+                        u.Email == usuario.Email &&
+                        u.Senha == usuario.Senha)!;
+
+
+>>>>>>> 297755082941f83f26c2ba8b1411124fee0595eb
                 usuario.UsuarioID = Guid.NewGuid();
                 _context.Usuario.Add(usuario);
                 _context.SaveChanges();
@@ -29,6 +39,7 @@ namespace Mercadados_API.Repositories
                 throw;
             }
         }
+
 
         public Usuario BuscarPorId(Guid id)
         {
@@ -56,5 +67,5 @@ namespace Mercadados_API.Repositories
             }
         }
 
-    }
-}
+    };
+};

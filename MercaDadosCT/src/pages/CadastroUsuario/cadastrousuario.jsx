@@ -20,63 +20,77 @@ export const CadastroUsuario = () => {
     complemento: "",
   });
 
-  // Atualiza o estado conforme os inputs
   function handleChange(e) {
     const { name, value } = e.target;
     setFuncionario({ ...funcionario, [name]: value });
   }
 
-  // Envia os dados para a API
-  async function cadastrarFuncionario(e) {
-    e.preventDefault();
+async function cadastrarFuncionario(e) {
+  e.preventDefault();
 
-    try {
-      const funcionarioFormatado = {
-        nomeFuncionario: funcionario.nome,
-        dataNascimento: funcionario.dataNascimento,
-        genero: funcionario.genero,
-        cpf: funcionario.cpfCnpj,
+  try {
+    const funcionarioFormatado = {
+      dataNascimento: funcionario.dataNascimento,
+      nomeFuncionario: funcionario.nome,
+      email: funcionario.email,
+      senha: funcionario.senha,
+      genero: funcionario.genero,
+      ruaENumero: funcionario.endereco,
+      CidadeEstadoCEP: funcionario.cidade,
+      complemento: funcionario.complemento,
+      numero: funcionario.telefone,
+      cpf: funcionario.cpfCnpj,
+      fotoPerfil: "",
+      usuario: {
+        usuarioID: "00000000-0000-0000-0000-000000000000", // placeholder
+        nomeUsuario: funcionario.nome,
         email: funcionario.email,
-        ruaENumero: funcionario.endereco,
-        cidadeEstadoCEP: funcionario.cidade,
-        numero: funcionario.telefone,
-        complemento: funcionario.complemento,
         senha: funcionario.senha,
-      };
+        tipoUsuarioID: "00000000-0000-0000-0000-000000000000", // placeholder
+        tipoUsuario: {
+          tipoUsuarioID: "00000000-0000-0000-0000-000000000000",
+          tituloTipoUsuario: "Funcionario",
+        },
+        numero: funcionario.telefone,
+        cpf: funcionario.cpfCnpj,
+      },
+    };
 
-      const resposta = await api.post("Funcionario", funcionarioFormatado);
+    console.log("➡️ Enviando para API:", funcionarioFormatado);
 
-      Swal.fire({
-        icon: "success",
-        title: "Funcionário cadastrado com sucesso!",
-        text: `Nome: ${resposta.data.nomeFuncionario}`,
-        confirmButtonColor: "#3085d6",
-      });
+    const resposta = await api.post("Funcionario", funcionarioFormatado);
 
-      // Limpa os campos
-      setFuncionario({
-        nome: "",
-        dataNascimento: "",
-        genero: "",
-        cpfCnpj: "",
-        email: "",
-        endereco: "",
-        senha: "",
-        cidade: "",
-        telefone: "",
-        complemento: "",
-      });
+    Swal.fire({
+      icon: "success",
+      title: "Funcionário cadastrado com sucesso!",
+      text: `Nome: ${resposta.data.nomeFuncionario}`,
+      confirmButtonColor: "#3085d6",
+    });
 
-    } catch (error) {
-      console.error("❌ Erro ao cadastrar:", error);
-      Swal.fire({
-        icon: "error",
-        title: "Erro ao cadastrar!",
-        text: error.response?.data?.message || "Não foi possível realizar o cadastro.",
-        confirmButtonColor: "#d33",
-      });
-    }
+    setFuncionario({
+      nome: "",
+      dataNascimento: "",
+      genero: "",
+      cpfCnpj: "",
+      email: "",
+      endereco: "",
+      senha: "",
+      cidade: "",
+      telefone: "",
+      complemento: "",
+    });
+  } catch (error) {
+    console.error("❌ Erro ao cadastrar:", error);
+    console.log("📦 Resposta da API:", error.response?.data);
+    Swal.fire({
+      icon: "error",
+      title: "Erro ao cadastrar!",
+      text: error.response?.data?.message || "Não foi possível realizar o cadastro.",
+      confirmButtonColor: "#d33",
+    });
   }
+}
+
 
   return (
     <div className="container-geral">
@@ -179,7 +193,9 @@ export const CadastroUsuario = () => {
               required
             />
 
-            <Botao nomeBotao="Cadastrar Funcionário" tipo="submit" />
+            <div className="botao-container">
+              <Botao nomeBotao="Cadastrar Funcionário" tipo="submit" onClick={cadastrarFuncionario} />
+            </div>
           </form>
         </main>
       </div>
