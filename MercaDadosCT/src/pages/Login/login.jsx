@@ -37,11 +37,6 @@ export const Login = () => {
      
      
      </Link>
-
-<<<<<<< HEAD
-         
-=======
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
         </form>
       </div>
     </div>
