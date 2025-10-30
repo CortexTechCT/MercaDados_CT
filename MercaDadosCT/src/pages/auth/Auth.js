@@ -1,4 +1,4 @@
-import { jwtDecode } from "jwt-decode"; // use assim
+import { jwtDecode } from "jwt-decode";
 
 
 export const userDecodeToken = (token) => {

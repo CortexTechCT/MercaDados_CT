@@ -23,7 +23,7 @@ export const Perfil = () => {
           <div className="perfil-dados">
             <div className="campo-perfil">
               <label>Nome completo</label>
-              <input type="text" value="Jucelino da Silva" readOnly />
+              <input type="text" value="Jucelino" readOnly />
             </div>
 
             <div className="campo-perfil">
