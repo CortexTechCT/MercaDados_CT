@@ -12,9 +12,8 @@ import { useNavigate } from "react-router-dom";
 export const FormaDePagamento = () => {
   const navigate = useNavigate();
 
-  // 🔙 Volta para a tela de Leitura de Produtos
   const handleVoltar = () => {
-    navigate("/LeituraProdutos"); // ou "/LeituraProdutos" se você tiver criado essa rota
+    navigate("/LeituraProdutos");
   };
 
   const handleConfirmar = () => {
@@ -23,22 +22,18 @@ export const FormaDePagamento = () => {
 
   return (
     <div className="pagamento-container">
-      {/* Header superior */}
       <MenuNormal />
 
-      {/* Conteúdo principal */}
       <div className="pagamento-content">
         <div className="pagamento-card">
           <h1>Forma de Pagamento!</h1>
 
-          {/* Botão de voltar */}
           <button className="voltar" onClick={handleVoltar}>
             <div>
               <img src={Voltar} alt="BotaoVoltar" />
             </div>
           </button>
 
-          {/* Opções de pagamento */}
           <div className="opcoes-pagamento">
             <div className="opcao">
               <img src={Pix} alt="Pix" />
@@ -57,7 +52,6 @@ export const FormaDePagamento = () => {
             </div>
           </div>
 
-          {/* Botão confirmar */}
           <Botao nomeBotao="Confirmar" onClick={handleConfirmar} />
         </div>
       </div>

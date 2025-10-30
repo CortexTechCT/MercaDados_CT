@@ -5,7 +5,6 @@ import "./confirmarPagamento.css";
 export const confirmarPagamento = () => {
     return(
         <div className="ok">
-            {/* Header superior */}
             <MenuNormal/>
         </div>
 

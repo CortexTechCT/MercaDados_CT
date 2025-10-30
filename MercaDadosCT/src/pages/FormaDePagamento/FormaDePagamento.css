@@ -90,13 +90,9 @@
 }
 
 .voltar img {
-  width: 100px;
-  height: 40px;
+  max-width: 32px;
+  max-height: 32px;
   object-fit: contain;
-  align-items: center;
-  margin-top: 10px;
-  margin-left: 0.2px;
-  
 }
 
 
@@ -105,28 +101,49 @@
   color: white;
 }
 
-/* Opções de pagamento */
-.opcoes-pagamento {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  justify-items: center;
-  margin-bottom: 40px;
+.opcoes-pagamento img {
+    max-width: 140px;
+    height: auto;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .opcao {
   background-color: #f0f3ff;
   border-radius: 12px;
-  padding: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  width: 150px;          /* ← tamanho fixo do card */
+  height: 120px;         /* ← altura padronizada */
+  display: flex;         /* ← centraliza a imagem */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+
 .opcao img {
-  width: 120px;
-  height: 70px;
+  max-width: 90%;
+  max-height: 90%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+.opcoes-pagamento .opcao img {
+  max-width: 120px;
+  height: auto;
   object-fit: contain;
 }
+
+
+
 
 .opcao:hover {
   transform: scale(1.05);

@@ -5,11 +5,12 @@ import { Fornecedores } from "../pages/Fornecedores/fornecedores";
 import { GestaoEstoque } from "../pages/GestaoEstoque/gestaoestoque";
 import { Home } from "../pages/Home/home";
 import { LucrosGastos } from "../pages/LucrosGastos/lucrosgastos";
-import { Perfil } from "../pages/Perfil/Perfil";
+import { Perfil } from "../pages/Perfil/Perfil.jsx";
 import { useAuth } from "../pages/contexts/authContexts";
 import { LeituraProdutos } from "../pages/LeituraProdutos/LeituraProdutos";
 import { Navigate } from "react-router-dom";
 import { AdmFuncionario } from "../pages/AdmFuncionario/admfuncionario.jsx"
+import { CadastroProduto } from "../pages/CadastroProduto/cadastroProduto.jsx";
 import { AuthProvider } from "../pages/contexts/authContexts";
 
 const Privado = ({ Item, tipoPermitido }) => {
@@ -39,6 +40,7 @@ const Rotas = () => {
                     <Route path="/GestaoEstoque" element={<Privado tipoPermitido="Admin" Item={GestaoEstoque} />} />
                     <Route path="/LucrosGastos" element={<Privado tipoPermitido="Admin" Item={LucrosGastos} />} />
                     <Route path="/AdmFuncionario" element={<Privado tipoPermitido="Admin" Item={AdmFuncionario} />} />
+                    <Route path="/CadastroProduto" element={<Privado tipoPermitido="Admin" Item={CadastroProduto} />} />
 
                     <Route path="/LeituraProdutos" element={<Privado tipoPermitido="Funcionario" Item={LeituraProdutos} />} />
                 </Routes>
