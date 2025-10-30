@@ -8,22 +8,20 @@ import bebidasIcon from "../../assets/bebidas.png";
 import hortifruitIcon from "../../assets/Hortifruit.png";
 import merceariaIcon from "../../assets/Mercearia.png";
 import padariaIcon from "../../assets/Padaria.png";
-import prolimIcon from "../../assets/Prolim.png";
-import nescau from "../../assets/Design sem nome 3.png";
+import prolimIcon from "../../assets/limpeza.png";
+import api from "../../services/Services.js";
 
 export const GestaoEstoque = () => {
+  // 🔧 Correção de digitação: "cosnt" → "const"
+  const [listaProduto, setListaProduto] = useState([]);
+  const [listaCategoria, setListaCategoria] = useState([]);
+   const [listaVenda, setListaVenda] = useState([]);
+
   const [state, setState] = useState({
     series: [
       {
         name: "Movimentação de Estoque",
-        data: [
-          [new Date("2025-01-01").getTime(), 12000000],
-          [new Date("2025-02-01").getTime(), 15000000],
-          [new Date("2025-03-01").getTime(), 11000000],
-          [new Date("2025-04-01").getTime(), 13000000],
-          [new Date("2025-05-01").getTime(), 17000000],
-          [new Date("2025-06-01").getTime(), 14000000],
-        ],
+        data: [], // será preenchido pela API
       },
     ],
     options: {
@@ -55,21 +53,72 @@ export const GestaoEstoque = () => {
       },
       yaxis: {
         labels: {
-          formatter: (val) => (val / 1000000).toFixed(0) + "M",
+          formatter: (val) => val.toFixed(0),
         },
-        title: { text: "Quantidade" },
+        title: { text: "Quantidade Vendida" },
       },
-      xaxis: { type: "datetime" },
+      xaxis: {
+        type: "datetime",
+      },
       tooltip: {
         shared: false,
         y: {
-          formatter: (val) => (val / 1000000).toFixed(2) + "M",
+          formatter: (val) => val.toFixed(2),
         },
       },
     },
   });
 
+  // 🔹 Função para buscar vendas da API
+  const listarVenda = async () => {
+    try {
+      const res = await api.get("Venda/Listar");
+      setListaVenda(res.data);
+      console.log("✅ Vendas:", res.data);
+
+      // supondo que cada venda tem campos `dataVenda` e `valorTotal` ou `quantidade`
+      const dadosConvertidos = res.data.map((venda) => [
+        new Date(venda.dataVenda).getTime(),
+        venda.quantidade || venda.valorTotal || 0,
+      ]);
+
+      // atualiza o gráfico
+      setState((prev) => ({
+        ...prev,
+        series: [{ ...prev.series[0], data: dadosConvertidos }],
+      }));
+    } catch (err) {
+      console.error("❌ Erro ao buscar vendas:", err);
+    }
+  };
+
+  // ✅ Função que consome a API
+  const listarProdutos = async () => {
+    try {
+      const res = await api.get("Produtos");
+      setListaProduto(res.data);
+      console.log("✅ Produtos:", res.data);
+    } catch (err) {
+      console.error("❌ Erro ao buscar Produtos:", err);
+    }
+  };
+  const listarCategoria = async () => {
+    try {
+      const res = await api.get("EstoqueProdutos");
+      setListaCategoria(res.data);
+
+      console.log("✅ Categorias:", res.data);
+    } catch (err) {
+      console.error("❌ Erro ao buscar Categorias:", err);
+    }
+  };
+
+  // ✅ useEffect para carregar produtos e ativar carrossel
   useEffect(() => {
+    listarVenda();
+    listarProdutos();
+    listarCategoria();
+
     const carrossel = document.getElementById("carrossel");
     const btnPrev = document.querySelector(".carrossel-btn.prev");
     const btnNext = document.querySelector(".carrossel-btn.next");
@@ -91,12 +140,14 @@ export const GestaoEstoque = () => {
   return (
     <div className="container-geral-gestaoestoque">
       <MenuLateral />
+
       <div className="conteudo-principal">
         <MenuNormal />
+
         <main className="gestaoestoque-box">
           <h2>Gestão de Estoque</h2>
 
-          {/* Gráfico */}
+          {/* 📊 Gráfico */}
           <div className="grafico-container">
             <div className="grafico-box">
               <ReactApexChart
@@ -108,7 +159,7 @@ export const GestaoEstoque = () => {
             </div>
           </div>
 
-          {/* Carrossel */}
+          {/* 🌀 Carrossel */}
           <div className="carrossel-container">
             <button className="carrossel-btn prev">&#10094;</button>
 
@@ -142,35 +193,45 @@ export const GestaoEstoque = () => {
             <button className="carrossel-btn next">&#10095;</button>
           </div>
 
-          {/* Produtos */}
+          {/* 🧾 Produtos */}
           <div className="listagem-produtos">
             <h4 className="produtos-h4">Produtos</h4>
 
-            <div className="produto-card">
-              <img className="produto-img" src={nescau} alt="Nescau" />
-              <div className="produto-info">
-                <p><strong>Descrição:</strong></p>
-                <p>Produto: Nescau</p>
-                <p>Número do produto: 99746487393</p>
-                <p>Peso: 400g</p>
-                <p>Valor: R$ 13,00</p>
-                <p>Validade: 14/08/26</p>
-                <p>Setor: Mercearia</p>
-              </div>
-            </div>
 
-            <div className="produto-card">
-              <img className="produto-img" src={nescau} alt="Nescau" />
-              <div className="produto-info">
-                <p><strong>Descrição:</strong></p>
-                <p>Produto: Nescau</p>
-                <p>Número do produto: 99746487393</p>
-                <p>Peso: 400g</p>
-                <p>Valor: R$ 13,00</p>
-                <p>Validade: 14/08/26</p>
-                <p>Setor: Mercearia</p>
-              </div>
-            </div>
+            {listaProduto.length > 0 ? (
+              listaProduto.map((produto, index) => {
+                // 🔍 Verifica se há um campo com o caminho da imagem
+                const caminhoImagem =
+                  produto.caminhoImagem || // usado se sua API retornar "caminhoImagem"
+                  produto.imagem ||        // usado se for apenas "imagem"
+                  produto.urlImagem ||     // usado se vier como "urlImagem"
+                  "";
+
+                // ✅ Monta o caminho completo (ajuste o domínio conforme seu back)
+                const imagemFinal = caminhoImagem
+                  ? `https://localhost:7067/${caminhoImagem.replace("wwwroot/", "")}`
+                  : ""; // sem placeholder
+
+                return (
+                  <div className="produto-card" key={index}>
+                    <img
+                      className="produto-img"
+                      src={imagemFinal}
+                      alt={produto.nome || "Produto"}
+                    />
+                    <div className="produto-info">
+                      <p><strong>Descrição:</strong></p>
+                      <p>Produto: {produto.nome}</p>
+                      <p>Peso: {produto.peso}</p>
+                      <p>Valor: R$ {produto.preco}</p>
+                      <p>Validade: {new Date(produto.validade).toLocaleDateString("pt-BR")}</p>
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <p>Carregando produtos...</p>
+            )}
           </div>
         </main>
       </div>
