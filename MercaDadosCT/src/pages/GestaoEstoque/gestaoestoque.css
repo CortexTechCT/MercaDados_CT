@@ -30,11 +30,10 @@
   width: 70%;
   max-width: 1000px;
   color: #000;
-<<<<<<< HEAD
+
  margin-left: 325px;
-=======
+
   margin-left: 25%;
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
 }
 
 .gestaoestoque-box h2 {
@@ -180,6 +179,18 @@
     padding: 20px;
     margin: 20px auto;
   }
+
+.funcionario-box{
+margin: 40px;
+        width: 90%;
+        padding: 30px 20px;
+        border-radius: 24px
+
+
+}
+
+
+
 }
 
 @media (max-width: 768px) {
@@ -269,10 +280,10 @@ position: absolute; /* O texto tem posição absoluta */
   }
 
 
-<<<<<<< HEAD
 
 
 
-=======
-}
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
+
+
+
+

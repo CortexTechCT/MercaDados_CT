@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 
-
-=======
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
 import "./menunormal.css";
 import iconeSino from "../../assets/Alarm.png";
 import iconeUsuario from "../../assets/perfil.png";

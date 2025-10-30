@@ -5,10 +5,7 @@ import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import perfilazul from "../../assets/perfilazul.svg";
 import api from "../../services/Services.js";
-<<<<<<< HEAD
 
-=======
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
 
  // Imagens (mantidas caso sejam usadas futuramente)
 // import vini from "../../assets/viniciou.jpg";
@@ -18,10 +15,8 @@ import api from "../../services/Services.js";
 // import herik from "../../assets/image_2.png";
 // import isaac from "../../assets/171977797.png";
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
+
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
   const [funcAberto, setFuncAberto] = useState(null);
@@ -52,7 +47,7 @@ export const AdmFuncionario = () => {
     series: [
       {
         name: "Desempenho",
-<<<<<<< HEAD
+
 
 
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
@@ -62,9 +57,7 @@ export const AdmFuncionario = () => {
 
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
 
-=======
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
       },
     ],
     options: {
@@ -81,7 +74,7 @@ export const AdmFuncionario = () => {
         offsetY: -20,
         style: { fontSize: "12px", colors: ["#304758"] },
       },
-<<<<<<< HEAD
+
 
 
       xaxis: { categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] },
@@ -101,23 +94,19 @@ export const AdmFuncionario = () => {
   //     },
   //   },
   // });
-=======
-      xaxis: {
-        categories: [
-          "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-        ],
-      },
-    },
-  };
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
+  //     xaxis: {
+  //       categories: [
+  //         "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  //         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+  //       ],
+  //     },
+  //   },
+  // };
+
 
   // Buscar funcionários do backend
   useEffect(() => {
-<<<<<<< HEAD
 
-=======
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
     ListarFuncionario();
   }, []);
 
@@ -151,12 +140,11 @@ export const AdmFuncionario = () => {
                     onClick={() => toggleFuncionario(index)}
                   >
                     <div className="info-funcionario">
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
+
+
                       <img
                         src={
                           f.fotoPerfil
@@ -165,22 +153,16 @@ export const AdmFuncionario = () => {
                         }
                         alt={f.nomeFuncionario}
                         className="foto-funcionario"
-<<<<<<< HEAD
+
 
                       /> 
                       <img 
                         src={perfilazul} 
 
-=======
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
                       />
 
                       <img
                         src={perfilazul}
-<<<<<<< HEAD
-
-=======
->>>>>>> e2f587557cd7c4562fe9026d7e29e07db1a3139f
                         className="Usuario-perfilAdm"
                         alt="Usuário"
                       />

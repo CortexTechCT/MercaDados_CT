@@ -94,12 +94,17 @@ body {
   cursor: pointer;
   display: block;
   margin: 0 auto;
- 
 }
 
 .botao-cadastrar:hover {
   background-color: #e59400;
 }
+
+
+
+
+
+
 
 @media (max-width: 1024px) {
   .container-geral {
@@ -166,12 +171,12 @@ width: 308px;
     padding: 10px 14px;
   }
 
-  .botao-cadastrar {
+  /* .botao-cadastrar {
     width: 90%;       /* Largura menor que 100% */
-    padding: 10px 0;  /* Altura do botão via padding */
-    font-size: 14px;  /* Fonte menor */
-    border-radius: 16px;
-  }
+    /* padding: 10px 0;  /* Altura do botão via padding */
+    /* font-size: 14px;  /* Fonte menor */
+    /* border-radius: 16px; */ */
+  /* } */ */ */
 
   .descricao-produto {
     gap: 15px;
@@ -195,7 +200,7 @@ width: 308px;
 
 .botao_cadusuario{
   width: 135%;
-        margin-left: -100px;
+        margin-left: -80px;
 }
 
 }
