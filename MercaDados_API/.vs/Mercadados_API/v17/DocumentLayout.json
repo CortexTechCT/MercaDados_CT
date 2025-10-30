@@ -3,40 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030174205_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251030174205_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\49984891860\\desktop\\mercadados_ct\\mercadados_api\\domains\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:domains\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\49984891860\\desktop\\mercadados_ct\\mercadados_api\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030172825_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251030172825_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030170643_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251030170643_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030165730_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251030165730_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030164057_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251030164057_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030163008_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251030163008_MyV1_Spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\49984891860\\desktop\\mercadados_ct\\mercadados_api\\repositories\\produtosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:repositories\\produtosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\49984891860\\desktop\\mercadados_ct\\mercadados_api\\migrations\\20251030174205_myv1_spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:migrations\\20251030174205_myv1_spada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,110 +31,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-30T17:42:05.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20251030172825_MyV1_Spada.cs",
-              "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030172825_MyV1_Spada.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251030172825_MyV1_Spada.cs",
-              "ToolTip": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030172825_MyV1_Spada.cs",
-              "RelativeToolTip": "Migrations\\20251030172825_MyV1_Spada.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T17:28:25.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20251030165730_MyV1_Spada.cs",
-              "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030165730_MyV1_Spada.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251030165730_MyV1_Spada.cs",
-              "ToolTip": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030165730_MyV1_Spada.cs",
-              "RelativeToolTip": "Migrations\\20251030165730_MyV1_Spada.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T16:57:30.468Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "20251030164057_MyV1_Spada.cs",
-              "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030164057_MyV1_Spada.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251030164057_MyV1_Spada.cs",
-              "ToolTip": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030164057_MyV1_Spada.cs",
-              "RelativeToolTip": "Migrations\\20251030164057_MyV1_Spada.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T16:40:57.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "20251030163008_MyV1_Spada.cs",
-              "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030163008_MyV1_Spada.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251030163008_MyV1_Spada.cs",
-              "ToolTip": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030163008_MyV1_Spada.cs",
-              "RelativeToolTip": "Migrations\\20251030163008_MyV1_Spada.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T16:30:09.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProdutosController.cs",
-              "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\ProdutosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProdutosController.cs",
-              "ToolTip": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Controllers\\ProdutosController.cs",
-              "RelativeToolTip": "Controllers\\ProdutosController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAiwC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T16:29:12.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Produtos.cs",
-              "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\Produtos.cs",
-              "RelativeDocumentMoniker": "Domains\\Produtos.cs",
-              "ToolTip": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Domains\\Produtos.cs",
-              "RelativeToolTip": "Domains\\Produtos.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAkwCQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T14:05:44.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20251030170643_MyV1_Spada.cs",
-              "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030170643_MyV1_Spada.cs",
-              "RelativeDocumentMoniker": "Migrations\\20251030170643_MyV1_Spada.cs",
-              "ToolTip": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Migrations\\20251030170643_MyV1_Spada.cs",
-              "RelativeToolTip": "Migrations\\20251030170643_MyV1_Spada.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T17:06:43.304Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProdutosRepository.cs",
-              "DocumentMoniker": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\ProdutosRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\ProdutosRepository.cs",
-              "ToolTip": "C:\\Users\\49984891860\\Desktop\\MercaDados_CT\\MercaDados_API\\Repositories\\ProdutosRepository.cs",
-              "RelativeToolTip": "Repositories\\ProdutosRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T16:24:13.616Z",
               "EditorCaption": ""
             }
           ]
