@@ -12,11 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
+<<<<<<< HEAD:MercaDados_API/Migrations/20251028193354_MyV1_Spada.Designer.cs
 <<<<<<<< HEAD:MercaDados_API/Migrations/20251028164330_MyV1.Designer.cs
     [Migration("20251028164330_MyV1")]
     partial class MyV1
 ========
     [Migration("20251028193354_MyV1_Spada")]
+=======
+    [Migration("20251030174205_MyV1_Spada")]
+>>>>>>> 03f3e79806f59bfd37800c050d6c243d768f15da:MercaDados_API/Migrations/20251030174205_MyV1_Spada.Designer.cs
     partial class MyV1_Spada
 >>>>>>>> 297755082941f83f26c2ba8b1411124fee0595eb:MercaDados_API/Migrations/20251028193354_MyV1_Spada.Designer.cs
     {
@@ -183,31 +187,6 @@ namespace Mercadados_API.Migrations
                     b.ToTable("ItemVenda");
                 });
 
-            modelBuilder.Entity("Mercadados_API.Domains.Produtos", b =>
-                {
-                    b.Property<Guid>("ProdutoID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Imagem")
-                        .IsRequired()
-                        .HasColumnType("Varchar(255)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("Varchar(200)");
-
-                    b.Property<double>("Preco")
-                        .HasColumnType("Float");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("INT");
-
-                    b.HasKey("ProdutoID");
-
-                    b.ToTable("Produtos");
-                });
-
             modelBuilder.Entity("Mercadados_API.Domains.TipoUsuario", b =>
                 {
                     b.Property<Guid>("TipoUsuarioID")
@@ -307,6 +286,42 @@ namespace Mercadados_API.Migrations
                     b.ToTable("Imagens");
                 });
 
+            modelBuilder.Entity("Produtos", b =>
+                {
+                    b.Property<Guid>("ProdutoID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Imagem")
+                        .IsRequired()
+                        .HasColumnType("Varchar(255)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("Varchar(200)");
+
+                    b.Property<int>("NumeroProduto")
+                        .HasColumnType("INT");
+
+                    b.Property<string>("Peso")
+                        .IsRequired()
+                        .HasColumnType("Varchar(250)");
+
+                    b.Property<string>("Setor")
+                        .IsRequired()
+                        .HasColumnType("Varchar(250)");
+
+                    b.Property<DateTime>("Validade")
+                        .HasColumnType("DATE");
+
+                    b.Property<double>("Valor")
+                        .HasColumnType("Float");
+
+                    b.HasKey("ProdutoID");
+
+                    b.ToTable("Produtos");
+                });
+
             modelBuilder.Entity("Mercadados_API.Domains.EstoqueProdutos", b =>
                 {
                     b.HasOne("Mercadados_API.Domains.Estoque", "Estoque")
@@ -315,7 +330,7 @@ namespace Mercadados_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Mercadados_API.Domains.Produtos", "Produtos")
+                    b.HasOne("Produtos", "Produtos")
                         .WithMany()
                         .HasForeignKey("ProdutosID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -350,7 +365,7 @@ namespace Mercadados_API.Migrations
 
             modelBuilder.Entity("Mercadados_API.Domains.ItemVenda", b =>
                 {
-                    b.HasOne("Mercadados_API.Domains.Produtos", "Produtos")
+                    b.HasOne("Produtos", "Produtos")
                         .WithMany()
                         .HasForeignKey("ProdutosID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -386,7 +401,7 @@ namespace Mercadados_API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Mercadados_API.Domains.Produtos", "Produtos")
+                    b.HasOne("Produtos", "Produtos")
                         .WithMany()
                         .HasForeignKey("ProdutosID");
 

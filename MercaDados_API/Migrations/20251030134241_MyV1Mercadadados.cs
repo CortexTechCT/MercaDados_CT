@@ -6,11 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mercadados_API.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251028164330_MyV1.cs
-    public partial class MyV1 : Migration
-========
-    public partial class MyV1_Spada : Migration
->>>>>>>> 297755082941f83f26c2ba8b1411124fee0595eb:MercaDados_API/Migrations/20251028193354_MyV1_Spada.cs
+    public partial class MyV1Mercadadados : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

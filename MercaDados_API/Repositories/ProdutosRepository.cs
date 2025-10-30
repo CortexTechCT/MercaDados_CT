@@ -20,8 +20,11 @@ namespace Mercadados_API.Repositories
                 if (produtoBuscado != null)
                 {
                     produtoBuscado.Nome = produto.Nome;
-                    produtoBuscado.Preco = produto.Preco;
-                    produtoBuscado.Quantidade = produto.Quantidade;
+                    produtoBuscado.Valor = produto.Valor;
+                    produtoBuscado.NumeroProduto = produto.NumeroProduto;
+                    produtoBuscado.Validade = produto.Validade;
+                    produtoBuscado.Peso = produto.Peso;
+                    produtoBuscado.Setor = produto.Setor;
 
                 }
                 _context.Produtos.Update(produtoBuscado!);

@@ -3,7 +3,7 @@ import api from "../../services/Services.js";
 import logo from "../../assets/ChatGPT Image 23_09_2025, 11_25_31 1.png";
 import { jwtDecode } from "jwt-decode";
 import { Botao } from "../../components/botao/Botao.jsx";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../pages/contexts/authContexts.jsx";
 
@@ -12,7 +12,7 @@ export const Login = () => {
   const [senha, setSenha] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { usuario, login } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const realizarAutenticacao = async (e) => {
@@ -45,22 +45,20 @@ export const Login = () => {
       };
 
       login(usuarioLogado, token);
-      setLoading(false);
+
+      if (usuarioLogado.tipoUsuario === "Admin") {
+        navigate("/Home", { replace: true });
+      } else if (usuarioLogado.tipoUsuario === "Funcionario") {
+        navigate("/LeituraProdutos", { replace: true });
+      } else {
+        navigate("/", { replace: true });
+      }
+
     } catch (error) {
       console.error(error.response ? error.response.data : error);
       alert("Erro ao realizar login!");
-      setLoading(false);
-    }
+    } 
   };
-
-  useEffect(() => {
-    if (!usuario) return;
-
-    if (usuario.tipoUsuario === "Admin") navigate("/Home", { replace: true });
-    else if (usuario.tipoUsuario === "Funcionario")
-      navigate("/LeituraProdutos", { replace: true });
-    else navigate("/", { replace: true });
-  }, [usuario, navigate]);
 
   return (
     <div className="login-container">

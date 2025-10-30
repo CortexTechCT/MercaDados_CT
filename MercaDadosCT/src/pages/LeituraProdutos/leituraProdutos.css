@@ -228,10 +228,7 @@
 }
 
 .check-icon {
-  width: 90px;
-  height: 90px;
-  background-color: #1e2a47;
-  border-radius: 50%;
-  padding: 15px;
-  margin: 10px 0;
+  width: 220px;
+  height: auto;
+  margin-top: 15px;
 }
