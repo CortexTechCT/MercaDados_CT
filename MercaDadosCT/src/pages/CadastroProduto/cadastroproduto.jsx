@@ -35,7 +35,6 @@ const handleSubmit = async () => {
     formData.append("Valor", produto.Valor);
     formData.append("NumeroProduto", produto.NumeroProduto);
 
-    // Converter Validade para ISO (se necessário)
     if (produto.Validade) {
       const validadeISO = new Date(produto.Validade).toISOString();
       formData.append("Validade", validadeISO);
