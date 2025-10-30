@@ -8,7 +8,7 @@ import cartaoDebito from "../../assets/cartaoDebito.png";
 import vr from "../../assets/vr.png";
 import dinheiro from "../../assets/dinheiro.png";
 import setaVoltar from "../../assets/setaVoltar.png";
-import check from "../../assets/check.png";
+import check from "../../assets/ok.png";
 import "./LeituraProdutos.css";
 
 export const LeituraProdutos = () => {

@@ -39,7 +39,6 @@ const Rotas = () => {
                     <Route path="/GestaoEstoque" element={<Privado tipoPermitido="Admin" Item={GestaoEstoque} />} />
                     <Route path="/LucrosGastos" element={<Privado tipoPermitido="Admin" Item={LucrosGastos} />} />
                     <Route path="/AdmFuncionario" element={<Privado tipoPermitido="Admin" Item={AdmFuncionario} />} />
-                    <Route path="/Perfil" element={<Privado tipoPermitido="Admin" Item={Perfil} />} />
 
                     <Route path="/LeituraProdutos" element={<Privado tipoPermitido="Funcionario" Item={LeituraProdutos} />} />
                 </Routes>
