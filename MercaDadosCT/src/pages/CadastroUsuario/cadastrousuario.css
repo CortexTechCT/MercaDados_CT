@@ -1,7 +1,6 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  /* background-color: #0E1A3D; */
 }
 
 .container-geral {
@@ -9,7 +8,7 @@ body {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-    background-color: #F9FAFB;
+  background-color: #F9FAFB;
 }
 
 .conteudo-principal {
@@ -30,7 +29,7 @@ body {
   color: white;
   font-size: 14px;
   outline: none;
-  appearance: none; /* remove a seta padrão do navegador */
+  appearance: none;
   height: 55px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -46,7 +45,7 @@ body {
 
 
 .formulario-box {
-  background-color: #0E1A3D;  
+  background-color: #0E1A3D;
   border-radius: 30px;
   margin: 24px auto;
   padding: 40px;
@@ -56,8 +55,9 @@ body {
 }
 
 .formulario-box h2 {
-  margin-bottom: 32px;
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .formulario-grid {
@@ -100,19 +100,13 @@ body {
   background-color: #e59400;
 }
 
-
-
-
-
-
-
 @media (max-width: 1024px) {
   .container-geral {
     flex-direction: column;
     height: auto;
   }
-  
-  
+
+
 
   .formulario-box {
     padding: 30px 20px;
@@ -143,13 +137,13 @@ body {
 @media (max-width: 600px) {
 
 
-.formulario-grid select {
+  .formulario-grid select {
 
-margin-left: -87px;
+    margin-left: -87px;
 
-width: 308px;
+    width: 308px;
 
-}
+  }
 
 
 
@@ -173,12 +167,13 @@ width: 308px;
 
   /* .botao-cadastrar {
     width: 90%;       /* Largura menor que 100% */
-    /* padding: 10px 0;  /* Altura do botão via padding */
-    /* font-size: 14px;  /* Fonte menor */
-    /* border-radius: 16px; */ */
-  /* } */ */ */
+  /* padding: 10px 0;  /* Altura do botão via padding */
+  /* font-size: 14px;  /* Fonte menor */
+  /* border-radius: 16px; */
+  */
 
-  .descricao-produto {
+  /* } */
+  */ */ .descricao-produto {
     gap: 15px;
   }
 
@@ -191,29 +186,31 @@ width: 308px;
     line-height: 1.5;
     max-width: 100%;
   }
- 
- /* .botao{
+
+  /* .botao{
          width: 135%;
         margin-left: -84px;
 
 } */
 
-.botao_cadusuario{
-  width: 135%;
-        margin-left: -80px;
-}
+  .botao_cadusuario {
+    width: 135%;
+    margin-left: -80px;
+  }
 
 }
 
 /* Celulares menores (até 480px) */
 @media (max-width: 480px) {
-   .menu-lateral {
+  .menu-lateral {
     display: none;
   }
+
   .conteudo-principal {
     /* margin-left: 0;  */
-    padding: 0px; 
+    padding: 0px;
   }
+
   .formulario-box {
     padding: 16px;
   }
@@ -227,5 +224,5 @@ width: 308px;
     padding: 10px 14px;
   }
 
-  
+
 }

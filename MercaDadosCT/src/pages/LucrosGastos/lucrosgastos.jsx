@@ -7,15 +7,15 @@ export const LucrosGastos = () => {
     const graficoProdutos = {
         series: [
             {
-                name: "PRODUCT A",
+                name: "Produto 1",
                 data: [50, 60, 55, 70, 90, 85, 95, 100, 120, 110, 125, 140, 135, 150],
             },
             {
-                name: "PRODUCT B",
+                name: "Produto 2",
                 data: [150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215],
             },
             {
-                name: "PRODUCT C",
+                name: "Produto 3",
                 data: [20, 22, 25, 23, 21, 24, 26, 27, 28, 26, 25, 27, 29, 30],
             },
         ],
@@ -38,7 +38,7 @@ export const LucrosGastos = () => {
     const graficoAcoes = {
         series: [
             {
-                name: "Stock Price",
+                name: "Movimento do preço das ações",
                 data: [160, 170, 200, 220, 180, 140, 120, 100, 90, 130, 150, 160, 170, 165, 175],
             },
         ],
@@ -66,7 +66,7 @@ export const LucrosGastos = () => {
 
                     <div className="grafico-container">
                         <div className="grafico-box">
-                            <h4>Irregular Data in Time Series</h4>
+                            <h4>Movimento de vendas</h4>
                             <ReactApexChart
                                 options={graficoProdutos.options}
                                 series={graficoProdutos.series}
@@ -76,7 +76,7 @@ export const LucrosGastos = () => {
                         </div>
 
                         <div className="grafico-box">
-                            <h4>Stock Price Movement</h4>
+                            <h4>Movimento de estoque</h4>
                             <ReactApexChart
                                 options={graficoAcoes.options}
                                 series={graficoAcoes.series}

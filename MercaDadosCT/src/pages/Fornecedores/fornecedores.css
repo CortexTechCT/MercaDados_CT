@@ -25,10 +25,10 @@
 .titulo-fornecedores {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
   color: #333;
   margin-left: 11%;
   margin-top: 20px;
+  margin-bottom: -25px;
 }
 
 
@@ -41,7 +41,7 @@ background-color:conteudoss#333;
     flex-direction: column;
     margin: 74px auto;
     width: 75%;
-    gap: 20px;
+    gap: 26px;
 
 }
 .fornecedor-card {
