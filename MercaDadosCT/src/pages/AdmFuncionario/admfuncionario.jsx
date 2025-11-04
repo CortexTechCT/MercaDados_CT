@@ -7,7 +7,7 @@ import perfilazul from "../../assets/perfilazul.svg";
 import api from "../../services/Services.js";
 
 
- // Imagens (mantidas caso sejam usadas futuramente)
+// Imagens (mantidas caso sejam usadas futuramente)
 // import vini from "../../assets/viniciou.jpg";
 // import yasmin from "../../assets/IMG_3617_1.png";
 // import matheus from "../../assets/IMG_8991_1.png";
@@ -15,11 +15,6 @@ import api from "../../services/Services.js";
 // import herik from "../../assets/image_2.png";
 // import isaac from "../../assets/171977797.png";
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
   const [funcAberto, setFuncAberto] = useState(null);
@@ -50,24 +45,18 @@ export const AdmFuncionario = () => {
     series: [
       {
         name: "Desempenho",
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
 
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
 
-<<<<<<< HEAD
+
 
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
 
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
-=======
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
+
       },
     ],
     options: {
@@ -87,13 +76,13 @@ export const AdmFuncionario = () => {
 
 
 
-      xaxis: { categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] },
+      xaxis: { categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] },
     },
   };
 
   // Buscar funcionários do backend
 
-  
+
 
   // useEffect (() => {
   //     xaxis: {
@@ -104,37 +93,10 @@ export const AdmFuncionario = () => {
   //     },
   //   },
   // });
-<<<<<<< HEAD
-  //     xaxis: {
-  //       categories: [
-  //         "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  //         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-  //       ],
-  //     },
-  //   },
-  // };
-=======
-
-     // xaxis: {
-       // categories: [
-        //  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-         // "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-       // ],
-    //  },
-   // },
- // };
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
-
 
   // Buscar funcionários do backend
   useEffect(() => {
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
     ListarFuncionario();
   }, []);
 
@@ -169,13 +131,6 @@ export const AdmFuncionario = () => {
                   >
                     <div className="info-funcionario">
 
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
                       <img
                         src={
                           f.fotoPerfil
@@ -186,22 +141,14 @@ export const AdmFuncionario = () => {
                         className="foto-funcionario"
 
 
-                      /> 
-                      <img 
-                        src={perfilazul} 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
+                      />
+                      <img
+                        src={perfilazul}
                       />
 
                       <img
                         src={perfilazul}
-<<<<<<< HEAD
-=======
 
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
                         className="Usuario-perfilAdm"
                         alt="Usuário"
                       />
@@ -217,9 +164,8 @@ export const AdmFuncionario = () => {
                   </div>
 
                   <div
-                    className={`detalhes-funcionario-transicao ${
-                      funcAberto === index ? "aberto" : ""
-                    }`}
+                    className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""
+                      }`}
                   >
                     {funcAberto === index && (
                       <div className="detalhes-funcionario">
