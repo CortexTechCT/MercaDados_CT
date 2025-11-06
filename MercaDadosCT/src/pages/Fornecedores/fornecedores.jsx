@@ -40,17 +40,17 @@ export const Fornecedores = () => {
       xaxis: {
         categories: [
           "Jan",
-          "Feb",
+          "Fev",
           "Mar",
-          "Apr",
-          "May",
+          "Abr",
+          "Mai",
           "Jun",
           "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
+          "Ago",
+          "Set",
+          "Out",
           "Nov",
-          "Dec",
+          "Dez",
         ],
         position: "top",
         axisBorder: { show: false },
@@ -96,7 +96,7 @@ export const Fornecedores = () => {
           <h2 className="titulo-fornecedores">Fornecedores</h2>
 
           <div className="fornecedores-lista">
-            {/* Fornecedor 1 */}
+            
             <div className="fornecedor-card">
               <img
                 src={chocolandiaLogo}
@@ -113,8 +113,7 @@ export const Fornecedores = () => {
                 />
               </div>
             </div>
-
-            {/* Fornecedor 2 */}
+            
             <div className="fornecedor-card">
               <img
                 src={nescauLogo}
@@ -132,7 +131,6 @@ export const Fornecedores = () => {
               </div>
             </div>
 
-            {/* Fornecedor 3 */}
             <div className="fornecedor-card">
               <img
                 src={duracellLogo}

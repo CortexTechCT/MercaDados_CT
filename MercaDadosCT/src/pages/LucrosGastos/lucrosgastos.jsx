@@ -31,7 +31,7 @@ export const LucrosGastos = () => {
                 ],
                 labels: { rotate: -45 },
             },
-            colors: ["#008FFB", "#00E396", "#FEB019"],
+            colors: ["#fe9143", "#097aef", "#3453ad"],
         },
     };
 
@@ -47,12 +47,12 @@ export const LucrosGastos = () => {
             stroke: { curve: "smooth", width: 3 },
             xaxis: {
                 categories: [
-                    "01 Feb", "05 Feb", "10 Feb", "15 Feb", "20 Feb", "01 Mar",
-                    "10 Mar", "20 Mar", "01 Apr", "10 Apr", "15 Apr", "20 Apr", 
-                    "25 Apr", "01 May", "10 May"
+                    "01 Fev", "05 Fev", "10 Fev", "15 Fev", "20 Fev", "01 Mar",
+                    "10 Mar", "20 Mar", "01 Abr", "10 Abr", "15 Abr", "20 Abr", 
+                    "25 Abr", "01 Mai", "10 Mai"
                 ],
             },
-            colors: ["#008FFB"],
+            colors: ["#ff8b07d3"],
         },
     };
 

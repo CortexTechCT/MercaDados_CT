@@ -8,7 +8,7 @@ import { GestaoEstoque } from "../pages/GestaoEstoque/gestaoestoque";
 import { Home } from "../pages/Home/home";
 import { LucrosGastos } from "../pages/LucrosGastos/LucrosGastos";
 import { Perfil } from "../pages/Perfil/Perfil";
-
+import {FeedbacksClientes} from "../pages/FeedbacksClientes/feedbacksclientes"
 const Rotas = () => {
   return (
    //<BrowserRouter>
@@ -21,6 +21,7 @@ const Rotas = () => {
         <Route path="/GestaoEstoque" element={<GestaoEstoque/>} />
         <Route path="/LucrosGastos" element={<LucrosGastos/>} />
         <Route path="/AdmFuncionarios" element={<AdmFuncionario/>} />
+        <Route path="/FeedbacksClientes" element={<FeedbacksClientes/>} />
         <Route path="/Perfil" element={<Perfil/>} />
       </Routes>
    // </BrowserRouter>
