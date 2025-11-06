@@ -15,27 +15,23 @@ namespace Mercadados_API.Repositories
         {
             _context = context;
         }
-         
+
         public void Cadastrar(Usuario usuario)
         {
             try
             {
-<<<<<<< HEAD
-=======
-                Usuario usuarioBuscado = _context.Usuario
-                    .Include(u => u.TipoUsuario)
-                    .FirstOrDefault(u =>
-                        u.Email == usuario.Email &&
-                        u.Senha == usuario.Senha)!;
-
-
->>>>>>> 297755082941f83f26c2ba8b1411124fee0595eb
+                // Gera novo ID para o usuário
                 usuario.UsuarioID = Guid.NewGuid();
+
+                // Adiciona o usuário no contexto
                 _context.Usuario.Add(usuario);
+
+                // Salva no banco de dados
                 _context.SaveChanges();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine("⚠️ Erro interno no EF: " + ex.InnerException?.Message);
                 throw;
             }
         }

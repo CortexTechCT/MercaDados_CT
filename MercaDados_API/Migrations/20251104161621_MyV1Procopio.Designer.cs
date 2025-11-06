@@ -12,17 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-<<<<<<< HEAD:MercaDados_API/Migrations/20251028193354_MyV1_Spada.Designer.cs
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251028164330_MyV1.Designer.cs
-    [Migration("20251028164330_MyV1")]
-    partial class MyV1
-========
-    [Migration("20251028193354_MyV1_Spada")]
-=======
-    [Migration("20251030174205_MyV1_Spada")]
->>>>>>> 03f3e79806f59bfd37800c050d6c243d768f15da:MercaDados_API/Migrations/20251030174205_MyV1_Spada.Designer.cs
-    partial class MyV1_Spada
->>>>>>>> 297755082941f83f26c2ba8b1411124fee0595eb:MercaDados_API/Migrations/20251028193354_MyV1_Spada.Designer.cs
+    [Migration("20251104161621_MyV1Procopio")]
+    partial class MyV1Procopio
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

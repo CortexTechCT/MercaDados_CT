@@ -6,11 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mercadados_API.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:MercaDados_API/Migrations/20251028164330_MyV1.cs
-    public partial class MyV1 : Migration
-========
-    public partial class MyV1_Spada : Migration
->>>>>>>> 297755082941f83f26c2ba8b1411124fee0595eb:MercaDados_API/Migrations/20251028193354_MyV1_Spada.cs
+    public partial class MyV1Procopio : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -47,8 +43,11 @@ namespace Mercadados_API.Migrations
                 {
                     ProdutoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "Varchar(200)", nullable: false),
-                    Preco = table.Column<double>(type: "Float", nullable: false),
-                    Quantidade = table.Column<int>(type: "INT", nullable: false),
+                    Valor = table.Column<double>(type: "Float", nullable: false),
+                    NumeroProduto = table.Column<int>(type: "INT", nullable: false),
+                    Validade = table.Column<DateTime>(type: "DATE", nullable: false),
+                    Peso = table.Column<string>(type: "Varchar(250)", nullable: false),
+                    Setor = table.Column<string>(type: "Varchar(250)", nullable: false),
                     Imagem = table.Column<string>(type: "Varchar(255)", nullable: false)
                 },
                 constraints: table =>

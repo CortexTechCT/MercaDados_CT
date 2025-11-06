@@ -6,10 +6,6 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
-<<<<<<< HEAD
-=======
-
->>>>>>> 297755082941f83f26c2ba8b1411124fee0595eb
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -115,12 +111,7 @@ app.UseStaticFiles(new StaticFileOptions
 app.UseStaticFiles(); // <- ESSENCIAL pra liberar wwwroot
 app.UseStaticFiles();
 
-<<<<<<< HEAD
-
-
-=======
 //Adiciona o Cors(pol�tica criada)
->>>>>>> 297755082941f83f26c2ba8b1411124fee0595eb
 app.UseCors("CorsPolicy");
 
 app.UseAuthentication();

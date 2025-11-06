@@ -35,13 +35,13 @@ const Rotas = () => {
                     <Route path="/" element={<Login />} />
 
                     <Route path="/Home" element={<Privado tipoPermitido="Admin" Item={Home} />} />
+                    <Route path="/Perfil" element={<Privado tipoPermitido="Admin" Item={Perfil} />} />
                     <Route path="/CadastroUsuario" element={<Privado tipoPermitido="Admin" Item={CadastroUsuario} />} />
                     <Route path="/Fornecedores" element={<Privado tipoPermitido="Admin" Item={Fornecedores} />} />
                     <Route path="/GestaoEstoque" element={<Privado tipoPermitido="Admin" Item={GestaoEstoque} />} />
                     <Route path="/LucrosGastos" element={<Privado tipoPermitido="Admin" Item={LucrosGastos} />} />
                     <Route path="/AdmFuncionario" element={<Privado tipoPermitido="Admin" Item={AdmFuncionario} />} />
                     <Route path="/CadastroProduto" element={<Privado tipoPermitido="Admin" Item={CadastroProduto} />} />
-
                     <Route path="/LeituraProdutos" element={<Privado tipoPermitido="Funcionario" Item={LeituraProdutos} />} />
                 </Routes>
     )
