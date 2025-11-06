@@ -105,18 +105,18 @@ button:hover {
  padding: 72px 21px;
     }
 .logo img {
-    height: 100%;
+    
     margin-bottom: 8px;
     height: 100px;
-    margin-inline: 70px
+    margin-inline: 70px;
 }
 
  input {
       height: 55px;
         width: 294px;
         display: flex;
-        justify-content: center;
-        margin-left: auto;
+        justify-content: center; 
+         margin-left: auto;
 
     } 
       .botao  {
@@ -137,7 +137,21 @@ margin-left: 20px;
   }
 form{
 
-  padding: 14px;
+  padding: 33px;
 }
 }
+@media (max-width: 480px) {
+  input {
+        height: 55px;
+        width: 282px;
+        display: flex
+;
+        justify-content: center;
+        margin-left: auto;
+    }
 
+form {
+        padding: 8px;
+    }
+
+}

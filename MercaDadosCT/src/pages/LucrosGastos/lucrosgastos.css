@@ -13,7 +13,7 @@
   overflow-y: auto;
 }
 
-.lucroegastos-box {
+.lucroegastos-box-min {
   background-color: #EEF3FF;
   border-radius: 20px;
   margin: 48px auto;
@@ -51,32 +51,18 @@
   font-size: 16px;
 }
 @media (max-width: 600px) {
-
-.lucroegastos-box {
-   
+  .lucroegastos-box-min {
     width: 91%;
-    
-  margin-left: 20px;
-  margin-top: 14px;
-
-}
-
-
+    margin: 14px 20px;
+  }
 }
 
 @media (max-width: 1024px) {
-
-.lucroegastos-box {
-
-margin: 40px;
-        width: 90%;
-        padding: 30px 20px;
-        border-radius: 24px
-
-
+  .lucroegastos-box,
+  .lucroegastos-box-min {
+    margin: 40px auto;
+    width: 90%;
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
 }
-
-
-}
-
-

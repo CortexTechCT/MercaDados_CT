@@ -16,10 +16,9 @@ import api from "../../services/Services.js";
 // import isaac from "../../assets/171977797.png";
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
+
+
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
   const [funcAberto, setFuncAberto] = useState(null);
@@ -50,24 +49,13 @@ export const AdmFuncionario = () => {
     series: [
       {
         name: "Desempenho",
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
 
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
 
-<<<<<<< HEAD
 
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
-
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
-=======
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
       },
     ],
     options: {
@@ -104,16 +92,8 @@ export const AdmFuncionario = () => {
   //     },
   //   },
   // });
-<<<<<<< HEAD
-  //     xaxis: {
-  //       categories: [
-  //         "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  //         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-  //       ],
-  //     },
-  //   },
-  // };
-=======
+
+ 
 
      // xaxis: {
        // categories: [
@@ -123,18 +103,13 @@ export const AdmFuncionario = () => {
     //  },
    // },
  // };
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
+
 
 
   // Buscar funcionários do backend
   useEffect(() => {
 
-<<<<<<< HEAD
-=======
 
-
-
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
     ListarFuncionario();
   }, []);
 
@@ -154,7 +129,7 @@ export const AdmFuncionario = () => {
       <div className="conteudo-principal">
         <MenuNormal />
 
-        <main className="funcionario-box">
+        <main className="funcionario-box-min">
           <h2>Gestão de funcionários:</h2>
 
           <div className="lista-funcionarios">
@@ -169,13 +144,7 @@ export const AdmFuncionario = () => {
                   >
                     <div className="info-funcionario">
 
-<<<<<<< HEAD
 
-
-
-
-=======
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
                       <img
                         src={
                           f.fotoPerfil
@@ -190,18 +159,13 @@ export const AdmFuncionario = () => {
                       <img 
                         src={perfilazul} 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
+
                       />
 
                       <img
                         src={perfilazul}
-<<<<<<< HEAD
-=======
 
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
                         className="Usuario-perfilAdm"
                         alt="Usuário"
                       />

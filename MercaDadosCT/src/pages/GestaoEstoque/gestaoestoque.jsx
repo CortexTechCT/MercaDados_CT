@@ -160,7 +160,7 @@ export const GestaoEstoque = () => {
             </div>
 
             <div className="produto-card">
-              <img className="produto-img" src={nescau} alt="Nescau" />
+              <img className="produto-img " src={nescau} alt="Nescau" />
               <div className="produto-info">
                 <p><strong>Descrição:</strong></p>
                 <p>Produto: Nescau</p>

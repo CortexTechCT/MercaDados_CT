@@ -128,7 +128,7 @@ border-top: 0;
   overflow-y: auto;
 }
 
-.funcionario-box {
+.funcionario-box-min {
   background-color: #EEF3FF;
   border-radius: 15px;
   margin: 48px auto;
@@ -136,18 +136,16 @@ border-top: 0;
   width: 70%;
   max-width: 1000px;
   color: #000;
-<<<<<<< HEAD
 
 
-=======
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
+
+
   margin-right: 69px;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
-<<<<<<< HEAD
 
 
-=======
->>>>>>> b8a60c8147ed55ad196445b14d15704f4c52f290
+
+
   margin-right: 69px;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
   margin-left: 24%;
@@ -244,7 +242,7 @@ border-top: 0;
   /* .conteudo-principal {
     margin-left: 180px; /* reduz o espaço da lateral */
   } */
-
+   .funcionario-box-min,
   .funcionario-box {
     width: 85%;
     padding: 20px;
@@ -288,7 +286,7 @@ border-top: 0;
     margin-left: 0;
   } */
 
-  .funcionario-box {
+  .funcionario-box-min {
     width: 90%;
     padding: 18px;
     margin: 24px auto;
@@ -324,7 +322,7 @@ border-top: 0;
 
 /* Telas muito pequenas (até 480px) */
 @media (max-width: 480px) {
-  .funcionario-box {
+  .funcionario-box-min {
     width: 95%;
     padding: 15px;
   }

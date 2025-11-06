@@ -61,12 +61,12 @@ export const LucrosGastos = () => {
             <MenuLateral />
             <div className="conteudo-principal">
                 <MenuNormal />
-                <main className="lucroegastos-box">
+                <main className="lucroegastos-box-min">
                     <h2>Lucro e Gastos</h2>
 
                     <div className="grafico-container">
                         <div className="grafico-box">
-                            <h4>Irregular Data in Time Series</h4>
+                            <h4>Dados irregulares em séries temporais</h4>
                             <ReactApexChart
                                 options={graficoProdutos.options}
                                 series={graficoProdutos.series}
@@ -76,7 +76,7 @@ export const LucrosGastos = () => {
                         </div>
 
                         <div className="grafico-box">
-                            <h4>Stock Price Movement</h4>
+                            <h4>Movimento do preço das ações</h4>
                             <ReactApexChart
                                 options={graficoAcoes.options}
                                 series={graficoAcoes.series}

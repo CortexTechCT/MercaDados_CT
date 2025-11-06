@@ -112,7 +112,6 @@ body {
     height: auto;
   }
   
-  
 
   .formulario-box {
     padding: 30px 20px;
@@ -137,6 +136,9 @@ body {
   .img-produto {
     width: 180px;
   }
+
+
+
 }
 
 /* Celulares (até 600px) */

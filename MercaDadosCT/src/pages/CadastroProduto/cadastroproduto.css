@@ -196,7 +196,7 @@ margin-left: -87px;
   .formulario-box {
    margin: 10px;
     width: 95%;
-    padding: 20px 15px;
+    padding: 20px 35px;
     border-radius: 18px;
    
   }
@@ -251,4 +251,14 @@ margin-left: -87px;
 
 
   
+}
+
+
+@media (max-width: 480px) {
+
+
+.formulario-grid {
+      margin-left: 47px;
+    }
+
 }
