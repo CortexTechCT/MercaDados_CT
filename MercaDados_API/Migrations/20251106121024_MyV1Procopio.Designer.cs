@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20251104161621_MyV1Procopio")]
+    [Migration("20251106121024_MyV1Procopio")]
     partial class MyV1Procopio
     {
         /// <inheritdoc />
@@ -282,6 +282,9 @@ namespace Mercadados_API.Migrations
                     b.Property<Guid>("ProdutoID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Fornecedor")
+                        .HasColumnType("VARCHAR(250)");
 
                     b.Property<string>("Imagem")
                         .IsRequired()

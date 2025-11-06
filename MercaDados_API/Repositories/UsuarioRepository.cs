@@ -2,8 +2,6 @@
 using Mercadados_API.Domains;
 using Mercadados_API.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
 
 namespace Mercadados_API.Repositories
 {
@@ -32,20 +30,21 @@ namespace Mercadados_API.Repositories
             catch (Exception ex)
             {
                 Console.WriteLine("⚠️ Erro interno no EF: " + ex.InnerException?.Message);
-                throw;
+                throw new Exception("Erro ao cadastrar usuário: " + ex.Message);
             }
         }
-
 
         public Usuario BuscarPorId(Guid id)
         {
             try
             {
-                return _context.Usuario.Find(id)!;
+                return _context.Usuario
+                    .Include(u => u.TipoUsuario) // carrega o tipo de usuário relacionado
+                    .FirstOrDefault(u => u.UsuarioID == id)!;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Erro ao buscar usuário por ID: " + ex.Message);
             }
         }
 
@@ -54,14 +53,13 @@ namespace Mercadados_API.Repositories
             try
             {
                 return _context.Usuario
-                    .Include(u => u.TipoUsuario)
+                    .Include(u => u.TipoUsuario) // inclui o tipo de usuário também no login
                     .FirstOrDefault(u => u.Email == email && u.Senha == senha)!;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Erro ao buscar usuário por e-mail e senha: " + ex.Message);
             }
         }
-
-    };
-};
+    }
+}

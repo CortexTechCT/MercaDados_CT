@@ -155,10 +155,19 @@
   vertical-align: top;
 }
 
-.produto-img {
+.produto-card .produto-img {
+  width: 180px !important;   /* aumenta o tamanho */
+  height: 180px !important;  /* altura igual */
+  object-fit: contain !important; /* mantém proporção da imagem */
   display: block;
-  margin: 0 auto 10px auto;
-  width: 120px;
+  margin: 0 auto 12px auto;
+  transition: transform 0.3s ease;
+}
+
+/* efeito leve ao passar o mouse (opcional) */
+.produto-img {
+  transform: scale(3);
+  transform-origin: center;
 }
 
 .produto-info p {

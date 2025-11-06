@@ -280,6 +280,9 @@ namespace Mercadados_API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Fornecedor")
+                        .HasColumnType("VARCHAR(250)");
+
                     b.Property<string>("Imagem")
                         .IsRequired()
                         .HasColumnType("Varchar(255)");

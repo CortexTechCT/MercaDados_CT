@@ -48,6 +48,7 @@ namespace Mercadados_API.Migrations
                     Validade = table.Column<DateTime>(type: "DATE", nullable: false),
                     Peso = table.Column<string>(type: "Varchar(250)", nullable: false),
                     Setor = table.Column<string>(type: "Varchar(250)", nullable: false),
+                    Fornecedor = table.Column<string>(type: "VARCHAR(250)", nullable: true),
                     Imagem = table.Column<string>(type: "Varchar(255)", nullable: false)
                 },
                 constraints: table =>

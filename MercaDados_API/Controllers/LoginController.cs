@@ -17,7 +17,7 @@ namespace Mercadados_API.Controllers
         private readonly IUsuarioRepository _usuarioRepository;
 
         private const string JwtKey = "eventos-chave-autenticacao-Mercadados-dev";
-        private const int JwtExpireMinutes = 5;
+        private const int JwtExpireMinutes = 30; // aumentei o tempo
 
         public LoginController(IUsuarioRepository usuarioRepository)
         {
@@ -30,25 +30,19 @@ namespace Mercadados_API.Controllers
             try
             {
                 if (loginDto == null || string.IsNullOrEmpty(loginDto.Email) || string.IsNullOrEmpty(loginDto.Senha))
-                {
                     return BadRequest("Email e senha são obrigatórios.");
-                }
 
-                // Busca o usuário pelo repositório  
                 Usuario usuarioBuscado = _usuarioRepository.BuscaPorEmailSenha(loginDto.Email, loginDto.Senha);
 
                 if (usuarioBuscado == null)
-                {
                     return NotFound("Email ou senha inválidos!");
-                }
 
-                // Define os claims do token  
                 var claims = new[]
                 {
-                  new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.UsuarioID.ToString()),
-                  new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
-                  new Claim("TituloTipoUsuario", usuarioBuscado.TipoUsuario?.TituloTipoUsuario ?? "Desconhecido")
-              };
+                    new Claim("IdUsuario", usuarioBuscado.UsuarioID.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
+                    new Claim("TituloTipoUsuario", usuarioBuscado.TipoUsuario?.TituloTipoUsuario ?? "Desconhecido")
+                };
 
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtKey));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

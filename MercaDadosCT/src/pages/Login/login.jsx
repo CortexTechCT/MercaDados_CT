@@ -26,6 +26,7 @@ export const Login = () => {
     try {
       setLoading(true);
 
+      //  Envia o login para a API
       const resposta = await api.post("login", { email, senha });
       const token = resposta?.data?.token;
 
@@ -35,29 +36,38 @@ export const Login = () => {
         return;
       }
 
+      //  Decodifica o token
       const decodificado = jwtDecode(token);
       console.log("Token decodificado:", decodificado);
 
+      // Monta o objeto do usuário logado
       const usuarioLogado = {
-        idUsuario: decodificado.jti,
+        idUsuario: decodificado.IdUsuario,
         email: decodificado.email,
         tipoUsuario: decodificado.TituloTipoUsuario?.trim() || "Desconhecido",
       };
 
+      //  Salva no contexto
       login(usuarioLogado, token);
 
-      if (usuarioLogado.tipoUsuario === "Admin") {
-        navigate("/Home", { replace: true });
-      } else if (usuarioLogado.tipoUsuario === "Funcionario") {
-        navigate("/LeituraProdutos", { replace: true });
-      } else {
-        navigate("/", { replace: true });
+      //  Redireciona com base no tipo de usuário
+      switch (usuarioLogado.tipoUsuario) {
+        case "Admin":
+          navigate("/Home", { replace: true });
+          break;
+        case "Funcionario":
+          navigate("/LeituraProdutos", { replace: true });
+          break;
+        default:
+          navigate("/", { replace: true });
+          break;
       }
-
     } catch (error) {
-      console.error(error.response ? error.response.data : error);
-      alert("Erro ao realizar login!");
-    } 
+      console.error(" Erro no login:", error.response ? error.response.data : error);
+      alert("Erro ao realizar login! Verifique suas credenciais ou tente novamente mais tarde.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

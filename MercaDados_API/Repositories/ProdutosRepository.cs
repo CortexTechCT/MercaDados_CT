@@ -25,7 +25,7 @@ namespace Mercadados_API.Repositories
                     produtoBuscado.Validade = produto.Validade;
                     produtoBuscado.Peso = produto.Peso;
                     produtoBuscado.Setor = produto.Setor;
-
+                    produtoBuscado.Fornecedor = produto.Fornecedor;
                 }
                 _context.Produtos.Update(produtoBuscado!);
                 _context.SaveChanges();

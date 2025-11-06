@@ -8,20 +8,21 @@ import api from "../../services/Services";
 
 export const Perfil = () => {
   const { usuario, token } = useAuth();
-  const [dados, setDados] = useState(usuario);
+  const [dados, setDados] = useState(null);
 
   useEffect(() => {
     const carregarUsuario = async () => {
-      if (!usuario?.usuarioID || !token) return;
+      if (!usuario?.idUsuario || !token) return;
+
       try {
-        const resposta = await api.get(`/Usuario/${usuario.usuarioID}`, {
-          headers: { Authorization: `Bearer ${token}` }
+        const resposta = await api.get(`/Usuario/BuscarPorId/${usuario.idUsuario}`, {
         });
         setDados(resposta.data);
       } catch (error) {
-        console.error("Erro ao carregar perfil:", error);
+        console.error(" Erro ao carregar perfil:", error.response ? error.response.data : error);
       }
     };
+
     carregarUsuario();
   }, [usuario, token]);
 
