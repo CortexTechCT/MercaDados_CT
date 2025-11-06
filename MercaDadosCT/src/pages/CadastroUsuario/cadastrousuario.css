@@ -25,13 +25,13 @@ body {
 .formulario-grid select {
   background-color: #162A63;
   border: 2px solid #264fbd;
-  border-radius: 10px;
+  border-radius: 22px;
   padding: 12px 16px;
-  color: white;
+  color: #9aa3bc;
   font-size: 14px;
   outline: none;
   appearance: none; /* remove a seta padrão do navegador */
-  height: 45px;
+  height: 49px;
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
@@ -50,7 +50,8 @@ body {
 
 
 .formulario-box {
-  background-color: #0E1A3D;  
+     height: 114%;
+
   border: 2.9px solid #F97316;
   border-radius: 30px;
   margin: 24px auto;
@@ -63,6 +64,7 @@ body {
 .formulario-box h2 {
   margin-bottom: 32px;
   font-size: 24px;
+  color: aliceblue;
 }
 
 .formulario-grid {
@@ -77,7 +79,7 @@ body {
   border: 2px solid #264fbd;
   border-radius: 10px;
   padding: 12px 16px;
-  color: white;
+  color: #9aa3bc;
   font-size: 14px;
   outline: none;
 }
