@@ -69,7 +69,7 @@ export const Home = () => {
 
           <div className="cards-dashboard">
             <div className="card-info">
-              <Link className="link-administrador" to="/AdmFuncionarios">
+              <Link className="link-administrador" to="/AdmFuncionario">
                 <img className="pessoas" src={Pessoas} alt="Administração" />
                 <p>Administração</p>
               </Link>

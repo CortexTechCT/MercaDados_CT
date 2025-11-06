@@ -32,7 +32,7 @@ public class Produtos
     [Required(ErrorMessage = "Este campo precisa estar preenchido!")]
     public string? Setor { get; set; }
 
-    [Column(TypeName ="VARCHAR(250)")]
+    [Column(TypeName = "VARCHAR(250)")]
     public string? Fornecedor { get; set; }
 
     [Column(TypeName = "Varchar(255)")]
