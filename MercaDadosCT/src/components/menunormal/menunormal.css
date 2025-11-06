@@ -4,21 +4,24 @@
   align-items: center;
   padding: 12px 24px;
   background-color: #0E1A3D;
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
   border-bottom: 2px solid  #162A63;
-
-
   border-bottom: 2px solid  #162A63;
-
   padding-left: 89%;
   padding-left: 85%;
   border-bottom: 2px solid  #162A63;
+<<<<<<< HEAD
   
 
 
 
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
   border-bottom: 2px solid  #162A63;
   border-bottom: 2px solid  #162A63;
   padding-left: 89%;
@@ -42,12 +45,16 @@
   padding-left: 78%;
   border-bottom: 0.1px solid #162A63;
   border-bottom: 2px solid #162A63;
+<<<<<<< HEAD
 
   border-bottom: 0.1px solid #162A63;
   border-bottom: 2px solid #162A63;
   border-bottom: 0.1px solid #162A63;
   border-bottom: 2px solid #162A63;
 
+=======
+  border-bottom: 0.1px solid #162A63;
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
 
 }
 
@@ -76,12 +83,15 @@
   object-fit: contain;
   display: block;      
   display: block;
+<<<<<<< HEAD
 
 
 
   display: block;      
   display: block;
 
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
   position: relative;
   left: 20%;
 
@@ -90,18 +100,23 @@
 .icons-header img {
   width: 36px;
   cursor: pointer;
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
     margin-right: -305px;
-
-
     margin-right: 5691px;
+<<<<<<< HEAD
 
 
 
   margin-right: -305px
 
+=======
+  margin-right: -305px
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
   
 }
 

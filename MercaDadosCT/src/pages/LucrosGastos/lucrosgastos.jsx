@@ -7,15 +7,15 @@ export const LucrosGastos = () => {
     const graficoProdutos = {
         series: [
             {
-                name: "PRODUCT A",
+                name: "Produto 1",
                 data: [50, 60, 55, 70, 90, 85, 95, 100, 120, 110, 125, 140, 135, 150],
             },
             {
-                name: "PRODUCT B",
+                name: "Produto 2",
                 data: [150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215],
             },
             {
-                name: "PRODUCT C",
+                name: "Produto 3",
                 data: [20, 22, 25, 23, 21, 24, 26, 27, 28, 26, 25, 27, 29, 30],
             },
         ],
@@ -31,14 +31,14 @@ export const LucrosGastos = () => {
                 ],
                 labels: { rotate: -45 },
             },
-            colors: ["#008FFB", "#00E396", "#FEB019"],
+            colors: ["#fe9143", "#097aef", "#3453ad"],
         },
     };
 
     const graficoAcoes = {
         series: [
             {
-                name: "Stock Price",
+                name: "Movimento do preço das ações",
                 data: [160, 170, 200, 220, 180, 140, 120, 100, 90, 130, 150, 160, 170, 165, 175],
             },
         ],
@@ -47,12 +47,12 @@ export const LucrosGastos = () => {
             stroke: { curve: "smooth", width: 3 },
             xaxis: {
                 categories: [
-                    "01 Feb", "05 Feb", "10 Feb", "15 Feb", "20 Feb", "01 Mar",
-                    "10 Mar", "20 Mar", "01 Apr", "10 Apr", "15 Apr", "20 Apr", 
-                    "25 Apr", "01 May", "10 May"
+                    "01 Fev", "05 Fev", "10 Fev", "15 Fev", "20 Fev", "01 Mar",
+                    "10 Mar", "20 Mar", "01 Abr", "10 Abr", "15 Abr", "20 Abr", 
+                    "25 Abr", "01 Mai", "10 Mai"
                 ],
             },
-            colors: ["#008FFB"],
+            colors: ["#ff8b07d3"],
         },
     };
 
@@ -66,7 +66,11 @@ export const LucrosGastos = () => {
 
                     <div className="grafico-container">
                         <div className="grafico-box">
+<<<<<<< HEAD
                             <h4>Dados irregulares em séries temporais</h4>
+=======
+                            <h4>Movimento de vendas</h4>
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
                             <ReactApexChart
                                 options={graficoProdutos.options}
                                 series={graficoProdutos.series}
@@ -76,7 +80,11 @@ export const LucrosGastos = () => {
                         </div>
 
                         <div className="grafico-box">
+<<<<<<< HEAD
                             <h4>Movimento do preço das ações</h4>
+=======
+                            <h4>Movimento de estoque</h4>
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
                             <ReactApexChart
                                 options={graficoAcoes.options}
                                 series={graficoAcoes.series}

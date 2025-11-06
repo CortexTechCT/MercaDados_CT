@@ -12,8 +12,8 @@ export const Home = () => {
         series: [40, 30, 10, 7, 13],
         options: {
             chart: { type: 'pie' },
-            labels: ['Categoria A', 'Categoria B', 'Categoria C', 'Categoria D', 'Categoria E'],
-            colors: ['#008FFB', '#00E396', '#FEB019', '#A3A3A3', '#7BDCB5'],
+            labels: ['Fornecedor 1', 'Fornecedor 2', 'Fornecedor 3', 'Fornecedor 4', 'Fornecedor 5'],
+            colors: ["#fe9143ff", "#097aef", "#3453ad", '#697affff', '#d872f4ff'],
             legend: {
                 position: 'bottom'
             }
@@ -23,15 +23,15 @@ export const Home = () => {
     const graficoProdutos = {
         series: [
             {
-                name: "PRODUCT A",
+                name: "Produto A",
                 data: [150, 160, 170, 165, 180, 190, 200, 210, 220, 225, 230, 240, 245, 250],
             },
             {
-                name: "PRODUCT B",
+                name: "Produto B",
                 data: [60, 65, 70, 75, 100, 120, 150, 160, 140, 130, 100, 80, 60, 50],
             },
             {
-                name: "PRODUCT C",
+                name: "Produto C",
                 data: [20, 22, 25, 23, 21, 24, 26, 27, 28, 26, 25, 27, 29, 30],
             },
         ],
@@ -47,7 +47,7 @@ export const Home = () => {
                 ],
                 labels: { rotate: -45 },
             },
-            colors: ["#00E396", "#008FFB", "#FEB019"],
+            colors: ["#fe9143", "#097aef", "#3453ad"],
         },
     }
 

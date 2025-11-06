@@ -7,7 +7,7 @@ import perfilazul from "../../assets/perfilazul.svg";
 import api from "../../services/Services.js";
 
 
- // Imagens (mantidas caso sejam usadas futuramente)
+// Imagens (mantidas caso sejam usadas futuramente)
 // import vini from "../../assets/viniciou.jpg";
 // import yasmin from "../../assets/IMG_3617_1.png";
 // import matheus from "../../assets/IMG_8991_1.png";
@@ -15,10 +15,13 @@ import api from "../../services/Services.js";
 // import herik from "../../assets/image_2.png";
 // import isaac from "../../assets/171977797.png";
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
   const [funcAberto, setFuncAberto] = useState(null);
@@ -55,7 +58,16 @@ export const AdmFuncionario = () => {
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
 
+<<<<<<< HEAD
 
+=======
+
+
+        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
+
+        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
+
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
       },
     ],
     options: {
@@ -75,13 +87,13 @@ export const AdmFuncionario = () => {
 
 
 
-      xaxis: { categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"] },
+      xaxis: { categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] },
     },
   };
 
   // Buscar funcionários do backend
 
-  
+
 
   // useEffect (() => {
   //     xaxis: {
@@ -92,6 +104,7 @@ export const AdmFuncionario = () => {
   //     },
   //   },
   // });
+<<<<<<< HEAD
 
  
 
@@ -105,11 +118,16 @@ export const AdmFuncionario = () => {
  // };
 
 
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
 
   // Buscar funcionários do backend
   useEffect(() => {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
     ListarFuncionario();
   }, []);
 
@@ -144,7 +162,10 @@ export const AdmFuncionario = () => {
                   >
                     <div className="info-funcionario">
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
                       <img
                         src={
                           f.fotoPerfil
@@ -155,12 +176,18 @@ export const AdmFuncionario = () => {
                         className="foto-funcionario"
 
 
+<<<<<<< HEAD
                       /> 
                       <img 
                         src={perfilazul} 
 
 
 
+=======
+                      />
+                      <img
+                        src={perfilazul}
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
                       />
 
                       <img
@@ -181,9 +208,8 @@ export const AdmFuncionario = () => {
                   </div>
 
                   <div
-                    className={`detalhes-funcionario-transicao ${
-                      funcAberto === index ? "aberto" : ""
-                    }`}
+                    className={`detalhes-funcionario-transicao ${funcAberto === index ? "aberto" : ""
+                      }`}
                   >
                     {funcAberto === index && (
                       <div className="detalhes-funcionario">

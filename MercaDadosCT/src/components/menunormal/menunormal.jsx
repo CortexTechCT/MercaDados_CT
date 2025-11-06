@@ -1,5 +1,8 @@
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
 import "./menunormal.css";
 import iconeSino from "../../assets/Alarm.png";
 import iconeUsuario from "../../assets/perfil.png";
@@ -9,10 +12,14 @@ import casa from "../../assets/casa.png";
 
 export const MenuNormal = () => {
   
+<<<<<<< HEAD
   
 
     
     return (
+=======
+  return (
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
       
       <header className="top-header">
       
@@ -25,5 +32,9 @@ export const MenuNormal = () => {
         
       </header>
     );
+<<<<<<< HEAD
   
   }
+=======
+ }
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37

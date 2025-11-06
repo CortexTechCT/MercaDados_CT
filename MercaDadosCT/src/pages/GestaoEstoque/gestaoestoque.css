@@ -30,12 +30,17 @@
   width: 70%;
   max-width: 1000px;
   color: #000;
+<<<<<<< HEAD
 
  margin-left: 325px;
 
 
  margin-left: 325px;
 
+=======
+ margin-left: 325px;
+ margin-left: 325px;
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
   margin-left: 25%;
 }
 
@@ -284,6 +289,7 @@ position: absolute;
     padding: 5px;
   }
 
+<<<<<<< HEAD
 /* @media (max-width: 480px) {
 
 
@@ -316,3 +322,5 @@ margin-top: -207px;
 
 
  */
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37

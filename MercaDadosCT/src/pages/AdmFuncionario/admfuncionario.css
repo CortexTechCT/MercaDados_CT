@@ -136,6 +136,7 @@ border-top: 0;
   width: 70%;
   max-width: 1000px;
   color: #000;
+<<<<<<< HEAD
 
 
 
@@ -146,9 +147,13 @@ border-top: 0;
 
 
 
+=======
   margin-right: 69px;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
-  margin-left: 24%;
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
+  margin-right: 69px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
+  margin-left: 22%;
 
 }
 
@@ -239,10 +244,13 @@ border-top: 0;
 
 
 @media (max-width: 1024px) {
+<<<<<<< HEAD
   /* .conteudo-principal {
     margin-left: 180px; /* reduz o espaço da lateral */
   } */
    .funcionario-box-min,
+=======
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
   .funcionario-box {
     width: 85%;
     padding: 20px;
@@ -274,7 +282,7 @@ border-top: 0;
   .funcionario-box h2 {
     font-size: 20px;
   }
-
+}
 
 /* Telas pequenas (celulares) */
 @media (max-width: 768px) {
@@ -282,11 +290,15 @@ border-top: 0;
     flex-direction: column;
   }
 
+<<<<<<< HEAD
   /* .conteudo-principal {
     margin-left: 0;
   } */
 
   .funcionario-box-min {
+=======
+  .funcionario-box {
+>>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
     width: 90%;
     padding: 18px;
     margin: 24px auto;
@@ -320,7 +332,6 @@ border-top: 0;
   }
 }
 
-/* Telas muito pequenas (até 480px) */
 @media (max-width: 480px) {
   .funcionario-box-min {
     width: 95%;

@@ -123,13 +123,9 @@
       transform: scale(1.1);
 }
 
-/* ========================= */
-/* RESPONSIVIDADE  */
-
 @media (max-width: 600px) {
 
 .home-box{
-
       margin: 10px auto;
         width: 95%;
         padding: 20px 15px;
@@ -143,11 +139,7 @@
 
 
 }
-
-
-   
 }
-
 
 @media (max-width: 1024px) {
  
@@ -183,7 +175,7 @@
         width: 90%;
         padding: 30px 20px;
         border-radius: 24px;
-        margin-top: 36px;
+        margin-top: 82px;
 }
 
 }
