@@ -4,6 +4,7 @@ using Mercadados_API.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20251111112001_Db_v3")]
+    partial class Db_v3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -235,7 +238,7 @@ namespace Mercadados_API.Migrations
                     b.Property<Guid>("FeedbackID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ProdutosID")
+                    b.Property<Guid?>("ProdutosID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantidade")
@@ -394,9 +397,7 @@ namespace Mercadados_API.Migrations
 
                     b.HasOne("Produtos", "Produtos")
                         .WithMany()
-                        .HasForeignKey("ProdutosID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProdutosID");
 
                     b.Navigation("Feedback");
 
