@@ -66,11 +66,11 @@ export const LucrosGastos = () => {
 
                     <div className="grafico-container">
                         <div className="grafico-box">
-<<<<<<< HEAD
+
                             <h4>Dados irregulares em séries temporais</h4>
-=======
+
                             <h4>Movimento de vendas</h4>
->>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
+
                             <ReactApexChart
                                 options={graficoProdutos.options}
                                 series={graficoProdutos.series}
@@ -80,11 +80,11 @@ export const LucrosGastos = () => {
                         </div>
 
                         <div className="grafico-box">
-<<<<<<< HEAD
+
                             <h4>Movimento do preço das ações</h4>
-=======
+
                             <h4>Movimento de estoque</h4>
->>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
+
                             <ReactApexChart
                                 options={graficoAcoes.options}
                                 series={graficoAcoes.series}

@@ -196,7 +196,7 @@ margin-left: -87px;
   .formulario-box {
    margin: 10px;
     width: 95%;
-    padding: 20px 35px;
+    padding: 20px 39px;
     border-radius: 18px;
    
   }
@@ -231,7 +231,7 @@ margin-left: -87px;
     gap: 15px;
     margin-left: -37px;
    padding: 26px;
-        margin: 80px;
+        margin: 6px;
         margin-top: -19px;
   }
 
@@ -245,8 +245,8 @@ margin-left: -87px;
 
   .botao-box button {
     width: 100%;
-    max-width: 280px;
-  
+    max-width: 291px;
+ margin-left:-1px ;
   }
 
 
@@ -257,8 +257,9 @@ margin-left: -87px;
 @media (max-width: 480px) {
 
 
-.formulario-grid {
-      margin-left: 47px;
+.formulario-grid  {
+    
+              margin: 55px;
     }
 
 }

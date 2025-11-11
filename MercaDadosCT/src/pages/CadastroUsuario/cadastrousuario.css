@@ -100,17 +100,19 @@ body {
   background-color: #e59400;
 }
 
+
+.botao {
+   margin-left: 280px;
+    margin-bottom: 62px;
+ 
+  }
+
 @media (max-width: 1024px) {
   .container-geral {
     flex-direction: column;
     height: auto;
   }
-<<<<<<< HEAD
-  
-=======
 
-
->>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
 
   .formulario-box {
     padding: 30px 20px;
@@ -135,6 +137,7 @@ body {
   .img-produto {
     width: 180px;
   }
+
 
 
 
@@ -186,11 +189,16 @@ body {
     max-width: 100%;
   }
 
-  /* .botao{
+   .botao{
          width: 135%;
-        margin-left: -84px;
+        margin-left: 72px;
 
-} */
+} 
+
+
+
+
+   
 
   .botao_cadusuario {
     width: 135%;

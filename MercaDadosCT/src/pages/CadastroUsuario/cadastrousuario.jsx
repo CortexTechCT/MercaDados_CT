@@ -175,11 +175,10 @@ export const CadastroUsuario = () => {
               onChange={handleChange}
               required
             />
-
+         </form>
             <div className="botao_cadusuario">
               <Botao nomeBotao="Cadastrar Funcionário" tipo="submit" />
             </div>
-          </form>
         </main>
       </div>
     </div>

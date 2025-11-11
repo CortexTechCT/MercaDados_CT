@@ -119,11 +119,17 @@ button:hover {
          margin-left: auto;
 
     } 
-      .botao  {
+      button.botao {
       
-        max-width: 290px; 
-        margin-left: 20px;
-        width: 20px;
+
+       margin-left: 73px;
+        width: 294px;
+    }
+
+    .botao-max{
+
+        margin-left: -70px;
+
     }
 
 .formulario-grid{
@@ -140,6 +146,8 @@ form{
   padding: 33px;
 }
 }
+
+
 @media (max-width: 480px) {
   input {
         height: 55px;
@@ -151,7 +159,7 @@ form{
     }
 
 form {
-        padding: 8px;
+        padding: 17px;
     }
 
 }

@@ -32,7 +32,11 @@ export const Login = () => {
             <a href="#">Esqueceu a senha?</a>
           </div>
 
+<div className="botao-max">
+
      <Botao nomeBotao="Entrar" />
+  
+</div>
      <Link to= "/home">
      
      

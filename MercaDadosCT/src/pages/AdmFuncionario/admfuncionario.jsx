@@ -15,13 +15,7 @@ import api from "../../services/Services.js";
 // import herik from "../../assets/image_2.png";
 // import isaac from "../../assets/171977797.png";
 
-<<<<<<< HEAD
 
-
-
-
-=======
->>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
 export const AdmFuncionario = () => {
   const [listaFuncionario, setListaFuncionario] = useState([]);
   const [funcAberto, setFuncAberto] = useState(null);
@@ -58,16 +52,7 @@ export const AdmFuncionario = () => {
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
 
-<<<<<<< HEAD
 
-=======
-
-
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
-
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 7.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.5],
-
->>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
       },
     ],
     options: {
@@ -104,7 +89,7 @@ export const AdmFuncionario = () => {
   //     },
   //   },
   // });
-<<<<<<< HEAD
+
 
  
 
@@ -118,16 +103,13 @@ export const AdmFuncionario = () => {
  // };
 
 
-=======
->>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
 
   // Buscar funcionários do backend
   useEffect(() => {
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
+
+
     ListarFuncionario();
   }, []);
 
@@ -162,10 +144,7 @@ export const AdmFuncionario = () => {
                   >
                     <div className="info-funcionario">
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
                       <img
                         src={
                           f.fotoPerfil
@@ -176,18 +155,18 @@ export const AdmFuncionario = () => {
                         className="foto-funcionario"
 
 
-<<<<<<< HEAD
+
                       /> 
                       <img 
                         src={perfilazul} 
 
 
 
-=======
+
                       />
                       <img
                         src={perfilazul}
->>>>>>> 0c67fe0582fcc184d89782b127030bb6976efd37
+
                       />
 
                       <img
