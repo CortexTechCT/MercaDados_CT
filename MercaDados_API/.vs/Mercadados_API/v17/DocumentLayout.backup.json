@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\Migrations\\20251106135842_AtualizarProdutosss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251106135842_AtualizarProdutosss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\testeee\\mercanovoclonado\\mercadados_ct\\mercadados_api\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\testeee\\mercanovoclonado\\mercadados_ct\\mercadados_api\\domains\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,14 +13,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\testeee\\mercanovoclonado\\mercadados_ct\\mercadados_api\\repositories\\produtosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:repositories\\produtosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\testeee\\mercanovoclonado\\mercadados_ct\\mercadados_api\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\Migrations\\20251106123616_AtualizarProdutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251106123616_AtualizarProdutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\testeee\\mercanovoclonado\\mercadados_ct\\mercadados_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,6 +25,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\testeee\\mercanovoclonado\\mercadados_ct\\mercadados_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\testeee\\mercanovoclonado\\mercadados_ct\\mercadados_api\\migrations\\20251106135842_atualizarprodutosss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:migrations\\20251106135842_atualizarprodutosss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|c:\\users\\43022067801\\desktop\\testeee\\mercanovoclonado\\mercadados_ct\\mercadados_api\\migrations\\20251106123616_atualizarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A04570F6-52D0-471D-9394-30CFA7F4607B}|Mercadados_API.csproj|solutionrelative:migrations\\20251106123616_atualizarprodutos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,16 +50,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "20251106135842_AtualizarProdutosss.cs",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\Migrations\\20251106135842_AtualizarProdutosss.cs",
               "RelativeDocumentMoniker": "Migrations\\20251106135842_AtualizarProdutosss.cs",
               "ToolTip": "C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\Migrations\\20251106135842_AtualizarProdutosss.cs",
               "RelativeToolTip": "Migrations\\20251106135842_AtualizarProdutosss.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:58:42.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T13:58:42.58Z"
             },
             {
               "$type": "Document",
@@ -71,25 +70,24 @@
               "RelativeToolTip": "Repositories\\ProdutosRepository.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAwwGIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:46:47.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T13:46:47.188Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ProdutosController.cs",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\Controllers\\ProdutosController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProdutosController.cs",
               "ToolTip": "C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\Controllers\\ProdutosController.cs",
               "RelativeToolTip": "Controllers\\ProdutosController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAADwv4gAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAADwvzoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-06T13:38:52.401Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "20251106123616_AtualizarProdutos.cs",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\Migrations\\20251106123616_AtualizarProdutos.cs",
               "RelativeDocumentMoniker": "Migrations\\20251106123616_AtualizarProdutos.cs",
@@ -97,12 +95,11 @@
               "RelativeToolTip": "Migrations\\20251106123616_AtualizarProdutos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T12:36:17.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T12:36:17.135Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Context.cs",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\Contexts\\Context.cs",
               "RelativeDocumentMoniker": "Contexts\\Context.cs",
@@ -114,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -126,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\43022067801\\Desktop\\testeee\\mercanovoclonado\\MercaDados_CT\\MercaDados_API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -146,8 +143,7 @@
               "RelativeToolTip": "Domains\\Produtos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T12:17:46.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-06T12:17:46.778Z"
             }
           ]
         }

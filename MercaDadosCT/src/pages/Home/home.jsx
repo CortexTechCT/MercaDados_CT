@@ -87,7 +87,7 @@ export const Home = () => {
               <Link className="link-administrador" to="/Fornecedores">
                 <img className="caminhao" src={caminhao} alt="Fornecedores" />
                 <p>Fornecedores Ativos</p>
-                <strong>32</strong>
+                <strong>3</strong>
               </Link>
             </div>
 
