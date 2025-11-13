@@ -15,16 +15,44 @@ export const Perfil = () => {
       if (!usuario?.idUsuario || !token) return;
 
       try {
-        const resposta = await api.get(`/Usuario/BuscarPorId/${usuario.idUsuario}`, {
-        });
+        const resposta = await api.get(`/Usuario/BuscarPorId/${usuario.idUsuario}`);
         setDados(resposta.data);
       } catch (error) {
-        console.error(" Erro ao carregar perfil:", error.response ? error.response.data : error);
+        console.error("Erro ao carregar perfil:", error.response ? error.response.data : error);
       }
     };
 
     carregarUsuario();
   }, [usuario, token]);
+
+  // 👉 Função para formatar CPF ou CNPJ
+  const formatarCpfCnpj = (valor) => {
+    if (!valor) return "";
+    const apenasNumeros = valor.replace(/\D/g, "");
+    if (apenasNumeros.length <= 11) {
+      // CPF
+      return apenasNumeros
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d)/, "$1.$2")
+        .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+    } else {
+      // CNPJ
+      return apenasNumeros
+        .replace(/^(\d{2})(\d)/, "$1.$2")
+        .replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3")
+        .replace(/\.(\d{3})(\d)/, ".$1/$2")
+        .replace(/(\d{4})(\d)/, "$1-$2");
+    }
+  };
+
+  // 👉 Função para formatar telefone
+  const formatarTelefone = (valor) => {
+    if (!valor) return "";
+    const apenasNumeros = valor.replace(/\D/g, "");
+    return apenasNumeros
+      .replace(/^(\d{2})(\d)/g, "($1) $2")
+      .replace(/(\d{5})(\d{4})$/, "$1-$2");
+  };
 
   if (!dados) {
     return <p style={{ margin: "50px", fontSize: "18px" }}>Carregando perfil...</p>;
@@ -57,12 +85,12 @@ export const Perfil = () => {
 
             <div className="campo-perfil">
               <label>Telefone</label>
-              <input type="text" value={dados.numero || ""} readOnly />
+              <input type="text" value={formatarTelefone(dados.numero)} readOnly />
             </div>
 
             <div className="campo-perfil">
-              <label>CPF</label>
-              <input type="text" value={dados.cpf || ""} readOnly />
+              <label>CPF/CNPJ</label>
+              <input type="text" value={formatarCpfCnpj(dados.cpf)} readOnly />
             </div>
 
             <div className="campo-perfil">

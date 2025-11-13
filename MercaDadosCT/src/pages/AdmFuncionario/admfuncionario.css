@@ -62,7 +62,7 @@ border-top: 0;
   background-color: #f5f6fa; /* mantém o cinza que você já tem */
   border-radius: 15px;
   padding: 30px; /* aumenta espaço interno */
-  width: 420px;  /* aumenta o quadrado cinza */
+  width: 380px;  /* aumenta o quadrado cinza */
   height: 420px; /* aumenta também em altura */
   display: flex;
   justify-content: center;
