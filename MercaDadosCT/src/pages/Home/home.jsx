@@ -10,7 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/authContexts";
 import { useState, useEffect } from "react";
 import api from "../../services/Services.js";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // 🆕 Ícones das setas
+import { ChevronLeft, ChevronRight } from "lucide-react"; 
 
 export const Home = () => {
   const { logout } = useAuth();
@@ -83,7 +83,6 @@ export const Home = () => {
     carregarFeedbacks();
   }, []);
 
-  // 🕒 Continua rodando automaticamente
   useEffect(() => {
     if (funcionarios.length === 0) return;
     const intervalo = setInterval(() => {
@@ -192,7 +191,8 @@ export const Home = () => {
                     <p className="nome-func-home">{funcionarioAtual.nomeFuncionario}</p>
                   </div>
 
-                  {graficoFuncionario ? (
+                  {/* 🆕 Exibe texto caso não haja feedbacks */}
+                  {graficoFuncionario && graficoFuncionario.series.some(v => v > 0) ? (
                     <ReactApexChart
                       options={graficoFuncionario.options}
                       series={graficoFuncionario.series}
@@ -200,7 +200,7 @@ export const Home = () => {
                       height={250}
                     />
                   ) : (
-                    <p>Carregando feedbacks...</p>
+                    <p className="sem-feedback">O funcionário não possui um feedback cadastrado.</p>
                   )}
                 </div>
               ) : (

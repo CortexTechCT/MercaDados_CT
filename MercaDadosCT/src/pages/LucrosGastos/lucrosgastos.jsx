@@ -4,30 +4,36 @@ import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import { useState, useEffect } from "react";
 import api from "../../services/Services.js";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 export const LucrosGastos = () => {
   const [lucros, setLucros] = useState([]);
   const [gastos, setGastos] = useState([]);
   const [categorias, setCategorias] = useState([]);
+  const [vendas, setVendas] = useState([]);
+
+  const [vendaSelecionada, setVendaSelecionada] = useState(null);
+  const [modalAberto, setModalAberto] = useState(false);
 
   const carregarDados = async () => {
     try {
       const vendasResp = await api.get("/Venda/Listar");
-      const vendas = vendasResp.data;
+      const vendasData = vendasResp.data || [];
 
-      const nomes = vendas.map((v, i) => `Venda ${i + 1}`);
-      const valores = vendas.map(v => v.valor);
+      const nomes = vendasData.map((v, i) => `Venda ${i + 1}`);
+      const valores = vendasData.map(v => v.valor);
 
       setCategorias(nomes);
       setLucros(valores);
+      setVendas(vendasData);
 
       try {
         const gastosResp = await api.get("/Gasto/Listar");
-        const gastosData = gastosResp.data;
-        const nomesGastos = gastosData.map((g, i) => `Gasto ${i + 1}`);
-        const valoresGastos = gastosData.map(g => g.valor);
-        setGastos(valoresGastos);
-      } catch (err) {
+        const gastosData = gastosResp.data || [];
+        setGastos(gastosData.map(g => g.valor));
+      } catch {
         console.warn("Nenhum gasto encontrado ou rota inexistente");
       }
 
@@ -38,19 +44,51 @@ export const LucrosGastos = () => {
 
   useEffect(() => {
     carregarDados();
-    const intervalo = setInterval(carregarDados, 10000); // Atualiza a cada 10s
-    return () => clearInterval(intervalo);
   }, []);
 
+  const handleClickVenda = (index) => {
+    const venda = vendas[index];
+    if (venda) {
+      setVendaSelecionada(venda);
+      setModalAberto(true);
+    }
+  };
+
+  // gráfico de barras para clique mais fácil
   const graficoLucros = {
     series: [{ name: "Lucros", data: lucros }],
     options: {
-      chart: { type: "area", height: 300 },
-      xaxis: { categories: categorias },
+      chart: {
+        type: "bar",
+        height: 300,
+        events: {
+          dataPointSelection: (event, chartContext, { dataPointIndex }) => {
+            handleClickVenda(dataPointIndex);
+          },
+        },
+        toolbar: { show: true },
+      },
+      xaxis: {
+        categories: categorias,
+        labels: {
+          style: { colors: "#333", fontSize: "13px" },
+        },
+      },
+      plotOptions: {
+        bar: {
+          borderRadius: 6,
+          distributed: true,
+          columnWidth: "16%",
+        },
+      },
       colors: ["#00E396"],
-      stroke: { curve: "smooth" },
       dataLabels: { enabled: true },
       yaxis: { title: { text: "Valor (R$)" } },
+      tooltip: {
+        y: {
+          formatter: (val) => `R$ ${val}`,
+        },
+      },
     },
   };
 
@@ -80,7 +118,7 @@ export const LucrosGastos = () => {
               <ReactApexChart
                 options={graficoLucros.options}
                 series={graficoLucros.series}
-                type="area"
+                type="bar"
                 height={300}
               />
             </div>
@@ -95,6 +133,58 @@ export const LucrosGastos = () => {
               />
             </div>
           </div>
+
+          {/* 🧱 MODAL DETALHES */}
+          <Modal
+            isOpen={modalAberto}
+            onRequestClose={() => setModalAberto(false)}
+            className="modal-detalhes"
+            overlayClassName="modal-overlay"
+          >
+            {vendaSelecionada ? (
+              <div>
+                <h2>Detalhes da Venda</h2>
+                <p><strong>ID:</strong> {vendaSelecionada.id}</p>
+                <p><strong>Valor total:</strong> R$ {vendaSelecionada.valor}</p>
+                <p><strong>Funcionário:</strong> {vendaSelecionada.funcionario?.nome || "Não informado"}</p>
+                <p><strong>Feedback:</strong> {vendaSelecionada.feedback || "Sem feedback"}</p>
+
+                <h3>Produtos:</h3>
+                <table className="tabela-produtos">
+                  <thead>
+                    <tr>
+                      <th>Produto</th>
+                      <th>Quantidade</th>
+                      <th>Valor (R$)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {vendaSelecionada.produtos && vendaSelecionada.produtos.length > 0 ? (
+                      vendaSelecionada.produtos.map((p, i) => (
+                        <tr key={i}>
+                          <td>{p.nome}</td>
+                          <td>{p.quantidade}</td>
+                          <td>{p.valor}</td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan="3">Nenhum produto registrado</td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+
+                <button onClick={() => setModalAberto(false)} className="btn-fechar-modal">
+                  Fechar
+                </button>
+                
+              </div>
+            ) : (
+              <p>Carregando detalhes...</p>
+            )}
+            
+          </Modal>
         </main>
       </div>
     </div>

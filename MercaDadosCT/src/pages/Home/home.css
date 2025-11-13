@@ -124,6 +124,14 @@
   width: 60px;
 }
 
+.sem-feedback {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+
 .alertaa {
   width: 60px;
 }

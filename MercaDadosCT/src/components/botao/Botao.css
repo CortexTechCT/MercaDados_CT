@@ -1,6 +1,7 @@
+
 .botao {
   background-color: #F97316;
-  width: 420px;
+  width: 368px;
   color: white;
   border: none;
   padding: 14px;
@@ -12,16 +13,4 @@
 
   display: block;
   margin-inline: auto;
-}
-
-@media (max-width: 480px) {
-
-.botao{
-  width: 102%;
-
-}
-
-
-
-
 }
