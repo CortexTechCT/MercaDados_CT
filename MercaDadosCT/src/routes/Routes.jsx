@@ -5,7 +5,7 @@ import { Fornecedores } from "../pages/Fornecedores/fornecedores";
 import { GestaoEstoque } from "../pages/GestaoEstoque/gestaoestoque";
 import { Home } from "../pages/Home/home";
 import { LucrosGastos } from "../pages/LucrosGastos/lucrosgastos";
-import { Perfil } from "../pages/Perfil/Perfil";
+import { Perfil } from "../pages/Perfil/Perfil.jsx";
 import { LeituraProdutos } from "../pages/LeituraProdutos/LeituraProdutos";
 import { AdmFuncionario } from "../pages/AdmFuncionario/admfuncionario.jsx";
 import { CadastroProduto } from "../pages/CadastroProduto/cadastroproduto.jsx";
