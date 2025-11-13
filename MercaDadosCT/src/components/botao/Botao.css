@@ -13,3 +13,15 @@
   display: block;
   margin-inline: auto;
 }
+
+@media (max-width: 480px) {
+
+.botao{
+  width: 102%;
+
+}
+
+
+
+
+}

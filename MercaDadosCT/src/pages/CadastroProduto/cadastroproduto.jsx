@@ -11,27 +11,23 @@ export const CadastroProduto = () => {
   const [produto, setProduto] = useState({
     Nome: "",
     Valor: "",
-    NumeroProduto: "",
     Validade: "",
     Peso: "",
     Setor: "",
+    Fornecedor: "",
     Imagem: null,
   });
 
   const [setoresDisponiveis, setSetoresDisponiveis] = useState([]);
   const [carregandoSetores, setCarregandoSetores] = useState(true);
 
-  // Buscar setores da API
   useEffect(() => {
     const buscarSetores = async () => {
       try {
-        const resposta = await api.get("/Estoque"); // URL correta da sua API
-        console.log("📦 Resposta da API de Estoque:", resposta.data);
-
+        const resposta = await api.get("/Estoque");
         const setores = Array.isArray(resposta.data)
           ? resposta.data.map((item) => item.setor)
           : [];
-
         setSetoresDisponiveis(setores);
       } catch (erro) {
         console.error("❌ Erro ao buscar setores:", erro);
@@ -44,7 +40,6 @@ export const CadastroProduto = () => {
         setCarregandoSetores(false);
       }
     };
-
     buscarSetores();
   }, []);
 
@@ -58,53 +53,47 @@ export const CadastroProduto = () => {
     }
   };
 
-  // Função auxiliar para converter arquivo em base64
-  const converterParaBase64 = (arquivo) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(arquivo);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
-  };
-
-  // Cadastrar produto
+  // Função de cadastro
   const cadastrarProduto = async (e) => {
     e.preventDefault();
 
+    if (!produto.Imagem) {
+      return Swal.fire({
+        icon: "warning",
+        title: "Imagem obrigatória",
+        text: "Selecione uma imagem para o produto.",
+      });
+    }
+
     try {
-      const produtoFormatado = {
-        nomeProduto: produto.Nome,
-        valor: parseFloat(produto.Valor),
-        numeroProduto: produto.NumeroProduto,
-        validade: produto.Validade ? new Date(produto.Validade).toISOString() : null,
-        peso: produto.Peso,
-        setor: produto.Setor,
-        imagem: produto.Imagem
-          ? {
-              nome: produto.Imagem.name,
-              arquivo: await converterParaBase64(produto.Imagem),
-            }
-          : null,
-      };
+      const formData = new FormData();
+      formData.append("Nome", produto.Nome);
+      formData.append("Valor", produto.Valor);
+      formData.append("NumeroProduto", Math.floor(Math.random() * 100000)); // número aleatório
+      formData.append("Validade", produto.Validade);
+      formData.append("Peso", produto.Peso);
+      formData.append("Setor", produto.Setor);
+      formData.append("Fornecedor", produto.Fornecedor || "Fornecedor Padrão");
+      formData.append("Imagem", produto.Imagem.name);
+      formData.append("imagem", produto.Imagem);
 
-      console.log("➡️ Enviando produto:", produtoFormatado);
-
-      const resposta = await api.post("/Produtos", produtoFormatado);
+      const resposta = await api.post("/Produtos", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
 
       Swal.fire({
         icon: "success",
         title: "Produto cadastrado com sucesso!",
-        text: `Produto: ${resposta.data.nomeProduto}`,
+        text: `Produto: ${resposta.data.nome}`,
       });
 
       setProduto({
         Nome: "",
         Valor: "",
-        NumeroProduto: "",
         Validade: "",
         Peso: "",
         Setor: "",
+        Fornecedor: "",
         Imagem: null,
       });
     } catch (erro) {
@@ -122,16 +111,14 @@ export const CadastroProduto = () => {
       <MenuLateral />
       <div className="conteudo-principal">
         <MenuNormal />
-        <main className="formulario-box">
+        <main className="formulario-box-produtos">
           <h2>Cadastro de Produtos</h2>
 
           <div className="descricao-produto">
             <img src={imagemCaixa} alt="Produto" className="img-produto" />
             <div className="descricao-texto">
               <strong>Descrição:</strong>
-              <p>
-                Preencha os campos abaixo para cadastrar um novo produto no sistema.
-              </p>
+              <p>Preencha os campos abaixo para cadastrar um novo produto no sistema.</p>
             </div>
           </div>
 
@@ -153,19 +140,12 @@ export const CadastroProduto = () => {
               required
             />
             <input
-              type="number"
-              name="NumeroProduto"
-              placeholder="Número do Produto"
-              value={produto.NumeroProduto}
-              onChange={handleChange}
-              required
-            />
-            <input
               type="date"
               name="Validade"
               placeholder="Validade"
               value={produto.Validade}
               onChange={handleChange}
+              required
             />
             <input
               type="text"
@@ -173,8 +153,8 @@ export const CadastroProduto = () => {
               placeholder="Peso (ex: 100ml)"
               value={produto.Peso}
               onChange={handleChange}
+              required
             />
-
             <select
               name="Setor"
               value={produto.Setor}
@@ -192,8 +172,17 @@ export const CadastroProduto = () => {
               ))}
             </select>
 
-            <input type="file" name="Imagem" onChange={handleChange} />
-            
+            <input
+              type="text"
+              name="Fornecedor"
+              placeholder="Fornecedor"
+              value={produto.Fornecedor}
+              onChange={handleChange}
+              required
+            />
+
+            <input type="file" name="Imagem" onChange={handleChange} required />
+
             <div className="botao-box">
               <Botao nomeBotao="Cadastrar Produto" tipo="submit" />
             </div>

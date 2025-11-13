@@ -59,7 +59,6 @@ namespace Mercadados_API.Domains
         [ForeignKey("Usuario")]
         public Guid UsuarioID { get; set; }
         public Usuario? Usuario { get; set; }
-
         [Column(TypeName = "VARCHAR(300)")]
         public string? FotoPerfil { get; set; }
     }

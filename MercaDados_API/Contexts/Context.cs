@@ -30,7 +30,9 @@ namespace Mercadados_API.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
+
                 optionsBuilder.UseSqlServer("Server =NOTE39-S28\\SQLEXPRESS; Database = MercaDadosCt; User Id = sa; Pwd = Senai@134; TrustServerCertificate=true;");
+
             }
         }
     };

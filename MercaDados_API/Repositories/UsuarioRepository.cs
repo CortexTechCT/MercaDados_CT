@@ -2,8 +2,6 @@
 using Mercadados_API.Domains;
 using Mercadados_API.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
 
 namespace Mercadados_API.Repositories
 {
@@ -15,38 +13,38 @@ namespace Mercadados_API.Repositories
         {
             _context = context;
         }
-         
+
         public void Cadastrar(Usuario usuario)
         {
             try
             {
-                Usuario usuarioBuscado = _context.Usuario
-                    .Include(u => u.TipoUsuario)
-                    .FirstOrDefault(u =>
-                        u.Email == usuario.Email &&
-                        u.Senha == usuario.Senha)!;
-
-
+                // Gera novo ID para o usuário
                 usuario.UsuarioID = Guid.NewGuid();
+
+                // Adiciona o usuário no contexto
                 _context.Usuario.Add(usuario);
+
+                // Salva no banco de dados
                 _context.SaveChanges();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Console.WriteLine("⚠️ Erro interno no EF: " + ex.InnerException?.Message);
+                throw new Exception("Erro ao cadastrar usuário: " + ex.Message);
             }
         }
-
 
         public Usuario BuscarPorId(Guid id)
         {
             try
             {
-                return _context.Usuario.Find(id)!;
+                return _context.Usuario
+                    .Include(u => u.TipoUsuario) // carrega o tipo de usuário relacionado
+                    .FirstOrDefault(u => u.UsuarioID == id)!;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Erro ao buscar usuário por ID: " + ex.Message);
             }
         }
 
@@ -55,14 +53,13 @@ namespace Mercadados_API.Repositories
             try
             {
                 return _context.Usuario
-                    .Include(u => u.TipoUsuario)
+                    .Include(u => u.TipoUsuario) // inclui o tipo de usuário também no login
                     .FirstOrDefault(u => u.Email == email && u.Senha == senha)!;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Erro ao buscar usuário por e-mail e senha: " + ex.Message);
             }
         }
-
-    };
-};
+    }
+}

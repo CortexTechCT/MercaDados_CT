@@ -49,3 +49,50 @@
   color: #333;
   font-size: 16px;
 }
+
+
+
+
+@media (max-width: 600px) {
+
+  .lucroegastos-box-min {
+    width: 91%;
+    margin: 14px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .lucroegastos-box,
+  .lucroegastos-box-min {
+    margin: 40px auto;
+    width: 90%;
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+
+
+
+  .lucroegastos-box {
+
+    width: 91%;
+
+    margin-left: 20px;
+    margin-top: 14px;
+
+  }
+
+
+}
+
+@media (max-width: 1024px) {
+
+  .lucroegastos-box {
+    width: 90%;
+    padding: 30px 20px;
+    border-radius: 24px;
+    margin: 20px auto;
+    margin-top: 75px;
+  }
+
+
+}

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20251104144643_Db_v1")]
-    partial class Db_v1
+    [Migration("20251106121024_MyV1Procopio")]
+    partial class MyV1Procopio
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -282,6 +282,9 @@ namespace Mercadados_API.Migrations
                     b.Property<Guid>("ProdutoID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Fornecedor")
+                        .HasColumnType("VARCHAR(250)");
 
                     b.Property<string>("Imagem")
                         .IsRequired()

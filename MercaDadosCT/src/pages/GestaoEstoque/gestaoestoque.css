@@ -128,7 +128,6 @@
   color: #ff6600;
 }
 
-/* ======== PRODUTOS ======== */
 .listagem-produtos {
   margin-top: 40px;
   text-align: center;
@@ -166,7 +165,7 @@
 
 /* efeito leve ao passar o mouse (opcional) */
 .produto-img {
-  transform: scale(3);
+ 
   transform-origin: center;
 }
 

@@ -1,111 +1,55 @@
 .top-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 12px 24px;
   background-color: #0E1A3D;
+  border-bottom: 2px solid #162A63;
+  padding: 12px 24px;
+  height: 64px;
+  width: 100%;
+  box-sizing: border-box;
 
-  padding-left: 89%;
-  padding-left: 89%;
-  padding-left: 85%;
-  padding-left: 89%;
-  padding-left: 85%;
-  border-bottom: 2px solid  #162A63;
-
-
- padding-left: 89%;
-
-  padding-left: 89%;
-
-
-padding-left: 85%;
-
-  padding-left: 89%;
-  padding-left: 85%;
-  border-bottom: 2px solid  #162A63;
-
+  top: 0;
+  left: 0;
+  z-index: 900;
 }
 
-.icone-sino {
-  margin-top: 2px;
-  padding-left: 78%;
-
-  border-bottom: 0.1px solid #162A63;
-
-  border-bottom: 2px solid #162A63;
-   
-
-
-  border-bottom: 0.1px solid #162A63;
-
-  border-bottom: 2px solid #162A63;
-  border-bottom: 0.1px solid #162A63;
-
-  border-bottom: 2px solid #162A63;
-
-}
-
-.Usuario-perfil {
+/* Ícones no canto direito (só o perfil por enquanto) */
+.icons-header {
   display: flex;
-  transition: transform 0.5s ease, background-color 0.9s ease;
   align-items: center;
-  
+  gap: 16px;
+}
+
+/* Ícone do perfil */
+.Usuario-perfil {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .Usuario-perfil:hover {
-
-} 
-
-
-
-.icons-header {
-  display: flex;
-  gap: 16px;
-
-  height: 100%;
+  transform: scale(1.15);
 }
 
-.icons-header img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-
-  display: block;      
-  display: block;
-
-
-  display: block;      
-
-
-  display: block;
-
-
-  position: relative;
-  left: 20%;
-
-}
-
-.icons-header img {
-  width: 36px;
-  cursor: pointer;
-
-}
-
-.menu-hamburguer {
-  display: none;
-  cursor: pointer;
-}
-
-.menu-hamburguer img {
-  width: 32px;
-  height: 32px;
-}
-
-
+/* Responsividade */
 @media (max-width: 1024px) {
-  .menu-hamburguer {
-    display: flex;
+  .top-header {
+    padding: 10px 16px;
+      position: fixed;
+  }
 
-    justify-content: flex-start;
+  .Usuario-perfil {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 600px) {
+  .Usuario-perfil {
+    width: 30px;
+    height: 30px;
   }
 }

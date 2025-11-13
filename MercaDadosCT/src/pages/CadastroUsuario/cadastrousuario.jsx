@@ -42,11 +42,11 @@ async function cadastrarFuncionario(e) {
       cpf: funcionario.cpfCnpj,
       fotoPerfil: "",
       usuario: {
-        usuarioID: "00000000-0000-0000-0000-000000000000", // placeholder
+        usuarioID: "00000000-0000-0000-0000-000000000000", 
         nomeUsuario: funcionario.nome,
         email: funcionario.email,
         senha: funcionario.senha,
-        tipoUsuarioID: "00000000-0000-0000-0000-000000000000", // placeholder
+        tipoUsuarioID: "00000000-0000-0000-0000-000000000000", 
         tipoUsuario: {
           tipoUsuarioID: "00000000-0000-0000-0000-000000000000",
           tituloTipoUsuario: "Funcionario",

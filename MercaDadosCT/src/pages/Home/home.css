@@ -22,8 +22,9 @@
   flex-direction: column;
   overflow-y: auto;
 }
-.link-administrador{
- color: #000;
+
+.link-administrador {
+  color: #000;
   text-decoration: none;
 }
 
@@ -35,6 +36,29 @@
   padding: 10px 30px;
 }
 
+.funcionario-carousel {
+  text-align: center;
+}
+
+.funcionario-carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foto-func-home {
+  width: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  margin-top: 14px;
+}
+
+.nome-func-home {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
 
 .btn-menu {
   background: none;
@@ -48,7 +72,6 @@
   height: 28px;
 }
 
-/* Dashboard */
 .home-box {
   background-color: #EEF3FF;
   border-radius: 15px;
@@ -57,7 +80,7 @@
   width: 90%;
   max-width: 1200px;
   color: #000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .cards-dashboard {
@@ -71,42 +94,47 @@
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   flex: 1;
   min-width: 200px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
- transition: transform 0.5s ease, background-color 0.9s ease;
+  transition: transform 0.5s ease, background-color 0.9s ease;
 }
 
 
 
 
-.card-info:hover{
-    transform: scale(1.1);
+.card-info:hover {
+  transform: scale(1.1);
 }
-.dashboard-h2{
+
+.dashboard-h2 {
   margin-bottom: 4%;
-  
-}
-.pessoas{
-  width: 60px;  
-}
-.caminhao{
- width: 60px;  
-}
-.alertaa{
- width: 60px;  
+
 }
 
-.graficos-home  {
+.pessoas {
+  width: 60px;
+}
+
+.caminhao {
+  width: 60px;
+}
+
+.alertaa {
+  width: 60px;
+}
+
+.graficos-home {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
-.lucrosGastos_h4{
+
+.lucrosGastos_h4 {
 
   color: #000;
   text-decoration: none;
@@ -118,35 +146,83 @@
   border-radius: 12px;
   flex: 1;
   min-width: 300px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-   transition: transform 0.5s ease, background-color 0.9s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.5s ease, background-color 0.9s ease;
 }
-.grafico-box-home:hover{
-      transform: scale(1.1);
+
+.grafico-box-home:hover {
+  transform: scale(1.1);
 }
+
+
+
+.funcionario-carousel {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.seta-esquerda,
+.seta-direita {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seta-esquerda:hover,
+.seta-direita:hover {
+  background: #f0f0f0;
+}
+
+.seta-esquerda {
+  left: 10px;
+}
+
+.seta-direita {
+  right: 10px;
+}
+
+
+
 
 /* ========================= */
 /* ===== RESPONSIVIDADE ==== */
 /* ========================= */
 @media (max-width: 600px) {
-.grafico-box-home{
 
-padding: 1px;
+.home-box{
+      margin: 10px auto;
+        width: 95%;
+        padding: 20px 15px;
+        border-radius: 24px;
 
 }
 
+.grafico-box-home {
+   width: 100%;
+   width: 20px;
 
 
 }
-
+}
 
 @media (max-width: 1024px) {
-  .conteudo-principal {
-    margin-left: 0;
-  }
+ 
 
   .btn-menu {
-    display: block; /* só aparece aqui */
+    display: block;  
   }
 
   .container-geral-home {
@@ -167,18 +243,23 @@ padding: 1px;
     left: 0;
   }
 
-  .cards-dashboard {
-    flex-direction: column;
-  }
 
-  .graficos-home {
-    flex-direction: column;
-  }
+  
+  
+.home-box{
+
+    margin: 40px auto;
+        width: 90%;
+        padding: 30px 20px;
+        border-radius: 24px;
+        margin-top: 82px;
+}
+
 }
 
 /* Oculta completamente o botão de menu em telas grandes */
-@media (min-width: 1025px) {
+/* @media (min-width: 1025px) {
   .btn-menu {
     display: none ;
   }
-}
+} */

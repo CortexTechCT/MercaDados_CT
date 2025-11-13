@@ -142,6 +142,7 @@ border-top: 0;
   width: 70%;
   max-width: 1000px;
   color: #000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .funcionario-box h2 {
@@ -282,6 +283,7 @@ border-top: 0;
     width: 90%;
     padding: 18px;
     margin: 24px auto;
+    margin-top: 21%;
   }
 
   .graficos-funcionario {
@@ -317,6 +319,7 @@ border-top: 0;
   .funcionario-box {
     width: 95%;
     padding: 15px;
+    margin-top: 29%;
   }
 
   .grafico-barra-placeholder,

@@ -1,10 +1,3 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #0E1A3D;
-}
-
-
 .feedbacks-container {
     display: flex;
     flex-direction: column;
@@ -14,19 +7,23 @@ body {
     background-color: #0E1A3D;
     position: relative;
 }
-.botao-feedback{
+
+.botao-feedback {
     background-color: transparent;
     border: none;
-     transition: transform 0.5s ease, background-color  0.9s ease;
-   
+    transition: transform 0.5s ease, background-color 0.9s ease;
+
 }
-.botao-feedback:hover{
-        transform: scale(1.1);
-        background-color: transparent;
+
+.botao-feedback:hover {
+    transform: scale(1.1);
+    background-color: transparent;
 }
-.fedcaras{
+
+.fedcaras {
     width: 69px;
 }
+
 .logo-feedbacks-geral {
     position: absolute;
     top: 30px;
@@ -45,6 +42,7 @@ body {
     border-radius: 57px;
     padding: 50px 40px 40px 40px;
     width: 730px;
+    height: 491px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: white;
     box-sizing: border-box;
@@ -60,22 +58,22 @@ body {
 
 
 .swal2-popup.popup-pagamento {
-  background-color: #bfcaf5 ;
-  border-radius: 20px ;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    background-color: #bfcaf5;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .swal2-title.titulo-pagamento {
-  color: #000 ;
-  font-size: 28px ;
-  font-weight: 600 ;
+    color: #000;
+    font-size: 28px;
+    font-weight: 600;
 }
 
 .swal2-html-container.texto-pagamento {
-  color: #000 ;
-  font-size: 18px ;
-  text-decoration: underline;
-  margin-top: 10px;
+    color: #000;
+    font-size: 18px;
+    text-decoration: underline;
+    margin-top: 10px;
 }
 
 
@@ -125,6 +123,29 @@ body {
     margin-bottom: 15px;
 }
 
+.botao-feedback.selecionado {
+    background-color: #ffe600;
+    border-radius: 45%;
+    box-shadow: 0 0 15px #ffeb3b;
+}
+
+.botao-confirmar {
+    margin-top: 41px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff6b00;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-confirmar:hover {
+    background-color: #e55e00;
+}
+
+
 .emojis {
     background-color: #DCE3F4;
     border-radius: 15px;
@@ -132,4 +153,5 @@ body {
     display: flex;
     justify-content: space-around;
     font-size: 35px;
+    margin-top: 48px;
 }

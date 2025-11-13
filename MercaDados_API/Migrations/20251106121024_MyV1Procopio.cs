@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mercadados_API.Migrations
 {
     /// <inheritdoc />
-    public partial class Db_v1 : Migration
+    public partial class MyV1Procopio : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -48,6 +48,7 @@ namespace Mercadados_API.Migrations
                     Validade = table.Column<DateTime>(type: "DATE", nullable: false),
                     Peso = table.Column<string>(type: "Varchar(250)", nullable: false),
                     Setor = table.Column<string>(type: "Varchar(250)", nullable: false),
+                    Fornecedor = table.Column<string>(type: "VARCHAR(250)", nullable: true),
                     Imagem = table.Column<string>(type: "Varchar(255)", nullable: false)
                 },
                 constraints: table =>
