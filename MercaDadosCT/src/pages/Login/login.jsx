@@ -101,7 +101,7 @@ export const Login = () => {
           />
 
           <div className="forgot-password">
-            <a href="#">Esqueceu a senha?</a>
+            <a href="/CadastroAdmin">criar cadastro</a>
           </div>
 
           <Botao nomeBotao={loading ? "Entrando..." : "Entrar"} />
