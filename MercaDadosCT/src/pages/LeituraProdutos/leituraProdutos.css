@@ -5,10 +5,10 @@
   padding-bottom: 2rem;
 }
 
-
+/* ÁREA AZUL */
 .fundo-azul {
   background-color: #97aef2;
-  width: 90%;  
+  width: 90%;
   margin: 20px auto;
   padding: 30px;
   border-radius: 20px;
@@ -20,119 +20,97 @@
 .conteudo {
   display: flex;
   gap: 3rem;
-  align-items: flex-start;
 }
+
+/* ---------------------------------------- */
+/* PRODUTOS (ESQUERDA) */
+/* ---------------------------------------- */
 
 .produtos {
   display: flex;
   flex-direction: column;
-  background-color: #DEE5FA;
+  background: #dee5fa;
+  width: 340px;
   height: 674px;
-  align-items: center;
-  justify-content: center;
   border-radius: 18px;
   padding: 1rem;
+  align-items: center;
+}
+.h6{
+  color: #000000;
+    font-size: 26px;
 }
 
-.leituraProdutos .produto-img {
-  width: 220px;
-  height: auto;
+.input-busca {
+  margin-top: 10px;
+  width: 90%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: none;
+  font-size: 17px;
+  outline: none;
+  transition: 0.3s;
+  color: #809ffe;
+  background: white;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+.input-busca:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(249,115,22,0.5);
+}
+
+/* LISTA DE BUSCA */
+.resultado-busca {
+  margin-top: 10px;
+  width: 90%;
+  max-height: 450px;
+  background: #fff;
+  overflow-y: auto;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 7px rgba(0,0,0,0.2);
+}
+
+.item-busca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.item-busca:hover {
+  background: #dfe3ff;
+}
+
+.item-busca img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
 }
 
 
 .tabela {
-  background-color: #DEE5FA;
+  background: #dee5fa;
   padding: 2rem;
   border-radius: 20px;
   width: 715px;
   height: 676px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.titulo {
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  margin-bottom: 0.5rem;
-}
-
-.subtitulo {
-  font-weight: 600;
-  color: #1e2a47;
-  margin-bottom: 1rem;
-}
-
-.tabela-dados,
-.tabela-itens {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.tabela-dados th,
-.tabela-dados td,
-.tabela-itens th,
-.tabela-itens td {
-  border-bottom: 1px solid #ccc;
-  padding: 16px;
-  text-align: left;
-  font-size: 18px;
-}
-
-.linha-energetico td {
-  background-color: #D0DCFF;
-}
-
-
-.botao_leitura {
-  background-color: #F97316;
-  border: none;
-  padding: 13px 88px;
-  border-radius: 15px;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  display: block;
-  margin: 35px auto 0;
-  transition: background-color 0.3s ease;
-}
-
-.botao_leitura:hover {
-  background-color: #e25f05;
-}
-
-
-.itens-cupom h4 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.atendido {
-  margin-top: 30px;
-  font-size: 0.95rem;
-  color: #000;
-}
-
-.resumo {
-  margin-top: 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.total {
-  width: 205px;
-  background-color: #1e2a47;
-  color: #fff;
-  padding: 9px 40px;
-  border-radius: 27px;
-  font-size: 25px;
-  margin-top: -64px;
-  text-align: center;
-}
 
+.tabela-listagem {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 
 .modal-pagamento, .modal-confirmacao {
   background-color: #ffffff;
@@ -180,7 +158,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-
 .botao-confirmar, .botao-voltar {
   background-color: #F97316;
   border: none;
@@ -211,7 +188,6 @@
   transform: scale(1.1);
 }
 
-
 .modal-confirmacao h2 {
   font-size: 30px;
   font-weight: 700;
@@ -231,4 +207,58 @@
   width: 220px;
   height: auto;
   margin-top: 15px;
+}
+
+.tabela-dados {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-dados th,
+.tabela-dados td {
+  padding: 14px;
+  border-bottom: 1px solid #ccc;
+}
+
+.produto-pequena-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  margin-right: 6px;
+}
+
+.botao-lixeira {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.resumo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.total {
+  background: #1e2a47;
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 25px;
+  font-size: 22px;
+}
+
+
+.botao_leitura {
+  background-color: #F97316;
+  border: none;
+  padding: 13px 80px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+  align-self: center;
+  margin-bottom: 5px;
 }

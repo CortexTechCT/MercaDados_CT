@@ -17,25 +17,27 @@ namespace Mercadados_API.Controllers
             _vendaRepository = vendaRepository;
         }
 
-        
-        
+
+
         //void Deletar(Guid id);
-            
+
         [HttpPost]
-        public IActionResult Post(Venda venda)
+        public IActionResult Post([FromBody] Venda venda)
         {
             try
             {
+                venda.VendaID = Guid.NewGuid();
+
                 _vendaRepository.Cadastrar(venda);
 
                 return StatusCode(201, venda);
-
             }
             catch (Exception error)
             {
-                return BadRequest(error);
+                return BadRequest(error.Message);
             }
         }
+
 
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)

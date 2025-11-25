@@ -22,19 +22,6 @@ const swalTheme = Swal.mixin({
   },
 });
 
-// 📌 MÁSCARA DE VALOR
-const formatarValor = (valor) => {
-  if (!valor) return "";
-
-  const numeros = valor.replace(/\D/g, "");
-  if (numeros.length === 0) return "";
-
-  const valorFloat = (parseInt(numeros) / 100).toFixed(2);
-  const valorFormatado = valorFloat.replace(".", ",");
-
-  return `R$ ${valorFormatado}`;
-};
-
 export const CadastroProduto = () => {
   const [produto, setProduto] = useState({
     Nome: "",
@@ -71,17 +58,12 @@ export const CadastroProduto = () => {
     buscarSetores();
   }, []);
 
-  // Atualizar formulário com máscara
+  // Atualizar formulário (campo de Valor agora normal)
   const handleChange = (e) => {
     const { name, value, files } = e.target;
 
     if (name === "Imagem") {
       setProduto({ ...produto, Imagem: files[0] });
-      return;
-    }
-
-    if (name === "Valor") {
-      setProduto({ ...produto, Valor: formatarValor(value) });
       return;
     }
 
@@ -103,10 +85,7 @@ export const CadastroProduto = () => {
     try {
       const formData = new FormData();
       formData.append("Nome", produto.Nome);
-
-      // REMOVE máscara antes de enviar
-      formData.append("Valor", produto.Valor.replace(/\D/g, "")); // Apenas números
-
+      formData.append("Valor", produto.Valor); // valor normal, sem máscara
       formData.append("NumeroProduto", Math.floor(Math.random() * 100000));
       formData.append("Validade", produto.Validade);
       formData.append("Peso", produto.Peso);
@@ -174,7 +153,7 @@ export const CadastroProduto = () => {
             <input
               type="text"
               name="Valor"
-              placeholder="Valor (ex: R$ 21,90)"
+              placeholder="Valor (ex: 21.90)"
               value={produto.Valor}
               onChange={handleChange}
               required
