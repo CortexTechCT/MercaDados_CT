@@ -7,7 +7,7 @@ import { Botao } from "../../components/botao/Botao.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import { useState, useEffect } from "react";
 
-// 🎨 Tema padrão SweetAlert (azul escuro, azul claro e laranja)
+// 🎨 Tema SweetAlert (azul escuro, azul claro e laranja)
 const swalTheme = Swal.mixin({
   background: "#EAF0FF",
   color: "#0C1B3A",
@@ -19,8 +19,21 @@ const swalTheme = Swal.mixin({
     popup: "swal-custom-popup",
     title: "swal-custom-title",
     htmlContainer: "swal-custom-text",
-  }
+  },
 });
+
+// 📌 MÁSCARA DE VALOR
+const formatarValor = (valor) => {
+  if (!valor) return "";
+
+  const numeros = valor.replace(/\D/g, "");
+  if (numeros.length === 0) return "";
+
+  const valorFloat = (parseInt(numeros) / 100).toFixed(2);
+  const valorFormatado = valorFloat.replace(".", ",");
+
+  return `R$ ${valorFormatado}`;
+};
 
 export const CadastroProduto = () => {
   const [produto, setProduto] = useState({
@@ -58,14 +71,21 @@ export const CadastroProduto = () => {
     buscarSetores();
   }, []);
 
-  // Atualizar formulário
+  // Atualizar formulário com máscara
   const handleChange = (e) => {
     const { name, value, files } = e.target;
+
     if (name === "Imagem") {
       setProduto({ ...produto, Imagem: files[0] });
-    } else {
-      setProduto({ ...produto, [name]: value });
+      return;
     }
+
+    if (name === "Valor") {
+      setProduto({ ...produto, Valor: formatarValor(value) });
+      return;
+    }
+
+    setProduto({ ...produto, [name]: value });
   };
 
   // Função de cadastro
@@ -83,7 +103,10 @@ export const CadastroProduto = () => {
     try {
       const formData = new FormData();
       formData.append("Nome", produto.Nome);
-      formData.append("Valor", produto.Valor);
+
+      // REMOVE máscara antes de enviar
+      formData.append("Valor", produto.Valor.replace(/\D/g, "")); // Apenas números
+
       formData.append("NumeroProduto", Math.floor(Math.random() * 100000));
       formData.append("Validade", produto.Validade);
       formData.append("Peso", produto.Peso);
@@ -126,6 +149,7 @@ export const CadastroProduto = () => {
       <MenuLateral />
       <div className="conteudo-principal">
         <MenuNormal />
+
         <main className="formulario-box-produtos">
           <h2>Cadastro de Produtos</h2>
 
@@ -146,14 +170,16 @@ export const CadastroProduto = () => {
               onChange={handleChange}
               required
             />
+
             <input
-              type="number"
+              type="text"
               name="Valor"
-              placeholder="Valor"
+              placeholder="Valor (ex: R$ 21,90)"
               value={produto.Valor}
               onChange={handleChange}
               required
             />
+
             <input
               type="date"
               name="Validade"
@@ -162,6 +188,7 @@ export const CadastroProduto = () => {
               onChange={handleChange}
               required
             />
+
             <input
               type="text"
               name="Peso"
@@ -170,6 +197,7 @@ export const CadastroProduto = () => {
               onChange={handleChange}
               required
             />
+
             <select
               name="Setor"
               value={produto.Setor}
@@ -180,6 +208,7 @@ export const CadastroProduto = () => {
               <option value="">
                 {carregandoSetores ? "Carregando setores..." : "Selecione um Setor"}
               </option>
+
               {setoresDisponiveis.map((setor, index) => (
                 <option key={index} value={setor}>
                   {setor}
