@@ -10,7 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/authContexts";
 import { useState, useEffect } from "react";
 import api from "../../services/Services.js";
-import { ChevronLeft, ChevronRight } from "lucide-react"; 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const Home = () => {
   const { logout } = useAuth();
@@ -23,26 +23,66 @@ export const Home = () => {
 
   const [lucros, setLucros] = useState([]);
   const [categorias, setCategorias] = useState([]);
+  const [totalVendasDia, setTotalVendasDia] = useState(0);
 
   const carregarLucros = async () => {
     try {
-      const vendasResp = await api.get("/Venda/Listar");
+      console.log("🔄 Buscando vendas...");
+
+      const vendasResp = await api.get("Venda/Listar");
       const vendas = vendasResp.data;
 
+      console.log("📌 Vendas recebidas:", vendas);
+
+      // ======== GRÁFICO ========
       const nomes = vendas.map((v, i) => `Venda ${i + 1}`);
       const valores = vendas.map(v => v.valor);
 
       setCategorias(nomes);
       setLucros(valores);
+
+      // ======== VENDAS DO DIA — PEGANDO DATA DO FEEDBACK ========
+      const hoje = new Date().toISOString().split("T")[0];
+      let totalHoje = 0;
+
+      for (const venda of vendas) {
+        const valorVenda = Number(venda.valor || 0);
+        const feedbackId = venda.feedbackID;
+
+        if (!feedbackId) continue;
+
+        try {
+          const respFeedback = await api.get(`Feedback/${feedbackId}`);
+          const feedback = respFeedback.data;
+
+          const dataFeedback = feedback.dataFeedback?.split("T")[0];
+
+          console.log("📝 Feedback encontrado:", {
+            feedbackId,
+            dataFeedback,
+            valorVenda,
+          });
+
+          if (dataFeedback === hoje) {
+            totalHoje += valorVenda;
+          }
+
+        } catch (err) {
+          console.log("⚠ Erro ao buscar feedback:", feedbackId, err);
+        }
+      }
+
+      console.log("💰 Total vendido hoje:", totalHoje);
+      setTotalVendasDia(totalHoje);
+
     } catch (error) {
-      console.error("Erro ao carregar lucros na Home:", error);
+      console.error("❌ Erro ao carregar lucros na Home:", error);
     }
   };
 
   useEffect(() => {
-    carregarLucros();
-    const intervalo = setInterval(carregarLucros, 10000);
-    return () => clearInterval(intervalo);
+
+   carregarLucros();
   }, []);
 
   const graficoLucros = {
@@ -157,7 +197,12 @@ export const Home = () => {
 
             <div className="card-info">
               <p>Vendas do Dia</p>
-              <strong>R$ 12.350</strong>
+              <strong>
+                {totalVendasDia.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </strong>
             </div>
           </div>
 
@@ -165,7 +210,6 @@ export const Home = () => {
             <div className="grafico-box-home funcionario-carousel">
               <h4>Funcionário em Destaque</h4>
 
-              {/* 🆕 Setas de navegação */}
               <button className="seta-esquerda" onClick={irParaAnterior}>
                 <ChevronLeft size={28} />
               </button>
@@ -179,10 +223,11 @@ export const Home = () => {
                     <img
                       src={
                         funcionarioAtual.fotoPerfil
-                          ? `https://localhost:7115${funcionarioAtual.fotoPerfil.startsWith("/")
-                            ? funcionarioAtual.fotoPerfil
-                            : `/${funcionarioAtual.fotoPerfil}`
-                          }`
+                          ? `https://localhost:7115${
+                              funcionarioAtual.fotoPerfil.startsWith("/")
+                                ? funcionarioAtual.fotoPerfil
+                                : `/${funcionarioAtual.fotoPerfil}`
+                            }`
                           : perfilazul
                       }
                       onError={(e) => (e.target.src = perfilazul)}
@@ -191,7 +236,6 @@ export const Home = () => {
                     <p className="nome-func-home">{funcionarioAtual.nomeFuncionario}</p>
                   </div>
 
-                  {/* 🆕 Exibe texto caso não haja feedbacks */}
                   {graficoFuncionario && graficoFuncionario.series.some(v => v > 0) ? (
                     <ReactApexChart
                       options={graficoFuncionario.options}

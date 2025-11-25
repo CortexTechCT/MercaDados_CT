@@ -18,6 +18,8 @@ namespace Mercadados_API.Domains
         public int Quantidade { get; set; }
 
         [ForeignKey("ProdutosID")]
+        public Guid ProdutoID { get; set; }
+
         public Produtos? Produtos { get; set; }
 
         [ForeignKey("FeedbackID")]

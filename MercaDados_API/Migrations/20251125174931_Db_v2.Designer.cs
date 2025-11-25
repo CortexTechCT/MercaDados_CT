@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20251118164537_bdb-v1")]
-    partial class bdbv1
+    [Migration("20251125174931_Db_v2")]
+    partial class Db_v2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -151,33 +151,6 @@ namespace Mercadados_API.Migrations
                     b.ToTable("Funcionario");
                 });
 
-            modelBuilder.Entity("Mercadados_API.Domains.ItemVenda", b =>
-                {
-                    b.Property<Guid>("ItemVendaID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("Data")
-                        .HasColumnType("DATE");
-
-                    b.Property<double>("Preco")
-                        .HasColumnType("FLOAT");
-
-                    b.Property<Guid>("ProdutosID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("VendaID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ItemVendaID");
-
-                    b.HasIndex("ProdutosID");
-
-                    b.HasIndex("VendaID");
-
-                    b.ToTable("ItemVenda");
-                });
-
             modelBuilder.Entity("Mercadados_API.Domains.TipoUsuario", b =>
                 {
                     b.Property<Guid>("TipoUsuarioID")
@@ -238,7 +211,10 @@ namespace Mercadados_API.Migrations
                     b.Property<Guid>("FeedbackID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ProdutosID")
+                    b.Property<Guid>("ProdutoID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ProdutosProdutoID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantidade")
@@ -251,7 +227,7 @@ namespace Mercadados_API.Migrations
 
                     b.HasIndex("FeedbackID");
 
-                    b.HasIndex("ProdutosID");
+                    b.HasIndex("ProdutosProdutoID");
 
                     b.ToTable("Venda");
                 });
@@ -357,25 +333,6 @@ namespace Mercadados_API.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("Mercadados_API.Domains.ItemVenda", b =>
-                {
-                    b.HasOne("Produtos", "Produtos")
-                        .WithMany()
-                        .HasForeignKey("ProdutosID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Mercadados_API.Domains.Venda", "Venda")
-                        .WithMany()
-                        .HasForeignKey("VendaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Produtos");
-
-                    b.Navigation("Venda");
-                });
-
             modelBuilder.Entity("Mercadados_API.Domains.Usuario", b =>
                 {
                     b.HasOne("Mercadados_API.Domains.TipoUsuario", "TipoUsuario")
@@ -397,7 +354,7 @@ namespace Mercadados_API.Migrations
 
                     b.HasOne("Produtos", "Produtos")
                         .WithMany()
-                        .HasForeignKey("ProdutosID");
+                        .HasForeignKey("ProdutosProdutoID");
 
                     b.Navigation("Feedback");
 

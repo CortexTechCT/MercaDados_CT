@@ -19,7 +19,6 @@ namespace Mercadados_API.Contexts
         public DbSet<TipoUsuario> TipoUsuario { get; set; }
         public DbSet<Produtos> Produtos { get; set; }
         public DbSet<Venda> Venda { get; set; }
-        public DbSet<ItemVenda> ItemVenda { get; set; }
         public DbSet<Estoque> Estoque { get; set; }
         public DbSet<EstoqueProdutos> EstoqueProdutos { get; set; }
         public DbSet<Feedback> Feedback { get; set; }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mercadados_API.Migrations
 {
     /// <inheritdoc />
-    public partial class bdbv1 : Migration
+    public partial class Db_v2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -174,7 +174,8 @@ namespace Mercadados_API.Migrations
                     VendaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Valor = table.Column<double>(type: "FLOAT", nullable: false),
                     Quantidade = table.Column<int>(type: "INT", nullable: false),
-                    ProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ProdutoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ProdutosProdutoID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     FeedbackID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -187,37 +188,10 @@ namespace Mercadados_API.Migrations
                         principalColumn: "FeedbackID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Venda_Produtos_ProdutosID",
-                        column: x => x.ProdutosID,
+                        name: "FK_Venda_Produtos_ProdutosProdutoID",
+                        column: x => x.ProdutosProdutoID,
                         principalTable: "Produtos",
                         principalColumn: "ProdutoID");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ItemVenda",
-                columns: table => new
-                {
-                    ItemVendaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Preco = table.Column<double>(type: "FLOAT", nullable: false),
-                    Data = table.Column<DateTime>(type: "DATE", nullable: false),
-                    ProdutosID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    VendaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ItemVenda", x => x.ItemVendaID);
-                    table.ForeignKey(
-                        name: "FK_ItemVenda_Produtos_ProdutosID",
-                        column: x => x.ProdutosID,
-                        principalTable: "Produtos",
-                        principalColumn: "ProdutoID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ItemVenda_Venda_VendaID",
-                        column: x => x.VendaID,
-                        principalTable: "Venda",
-                        principalColumn: "VendaID",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -241,16 +215,6 @@ namespace Mercadados_API.Migrations
                 column: "UsuarioID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ItemVenda_ProdutosID",
-                table: "ItemVenda",
-                column: "ProdutosID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ItemVenda_VendaID",
-                table: "ItemVenda",
-                column: "VendaID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Usuario_TipoUsuarioID",
                 table: "Usuario",
                 column: "TipoUsuarioID");
@@ -261,9 +225,9 @@ namespace Mercadados_API.Migrations
                 column: "FeedbackID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Venda_ProdutosID",
+                name: "IX_Venda_ProdutosProdutoID",
                 table: "Venda",
-                column: "ProdutosID");
+                column: "ProdutosProdutoID");
         }
 
         /// <inheritdoc />
@@ -276,13 +240,10 @@ namespace Mercadados_API.Migrations
                 name: "Imagens");
 
             migrationBuilder.DropTable(
-                name: "ItemVenda");
+                name: "Venda");
 
             migrationBuilder.DropTable(
                 name: "Estoque");
-
-            migrationBuilder.DropTable(
-                name: "Venda");
 
             migrationBuilder.DropTable(
                 name: "Feedback");

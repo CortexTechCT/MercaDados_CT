@@ -83,12 +83,11 @@ export const GestaoEstoque = () => {
     vendas.forEach(v => {
       const data = mapaFeedback[v.feedbackID];
       if (data) {
-        const dia = new Date(data).toISOString().split("T")[0]; // yyyy-mm-dd
+        const dia = new Date(data).toISOString().split("T")[0]; 
         somaPorData[dia] = (somaPorData[dia] || 0) + (v.quantidade || 0);
       }
     });
 
-    // 🔹 Transforma em array ordenado
     const dadosGrafico = Object.entries(somaPorData)
       .map(([data, quantidade]) => ({
         x: new Date(data).getTime(),

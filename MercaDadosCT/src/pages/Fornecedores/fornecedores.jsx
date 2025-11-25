@@ -18,105 +18,91 @@ export const Fornecedores = () => {
   const [mapasPorFornecedor, setMapasPorFornecedor] = useState({});
 
   const baseOpcoesGrafico = {
-    chart: { type: "bar", height: 250 },
-    plotOptions: { bar: { borderRadius: 8, columnWidth: "60%" } },
-    dataLabels: {
-      enabled: true,
-      formatter: (val) => val,
-      offsetY: -10,
-      style: { fontSize: "12px", colors: ["#333"] },
-    },
+    chart: { type: "bar", height: 220 },
+    plotOptions: { bar: { borderRadius: 6, columnWidth: "60%" } },
+    dataLabels: { enabled: true },
     yaxis: { title: { text: "Quantidade Vendida" } },
     tooltip: { y: { formatter: (val) => `${val} unidades` } },
-    responsive: [
-      {
-        breakpoint: 768,
-        options: {
-          chart: { height: 200 },
-          plotOptions: { bar: { columnWidth: "80%" } },
-          dataLabels: { style: { fontSize: "10px" } },
-        },
-      },
-    ],
   };
 
   const criarMapaPorFornecedor = async (fornecedorNome) => {
     try {
-      const [resVendas, resProdutos, resItemVendas, resFeedbacks] =
-        await Promise.all([
-          api.get("Venda/Listar"),
-          api.get("Produtos"),
-          api.get("ItemVenda"),
-          api.get("Feedback"),
-        ]);
+      const [resVendas, resProdutos, resFeedbacks] = await Promise.all([
+        api.get("Venda/Listar"),
+        api.get("Produtos"),
+        api.get("Feedback"),
+      ]);
 
       const vendas = resVendas.data || [];
       const produtos = resProdutos.data || [];
-      const itemVendas = resItemVendas.data || [];
       const feedbacks = resFeedbacks.data || [];
 
-      // 🔹 Map feedbackID → dataFeedback
+      // 🔵 Mapa FeedbackID → Data
       const mapaFeedbackData = {};
       feedbacks.forEach((fb) => {
-        const fid = fb.feedbackID || fb.FeedbackID;
-        const data = fb.dataFeedback || fb.DataFeedback;
+        const fid =
+          fb.feedbackID || fb.FeedbackID || fb.idFeedback || fb.IdFeedback;
+
+        const data =
+          fb.dataFeedback || fb.DataFeedback || fb.data || fb.Data;
+
         if (fid && data) mapaFeedbackData[fid] = data;
       });
 
-      // 🔹 Filtra produtos do fornecedor
-      const produtosDoFornecedor = produtos.filter(
-        (p) =>
-          (p.Fornecedor || p.fornecedor).toLowerCase() ===
-          fornecedorNome.toLowerCase()
-      );
+      // 🔵 Filtrar produtos do fornecedor
+      const produtosDoFornecedor = produtos.filter((p) => {
+        const nomeFornecedor =
+          p.Fornecedor ||
+          p.fornecedor ||
+          p.nomeFornecedor ||
+          p.fornecedorNome ||
+          p.FORNECEDOR;
+
+        return (
+          nomeFornecedor &&
+          nomeFornecedor.toString().toLowerCase() === fornecedorNome.toLowerCase()
+        );
+      });
 
       if (produtosDoFornecedor.length === 0) return {};
 
-      // 🔹 Map produtoID → nomeProduto
+      // 🔵 Criar mapa produtoID → nomeProduto
       const mapaProdutoNome = {};
       produtosDoFornecedor.forEach((p) => {
-        mapaProdutoNome[p.produtoID || p.ProdutoID] = p.nome || p.Nome;
+        const pid =
+          p.produtoID || p.ProdutoID || p.idProduto || p.IDProduto;
+        const nome = p.nome || p.Nome || p.nomeProduto;
+        if (pid && nome) mapaProdutoNome[pid] = nome;
       });
 
-      // 🔹 Map vendaID → Venda
-      const mapaVenda = {};
-      vendas.forEach((v) => {
-        mapaVenda[v.vendaID || v.VendaID] = v;
-      });
-
-      // 🔹 Contabiliza vendas por produto e mês
+      // 🔵 Contador final:
+      // produto → { mesAno → quantidade }
       const mapaVendasPorProduto = {};
 
-      itemVendas.forEach((iv) => {
-        const produtoID = iv.produtosID || iv.ProdutosID;
-        const vendaID = iv.vendaID || iv.VendaID;
+      vendas.forEach((v) => {
+        const produtoID = v.produtoID || v.ProdutoID;
+        const feedbackID = v.feedbackID || v.FeedbackID;
+        const quantidade = v.quantidade || v.Quantidade || 1;
 
         const nomeProduto = mapaProdutoNome[produtoID];
-        if (!nomeProduto) return; // Produto de outro fornecedor
+        if (!nomeProduto) return; // venda não é deste fornecedor
 
-        const venda = mapaVenda[vendaID];
-        if (!venda) return;
-
-        const feedbackID = venda.feedbackID || venda.FeedbackID;
         const data = mapaFeedbackData[feedbackID];
-        if (!data) return;
+        if (!data) return; // venda sem data
 
         const d = new Date(data);
-        const chaveMes = `${String(d.getMonth() + 1).padStart(2, "0")}/${
-          d.getFullYear()
-        }`;
+        const chaveMes = `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
 
         if (!mapaVendasPorProduto[nomeProduto])
           mapaVendasPorProduto[nomeProduto] = {};
 
         mapaVendasPorProduto[nomeProduto][chaveMes] =
-          (mapaVendasPorProduto[nomeProduto][chaveMes] || 0) +
-          (venda.quantidade || venda.Quantidade || 0);
+          (mapaVendasPorProduto[nomeProduto][chaveMes] || 0) + quantidade;
       });
 
       return mapaVendasPorProduto;
     } catch (err) {
-      console.error("❌ Erro ao buscar dados:", err);
+      console.error("ERRO AO MONTAR MAPA:", err);
       return {};
     }
   };
@@ -125,8 +111,7 @@ export const Fornecedores = () => {
     const carregarTodos = async () => {
       const novoMapas = {};
       for (const f of fornecedores) {
-        const vendasPorProduto = await criarMapaPorFornecedor(f.nome);
-        novoMapas[f.nome] = vendasPorProduto;
+        novoMapas[f.nome] = await criarMapaPorFornecedor(f.nome);
       }
       setMapasPorFornecedor(novoMapas);
     };
@@ -143,6 +128,7 @@ export const Fornecedores = () => {
       );
     }
 
+
     const todosMeses = Array.from(
       new Set(
         Object.values(vendasPorProduto).flatMap((vendasMes) =>
@@ -150,37 +136,31 @@ export const Fornecedores = () => {
         )
       )
     ).sort((a, b) => {
-      const [mesA, anoA] = a.split("/").map(Number);
-      const [mesB, anoB] = b.split("/").map(Number);
-      return anoA === anoB ? mesA - mesB : anoA - anoB;
+      const [mA, aA] = a.split("/").map(Number);
+      const [mB, aB] = b.split("/").map(Number);
+      return aA === aB ? mA - mB : aA - aB;
     });
 
     const series = Object.entries(vendasPorProduto).map(
-      ([produto, vendasMes]) => {
-        const data = todosMeses.map((mes) => vendasMes[mes] || 0);
-        return { name: produto, data };
-      }
+      ([produto, vendasMes]) => ({
+        name: produto,
+        data: todosMeses.map((mes) => vendasMes[mes] || 0),
+      })
     );
 
     return (
       <div className="fornecedor-card" key={titulo}>
         <img src={logo} alt={titulo} className="logo-fornecedor" />
-        <div className="grafico-placeholder">
-          <ReactApexChart
-            options={{
-              ...baseOpcoesGrafico,
-              title: {
-                text: `Vendas Mensais - ${titulo}`,
-                align: "center",
-                style: { fontSize: "16px" },
-              },
-              xaxis: { categories: todosMeses, title: { text: "Mês/Ano" } },
-            }}
-            series={series}
-            type="bar"
-            height={250}
-          />
-        </div>
+        <ReactApexChart
+          options={{
+            ...baseOpcoesGrafico,
+            xaxis: { categories: todosMeses },
+            title: { text: `Vendas Mensais - ${titulo}`, align: "center" },
+          }}
+          series={series}
+          type="bar"
+          height={220}
+        />
       </div>
     );
   };
@@ -204,7 +184,7 @@ export const Fornecedores = () => {
                 gerarGraficoFornecedor(
                   f.nome,
                   f.logo,
-                  mapasPorFornecedor[f.nome] || {}
+                  mapasPorFornecedor[f.nome]
                 )
               )
             )}

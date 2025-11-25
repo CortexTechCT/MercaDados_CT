@@ -29,7 +29,6 @@ builder.Services.AddScoped<IEstoqueProdutosRepository, EstoqueProdutoRepository>
 builder.Services.AddScoped<IEstoqueRepository, EstoqueRepository>();
 builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 builder.Services.AddScoped<IImagemRepository, ImagemRepository>();
-builder.Services.AddScoped<IItemVendaRepository, ItemVendaRepository>();
 builder.Services.AddScoped<IProdutosRepository, ProdutosRepository>();
 builder.Services.AddScoped<ITipoUsuarioRepository, TipoUsuarioRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
