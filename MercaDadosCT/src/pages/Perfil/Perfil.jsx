@@ -15,7 +15,7 @@ export const Perfil = () => {
       if (!usuario?.idUsuario || !token) return;
 
       try {
-        const resposta = await api.get(`/Usuario/BuscarPorId/${usuario.idUsuario}`);
+        const resposta = await api.get(`Usuario/BuscarPorId/${usuario.idUsuario}`);
         setDados(resposta.data);
       } catch (error) {
         console.error("Erro ao carregar perfil:", error.response ? error.response.data : error);

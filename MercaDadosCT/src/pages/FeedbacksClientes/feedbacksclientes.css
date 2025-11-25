@@ -48,6 +48,19 @@
     box-sizing: border-box;
     text-align: center;
 }
+.swal-custom-popup {
+  border-radius: 16px !important;
+  border: 2px solid #FF7A00 !important;
+}
+
+.swal-custom-title {
+  font-weight: bold !important;
+  color: #0C1B3A !important;
+}
+
+.swal-custom-text {
+  color: #0C1B3A !important;
+}
 
 
 .titulo-itens {

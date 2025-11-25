@@ -16,11 +16,26 @@ export const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
+  // 🎨 TEMA SWEETALERT NAS CORES DO SISTEMA
+  const swalTheme = Swal.mixin({
+    background: "#EAF0FF", // azul claro
+    color: "#0C1B3A",      // azul escuro
+    confirmButtonColor: "#FF7A00", // laranja
+    denyButtonColor: "#0C1B3A",
+    cancelButtonColor: "#0C1B3A",
+    buttonsStyling: true,
+    customClass: {
+      popup: "swal-custom-popup",
+      title: "swal-custom-title",
+      htmlContainer: "swal-custom-text",
+    },
+  });
+
   const realizarAutenticacao = async (e) => {
     e.preventDefault();
 
     if (!email.trim() || !senha.trim()) {
-      Swal.fire("Atenção", "Preencha todos os campos!", "warning");
+      swalTheme.fire("Atenção", "Preencha todos os campos!", "warning");
       return;
     }
 
@@ -30,14 +45,12 @@ export const Login = () => {
       const token = resposta?.data?.token;
 
       if (!token) {
-        Swal.fire("Erro", "Credenciais incorretas!", "error");
+        swalTheme.fire("Erro", "Credenciais incorretas!", "error");
         setLoading(false);
         return;
       }
 
       const decodificado = jwtDecode(token);
-      console.log("TOKEN DECODIFICADO:", decodificado);
-
       const tipoUsuario = decodificado.Tipo?.toLowerCase();
 
       const usuarioLogado = {
@@ -50,16 +63,17 @@ export const Login = () => {
       login(usuarioLogado, token);
 
       if (tipoUsuario === "funcionario") {
-        Swal.fire({
+        swalTheme.fire({
           title: `Olá, ${usuarioLogado.email}!`,
           text: "Para qual tela você deseja ir?",
           icon: "question",
           showDenyButton: true,
           confirmButtonText: "Caixa",
           denyButtonText: "Feedback",
-          confirmButtonColor: "#1b2d68",
-          denyButtonColor: "#bfcaf5",
-        }).then((result) => {
+          confirmButtonColor: "#FF7A00", // laranja
+          denyButtonColor: "#0C1B3A",    // azul escuro
+        })
+        .then((result) => {
           if (result.isConfirmed) {
             navigate("/LeituraProdutos", { replace: true });
           } else if (result.isDenied) {
@@ -69,18 +83,22 @@ export const Login = () => {
             );
           }
         });
+
       } else if (tipoUsuario === "admin") {
         navigate("/Home", { replace: true });
+
       } else {
-        Swal.fire(
+        swalTheme.fire(
           "Atenção",
           "Tipo de usuário não reconhecido. Verifique seu cadastro.",
           "warning"
         );
       }
+
     } catch (error) {
-      console.error("Erro no login:", error.response ? error.response.data : error);
-      Swal.fire("Erro", "Não foi possível realizar o login!", "error");
+      console.error("Erro no login:", error?.response?.data || error);
+      swalTheme.fire("Erro", "Não foi possível realizar o login!", "error");
+
     } finally {
       setLoading(false);
     }

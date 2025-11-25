@@ -7,6 +7,21 @@ import { Botao } from "../../components/botao/Botao.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import { useState, useEffect } from "react";
 
+// 🎨 Tema padrão SweetAlert (azul escuro, azul claro e laranja)
+const swalTheme = Swal.mixin({
+  background: "#EAF0FF",
+  color: "#0C1B3A",
+  confirmButtonColor: "#FF7A00",
+  cancelButtonColor: "#0C1B3A",
+  denyButtonColor: "#0C1B3A",
+  buttonsStyling: true,
+  customClass: {
+    popup: "swal-custom-popup",
+    title: "swal-custom-title",
+    htmlContainer: "swal-custom-text",
+  }
+});
+
 export const CadastroProduto = () => {
   const [produto, setProduto] = useState({
     Nome: "",
@@ -31,7 +46,7 @@ export const CadastroProduto = () => {
         setSetoresDisponiveis(setores);
       } catch (erro) {
         console.error("❌ Erro ao buscar setores:", erro);
-        Swal.fire({
+        swalTheme.fire({
           icon: "error",
           title: "Erro ao carregar setores",
           text: "Não foi possível listar os setores disponíveis.",
@@ -58,7 +73,7 @@ export const CadastroProduto = () => {
     e.preventDefault();
 
     if (!produto.Imagem) {
-      return Swal.fire({
+      return swalTheme.fire({
         icon: "warning",
         title: "Imagem obrigatória",
         text: "Selecione uma imagem para o produto.",
@@ -69,7 +84,7 @@ export const CadastroProduto = () => {
       const formData = new FormData();
       formData.append("Nome", produto.Nome);
       formData.append("Valor", produto.Valor);
-      formData.append("NumeroProduto", Math.floor(Math.random() * 100000)); // número aleatório
+      formData.append("NumeroProduto", Math.floor(Math.random() * 100000));
       formData.append("Validade", produto.Validade);
       formData.append("Peso", produto.Peso);
       formData.append("Setor", produto.Setor);
@@ -81,7 +96,7 @@ export const CadastroProduto = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      Swal.fire({
+      swalTheme.fire({
         icon: "success",
         title: "Produto cadastrado com sucesso!",
         text: `Produto: ${resposta.data.nome}`,
@@ -98,7 +113,7 @@ export const CadastroProduto = () => {
       });
     } catch (erro) {
       console.error("❌ Erro ao cadastrar produto:", erro);
-      Swal.fire({
+      swalTheme.fire({
         icon: "error",
         title: "Erro ao cadastrar produto",
         text: erro.response?.data?.message || "Não foi possível realizar o cadastro.",

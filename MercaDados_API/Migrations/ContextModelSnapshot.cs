@@ -235,7 +235,7 @@ namespace Mercadados_API.Migrations
                     b.Property<Guid>("FeedbackID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ProdutosID")
+                    b.Property<Guid?>("ProdutosID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantidade")
@@ -394,9 +394,7 @@ namespace Mercadados_API.Migrations
 
                     b.HasOne("Produtos", "Produtos")
                         .WithMany()
-                        .HasForeignKey("ProdutosID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProdutosID");
 
                     b.Navigation("Feedback");
 

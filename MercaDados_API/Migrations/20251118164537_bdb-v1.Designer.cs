@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20251106135842_AtualizarProdutosss")]
-    partial class AtualizarProdutosss
+    [Migration("20251118164537_bdb-v1")]
+    partial class bdbv1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

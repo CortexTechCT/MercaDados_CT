@@ -11,6 +11,21 @@ body {
   height: 100vh;
   background-color: #0E1A3D;
 }
+.swal-custom-popup {
+  border-radius: 16px !important;
+  border: 2px solid #FF7A00 !important; /* laranja */
+  padding: 20px !important;
+}
+
+.swal-custom-title {
+  font-weight: 700 !important;
+  color: #0C1B3A !important; /* azul escuro */
+}
+
+.swal-custom-text {
+  color: #0C1B3A !important;
+  font-size: 1.1rem !important;
+}
 
 .login-box {
   background-color: #0E1A3D;
