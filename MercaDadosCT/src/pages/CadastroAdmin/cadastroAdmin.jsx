@@ -85,7 +85,7 @@ export const CadastroAdmin = () => {
         senha: usuario.senha,
         numero: apenasDigitos(usuario.numero),
         cpf: apenasDigitos(usuario.cpf),
-        tipoUsuarioID: "1b001e46-c59b-4c4a-943e-ad42b66f2da3",
+        tipoUsuarioID: "3a36f691-f24a-4861-887f-e16aa3693a35",
       };
 
       const resposta = await api.post("Usuario", usuarioFormatado);

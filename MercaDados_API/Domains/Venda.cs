@@ -1,29 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Mercadados_API.Domains;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Mercadados_API.Domains
+[Table("Venda")]
+public class Venda
 {
-    [Table("Venda")]
-    public class Venda
-    {
-        [Key]
-        public Guid VendaID { get; set; }
+    [Key]
+    public Guid VendaID { get; set; }
 
-        [Column(TypeName = "FLOAT")]
-        [Required(ErrorMessage = "Valor é obrigatorio!")]
-        public float Valor { get; set; }
+    [Column(TypeName = "FLOAT")]
+    [Required]
+    public float Valor { get; set; }
 
-        [Column(TypeName = "INT")]
-        [Required(ErrorMessage = "Quantidade é obrigatorio!")]
-        public int Quantidade { get; set; }
+    [Column(TypeName = "INT")]
+    [Required]
+    public int Quantidade { get; set; }
 
-        [ForeignKey("ProdutosID")]
-        public Guid ProdutoID { get; set; }
+    public Guid ProdutoID { get; set; }
+    public Produtos? Produtos { get; set; }
 
-        public Produtos? Produtos { get; set; }
+    public Guid? FeedbackID { get; set; }
+    public Feedback? Feedback { get; set; }
 
-        [ForeignKey("FeedbackID")]
-        public Guid? FeedbackID { get; set; }
-        public Feedback? Feedback { get; set; }
-    }
-}   
+    [Column(TypeName = "datetime2")]
+    public DateTime DataVenda { get; set; }
+}

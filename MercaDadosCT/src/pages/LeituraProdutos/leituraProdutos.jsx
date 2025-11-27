@@ -1,3 +1,7 @@
+// ===============================
+// 📄 LeituraProdutos.jsx (FINAL)
+// ===============================
+
 import React, { useState, useEffect } from "react";
 import { MenuNormal } from "../../components/menunormal/menunormal";
 import { Modal } from "../../components/modal/Modal";
@@ -21,6 +25,7 @@ export const LeituraProdutos = () => {
   const [mostrarConfirmacao, setMostrarConfirmacao] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  // Carregar produtos
   useEffect(() => {
     const listarProdutos = async () => {
       try {
@@ -34,9 +39,7 @@ export const LeituraProdutos = () => {
   }, []);
 
   const produtosFiltrados = busca
-    ? produtos.filter((p) =>
-        p.nome.toLowerCase().includes(busca.toLowerCase())
-      )
+    ? produtos.filter((p) => p.nome.toLowerCase().includes(busca.toLowerCase()))
     : [];
 
   const adicionarProduto = (produto) => {
@@ -51,9 +54,11 @@ export const LeituraProdutos = () => {
         )
       );
     } else {
-      setListaVenda((prev) => [...prev, { ...produto, quantidade: 1 }]);
+      setListaVenda((prev) => [
+        ...prev,
+        { ...produto, quantidade: 1 },
+      ]);
     }
-
     setBusca("");
   };
 
@@ -85,15 +90,23 @@ export const LeituraProdutos = () => {
     setMostrarConfirmacao(true);
   };
 
+  // ============================
+  // 🔥 Cadastrar venda (funcionando)
+  // ============================
   const cadastrarVenda = async () => {
     setLoading(true);
+
     try {
       for (const item of listaVenda) {
         const vendaPayload = {
           vendaID: uuidv4(),
           valor: Number(item.valor),
           quantidade: Number(item.quantidade),
-          produtosID: item.produtoID,
+
+          // 🔥 NOME CORRETO DA FK
+          produtoID: item.produtoID,
+
+          // ❌ Não envia DataVenda — BACK coloca DateTime.Now
         };
 
         await api.post("/Venda", vendaPayload);
@@ -112,15 +125,13 @@ export const LeituraProdutos = () => {
 
     } catch (error) {
       console.error("Erro ao cadastrar venda:", error);
-
       Swal.fire({
         title: "Erro",
-        text: "Erro ao cadastrar venda! Verifique o console.",
+        text: "Erro ao cadastrar venda!",
         icon: "error",
         confirmButtonColor: "#F97316",
         background: "#DEE5FA",
       });
-
     } finally {
       setLoading(false);
     }
@@ -132,10 +143,10 @@ export const LeituraProdutos = () => {
 
       <div className="fundo-azul">
         <div className="conteudo">
-          
-          {/* ÁREA DE PRODUTOS */}
+
+          {/* BUSCA DE PRODUTOS */}
           <div className="produtos">
-            <h6 className="h6">Buscar Produtos:  </h6>
+            <h6 className="h6">Buscar Produtos:</h6>
             <input
               className="input-busca"
               type="text"
@@ -143,7 +154,7 @@ export const LeituraProdutos = () => {
               value={busca}
               onChange={(e) => setBusca(e.target.value)}
             />
-   
+
             {busca && produtosFiltrados.length > 0 && (
               <div className="resultado-busca">
                 {produtosFiltrados.map((produto) => {
@@ -166,7 +177,7 @@ export const LeituraProdutos = () => {
             )}
           </div>
 
-          {/* TABELA */}
+          {/* LISTA */}
           <div className="tabela">
             <h2 className="titulo">Registro Atual</h2>
 
@@ -203,9 +214,7 @@ export const LeituraProdutos = () => {
 
                         <td>{item.quantidade}</td>
                         <td>R$ {item.valor.toFixed(2)}</td>
-                        <td>
-                          R$ {(item.valor * item.quantidade).toFixed(2)}
-                        </td>
+                        <td>R$ {(item.valor * item.quantidade).toFixed(2)}</td>
 
                         <td>
                           <button
@@ -236,6 +245,7 @@ export const LeituraProdutos = () => {
         </div>
       </div>
 
+      {/* MODAL PAGAMENTO */}
       {mostrarPagamento && (
         <Modal onClose={() => setMostrarPagamento(false)}>
           <div className="modal-pagamento">
@@ -262,6 +272,7 @@ export const LeituraProdutos = () => {
         </Modal>
       )}
 
+      {/* MODAL CONFIRMAÇÃO */}
       {mostrarConfirmacao && (
         <Modal onClose={() => setMostrarConfirmacao(false)}>
           <div className="modal-confirmacao">

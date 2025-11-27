@@ -50,7 +50,7 @@ body {
 .formulario-grid select {
   background-color: #fff;
   border: 2px solid #a1b6ef;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 12px 16px;
   color: #4a4d57;
   font-size: 14px;
@@ -70,6 +70,7 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
+
 }
 
 /* --- Botão --- */

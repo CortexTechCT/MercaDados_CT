@@ -21,85 +21,68 @@ export const Home = () => {
     navigate("/");
   };
 
+  // ========================
+  // ESTADOS
+  // ========================
   const [lucros, setLucros] = useState([]);
   const [categorias, setCategorias] = useState([]);
   const [totalVendasDia, setTotalVendasDia] = useState(0);
+  const [funcionarios, setFuncionarios] = useState([]);
+  const [feedbacks, setFeedbacks] = useState([]);
+  const [indexAtual, setIndexAtual] = useState(0);
 
+
+  // ========================
+  // CARREGAR VENDAS DO DIA (USANDO dataVenda)
+  // ========================
+  const carregarVendasDoDia = async () => {
+    try {
+      const resp = await api.get("Venda/Listar");
+      const vendas = resp.data;
+
+      const hoje = new Date().toISOString().split("T")[0];
+      let totalHoje = 0;
+
+      vendas.forEach(venda => {
+        if (!venda.dataVenda) return;
+
+        const dataVenda = venda.dataVenda.split("T")[0];
+
+        if (dataVenda === hoje) {
+          totalHoje += Number(venda.valor || 0);
+        }
+      });
+
+      setTotalVendasDia(totalHoje);
+    } catch (error) {
+      console.log("❌ Erro ao carregar vendas do dia:", error);
+    }
+  };
+
+
+  // ========================
+  // CARREGAR LUCROS PARA O GRÁFICO
+  // ========================
   const carregarLucros = async () => {
     try {
-      console.log("🔄 Buscando vendas...");
-
       const vendasResp = await api.get("Venda/Listar");
       const vendas = vendasResp.data;
 
-      console.log("📌 Vendas recebidas:", vendas);
-
-      // ======== GRÁFICO ========
       const nomes = vendas.map((v, i) => `Venda ${i + 1}`);
       const valores = vendas.map(v => v.valor);
 
       setCategorias(nomes);
       setLucros(valores);
 
-      // ======== VENDAS DO DIA — PEGANDO DATA DO FEEDBACK ========
-      const hoje = new Date().toISOString().split("T")[0];
-      let totalHoje = 0;
-
-      for (const venda of vendas) {
-        const valorVenda = Number(venda.valor || 0);
-        const feedbackId = venda.feedbackID;
-
-        if (!feedbackId) continue;
-
-        try {
-          const respFeedback = await api.get(`Feedback/${feedbackId}`);
-          const feedback = respFeedback.data;
-
-          const dataFeedback = feedback.dataFeedback?.split("T")[0];
-
-          console.log("📝 Feedback encontrado:", {
-            feedbackId,
-            dataFeedback,
-            valorVenda,
-          });
-
-          if (dataFeedback === hoje) {
-            totalHoje += valorVenda;
-          }
-
-        } catch (err) {
-          console.log("⚠ Erro ao buscar feedback:", feedbackId, err);
-        }
-      }
-
-      console.log("💰 Total vendido hoje:", totalHoje);
-      setTotalVendasDia(totalHoje);
-
     } catch (error) {
-      console.error("❌ Erro ao carregar lucros na Home:", error);
+      console.error("❌ Erro ao carregar lucros:", error);
     }
   };
 
-  useEffect(() => {
 
-   carregarLucros();
-  }, []);
-
-  const graficoLucros = {
-    series: [{ name: "Lucros", data: lucros }],
-    options: {
-      chart: { type: "area", height: 300 },
-      xaxis: { categories: categorias },
-      colors: ["#00E396"],
-      stroke: { curve: "smooth" },
-      dataLabels: { enabled: true },
-    },
-  };
-
-  const [funcionarios, setFuncionarios] = useState([]);
-  const [feedbacks, setFeedbacks] = useState([]);
-  const [indexAtual, setIndexAtual] = useState(0);
-
+  // ========================
+  // CARREGAR FUNCIONÁRIOS
+  // ========================
   const carregarFuncionarios = async () => {
     try {
       const res = await api.get("Funcionario");
@@ -109,6 +92,9 @@ export const Home = () => {
     }
   };
 
+  // ========================
+  // CARREGAR FEEDBACKS
+  // ========================
   const carregarFeedbacks = async () => {
     try {
       const res = await api.get("Feedback");
@@ -118,11 +104,21 @@ export const Home = () => {
     }
   };
 
+
+  // ========================
+  // USEEFFECT PRINCIPAL
+  // ========================
   useEffect(() => {
+    carregarLucros();
+    carregarVendasDoDia();
     carregarFuncionarios();
     carregarFeedbacks();
   }, []);
 
+
+  // ========================
+  // CARROSSEL DE FUNCIONÁRIOS
+  // ========================
   useEffect(() => {
     if (funcionarios.length === 0) return;
     const intervalo = setInterval(() => {
@@ -130,6 +126,7 @@ export const Home = () => {
     }, 5000);
     return () => clearInterval(intervalo);
   }, [funcionarios]);
+
 
   const funcionarioAtual = funcionarios[indexAtual];
 
@@ -141,15 +138,31 @@ export const Home = () => {
     setIndexAtual((prev) => (prev + 1) % funcionarios.length);
   };
 
+
+  // ========================
+  // GRÁFICO DO FUNCIONÁRIO
+  // ========================
   let graficoFuncionario = null;
 
   if (funcionarioAtual) {
-    const idFunc = funcionarioAtual.funcionarioID || funcionarioAtual.idFuncionario;
-    const feedbacksFunc = feedbacks.filter(f => f.funcionarioID === idFunc);
+    const idFunc =
+      funcionarioAtual.funcionarioID || funcionarioAtual.idFuncionario;
 
-    const totalSatisfeito = feedbacksFunc.filter(f => f.nota?.toLowerCase() === "satisfeito").length;
-    const totalNeutro = feedbacksFunc.filter(f => f.nota?.toLowerCase() === "neutro").length;
-    const totalInsatisfeito = feedbacksFunc.filter(f => f.nota?.toLowerCase() === "insatisfeito").length;
+    const feedbacksFunc = feedbacks.filter(
+      (f) => f.funcionarioID === idFunc
+    );
+
+    const totalSatisfeito = feedbacksFunc.filter(
+      (f) => f.nota?.toLowerCase() === "satisfeito"
+    ).length;
+
+    const totalNeutro = feedbacksFunc.filter(
+      (f) => f.nota?.toLowerCase() === "neutro"
+    ).length;
+
+    const totalInsatisfeito = feedbacksFunc.filter(
+      (f) => f.nota?.toLowerCase() === "insatisfeito"
+    ).length;
 
     graficoFuncionario = {
       series: [totalSatisfeito, totalNeutro, totalInsatisfeito],
@@ -162,6 +175,25 @@ export const Home = () => {
     };
   }
 
+
+  // ========================
+  // GRÁFICO DE LUCROS
+  // ========================
+  const graficoLucros = {
+    series: [{ name: "Lucros", data: lucros }],
+    options: {
+      chart: { type: "area", height: 300 },
+      xaxis: { categories: categorias },
+      colors: ["#00E396"],
+      stroke: { curve: "smooth" },
+      dataLabels: { enabled: true },
+    },
+  };
+
+
+  // ========================
+  // RENDERIZAÇÃO
+  // ========================
   return (
     <div className="container-geral-home">
       <MenuLateral />
@@ -195,6 +227,7 @@ export const Home = () => {
               </Link>
             </div>
 
+            {/* VENDAS DO DIA */}
             <div className="card-info">
               <p>Vendas do Dia</p>
               <strong>
@@ -207,6 +240,7 @@ export const Home = () => {
           </div>
 
           <div className="graficos-home">
+            {/* FUNCIONÁRIO EM DESTAQUE */}
             <div className="grafico-box-home funcionario-carousel">
               <h4>Funcionário em Destaque</h4>
 
@@ -233,10 +267,13 @@ export const Home = () => {
                       onError={(e) => (e.target.src = perfilazul)}
                       className="foto-func-home"
                     />
-                    <p className="nome-func-home">{funcionarioAtual.nomeFuncionario}</p>
+                    <p className="nome-func-home">
+                      {funcionarioAtual.nomeFuncionario}
+                    </p>
                   </div>
 
-                  {graficoFuncionario && graficoFuncionario.series.some(v => v > 0) ? (
+                  {graficoFuncionario &&
+                  graficoFuncionario.series.some((v) => v > 0) ? (
                     <ReactApexChart
                       options={graficoFuncionario.options}
                       series={graficoFuncionario.series}
@@ -244,7 +281,9 @@ export const Home = () => {
                       height={250}
                     />
                   ) : (
-                    <p className="sem-feedback">O funcionário não possui um feedback cadastrado.</p>
+                    <p className="sem-feedback">
+                      O funcionário não possui um feedback cadastrado.
+                    </p>
                   )}
                 </div>
               ) : (
@@ -252,6 +291,7 @@ export const Home = () => {
               )}
             </div>
 
+            {/* GRÁFICO DE LUCROS */}
             <div className="grafico-box-home">
               <Link to="/LucrosGastos">
                 <h4 className="lucrosGastos_h4">Lucros</h4>

@@ -28,6 +28,9 @@ namespace Mercadados_API.Controllers
             {
                 venda.VendaID = Guid.NewGuid();
 
+                // 👇 AQUI REGISTRA A DATA AUTOMATICA
+                venda.DataVenda = DateTime.Now;
+
                 _vendaRepository.Cadastrar(venda);
 
                 return StatusCode(201, venda);
@@ -37,6 +40,7 @@ namespace Mercadados_API.Controllers
                 return BadRequest(error.Message);
             }
         }
+
 
 
         [HttpGet("BuscarPorId/{id}")]

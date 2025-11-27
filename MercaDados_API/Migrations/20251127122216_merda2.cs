@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mercadados_API.Migrations
 {
     /// <inheritdoc />
-    public partial class Db_v2 : Migration
+    public partial class merda2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -176,7 +176,8 @@ namespace Mercadados_API.Migrations
                     Quantidade = table.Column<int>(type: "INT", nullable: false),
                     ProdutoID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProdutosProdutoID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    FeedbackID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    FeedbackID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DataVenda = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -185,8 +186,7 @@ namespace Mercadados_API.Migrations
                         name: "FK_Venda_Feedback_FeedbackID",
                         column: x => x.FeedbackID,
                         principalTable: "Feedback",
-                        principalColumn: "FeedbackID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "FeedbackID");
                     table.ForeignKey(
                         name: "FK_Venda_Produtos_ProdutosProdutoID",
                         column: x => x.ProdutosProdutoID,

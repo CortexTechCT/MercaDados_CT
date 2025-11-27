@@ -2,7 +2,7 @@ import "./Perfil.css";
 import { MenuLateral } from "../../components/menulateral/MenuLateral";
 import { MenuNormal } from "../../components/menunormal/menunormal";
 import iconeUsuario from "../../assets/perfil.png";
-import { useAuth } from "../contexts/authContexts"; 
+import { useAuth } from "../contexts/authContexts";
 import { useEffect, useState } from "react";
 import api from "../../services/Services";
 
@@ -10,33 +10,38 @@ export const Perfil = () => {
   const { usuario, token } = useAuth();
   const [dados, setDados] = useState(null);
 
-  useEffect(() => {
-    const carregarUsuario = async () => {
-      if (!usuario?.idUsuario || !token) return;
+useEffect(() => {
+  const carregarUsuario = async () => {
+    if (!usuario || !token) return;
 
-      try {
-        const resposta = await api.get(`Usuario/BuscarPorId/${usuario.idUsuario}`);
-        setDados(resposta.data);
-      } catch (error) {
-        console.error("Erro ao carregar perfil:", error.response ? error.response.data : error);
-      }
-    };
+    const id = usuario.usuarioId;
 
-    carregarUsuario();
-  }, [usuario, token]);
+    if (!id) return;
+
+    try {
+      const resposta = await api.get(`/Usuario/BuscarPorId/${id}`);
+      console.log("Resposta da API:", resposta.data);
+      setDados(resposta.data);
+    } catch (error) {
+      console.error("Erro ao carregar perfil:", error);
+    }
+  };
+
+  carregarUsuario();
+}, [usuario, token]);
+
+
 
   // 👉 Função para formatar CPF ou CNPJ
   const formatarCpfCnpj = (valor) => {
     if (!valor) return "";
     const apenasNumeros = valor.replace(/\D/g, "");
     if (apenasNumeros.length <= 11) {
-      // CPF
       return apenasNumeros
         .replace(/(\d{3})(\d)/, "$1.$2")
         .replace(/(\d{3})(\d)/, "$1.$2")
         .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
     } else {
-      // CNPJ
       return apenasNumeros
         .replace(/^(\d{2})(\d)/, "$1.$2")
         .replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3")
