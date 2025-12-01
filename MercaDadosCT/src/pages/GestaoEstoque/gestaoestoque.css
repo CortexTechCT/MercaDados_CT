@@ -153,7 +153,30 @@
   text-align: left;
   vertical-align: top;
 }
+.bt-excluir{
+   border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+   background-color: #4265c5;
+  color: white;
+  margin-left: 10px;
+  
+}
 
+
+.bt-editar{
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+   background-color: #f97316;
+  color: white;
+}
 .produto-card .produto-img {
   width: 180px !important;   /* aumenta o tamanho */
   height: 180px !important;  /* altura igual */
@@ -174,7 +197,68 @@
   color: black;
   font-size: 14px;
 }
+.modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
+.modal-box {
+  width: 557px;
+  padding: 25px;
+  background: #f3f6ff;
+  border-radius: 22px;
+  border: 2px solid #dce3fb;
+}
+
+.modal-form {
+  display: grid;
+  gap: 15px;
+}
+
+.modal-form input {
+  padding: 12px;
+  border-radius: 14px;
+  border: 2px solid #d2d8f0;
+  background: white;
+  color: #000;
+}
+
+
+.modal-form select{
+  padding: 12px;
+  border-radius: 14px;
+  border: 2px solid #d2d8f0;
+  background: white;
+  color: #000;
+  margin-bottom: 26px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.cancelar {
+  background: #0c1b3a;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 14px;
+  border: none;
+}
+
+.salvar {
+  background: #ff7a00;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 14px;
+  border: none;
+}
 /* ======== RESPONSIVIDADE ======== */
 @media (max-width: 768px) {
   .carrossel-container {

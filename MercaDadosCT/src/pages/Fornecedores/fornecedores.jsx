@@ -2,17 +2,21 @@ import { MenuLateral } from "../../components/menulateral/MenuLateral";
 import "./fornecedores.css";
 import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
-import chocolandiaLogo from "../../assets/chocolandia.png";
-import nescauLogo from "../../assets/nescau.png";
-import duracellLogo from "../../assets/duracell.png";
+
+import nestleLogo from "../../assets/nestle.avif";
+import cocacolaLogo from "../../assets/cocacolaa.jpg";
+import unileverLogo from "../../assets/univerogo.png";
+import duracellLogo from "../../assets/duracell.png"; // 🔥 voltou
+
 import { MenuNormal } from "../../components/menunormal/menunormal";
 import api from "../../services/Services.js";
 
 export const Fornecedores = () => {
   const fornecedores = [
-    { nome: "Chocolândia", logo: chocolandiaLogo },
-    { nome: "Nescau", logo: nescauLogo },
-    { nome: "Duracell", logo: duracellLogo },
+    { nome: "Nestlé", logo: nestleLogo },
+    { nome: "Coca-Cola", logo: cocacolaLogo },
+    { nome: "Unilever", logo: unileverLogo },
+    { nome: "Duracell", logo: duracellLogo }, // 🔥 voltou aqui
   ];
 
   const [mapasPorFornecedor, setMapasPorFornecedor] = useState({});
@@ -27,27 +31,13 @@ export const Fornecedores = () => {
 
   const criarMapaPorFornecedor = async (fornecedorNome) => {
     try {
-      const [resVendas, resProdutos, resFeedbacks] = await Promise.all([
+      const [resVendas, resProdutos] = await Promise.all([
         api.get("Venda/Listar"),
         api.get("Produtos"),
-        api.get("Feedback"),
       ]);
 
       const vendas = resVendas.data || [];
       const produtos = resProdutos.data || [];
-      const feedbacks = resFeedbacks.data || [];
-
-      // 🔵 Mapa FeedbackID → Data
-      const mapaFeedbackData = {};
-      feedbacks.forEach((fb) => {
-        const fid =
-          fb.feedbackID || fb.FeedbackID || fb.idFeedback || fb.IdFeedback;
-
-        const data =
-          fb.dataFeedback || fb.DataFeedback || fb.data || fb.Data;
-
-        if (fid && data) mapaFeedbackData[fid] = data;
-      });
 
       // 🔵 Filtrar produtos do fornecedor
       const produtosDoFornecedor = produtos.filter((p) => {
@@ -55,8 +45,7 @@ export const Fornecedores = () => {
           p.Fornecedor ||
           p.fornecedor ||
           p.nomeFornecedor ||
-          p.fornecedorNome ||
-          p.FORNECEDOR;
+          p.fornecedorNome;
 
         return (
           nomeFornecedor &&
@@ -69,26 +58,29 @@ export const Fornecedores = () => {
       // 🔵 Criar mapa produtoID → nomeProduto
       const mapaProdutoNome = {};
       produtosDoFornecedor.forEach((p) => {
-        const pid =
-          p.produtoID || p.ProdutoID || p.idProduto || p.IDProduto;
+        const pid = p.produtoID || p.ProdutoID || p.idProduto;
         const nome = p.nome || p.Nome || p.nomeProduto;
         if (pid && nome) mapaProdutoNome[pid] = nome;
       });
 
-      // 🔵 Contador final:
-      // produto → { mesAno → quantidade }
+      // 🔵 produto → { mesAno → quantidade }
       const mapaVendasPorProduto = {};
 
       vendas.forEach((v) => {
         const produtoID = v.produtoID || v.ProdutoID;
-        const feedbackID = v.feedbackID || v.FeedbackID;
+        const nomeProduto = mapaProdutoNome[produtoID];
+        if (!nomeProduto) return;
+
         const quantidade = v.quantidade || v.Quantidade || 1;
 
-        const nomeProduto = mapaProdutoNome[produtoID];
-        if (!nomeProduto) return; // venda não é deste fornecedor
+        // 🔵 Usando a data da venda (correto!)
+        const data =
+          v.dataVenda ||
+          v.DataVenda ||
+          v.data ||
+          v.Data;
 
-        const data = mapaFeedbackData[feedbackID];
-        if (!data) return; // venda sem data
+        if (!data) return;
 
         const d = new Date(data);
         const chaveMes = `${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
@@ -127,7 +119,6 @@ export const Fornecedores = () => {
         </div>
       );
     }
-
 
     const todosMeses = Array.from(
       new Set(

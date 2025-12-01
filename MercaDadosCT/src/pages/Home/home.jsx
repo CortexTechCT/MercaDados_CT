@@ -21,9 +21,7 @@ export const Home = () => {
     navigate("/");
   };
 
-  // ========================
-  // ESTADOS
-  // ========================
+
   const [lucros, setLucros] = useState([]);
   const [categorias, setCategorias] = useState([]);
   const [totalVendasDia, setTotalVendasDia] = useState(0);
@@ -32,9 +30,7 @@ export const Home = () => {
   const [indexAtual, setIndexAtual] = useState(0);
 
 
-  // ========================
-  // CARREGAR VENDAS DO DIA (USANDO dataVenda)
-  // ========================
+ 
   const carregarVendasDoDia = async () => {
     try {
       const resp = await api.get("Venda/Listar");
@@ -60,9 +56,7 @@ export const Home = () => {
   };
 
 
-  // ========================
-  // CARREGAR LUCROS PARA O GRÁFICO
-  // ========================
+
   const carregarLucros = async () => {
     try {
       const vendasResp = await api.get("Venda/Listar");
@@ -80,9 +74,7 @@ export const Home = () => {
   };
 
 
-  // ========================
-  // CARREGAR FUNCIONÁRIOS
-  // ========================
+
   const carregarFuncionarios = async () => {
     try {
       const res = await api.get("Funcionario");
@@ -92,9 +84,7 @@ export const Home = () => {
     }
   };
 
-  // ========================
-  // CARREGAR FEEDBACKS
-  // ========================
+
   const carregarFeedbacks = async () => {
     try {
       const res = await api.get("Feedback");
@@ -105,9 +95,7 @@ export const Home = () => {
   };
 
 
-  // ========================
-  // USEEFFECT PRINCIPAL
-  // ========================
+
   useEffect(() => {
     carregarLucros();
     carregarVendasDoDia();
@@ -116,9 +104,7 @@ export const Home = () => {
   }, []);
 
 
-  // ========================
-  // CARROSSEL DE FUNCIONÁRIOS
-  // ========================
+
   useEffect(() => {
     if (funcionarios.length === 0) return;
     const intervalo = setInterval(() => {
@@ -139,9 +125,7 @@ export const Home = () => {
   };
 
 
-  // ========================
-  // GRÁFICO DO FUNCIONÁRIO
-  // ========================
+ 
   let graficoFuncionario = null;
 
   if (funcionarioAtual) {
@@ -176,9 +160,7 @@ export const Home = () => {
   }
 
 
-  // ========================
-  // GRÁFICO DE LUCROS
-  // ========================
+
   const graficoLucros = {
     series: [{ name: "Lucros", data: lucros }],
     options: {
@@ -191,9 +173,7 @@ export const Home = () => {
   };
 
 
-  // ========================
-  // RENDERIZAÇÃO
-  // ========================
+
   return (
     <div className="container-geral-home">
       <MenuLateral />
@@ -201,7 +181,7 @@ export const Home = () => {
         <MenuNormal />
 
         <main className="home-box">
-          <h2 className="dashboard-h2">Dashboard</h2>
+          <h2 className="dashboard-h2">Gerenciamento</h2>
 
           <div className="cards-dashboard">
             <div className="card-info">
@@ -211,13 +191,7 @@ export const Home = () => {
               </Link>
             </div>
 
-            <div className="card-info">
-              <Link className="link-administrador" to="/LucrosGastos">
-                <img className="alertaa" src={alerta} alt="Alertas" />
-                <p>Alertas/Situações Críticas</p>
-                <strong>3</strong>
-              </Link>
-            </div>
+        
 
             <div className="card-info">
               <Link className="link-administrador" to="/Fornecedores">
@@ -291,7 +265,7 @@ export const Home = () => {
               )}
             </div>
 
-            {/* GRÁFICO DE LUCROS */}
+         
             <div className="grafico-box-home">
               <Link to="/LucrosGastos">
                 <h4 className="lucrosGastos_h4">Lucros</h4>

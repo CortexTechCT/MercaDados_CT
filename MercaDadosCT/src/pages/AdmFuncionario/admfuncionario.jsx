@@ -1,6 +1,7 @@
 import "./AdmFuncionario.css";
 import { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
+import Swal from "sweetalert2";
 import { MenuLateral } from "../../components/menulateral/MenuLateral.jsx";
 import { MenuNormal } from "../../components/menunormal/menunormal.jsx";
 import perfilazul from "../../assets/perfilazul.svg";
@@ -16,12 +17,11 @@ export const AdmFuncionario = () => {
     setFuncAberto(funcAberto === index ? null : index);
   };
 
-  // 📡 Funções para buscar dados da API
+  // 📡 Buscas API
   const listarFuncionario = async () => {
     try {
       const res = await api.get("Funcionario");
       setListaFuncionario(res.data);
-      console.log("✅ Funcionários:", res.data);
     } catch (err) {
       console.error("❌ Erro ao buscar funcionários:", err);
     }
@@ -31,7 +31,6 @@ export const AdmFuncionario = () => {
     try {
       const res = await api.get("Venda/Listar");
       setListaVenda(res.data);
-      console.log("✅ Vendas:", res.data);
     } catch (err) {
       console.error("❌ Erro ao buscar vendas:", err);
     }
@@ -41,7 +40,6 @@ export const AdmFuncionario = () => {
     try {
       const res = await api.get("Feedback");
       setListaFeed(res.data);
-      console.log("✅ Feedbacks:", res.data);
     } catch (err) {
       console.error("❌ Erro ao buscar feedbacks:", err);
     }
@@ -53,20 +51,25 @@ export const AdmFuncionario = () => {
     listarFeedback();
   }, []);
 
-  // Gráficos gerais (opcional, se precisar)
-  const graficoBarrasGeral = {
-    series: [
-      {
-        name: "Desempenho",
-        data: listaVenda.map((v) => v.percentualDesempenho || 0),
-      },
-    ],
-    options: {
-      chart: { type: "bar", height: 250 },
-      plotOptions: { bar: { borderRadius: 10, dataLabels: { position: "top" } } },
-      dataLabels: { enabled: true, formatter: (val) => val + "%", offsetY: -20, style: { fontSize: "12px", colors: ["#304758"] } },
-      xaxis: { categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] },
-    },
+  // 🗑 Excluir funcionário
+  const excluirFuncionario = async (idFunc) => {
+    Swal.fire({
+      title: "Deseja realmente descartar  este funcionário?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sim, descartar ",
+      cancelButtonText: "Cancelar",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await api.delete(`Funcionario/${idFunc}`);
+          Swal.fire("Excluído!", "Funcionário excluído com sucesso.", "success");
+          listarFuncionario(); // Atualiza a lista
+        } catch (err) {
+          Swal.fire("Erro!", "Não foi possível excluir.", "error");
+        }
+      }
+    });
   };
 
   return (
@@ -79,14 +82,51 @@ export const AdmFuncionario = () => {
           <h2>Gestão de funcionários:</h2>
 
           <div className="lista-funcionarios">
-            {listaFuncionario.length === 0 && <p className="nenhum-funcionario">Nenhum funcionário encontrado.</p>}
+            {listaFuncionario.length === 0 && (
+              <p className="nenhum-funcionario">Nenhum funcionário encontrado.</p>
+            )}
 
             {listaFuncionario.map((f, index) => {
               const idFunc = f.funcionarioID || f.idFuncionario || f.id;
 
-              const feedbacksFuncionario = listaFeed.filter((fb) => fb.funcionarioID === idFunc);
-              const feedbacksIDs = feedbacksFuncionario.map((fb) => fb.feedbackID);
-              const vendasFuncionario = listaVenda.filter((v) => feedbacksIDs.includes(v.feedbackID));
+              const feedbacksFuncionario = listaFeed.filter(
+                (fb) => String(fb.funcionarioID) === String(idFunc)
+              );
+
+              const vendasFuncionario = listaVenda.filter(
+                (v) => !v.funcionarioID || String(v.funcionarioID) === String(idFunc)
+              );
+
+              const vendasPorMes = Array.from({ length: 12 }, (_, i) => {
+                const mes = i + 1;
+                return vendasFuncionario
+                  .filter((v) => new Date(v.dataVenda).getMonth() + 1 === mes)
+                  .reduce((acc, v) => acc + (v.quantidade || 0), 0);
+              });
+
+              const graficoBarrasFuncionario = {
+                series: [{ name: "Vendas", data: vendasPorMes }],
+                options: {
+                  chart: { type: "bar", height: 250 },
+                  plotOptions: {
+                    bar: { borderRadius: 10, dataLabels: { position: "top" } },
+                  },
+                  dataLabels: {
+                    enabled: true,
+                    formatter: (val) => val,
+                    offsetY: -20,
+                    style: { fontSize: "12px", colors: ["#304758"] },
+                  },
+                  xaxis: {
+                    categories: [
+                      "Jan","Fev","Mar","Abr","Mai","Jun",
+                      "Jul","Ago","Set","Out","Nov","Dez"
+                    ],
+                  },
+                  yaxis: { title: { text: "Quantidade de Vendas" } },
+                  tooltip: { y: { formatter: (val) => `${val} vendas` } },
+                },
+              };
 
               const graficoPizzaFuncionario = {
                 options: {
@@ -102,37 +142,30 @@ export const AdmFuncionario = () => {
                 ],
               };
 
-              const vendasPorMes = Array.from({ length: 12 }, (_, i) => {
-                const mes = i + 1;
-                return vendasFuncionario.filter((v) => {
-                  const fb = listaFeed.find((fb) => fb.feedbackID === v.feedbackID);
-                  return fb ? new Date(fb.dataFeedback).getMonth() + 1 === mes : false;
-                }).length;
-              });
-
-              const graficoBarrasFuncionario = {
-                series: [{ name: "Vendas", data: vendasPorMes }],
-                options: {
-                  chart: { type: "bar", height: 250 },
-                  plotOptions: { bar: { borderRadius: 10, dataLabels: { position: "top" } } },
-                  dataLabels: { enabled: true, formatter: (val) => val, offsetY: -20, style: { fontSize: "12px", colors: ["#304758"] } },
-                  xaxis: { categories: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"] },
-                },
-              };
-
               return (
                 <div key={index} className="item-funcionario-wrapper">
-                  <div className="item-funcionario" onClick={() => toggleFuncionario(index)}>
+                  <div
+                    className="item-funcionario"
+                    onClick={() => toggleFuncionario(index)}
+                  >
                     <div className="info-funcionario">
                       <img
-                        src={f.fotoPerfil ? `https://localhost:7115${f.fotoPerfil.startsWith("/") ? f.fotoPerfil : `/${f.fotoPerfil}`}` : perfilazul}
+                        src={
+                          f.fotoPerfil
+                            ? `https://localhost:7115${
+                                f.fotoPerfil.startsWith("/") ? f.fotoPerfil : `/${f.fotoPerfil}`
+                              }`
+                            : perfilazul
+                        }
                         alt={f.nomeFuncionario}
                         className="foto-funcionario"
                         onError={(e) => (e.target.src = perfilazul)}
                       />
                       <p>{f.nomeFuncionario}</p>
                     </div>
-                    <span className={`seta ${funcAberto === index ? "aberto" : ""}`}>{funcAberto === index ? "˄" : "˅"}</span>
+                    <span className={`seta ${funcAberto === index ? "aberto" : ""}`}>
+                      {funcAberto === index ? "˄" : "˅"}
+                    </span>
                   </div>
 
                   {funcAberto === index && (
@@ -141,13 +174,21 @@ export const AdmFuncionario = () => {
                         <div className="header-funcionario-expandido">
                           <div>
                             <strong>{f.nomeFuncionario}</strong>
-                            <span className="funcao">Função: {f.funcao || "Caixa de Vendas"}</span>
+                            <span className="funcao">
+                              Função: {f.funcao || "Caixa de Vendas"}
+                            </span>
                           </div>
+                          <button
+                            className="btn-excluir-funcionario"
+                            onClick={() => excluirFuncionario(idFunc)}
+                          >
+                            Descartar 
+                          </button>
                         </div>
 
                         <div className="graficos-funcionario">
                           <div className="grafico-barra-placeholder">
-                            {graficoBarrasFuncionario.series[0].data.length > 0 ? (
+                            {graficoBarrasFuncionario.series[0].data.some((v) => v > 0) ? (
                               <ReactApexChart
                                 options={graficoBarrasFuncionario.options}
                                 series={graficoBarrasFuncionario.series}
@@ -156,7 +197,7 @@ export const AdmFuncionario = () => {
                                 width={370}
                               />
                             ) : (
-                              <p>Carregando dados de vendas...</p>
+                              <p>Sem vendas cadastradas.</p>
                             )}
                           </div>
 
@@ -169,7 +210,7 @@ export const AdmFuncionario = () => {
                                 width={350}
                               />
                             ) : (
-                              <p>Carregando feedbacks...</p>
+                              <p>Sem feedbacks cadastrados.</p>
                             )}
                           </div>
                         </div>

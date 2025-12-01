@@ -8,6 +8,18 @@ body {
   flex-direction: column;
 }
 
+.btn-excluir-funcionario{
+    border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+   background-color: #f97316;
+  color: white;
+}
+
+
 .detalhes-funcionario {
   background: white;
   color: black;

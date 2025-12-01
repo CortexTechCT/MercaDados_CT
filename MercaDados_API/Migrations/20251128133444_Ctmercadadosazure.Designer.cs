@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mercadados_API.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20251127122216_merda2")]
-    partial class merda2
+    [Migration("20251128133444_Ctmercadadosazure")]
+    partial class Ctmercadadosazure
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

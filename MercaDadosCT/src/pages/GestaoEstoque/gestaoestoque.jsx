@@ -10,12 +10,165 @@ import merceariaIcon from "../../assets/Mercearia.png";
 import padariaIcon from "../../assets/Padaria.png";
 import prolimIcon from "../../assets/limpeza.png";
 import api from "../../services/Services.js";
+import Swal from "sweetalert2";
 
+/* =====================================================================
+      MODAL EDITAR
+===================================================================== */
+const ModalEditar = ({ produto, fechar, atualizar }) => {
+  const [form, setForm] = useState({
+    nome: "",
+    valor: "",
+    validade: "",
+    peso: "",
+    setor: "",
+    fornecedor: "",
+  });
+
+  const [setoresDisponiveis, setSetoresDisponiveis] = useState([]);
+  const [carregandoSetores, setCarregandoSetores] = useState(true);
+
+  useEffect(() => {
+    const carregarSetores = async () => {
+      try {
+        const resposta = await api.get("/Estoque");
+        const setores = Array.isArray(resposta.data)
+          ? resposta.data.map((item) => item.setor)
+          : [];
+        setSetoresDisponiveis(setores);
+      } catch (err) {
+        console.error("Erro ao listar setores", err);
+      } finally {
+        setCarregandoSetores(false);
+      }
+    };
+    carregarSetores();
+  }, []);
+
+  useEffect(() => {
+    if (produto) {
+      setForm({
+        nome: produto.nome,
+        valor: produto.valor,
+        validade: produto.validade?.slice(0, 10),
+        peso: produto.peso,
+        setor: produto.setor,
+        fornecedor: produto.fornecedor,
+      });
+    }
+  }, [produto]);
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const salvar = async (e) => {
+    e.preventDefault();
+    try {
+      const formData = new FormData();
+      formData.append("produtoID", produto.produtoID);
+      formData.append("nome", form.nome);
+      formData.append("valor", parseFloat(form.valor));
+      formData.append("validade", form.validade);
+      formData.append("peso", form.peso);
+      formData.append("setor", form.setor);
+      formData.append("fornecedor", form.fornecedor);
+      formData.append("imagem", produto.imagem ?? "");
+
+      await api.put(`/Produtos/${produto.produtoID}`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      Swal.fire("Sucesso", "Produto atualizado!", "success");
+      atualizar();
+      fechar();
+    } catch (err) {
+      console.error(err);
+      Swal.fire("Erro", "Não foi possível atualizar", "error");
+    }
+  };
+
+  return (
+    <div className="modal-bg">
+      <div className="modal-box">
+        <h2>Editar Produto</h2>
+        <form onSubmit={salvar} className="modal-form">
+          <input
+            type="text"
+            name="nome"
+            placeholder="Nome"
+            value={form.nome}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="valor"
+            placeholder="Valor"
+            value={form.valor}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="date"
+            name="validade"
+            value={form.validade}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="peso"
+            placeholder="Peso"
+            value={form.peso}
+            onChange={handleChange}
+            required
+          />
+          <select
+            name="setor"
+            value={form.setor}
+            onChange={handleChange}
+            disabled={carregandoSetores}
+            required
+          >
+            <option value="">
+              {carregandoSetores ? "Carregando setores..." : "Selecione um Setor"}
+            </option>
+            {setoresDisponiveis.map((setor, index) => (
+              <option key={index} value={setor}>
+                {setor}
+              </option>
+            ))}
+          </select>
+          <input
+            type="text"
+            name="fornecedor"
+            placeholder="Fornecedor"
+            value={form.fornecedor}
+            onChange={handleChange}
+            required
+          />
+          <div className="modal-buttons">
+            <button type="button" className="cancelar" onClick={fechar}>
+              Cancelar
+            </button>
+            <button type="submit" className="salvar">
+              Salvar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+/* =====================================================================
+      TELA PRINCIPAL
+===================================================================== */
 export const GestaoEstoque = () => {
   const [listaProduto, setListaProduto] = useState([]);
   const [listaCategoria, setListaCategoria] = useState([]);
   const [listaVenda, setListaVenda] = useState([]);
   const [setorSelecionado, setSetorSelecionado] = useState("");
+  const [produtoEditar, setProdutoEditar] = useState(null);
 
   const [state, setState] = useState({
     series: [{ name: "Quantidade Vendida", data: [] }],
@@ -29,7 +182,7 @@ export const GestaoEstoque = () => {
       },
       dataLabels: { enabled: false },
       markers: { size: 0 },
-      title: { text: "Quantidade Vendida por Data (via Feedback)", align: "left" },
+      title: { text: "Quantidade Vendida por Data de Venda", align: "left" },
       fill: {
         type: "gradient",
         gradient: {
@@ -46,7 +199,7 @@ export const GestaoEstoque = () => {
       },
       xaxis: {
         type: "datetime",
-        title: { text: "Data do Feedback / Venda" },
+        title: { text: "Data da Venda" },
         labels: {
           datetimeFormatter: {
             year: "yyyy",
@@ -63,66 +216,37 @@ export const GestaoEstoque = () => {
     },
   });
 
-  // 🔹 Função para buscar vendas e montar gráfico
- const listarVenda = async () => {
-  try {
-    const resVendas = await api.get("Venda/Listar");
-    const vendas = resVendas.data || [];
+  // 🔹 Listar Vendas
+  const listarVenda = async () => {
+    try {
+      const resVendas = await api.get("Venda/Listar");
+      const vendas = resVendas.data || [];
 
-    const resFeedbacks = await api.get("Feedback");
-    const feedbacks = resFeedbacks.data || [];
+      const somaPorData = {};
+      vendas.forEach((v) => {
+        if (v.dataVenda) {
+          const dia = new Date(v.dataVenda).toISOString().split("T")[0];
+          somaPorData[dia] = (somaPorData[dia] || 0) + (v.quantidade || 0);
+        }
+      });
 
-    const mapaFeedback = {};
-    feedbacks.forEach(fb => {
-      if (fb.feedbackID && fb.dataFeedback)
-        mapaFeedback[fb.feedbackID] = fb.dataFeedback;
-    });
+      const dadosGrafico = Object.entries(somaPorData)
+        .map(([data, quantidade]) => ({
+          x: new Date(data).getTime(),
+          y: quantidade,
+        }))
+        .sort((a, b) => a.x - b.x);
 
-    // 🔹 Consolida vendas por data
-    const somaPorData = {};
-    vendas.forEach(v => {
-      const data = mapaFeedback[v.feedbackID];
-      if (data) {
-        const dia = new Date(data).toISOString().split("T")[0]; 
-        somaPorData[dia] = (somaPorData[dia] || 0) + (v.quantidade || 0);
-      }
-    });
+      setState((prev) => ({
+        ...prev,
+        series: [{ name: "Total Vendido", data: dadosGrafico }],
+      }));
+    } catch (err) {
+      console.error("❌ Erro ao buscar vendas:", err);
+    }
+  };
 
-    const dadosGrafico = Object.entries(somaPorData)
-      .map(([data, quantidade]) => ({
-        x: new Date(data).getTime(),
-        y: quantidade,
-      }))
-      .sort((a, b) => a.x - b.x);
-
-    setState(prev => ({
-      ...prev,
-      options: {
-        ...prev.options,
-        chart: { type: "area", zoom: { enabled: true } },
-        xaxis: {
-          type: "datetime",
-          title: { text: "Data da Venda (via Feedback)" },
-        },
-        yaxis: { title: { text: "Total Vendido no Dia" } },
-        title: { text: "Vendas Totais por Dia", align: "left" },
-        tooltip: {
-          x: { format: "dd/MM/yyyy" },
-          y: { formatter: val => `${val} unidades` },
-        },
-      },
-      series: [
-        {
-          name: "Total Vendido",
-          data: dadosGrafico,
-        },
-      ],
-    }));
-  } catch (err) {
-    console.error("❌ Erro ao buscar vendas/feedbacks:", err);
-  }
-};
-
+  // 🔹 Listar Produtos
   const listarProdutos = async () => {
     try {
       const res = await api.get("Produtos");
@@ -132,6 +256,7 @@ export const GestaoEstoque = () => {
     }
   };
 
+  // 🔹 Listar Categorias
   const listarCategoria = async () => {
     try {
       const res = await api.get("EstoqueProdutos");
@@ -141,20 +266,41 @@ export const GestaoEstoque = () => {
     }
   };
 
+  // 🔹 Excluir Produto
+  const excluirProduto = async (id) => {
+    const confirm = await Swal.fire({
+      title: "Excluir?",
+      text: "Deseja realmente excluir?",
+      icon: "warning",
+      showCancelButton: true,
+    });
+    if (!confirm.isConfirmed) return;
+
+    try {
+      await api.delete(`/Produtos/${id}`);
+      Swal.fire("Excluído", "Produto removido!", "success");
+      listarProdutos();
+    } catch (err) {
+      Swal.fire("Erro", "Não foi possível excluir", "error");
+    }
+  };
+
+  // 🔹 Carrossel scroll
   useEffect(() => {
     listarVenda();
     listarProdutos();
     listarCategoria();
 
-    
     const carrossel = document.getElementById("carrossel");
     const btnPrev = document.querySelector(".carrossel-btn.prev");
     const btnNext = document.querySelector(".carrossel-btn.next");
 
     if (!carrossel || !btnPrev || !btnNext) return;
 
-    const scrollRight = () => carrossel.scrollBy({ left: 200, behavior: "smooth" });
-    const scrollLeft = () => carrossel.scrollBy({ left: -200, behavior: "smooth" });
+    const scrollRight = () =>
+      carrossel.scrollBy({ left: 200, behavior: "smooth" });
+    const scrollLeft = () =>
+      carrossel.scrollBy({ left: -200, behavior: "smooth" });
 
     btnNext.addEventListener("click", scrollRight);
     btnPrev.addEventListener("click", scrollLeft);
@@ -165,7 +311,7 @@ export const GestaoEstoque = () => {
     };
   }, []);
 
-  // 🧠 Filtro de produtos
+  // 🔹 Produtos filtrados
   const produtosFiltrados =
     setorSelecionado && setorSelecionado !== "Mostrar Todos"
       ? listaProduto.filter(
@@ -178,14 +324,12 @@ export const GestaoEstoque = () => {
   return (
     <div className="container-geral-gestaoestoque">
       <MenuLateral />
-
       <div className="conteudo-principal">
         <MenuNormal />
-
         <main className="gestaoestoque-box">
           <h2>Gestão de Estoque</h2>
 
-          {/* 📊 Gráfico */}
+          {/* Gráfico */}
           <div className="grafico-container">
             <div className="grafico-box">
               <ReactApexChart
@@ -197,10 +341,9 @@ export const GestaoEstoque = () => {
             </div>
           </div>
 
-          {/* 🌀 Carrossel */}
+          {/* Carrossel */}
           <div className="carrossel-container">
             <button className="carrossel-btn prev">&#10094;</button>
-
             <div className="categorias-box" id="carrossel">
               <div
                 className={`categoria-item ${
@@ -256,25 +399,20 @@ export const GestaoEstoque = () => {
                 <img src={prolimIcon} alt="Limpeza" />
                 <p>Limpeza</p>
               </div>
-
-              {/* 🚀 Nova categoria: Mostrar Todos */}
               <div
                 className={`categoria-item ${
                   setorSelecionado === "Mostrar Todos" ? "ativo" : ""
                 }`}
                 onClick={() => setSetorSelecionado("Mostrar Todos")}
               >
-
                 <div className="mostrar-todos-icone">🛒</div>
-                <p>  </p>
                 <p>Mostrar Todos</p>
               </div>
             </div>
-
             <button className="carrossel-btn next">&#10095;</button>
           </div>
 
-          {/* 🧾 Produtos */}
+          {/* Listagem Produtos */}
           <div className="listagem-produtos">
             <h4 className="produtos-h4">
               Produtos{" "}
@@ -291,7 +429,10 @@ export const GestaoEstoque = () => {
                   produto.urlImagem ||
                   "";
                 const imagemFinal = caminhoImagem
-                  ? `https://localhost:7067/${caminhoImagem.replace("wwwroot/", "")}`
+                  ? `https://localhost:7067/${caminhoImagem.replace(
+                      "wwwroot/",
+                      ""
+                    )}`
                   : "";
 
                 return (
@@ -302,7 +443,9 @@ export const GestaoEstoque = () => {
                       alt={produto.nome || "Produto"}
                     />
                     <div className="produto-info">
-                      <p><strong>Descrição:</strong></p>
+                      <p>
+                        <strong>Descrição:</strong>
+                      </p>
                       <p>Produto: {produto.nome}</p>
                       <p>Peso: {produto.peso}</p>
                       <p>Valor: R$ {produto.valor}</p>
@@ -311,6 +454,20 @@ export const GestaoEstoque = () => {
                         {new Date(produto.validade).toLocaleDateString("pt-BR")}
                       </p>
                       <p>Setor: {produto.setor}</p>
+                    </div>
+                    <div className="botoes-crud">
+                      <button
+                        className="bt-editar"
+                        onClick={() => setProdutoEditar(produto)}
+                      >
+                        Editar
+                      </button>
+                      <button
+                        className="bt-excluir"
+                        onClick={() => excluirProduto(produto.produtoID)}
+                      >
+                        Excluir
+                      </button>
                     </div>
                   </div>
                 );
@@ -321,6 +478,14 @@ export const GestaoEstoque = () => {
           </div>
         </main>
       </div>
+
+      {produtoEditar && (
+        <ModalEditar
+          produto={produtoEditar}
+          fechar={() => setProdutoEditar(null)}
+          atualizar={listarProdutos}
+        />
+      )}
     </div>
   );
 };

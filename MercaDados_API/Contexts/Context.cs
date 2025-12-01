@@ -30,7 +30,7 @@ namespace Mercadados_API.Contexts
             if (!optionsBuilder.IsConfigured)
             {
 
-                optionsBuilder.UseSqlServer("Server =NOTE38-S28\\SQLEXPRESS; Database = MercaDados; User Id = sa; Pwd = Senai@134; TrustServerCertificate=true;");
+                optionsBuilder.UseSqlServer("Server=tcp:ctmerca.database.windows.net,1433;Initial Catalog=serverctmercadados;Persist Security Info=False;User ID=ctmerca;Password=Senai@134;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
             }
         }
