@@ -1,23 +1,22 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Login } from "../pages/Login/login";
-import { CadastroUsuario } from "../pages/CadastroUsuario/cadastrousuario";
-import { Fornecedores } from "../pages/Fornecedores/fornecedores";
-import { GestaoEstoque } from "../pages/GestaoEstoque/gestaoestoque";
-import { Home } from "../pages/Home/home";
-import { LucrosGastos } from "../pages/LucrosGastos/lucrosgastos";
+import { Login } from "../pages/Login/login.jsx";
+import { CadastroUsuario } from "../pages/CadastroUsuario/cadastrousuario.jsx";
+import { Fornecedores } from "../pages/Fornecedores/fornecedores.jsx";
+import { GestaoEstoque } from "../pages/GestaoEstoque/gestaoestoque.jsx";
+import { Home } from "../pages/Home/home.jsx";
+import { LucrosGastos } from "../pages/LucrosGastos/lucrosgastos.jsx";
 import { Perfil } from "../pages/Perfil/Perfil.jsx";
-import { LeituraProdutos } from "../pages/LeituraProdutos/LeituraProdutos";
-import { AdmFuncionario } from "../pages/AdmFuncionario/admfuncionario";
-import { CadastroProduto } from "../pages/CadastroProduto/cadastroproduto";
-import { FeedbacksClientes } from "../pages/FeedbacksClientes/feedbacksclientes";
-import { CadastroAdmin } from "../pages/CadastroAdmin/cadastroAdmin";
-import { useAuth } from "../pages/contexts/authContexts";
+import { LeituraProdutos } from "../pages/LeituraProdutos/leituraProdutos.jsx";
+import { AdmFuncionario } from "../pages/AdmFuncionario/admfuncionario.jsx";
+import { CadastroProduto } from "../pages/CadastroProduto/cadastroproduto.jsx";
+import { FeedbacksClientes } from "../pages/FeedbacksClientes/feedbacksclientes.jsx";
+import { CadastroAdmin } from "../pages/CadastroAdmin/cadastroAdmin.jsx";
+import { useAuth } from "../pages/contexts/authContexts.jsx";
 
 // 🔒 Componente para proteger rotas
 const Privado = ({ Item, tipoPermitido }) => {
   const { usuario, loading } = useAuth();
 
-  // Espera o contexto carregar
   if (loading) {
     return (
       <div
